@@ -1,4 +1,4 @@
-<img src="logo.png" alt="Wageningen University & Research · YouiLab · IPICYT" height="90" align="right">
+<img src="assets/brand/logo.png" alt="Wageningen University & Research · YouiLab · IPICYT" height="90" align="right">
 
 # Curso de Inteligencia Artificial
 
@@ -52,9 +52,10 @@ Mayo–agosto 2026, una sesión por semana.
 ```
 curso_IA/
 ├── _quarto.yml        # configuración del sitio web
+├── assets/            # logos y media reutilizable del sitio
 ├── index.qmd          # landing page
+├── relics/            # material histórico archivado
 ├── syllabus.qmd       # programa completo del curso
-├── ai_course.qmd      # documento de trabajo
 └── sesiones/
     ├── sesion-01.qmd
     ├── sesion-02.qmd
