@@ -697,13 +697,14 @@ details.sy-info[open] summary .sy-chevron { transform: rotate(90deg); }
           </div>
           <span class="sy-cal-go">→</span>
         </a>
-        <div class="sy-cal-entry">
+        <a href="sesiones/sesion-02.html" class="sy-cal-entry">
           <span class="sy-cal-day">12</span>
           <div class="sy-cal-info">
             <div class="sy-cal-num">02</div>
             <div class="sy-cal-text">Redes Neuronales</div>
           </div>
-        </div>
+          <span class="sy-cal-go">→</span>
+        </a>
         <div class="sy-cal-entry">
           <span class="sy-cal-day">19</span>
           <div class="sy-cal-info">

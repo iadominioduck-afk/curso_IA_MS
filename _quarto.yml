@@ -22,8 +22,8 @@ website:
           - text: "S1 · ¿Qué es la IA?"
             href: sesiones/sesion-01.qmd
           # Las siguientes sesiones se activarán conforme se publiquen:
-          # - text: "S2 · ¿Cómo aprende una máquina?"
-          #   href: sesiones/sesion-02.qmd
+          - text: "S2 · Redes Neuronales — ¿Cómo 'piensa' la IA?"
+            href: sesiones/sesion-02.qmd
           # - text: "S3 · Algoritmos"
           #   href: sesiones/sesion-03.qmd
           # - text: "S4 · IA Generativa"
