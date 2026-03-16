@@ -218,11 +218,9 @@ window.Quarto = {
 <hr>
 <section id="introducción" class="level3">
 <h3 class="anchored" data-anchor-id="introducción">Introducción</h3>
-<p>Abre TikTok ahora mismo. Lo que ves en los primeros tres segundos — ese primer video, ese primer audio — lo decidió una inteligencia artificial. No un humano. No un editor. Un algoritmo que lleva semanas observándote: cuánto tiempo te quedas en cada video, qué tipo de contenido pausas, cuándo deslizas rápido, cuándo vuelves a ver algo. Tres segundos de pantalla. Millones de cálculos.</p>
-<div style="margin:2rem 0;">
-  <p style="text-align:center;color:#888;font-size:0.82rem;margin-bottom:1rem;font-style:italic;">
-    ¿Cómo decide TikTok qué mostrarte?
-  </p>
+<p>Abre TikTok ahora mismo. Lo que ves en los primeros tres segundos (ese primer video, ese primer audio) lo decidió una inteligencia artificial. No un humano. No un editor. Un algoritmo que lleva semanas observándote: cuánto tiempo te quedas en cada video, qué tipo de contenido pausas, cuándo deslizas rápido, cuándo vuelves a ver algo. Tres segundos de pantalla. Millones de cálculos.</p>
+<div class="demo-wrap">
+  <p class="fig-caption">¿Cómo decide TikTok qué mostrarte?</p>
 
   <div style="display:flex;gap:1.5rem;align-items:center;justify-content:center;flex-wrap:wrap;">
 
@@ -273,7 +271,7 @@ window.Quarto = {
   </div>
 
   <!-- Timer y botón -->
-  <p id="tt-status" style="text-align:center;color:#888;font-size:0.78rem;margin-top:0.8rem;min-height:1.2em;"></p>
+  <p id="tt-status" style="text-align:center;color:#64748b;font-size:0.78rem;margin-top:0.8rem;min-height:1.2em;"></p>
   <div style="text-align:center;margin-top:0.4rem;">
     <button id="tt-btn" onclick="ttRestart()" style="background:#fe2c55;color:#fff;border:none;border-radius:6px;
                    padding:6px 18px;font-size:0.82rem;cursor:pointer;">
@@ -610,13 +608,11 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
 </div>
 </div>
 <p>Veamos cómo ocurre ese cálculo, paso a paso:</p>
-<div id="lr-wrap" style="margin:1.5rem 0;">
+<div id="lr-wrap" class="demo-wrap">
 
   <!-- ① FASE TABLA -->
   <div id="lr-tbl-area">
-    <p style="text-align:center;font-size:.82rem;color:#888;margin:.2rem 0 .8rem;font-style:italic;">
-      Datos de 8 estudiantes: cuánto estudiaron y qué calificación obtuvieron
-    </p>
+    <p class="fig-caption">Datos de 8 estudiantes: cuánto estudiaron y qué calificación obtuvieron</p>
     <div style="overflow-x:auto;">
       
 <table class="caption-top" data-quarto-postprocess="true" style="width:100%;max-width:440px;margin:0 auto;border-collapse:collapse;font-size:.88rem;">
@@ -644,7 +640,7 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
 
   <!-- ② FASE CANVAS -->
   <div id="lr-graph-area" style="display:none;flex-direction:column;align-items:center;gap:.7rem;">
-    <p style="text-align:center;font-size:.82rem;color:#888;margin:0;font-style:italic;">
+    <p style="text-align:center;font-size:.82rem;color:#64748b;margin:0;font-style:italic;">
       Cada fila de la tabla se convierte en un punto <strong>(x, y)</strong> en el plano
     </p>
     <canvas id="lr-cv" width="460" height="300" style="max-width:100%;border-radius:10px;background:#f8fafc;border:1px solid #e2e8f0;"></canvas>
@@ -886,18 +882,16 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
   else setTimeout(buildTable,200);
 })();
 </script>
-<details style="margin:1.2rem 0 0.5rem;border:1px solid #dbeafe;border-radius:10px;overflow:hidden;">
-<summary style="cursor:pointer;padding:.9rem 1.2rem;font-weight:600;color:#1e40af;
-background:#eff6ff;user-select:none;list-style:none;display:flex;
-justify-content:space-between;align-items:center;">
+<details class="expand-section">
+<summary class="expand-summary">
 <span>🔢 Las matemáticas detrás — ¿De dónde sale la línea roja? (álgebra básica)</span>
-<span style="font-weight:400;color:#94a3b8;font-size:.85rem;">haz clic para ver</span>
+<span class="expand-summary-hint">haz clic para ver</span>
 </summary>
-<div style="padding:1.2rem 1.5rem;font-size:.9rem;line-height:1.7;">
+<div class="expand-body">
 
 <p>La animación usó <strong>Regresión Lineal Simple</strong>: encontrar la recta que pasa <em>lo más cerca posible</em> de todos los puntos. La recta se describe con la <strong>ecuación de la recta en forma pendiente-ordenada</strong>:</p>
 
-<div style="background:#f0f4ff;border-radius:8px;padding:1rem 1.4rem;margin:.8rem 0;font-size:.92rem;line-height:2;">
+<div class="formula-box" style="font-size:.92rem;line-height:2;">
   <div style="font-family:'Courier New',monospace;font-size:1.1rem;font-weight:700;text-align:center;margin-bottom:.6rem;">
     ŷ &nbsp;=&nbsp; <span style="color:#dc2626;">m</span> · x &nbsp;+&nbsp; <span style="color:#dc2626;">b</span>
   </div>
@@ -928,8 +922,7 @@ justify-content:space-between;align-items:center;">
 <p><strong>¿Qué es la pendiente? — "elevación sobre avance"</strong></p>
 <p>En prepa aprendiste que la pendiente es el cociente <em>"cuánto sube / cuánto avanza"</em>:</p>
 
-<div style="background:#fefce8;border-left:3px solid #d97706;border-radius:0 8px 8px 0;
-            padding:.7rem 1.2rem;margin:.5rem 0;font-family:'Courier New',monospace;font-size:.9rem;line-height:2.2;">
+<div class="highlight-yellow">
   m &nbsp;=&nbsp; <strong>Δy / Δx</strong> &nbsp;=&nbsp; <strong>elevación / avance</strong><br>
   <span style="font-size:.8rem;font-family:system-ui;color:#78350f;">
     Si m = 5.23 → por cada hora más que estudias, tu calificación sube ≈ 5.2 puntos
@@ -940,16 +933,14 @@ justify-content:space-between;align-items:center;">
 Con 2 puntos siempre puedes trazar exactamente una recta — eso es geometría básica. Pero aquí tenemos 8 estudiantes y <em>ninguna</em> recta pasa exactamente por los 8 puntos. Si eliges a Ana (1 h → 55) y Emilio (8 h → 90), obtienes una pendiente. Si eliges a Carlos y Fernanda, obtienes otra diferente. ¿Cuál es la "correcta"? Ninguna — porque cada par ignora a los demás.<br><br>
 La solución: usar <strong>todos</strong> los puntos a la vez y encontrar la recta que cometa el <em>menor error posible considerando a todos en conjunto</em>. Eso es la fórmula de <strong>Mínimos Cuadrados</strong> — álgebra pura:</p>
 
-<div style="background:#f0f4ff;border-radius:8px;padding:.8rem 1.4rem;margin:.6rem 0;
-            font-family:'Courier New',monospace;font-size:.88rem;line-height:2.2;text-align:center;">
+<div class="formula-box" style="font-size:.88rem;text-align:center;">
   m = Σ(xᵢ − x̄)(yᵢ − ȳ) / Σ(xᵢ − x̄)² &nbsp;&nbsp;&nbsp; b = ȳ − m·x̄
 </div>
 
 <p>La Σ (sigma) significa "suma de todos los estudiantes". Suena intimidante, pero es aritmética básica. Veamos cada paso:</p>
 
 <p><strong>Paso 1 — Calcular las medias (promedios):</strong></p>
-<div style="background:#f0f4ff;border-radius:8px;padding:.8rem 1.2rem;margin:.5rem 0;
-            font-family:'Courier New',monospace;font-size:.88rem;line-height:2.2;">
+<div class="formula-box" style="font-size:.88rem;">
   x̄ = (1+2+3+4+5+6+7+8) / 8 = 36 / 8 = <strong>4.5</strong><br>
   ȳ = (55+60+65+72+75+82+88+90) / 8 = 587 / 8 = <strong>73.4</strong>
 </div>
@@ -1053,17 +1044,15 @@ La solución: usar <strong>todos</strong> los puntos a la vez y encontrar la rec
 </div>
 
 <p><strong>Paso 3 — Sustituir en las fórmulas:</strong></p>
-<div style="background:#f0f4ff;border-radius:8px;padding:.8rem 1.2rem;margin:.5rem 0;
-            font-family:'Courier New',monospace;font-size:.92rem;line-height:2.2;">
+<div class="formula-box" style="font-size:.92rem;">
   m = 219.5 / 42.0 = <strong style="color:#dc2626;">5.23</strong><br>
   b = 73.4 − 5.23 × 4.5 = <strong style="color:#dc2626;">49.86</strong><br>
   <strong>ŷ = 5.23·x + 49.86</strong>
 </div>
 
 <p style="margin-top:1.2rem;"><strong>Paso 4 — El mismo cálculo en Python</strong>
-<span style="font-size:.8rem;color:#888;">(lo puedes correr gratis en Google Colab)</span></p>
-<pre style="background:#1e1e2e;color:#cdd6f4;padding:1rem 1.2rem;border-radius:8px;
-            font-size:.8rem;overflow-x:auto;line-height:1.7;margin:.5rem 0;"><code><span style="color:#89b4fa">import</span> numpy <span style="color:#89b4fa">as</span> np
+<span style="font-size:.8rem;color:#64748b;">(lo puedes correr gratis en Google Colab)</span></p>
+<pre class="code-dark"><code><span style="color:#89b4fa">import</span> numpy <span style="color:#89b4fa">as</span> np
 
 <span style="color:#6c7086"># Datos: horas de estudio (x) → calificación (y)</span>
 x = np.array([1, 2, 3, 4, 5, 6, 7, 8])
@@ -1078,16 +1067,11 @@ m, b = np.polyfit(x, y, 1)
 <span style="color:#a6e3a1">print</span>(f<span style="color:#a6d189">"Predicción (6.5 hrs): {m*6.5+b:.1f} pts"</span>)
 <span style="color:#6c7086"># → Predicción (6.5 hrs): 83.9 pts</span></code></pre>
 
-<div style="background:#dcfce7;border-left:4px solid #16a34a;padding:.9rem 1.2rem;
-            border-radius:0 8px 8px 0;margin-top:1.2rem;">
-  <p style="margin:0;font-weight:700;color:#15803d;font-size:.95rem;">
-    ¿Ves? Todo empieza con álgebra fundamental — la misma que ves en prepa.
-  </p>
-  <p style="margin:.4rem 0 0;font-size:.85rem;color:#166534;">
-    Una máquina no hace magia: calcula pendientes, promedios y sumas para minimizar errores.
+<div class="highlight-green">
+  <p>¿Ves? Todo empieza con álgebra fundamental — la misma que ves en prepa.</p>
+  <p>Una máquina no hace magia: calcula pendientes, promedios y sumas para minimizar errores.
     Lo que la hace poderosa es que puede hacer ese cálculo con <em>millones</em> de datos
-    y <em>miles</em> de variables simultáneamente, en fracciones de segundo.
-  </p>
+    y <em>miles</em> de variables simultáneamente, en fracciones de segundo.</p>
 </div>
 </div>
 </details>
@@ -1133,19 +1117,14 @@ m, b = np.polyfit(x, y, 1)
 <li><p>Amazon detectando segmentos de clientes similares</p></li>
 <li><p>Netflix identificando “tipos” de espectadores para personalizar portadas</p></li>
 </ul>
-<div id="sp-wrap" style="margin:1.5rem 0;">
-  <p style="text-align:center;font-size:.82rem;color:#888;margin:0 0 .6rem;font-style:italic;">
-    Animación: K-Means Clustering — cómo Spotify agrupa canciones sin que nadie le enseñe géneros
-  </p>
+<div id="sp-wrap" class="demo-wrap">
+  <p class="fig-caption">Animación: K-Means Clustering — cómo Spotify agrupa canciones sin que nadie le enseñe géneros</p>
   <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem;">
     <canvas id="sp-cv" width="460" height="300" style="max-width:100%;border-radius:12px;background:#0f0f0f;
              border:1px solid #222;box-shadow:0 4px 24px rgba(29,185,84,.15);"></canvas>
     <p id="sp-st" style="font-size:.83rem;font-weight:600;color:#1d4ed8;
        margin:0;min-height:1.4em;text-align:center;max-width:460px;"></p>
-    <button onclick="spRestart()" style="background:transparent;border:1px solid #cbd5e1;border-radius:6px;
-             padding:5px 18px;font-size:.78rem;cursor:pointer;color:#64748b;">
-      ↺ Ver animación de nuevo
-    </button>
+    <button onclick="spRestart()" class="btn-restart">↺ Ver animación de nuevo</button>
   </div>
 </div>
 
@@ -1425,18 +1404,13 @@ m, b = np.polyfit(x, y, 1)
 <li><p>Spot de Boston Dynamics aprendió a caminar en terreno irregular (lo veremos a detalle en otra sesión)</p></li>
 <li><p>Los algoritmos de recomendación de TikTok aprenden qué contenido maximiza el tiempo que te quedas en la app</p></li>
 </ul>
-<div id="mr-wrap" style="margin:1.5rem 0;">
-  <p style="text-align:center;font-size:.82rem;color:#888;margin:0 0 .6rem;font-style:italic;">
-    Animación: un agente aprende a cruzar el hueco — Aprendizaje por Refuerzo
-  </p>
+<div id="mr-wrap" class="demo-wrap">
+  <p class="fig-caption">Animación: un agente aprende a cruzar el hueco — Aprendizaje por Refuerzo</p>
   <div style="display:flex;flex-direction:column;align-items:center;gap:.6rem;">
     <canvas id="mr-cv" width="460" height="240" style="max-width:100%;border-radius:10px;border:1px solid #e2e8f0;"></canvas>
     <p id="mr-st" style="font-size:.83rem;font-weight:600;color:#1d4ed8;
        margin:0;min-height:1.4em;text-align:center;max-width:460px;"></p>
-    <button onclick="mrRestart()" style="background:transparent;border:1px solid #cbd5e1;border-radius:6px;
-             padding:5px 18px;font-size:.78rem;cursor:pointer;color:#64748b;">
-      ↺ Ver de nuevo
-    </button>
+    <button onclick="mrRestart()" class="btn-restart">↺ Ver de nuevo</button>
   </div>
 </div>
 

@@ -3,6 +3,21 @@
    Estilos compartidos para todas las páginas de sesión
 ================================================ */
 
+/* ---- Variables CSS globales ---- */
+:root {
+  --c-primary:       #2780e3;
+  --c-primary-hover: #1a6fc4;
+  --c-accent:        #0ea5e9;
+  --c-navy:          #1a365d;
+  --c-muted:         #64748b;
+  --c-border:        #e2e8f0;
+  --c-border-blue:   #dbeafe;
+  --c-bg-blue:       #f0f7ff;
+  --c-gray-50:       #f8fafc;
+  --c-gray-400:      #94a3b8;
+  --radius:          8px;
+}
+
 /* ---- Navbar logo: oculta el texto de título junto al logo ---- */
 .navbar-title {
   display: none !important;
@@ -16,9 +31,10 @@
 /* ---- Banner de sesión ---- */
 
 .sesion-banner {
-  background: linear-gradient(135deg, #f0f7ff 0%, #dbeafe 60%, #e0f2fe 100%);
-  border: 1px solid #bfdbfe;
-  border-radius: 14px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-top: 3px solid #2780e3;
+  border-radius: 12px;
   padding: 1.4rem 1.75rem;
   margin: 0 0 2.5rem;
   display: flex;
@@ -322,4 +338,116 @@
   }
   .sesion-nav-center { width: 100%; order: -1; }
   .sesion-nav-btn { min-width: 0; max-width: none; flex: 1; }
+}
+
+/* ================================================
+   UTILIDADES — reutilizables en todas las sesiones
+================================================ */
+
+/* Caption de figuras y animaciones */
+.fig-caption {
+  text-align: center;
+  color: var(--c-muted);
+  font-size: 0.82rem;
+  margin: 0 0 0.6rem;
+  font-style: italic;
+}
+
+/* Wrapper de demos interactivas */
+.demo-wrap {
+  margin: 1.5rem 0;
+}
+
+/* Botón de reinicio de animaciones */
+.btn-restart {
+  background: transparent;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 5px 18px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  color: var(--c-muted);
+  transition: border-color 0.15s, color 0.15s;
+}
+.btn-restart:hover {
+  border-color: var(--c-primary);
+  color: var(--c-primary);
+}
+
+/* Caja de fórmula / código matemático */
+.formula-box {
+  background: var(--c-bg-blue);
+  border-radius: var(--radius);
+  padding: 0.8rem 1.4rem;
+  margin: 0.6rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 2.2;
+}
+
+/* Nota positiva (verde) */
+.highlight-green {
+  background: #dcfce7;
+  border-left: 4px solid #16a34a;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.9rem 1.2rem;
+  margin-top: 1.2rem;
+}
+.highlight-green p          { margin: 0; }
+.highlight-green p + p      { margin-top: 0.4rem; }
+.highlight-green p:first-child { font-weight: 700; color: #15803d; font-size: 0.95rem; }
+.highlight-green p:last-child  { font-size: 0.85rem; color: #166534; }
+
+/* Nota de aviso (amarillo) */
+.highlight-yellow {
+  background: #fefce8;
+  border-left: 3px solid #d97706;
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 0.7rem 1.2rem;
+  margin: 0.5rem 0;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  line-height: 2.2;
+}
+
+/* Código Python / dark block */
+.code-dark {
+  background: #1e1e2e;
+  color: #cdd6f4;
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  font-size: 0.8rem;
+  overflow-x: auto;
+  line-height: 1.7;
+  margin: 0.5rem 0;
+}
+
+/* Sección expandible (<details>) */
+.expand-section {
+  margin: 1.2rem 0 0.5rem;
+  border: 1px solid var(--c-border-blue);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.expand-summary {
+  cursor: pointer;
+  padding: 0.9rem 1.2rem;
+  font-weight: 600;
+  color: #1e40af;
+  background: #eff6ff;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.expand-summary-hint {
+  font-weight: 400;
+  color: var(--c-gray-400);
+  font-size: 0.85rem;
+}
+.expand-body {
+  padding: 1.2rem 1.5rem;
+  font-size: 0.9rem;
+  line-height: 1.7;
 }
