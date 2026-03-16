@@ -3,11 +3,14 @@ project:
   output-dir: _site
 
 website:
-  title: "Curso IA · SLP"
+  title: "Intro a la IA"
   site-url: "https://www.curso-ia-slp.com"
   description: "Panorama de la Inteligencia Artificial para estudiantes de nivel medio-superior"
+  favicon: assets/logo.svg
 
   navbar:
+    logo: assets/logo.svg
+    logo-alt: "Intro a la IA"
     left:
       - text: "Inicio"
         href: index.qmd
@@ -51,7 +54,7 @@ website:
           #   href: sesiones/sesion-15.qmd
 
   page-footer:
-    left: "Curso IA · San Luis Potosí · 2026"
+    left: "Intro a la IA · San Luis Potosí · 2026"
     right:
       - icon: github
         href: https://github.com
@@ -62,3 +65,4 @@ format:
     toc: true
     toc-depth: 3
     number-sections: false
+    css: styles/sesion.css
