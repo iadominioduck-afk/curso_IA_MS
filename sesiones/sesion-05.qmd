@@ -94,11 +94,6 @@ format:
 - Preguntas de debate para trabajo individual o grupal.
 - Espacio para ejemplos locales y conexión con México.
 
-::: {.callout-note}
-# Estado de esta página
-La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-04.html" class="sesion-nav-btn prev">

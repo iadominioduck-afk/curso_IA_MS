@@ -94,11 +94,6 @@ format:
 - Ejemplos con Notion AI, Perplexity, Consensus o Gamma.
 - Sección para prácticas de verificación de fuentes.
 
-::: {.callout-note}
-# Estado de esta página
-La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-08.html" class="sesion-nav-btn prev">

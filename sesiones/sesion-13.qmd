@@ -94,11 +94,6 @@ format:
 - Tabla de niveles de autonomía en vehículos.
 - Preguntas de debate sobre robots y sistemas autónomos.
 
-::: {.callout-note}
-# Estado de esta página
-La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-12.html" class="sesion-nav-btn prev">

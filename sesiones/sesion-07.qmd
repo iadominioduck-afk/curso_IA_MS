@@ -94,11 +94,6 @@ format:
 - Ejemplos de prompts para leer mejor y escribir con claridad.
 - Mini guía de usos permitidos y no permitidos en trabajos escolares.
 
-::: {.callout-note}
-# Estado de esta página
-La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-06.html" class="sesion-nav-btn prev">

@@ -84,11 +84,6 @@ format:
 - Resumen de ideas clave sobre educación global.
 - Enlaces a programas o iniciativas mencionadas.
 
-::: {.callout-note}
-# Estado de esta página
-Esta sesión en vivo quedó publicada como placeholder funcional. La siguiente iteración natural es agregar la grabación y el resumen posterior.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-10.html" class="sesion-nav-btn prev">

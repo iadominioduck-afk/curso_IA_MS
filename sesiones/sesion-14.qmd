@@ -94,11 +94,6 @@ format:
 - Caso de falla clínica para análisis crítico.
 - Preguntas sobre privacidad y regulación de datos médicos.
 
-::: {.callout-note}
-# Estado de esta página
-La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-13.html" class="sesion-nav-btn prev">

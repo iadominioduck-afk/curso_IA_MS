@@ -94,11 +94,6 @@ format:
 - Caso Colorado 2022 para discusión.
 - Galería de resultados con prompts breves y claros.
 
-::: {.callout-note}
-# Estado de esta página
-La sesión ya quedó publicada con estructura base, navegación y placeholders. Falta integrar el guion final, la actividad y los recursos visuales.
-:::
-
 ```{=html}
 <nav class="sesion-nav">
   <a href="sesion-07.html" class="sesion-nav-btn prev">
