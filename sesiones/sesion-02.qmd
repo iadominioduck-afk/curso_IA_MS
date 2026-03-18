@@ -21,7 +21,7 @@ format:
   <div class="sesion-meta">
     <span class="sesion-meta-chip">📅 Mayo de 2026</span>
     <span class="sesion-meta-chip">⏱ 45 minutos</span>
-    <a href="../syllabus.qmd">Ver programa completo →</a>
+    <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
 ```
@@ -2604,7 +2604,7 @@ Una neurona artificial recibe señales, les asigna pesos y produce una salida. U
 
 ```{=html}
 <nav class="sesion-nav">
-  <a href="sesion-01.qmd" class="sesion-nav-btn prev">
+  <a href="sesion-01.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Anterior</span>
     <span class="nav-title">S1: ¿Qué es la IA y dónde está en tu vida?</span>
   </a>
@@ -2628,9 +2628,9 @@ Una neurona artificial recibe señales, les asigna pesos y produce una salida. U
     </div>
     <span class="sesion-nav-progress">Sesión 2 de 15</span>
   </div>
-  <div class="sesion-nav-btn next disabled">
+  <a href="sesion-03.html" class="sesion-nav-btn next">
     <span class="nav-label">Siguiente →</span>
     <span class="nav-title">S3: Algoritmos de IA</span>
-  </div>
+  </a>
 </nav>
 ```

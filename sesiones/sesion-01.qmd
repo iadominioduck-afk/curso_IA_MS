@@ -21,7 +21,7 @@ format:
   <div class="sesion-meta">
     <span class="sesion-meta-chip">📅 5 de mayo de 2026</span>
     <span class="sesion-meta-chip">⏱ 45 minutos</span>
-    <a href="../syllabus.qmd">Ver programa completo →</a>
+    <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
 ```
@@ -827,7 +827,7 @@ La inteligencia artificial no es magia ni consciencia. En su versión más simpl
 
 ```{=html}
 <nav class="sesion-nav">
-  <a href="../index.qmd" class="sesion-nav-btn prev">
+  <a href="../index.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Inicio</span>
     <span class="nav-title">Página principal</span>
   </a>
@@ -851,7 +851,7 @@ La inteligencia artificial no es magia ni consciencia. En su versión más simpl
     </div>
     <span class="sesion-nav-progress">Sesión 1 de 15</span>
   </div>
-  <a href="sesion-02.qmd" class="sesion-nav-btn next">
+  <a href="sesion-02.html" class="sesion-nav-btn next">
     <span class="nav-label">Siguiente →</span>
     <span class="nav-title">S2: Redes neuronales — ¿Cómo “piensa” la IA?</span>
   </a>
