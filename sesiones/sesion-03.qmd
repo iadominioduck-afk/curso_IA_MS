@@ -352,24 +352,62 @@ Un árbol de decisión hace exactamente eso, pero con datos.
 El algoritmo analiza el conjunto de entrenamiento y descubre cuál es la pregunta más útil para hacer primero — la que mejor **divide** los datos entre las posibles categorías. Luego hace la siguiente pregunta más útil, y así recursivamente, hasta llegar a una clasificación.
 
 **Ejemplo:** Supón que quieres construir un clasificador de spam. El árbol podría aprender preguntas como:
+
 1. ¿Contiene la frase "haz clic aquí para ganar"? → Si sí → spam
+
 2. ¿El remitente está en tus contactos? → Si no → probablemente spam
+
 3. ¿El asunto tiene más de 3 signos de exclamación? → Si sí → spam
 
 Nadie le programó esas reglas. El árbol las **aprendió** del historial de correos etiquetados.
 
-```{mermaid}
-flowchart TD
-    A{"¿Contiene 'haz clic\npara ganar'?"}
-    A -->|Sí| S1["🚨 Spam"]
-    A -->|No| B{"¿Remitente\nen contactos?"}
-    B -->|Sí| OK["✅ No es spam"]
-    B -->|No| C{"¿Más de 3\nsignos de '!'?"}
-    C -->|Sí| S2["🚨 Spam"]
-    C -->|No| D["🤔 Revisar manualmente"]
+```{=html}
+<figure style="margin:1.4rem 0;">
+  <svg viewBox="0 0 580 295" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:560px;display:block;margin:0 auto;" role="img" aria-label="Árbol de decisión para clasificar spam en tres preguntas">
+    <defs>
+      <marker id="dtarr" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto">
+        <polygon points="0 0, 7 3.5, 0 7" fill="#cbd5e1"/>
+      </marker>
+    </defs>
+    <line x1="280" y1="54" x2="72"  y2="101" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"/>
+    <line x1="280" y1="54" x2="400" y2="101" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"/>
+    <line x1="400" y1="136" x2="262" y2="187" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"/>
+    <line x1="400" y1="136" x2="469" y2="187" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"/>
+    <line x1="470" y1="222" x2="387" y2="257" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"/>
+    <line x1="470" y1="222" x2="513" y2="257" stroke="#cbd5e1" stroke-width="1.5" marker-end="url(#dtarr)"/>
+    <rect x="140" y="70" width="24" height="14" rx="7" fill="#dcfce7"/>
+    <text x="152" y="77" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#15803d" font-family="system-ui,sans-serif">Sí</text>
+    <rect x="305" y="153" width="24" height="14" rx="7" fill="#dcfce7"/>
+    <text x="317" y="160" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#15803d" font-family="system-ui,sans-serif">Sí</text>
+    <rect x="412" y="231" width="24" height="14" rx="7" fill="#dcfce7"/>
+    <text x="424" y="238" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#15803d" font-family="system-ui,sans-serif">Sí</text>
+    <rect x="329" y="70" width="24" height="14" rx="7" fill="#f1f5f9"/>
+    <text x="341" y="77" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#475569" font-family="system-ui,sans-serif">No</text>
+    <rect x="424" y="153" width="24" height="14" rx="7" fill="#f1f5f9"/>
+    <text x="436" y="160" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#475569" font-family="system-ui,sans-serif">No</text>
+    <rect x="480" y="231" width="24" height="14" rx="7" fill="#f1f5f9"/>
+    <text x="492" y="238" text-anchor="middle" dominant-baseline="middle" font-size="9" font-weight="700" fill="#475569" font-family="system-ui,sans-serif">No</text>
+    <rect x="150" y="10" width="260" height="44" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="280" y="26" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">¿Contiene "haz clic para ganar"?</text>
+    <text x="280" y="43" text-anchor="middle" dominant-baseline="middle" font-size="9" fill="#6b7280" font-family="system-ui,sans-serif">Pregunta 1 de 3</text>
+    <rect x="303" y="101" width="194" height="35" rx="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="400" y="119" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">¿Remitente en contactos?</text>
+    <rect x="382" y="187" width="176" height="35" rx="9" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="470" y="205" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="700" fill="#1d4ed8" font-family="system-ui,sans-serif">¿Más de 3 signos "!"?</text>
+    <rect x="10"  y="101" width="120" height="35" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="70"  y="119" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="system-ui,sans-serif">🚨 Spam</text>
+    <rect x="325" y="257" width="120" height="32" rx="9" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+    <text x="385" y="273" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="700" fill="#dc2626" font-family="system-ui,sans-serif">🚨 Spam</text>
+    <rect x="185" y="187" width="150" height="35" rx="9" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+    <text x="260" y="205" text-anchor="middle" dominant-baseline="middle" font-size="11" font-weight="700" fill="#16a34a" font-family="system-ui,sans-serif">✅ No es spam</text>
+    <rect x="455" y="257" width="115" height="32" rx="9" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+    <text x="513" y="273" text-anchor="middle" dominant-baseline="middle" font-size="10.5" font-weight="600" fill="#475569" font-family="system-ui,sans-serif">🤔 Revisar</text>
+  </svg>
+  <figcaption style="text-align:center;font-size:0.78rem;color:#94a3b8;margin-top:0.5rem;">El árbol aprendió estas tres preguntas solo — nadie las programó a mano.</figcaption>
+</figure>
 ```
 
-**Cuándo usarlo:** cuando tienes datos estructurados (tablas con columnas y filas), necesitas clasificar en categorías, y quieres que el modelo sea **explicable** — es decir, poder decirle al usuario exactamente por qué tomó una decisión.
+**Cuándo usarlo:** cuando tienes datos estructurados (tablas con columnas y filas), necesitas clasificar en categorías, y quieres que el modelo sea explicable — es decir, poder decirle al usuario exactamente por qué tomó una decisión.
 
 **Su límite:** Si los datos de prueba son muy distintos a los de entrenamiento, el árbol falla. También puede "memorizar" demasiado los datos de entrenamiento sin generalizar bien — eso se llama **sobreajuste** (*overfitting*). Las versiones mejoradas (Random Forest, Gradient Boosting) solucionan esto con decenas de árboles trabajando juntos.
 
@@ -381,8 +419,8 @@ flowchart TD
     <h5 class="demo-externo-title">R2D3: Una introducción visual al machine learning</h5>
     <p class="demo-externo-copy">
       Uno de los mejores recursos para entender árboles de decisión de forma visual.
-      Usa datos reales de departamentos en San Francisco y Nueva York.
-      No necesitas ningún conocimiento previo — solo desplázate lentamente y observa cómo el árbol construye sus preguntas paso a paso.<br><br>
+      Usa datos de departamentos en San Francisco y Nueva York.
+      No necesitas ningún conocimiento previo, solo desplázate lentamente y observa cómo el árbol construye sus preguntas paso a paso.<br><br>
       <a href="https://r2d3.us/visual-intro-to-machine-learning-part-1/" target="_blank" rel="noopener">→ Abrir R2D3 (inglés, visual, gratuito)</a>
     </p>
   </div>
@@ -400,13 +438,13 @@ En la sesión 1 viste cómo K-Means agrupa canciones sin etiquetas: propone cent
 
 **Cuándo usarlo:** cuando no tienes etiquetas y quieres descubrir la estructura natural de tus datos. Segmentación de clientes, agrupación de noticias por tema, detección de perfiles de usuario.
 
-**Su límite clave:** tú tienes que decirle cuántos grupos quieres (`k`). El algoritmo no lo decide solo. Si eliges un `k` incorrecto, los grupos no tendrán sentido. Existen métodos para estimar el mejor `k` (método del codo, silueta), pero siguen siendo heurísticos.
+**Su límite:** tú tienes que decirle cuántos grupos quieres (`k`). El algoritmo no lo decide solo. Si eliges un `k` incorrecto, los grupos no tendrán sentido. Existen métodos para estimar el mejor `k`, pero siguen siendo heurísticos.
 
 ---
 
-#### Redes convolucionales (CNN) — cómo ve la IA {.unnumbered}
+#### Redes neuronales convolucionales (CNN) — cómo ve la IA {.unnumbered}
 
-Cuando ves una fotografía de un gato, tu cerebro no la analiza píxel por píxel. Detecta bordes, luego formas, luego texturas, luego el objeto completo — en capas progresivas de abstracción. Las redes convolucionales hacen algo muy parecido.
+Cuando ves una fotografía de un gato, tu cerebro no la analiza píxel por píxel. Detecta bordes, luego formas, luego texturas, luego el objeto completo, todo en capas progresivas de abstracción. Las redes convolucionales hacen algo muy parecido.
 
 Una CNN pasa la imagen por una serie de **filtros** (pequeñas matrices matemáticas) que aprenden a detectar características en orden de complejidad:
 
@@ -416,7 +454,7 @@ Una CNN pasa la imagen por una serie de **filtros** (pequeñas matrices matemát
 - **Capa 4:** partes (ojo, oreja, pata)
 - **Capa final:** el objeto completo (gato, perro, persona)
 
-Ninguna de esas características fue programada manualmente. La red las **aprendió** ajustando los filtros con millones de imágenes etiquetadas y retropropagación (backpropagation, que viste en S2).
+Ninguna de esas características fue programada manualmente. La red las **aprendió** ajustando los filtros con millones de imágenes etiquetadas y retropropagación (backpropagation, que se mencionó brevemente en la S2).
 
 ```{=html}
 <div class="algo-family-grid">
@@ -447,8 +485,11 @@ Ninguna de esas características fue programada manualmente. La red las **aprend
 **Cuándo usarlas:** casi cualquier tarea con imágenes o video — reconocimiento facial, detección de objetos, moderación de contenido, diagnóstico médico por radiografías.
 
 **Ejemplos que ya usas:**
+
 - Face ID de tu iPhone o la detección automática de caras en Instagram
+
 - El filtro de contenido violento en TikTok
+
 - Los asistentes de diagnóstico por imagen en hospitales
 
 **Su límite:** necesitan **enormes** cantidades de imágenes etiquetadas para funcionar bien (decenas de miles a millones). También son costosas de entrenar en tiempo y computación. Y si les das una imagen ligeramente distorsionada (un pixel cambiado estratégicamente — lo que se llama *adversarial attack*), pueden fallar de forma sorprendente.
@@ -460,7 +501,7 @@ Ninguna de esas características fue programada manualmente. La red las **aprend
     <p class="demo-externo-kicker">Demo — clasifica imágenes sin código</p>
     <h5 class="demo-externo-title">Teachable Machine de Google — entrenamiento de imágenes</h5>
     <p class="demo-externo-copy">
-      Ya usaste Teachable Machine en la sesión 1. Esta vez vuelve con otro enfoque: cuando entrenas tu clasificador de imágenes, lo que está ocurriendo internamente es una CNN pequeña aprendiendo qué características distinguen tus clases. Prueba con menos fotos y observa cuándo el modelo empieza a fallar — ese es el límite de los datos que mencionamos arriba.<br><br>
+      Ya usaste Teachable Machine en la sesión 1. Esta vez vuelve con otro enfoque: cuando entrenas tu clasificador de imágenes, lo que está ocurriendo internamente es una CNN pequeña aprendiendo qué características distinguen tus clases. Prueba con menos fotos y observa cuándo el modelo empieza a fallar, ese es el límite de los datos que mencionamos arriba.<br><br>
       <a href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">→ Abrir Teachable Machine</a>
     </p>
   </div>
@@ -471,11 +512,24 @@ Ninguna de esas características fue programada manualmente. La red las **aprend
 
 #### Transformers — el cerebro detrás de ChatGPT {.unnumbered}
 
+:::{.callout-note}
+# ¿No habíamos dicho que ChatGPT usa redes neuronales?
+Sí. Los transformers **son** redes neuronales: usan las mismas neuronas artificiales, pesos y entrenamiento por retropropagación que viste en la S2. Lo que cambia es la **arquitectura**: cómo están organizadas esas neuronas y qué mecanismo usan para procesar información.
+
+La jerarquía es:
+
+- **Red neuronal** → categoría general (cualquier modelo con capas de neuronas conectadas)
+
+  - **CNN** → subtype especializado en imágenes (detecta bordes, formas, objetos)
+
+  - **Transformer** → subtipo especializado en texto y secuencias (entiende el contexto completo de una oración)
+:::
+
 Cuando alguien te manda un mensaje que dice "¿ya llegaste?", tú entiendes instantáneamente que "ya" implica que había un plan previo, que "llegaste" se refiere a un lugar específico del contexto de su conversación, y que la persona probablemente te está esperando. Procesas todas esas relaciones entre palabras de forma paralela, en fracción de segundo.
 
 Eso es exactamente lo que los transformers intentan hacer — y lo logran con un mecanismo llamado **atención** (*attention*).
 
-La idea central: en lugar de leer una oración de izquierda a derecha (como lo hacían las redes anteriores), un transformer mira **todas las palabras al mismo tiempo** y calcula qué tan relacionada está cada palabra con las demás. Esta capacidad de capturar dependencias largas — entender que "ella" en el final de un párrafo se refiere a "María" mencionada hace cinco oraciones — es lo que los hace tan poderosos para lenguaje.
+La idea central: en lugar de leer una oración de izquierda a derecha (como lo hacían las redes anteriores), un transformer mira **todas las palabras al mismo tiempo** y calcula qué tan relacionada está cada palabra con las demás. Esta capacidad de capturar dependencias largas. Entender que "ella" en el final de un párrafo se refiere a "María" mencionada hace cinco oraciones, es lo que los hace tan poderosos para lenguaje.
 
 **¿Qué aprenden?**
 
@@ -483,7 +537,7 @@ Un transformer se entrena con cantidades enormes de texto. Su tarea durante el e
 
 **Cuándo usarlos:** traducción automática, generación de texto, resumen de documentos, chatbots, asistentes de código, análisis de sentimiento.
 
-**Su límite:** son **extremadamente costosos** de entrenar desde cero — GPT-4 costó decenas de millones de dólares en cómputo. También pueden "alucinar" (inventar respuestas falsas con total confianza), y capturan los sesgos del texto con el que fueron entrenados. La siguiente sesión está dedicada exactamente a este mundo.
+**Su límite:** son **extremadamente costosos** de entrenar desde cero. GPT-4 costó decenas de millones de dólares en cómputo. También pueden "alucinar" (inventar respuestas falsas con total confianza), y capturan los sesgos del texto con el que fueron entrenados. La siguiente sesión está dedicada exactamente a este mundo.
 
 ```{=html}
 <div class="demo-externo">
@@ -512,13 +566,13 @@ En la sesión 1 viste a Mario aprendiendo a saltar: el agente toma acciones, rec
 
 **Cuándo usarlo:** cuando no tienes un conjunto de datos etiquetados y el sistema puede aprender actuando en un simulador: videojuegos, robótica, optimización de rutas, sistemas de trading, control de plantas industriales.
 
-**Su límite clave:** necesita un **simulador** donde probar millones de veces sin consecuencias reales. Transferir lo aprendido en simulación al mundo físico (el llamado *sim-to-real gap*) sigue siendo uno de los problemas más difíciles de la robótica moderna.
+**Su límite:** necesita un **simulador** donde probar millones de veces sin consecuencias reales. Transferir lo aprendido en simulación al mundo físico (el llamado *sim-to-real gap*) sigue siendo uno de los problemas más difíciles de la robótica moderna.
 
 ---
 
 ## Actividad: Problema → Método → Límite
 
-Ahora te toca a ti. A continuación hay seis problemas reales. Para cada uno, elige la familia de algoritmos que mejor encaja usando lo que viste en el mapa de métodos. Cuando hayas asignado todos, verifica tus respuestas.
+Ahora te toca a ti. A continuación hay seis problemas que nos podemos encontrar en el día a día. Para cada uno, elige la familia de algoritmos que mejor encaja usando lo que viste en el mapa de métodos. Cuando hayas asignado todos, verifica tus respuestas.
 
 ```{=html}
 <div class="demo-wrap">
@@ -545,7 +599,7 @@ Ahora te toca a ti. A continuación hay seis problemas reales. Para cada uno, el
             </div>
           </div>
           <p class="demo-preview-title">Vista previa de la actividad</p>
-          <p class="demo-preview-copy">Seis problemas reales esperan tu clasificación. Abre la actividad para empezar.</p>
+          <p class="demo-preview-copy">Seis problemas esperan tu clasificación. Abre la actividad para empezar.</p>
         </div>
       </div>
 
@@ -557,7 +611,7 @@ Ahora te toca a ti. A continuación hay seis problemas reales. Para cada uno, el
     <div class="demo-insights">
       <div class="demo-insight">
         <h5>Qué estás viendo</h5>
-        <p id="match-seeing">6 problemas reales del mundo actual. Tu tarea es asignar la familia de IA más apropiada a cada uno.</p>
+        <p id="match-seeing">6 problemas del mundo actual. Tu tarea es asignar la familia de IA más apropiada a cada uno.</p>
       </div>
       <div class="demo-insight">
         <h5>Qué significa</h5>
@@ -632,6 +686,9 @@ Ahora te toca a ti. A continuación hay seis problemas reales. Para cada uno, el
   ];
 
   const selections = {};
+
+  // Activar el shell inmediatamente (sin botón de inicio)
+  document.getElementById('match-shell').classList.add('is-active');
 
   // Build cards
   const container = document.getElementById('match-cards');
@@ -798,31 +855,25 @@ Aquí está el mapa completo en una sola vista:
 </table>
 ```
 
-### La idea central
-
 :::{.callout-important}
 # La idea central de esta sesión
 El algoritmo correcto no es el más complejo ni el más famoso — es el que mejor encaja con el tipo de problema que tienes. Un transformer no es mejor que un árbol de decisión en absoluto: son herramientas para trabajos distintos. La habilidad no es saber todos los algoritmos de memoria; es saber hacer las dos preguntas del mapa.
 :::
-
-**Puente a la siguiente sesión:** Ahora que tienes el mapa completo, en la sesión 4 vamos a explorar la familia más reciente y más mediática: **la IA generativa**. Ya sabes dónde vive en el árbol (transformers, en su mayor parte). Lo que veremos a continuación es qué pasa cuando ese mecanismo de atención se escala a cientos de miles de millones de parámetros — y qué cambia cuando la IA no solo clasifica sino que **crea**.
 
 ---
 
 ## Para reflexionar
 
 :::{.callout-tip}
-# Para pensar (5 minutos)
+# Para pensar en casa
 
 Ahora que terminaste la sesión, responde para ti mismo estas preguntas:
 
 1. **Elige una app que usas todos los días.** ¿Qué tipo de problema resuelve su IA? Usa el mapa de las dos preguntas para ubicarla.
 
-2. **¿Cuál de las tres familias nuevas** (árbol de decisión, CNN, transformer) te pareció más sorprendente? ¿Por qué?
+2. **Piensa en un problema que quisieras resolver con IA** — puede ser algo de tu escuela, tu hobby o algo que veas en tu comunidad. ¿Qué familia usarías? ¿Qué datos necesitarías?
 
-3. **Piensa en un problema que quisieras resolver con IA** — puede ser algo de tu escuela, tu hobby o algo que veas en tu comunidad. ¿Qué familia usarías? ¿Qué datos necesitarías?
-
-4. **Los límites importan.** Si tuvieras que explicarle a alguien por qué los transformers no son la solución a todo, ¿qué le dirías?
+3. **Los límites importan.** Si tuvieras que explicarle a alguien por qué los transformers no son la solución a todo (LLMs, ChatGPT), ¿qué le dirías?
 
 No hay respuestas correctas o incorrectas. El objetivo es que el mapa empiece a vivir en tu cabeza, no solo en esta página.
 :::
