@@ -24,75 +24,632 @@ format:
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
+```
 
-<div class="sesion-outline">
-  <p class="sesion-outline-kicker">Riesgos y decisiones</p>
-  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
-  <p class="sesion-outline-copy">Esta página deja el esqueleto para trabajar casos reales, sesgos algorítmicos, privacidad, deepfakes y preguntas de responsabilidad pública.</p>
-  <div class="sesion-outline-grid">
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">01</span>
-      <h3>Apertura</h3>
-      <p>Un caso detonador para mostrar que los errores de IA afectan personas reales.</p>
+```{=html}
+<link rel="stylesheet" href="../styles/sessions/sesion-05.css">
+```
+
+```{=html}
+<script src="../interactives/sesion-05.js" defer></script>
+```
+
+## Video: Ética y Problemas con la IA
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: Ética y Problemas con la IA</p>
+</div>
+```
+
+---
+
+## Texto: Ética y Problemas con la IA
+
+---
+
+### Introducción
+
+Empezaremos esta sesión con un evento histórico. Era 2014. Amazon, una de las empresas más poderosas del mundo, decidió construir algo que parecía brillante: un sistema de IA que leyera currículums automáticamente y les diera una puntuación del 1 al 5. Sin reclutador humano. Sin tiempo perdido leyendo cientos de currículums. Solo el algoritmo.
+
+Cuatro años después, Amazon silenciosamente cerró el proyecto.
+
+**¿El motivo?** El sistema había aprendido a discriminar contra las mujeres. No porque alguien lo programara así. Sino porque fue entrenado con diez años de currículums de empleados ya contratados en Amazon... y la mayoría eran hombres. La máquina aprendió que *"hombre = buena contratación"* y empezó a penalizar automáticamente cualquier currículum que contuviera palabras como *"equipo femenino de robótica"* o el nombre de una universidad exclusivamente para mujeres.
+
+El modelo no entendía el significado de esas palabras. Solo aprendió que históricamente esos patrones aparecían menos en los currículums de quienes fueron contratados.
+
+En la sesión 4 vimos que los LLMs *reproducen los sesgos de sus datos de entrenamiento*. Hoy vamos a ver qué significa eso en la práctica con casos verídicos, consecuencias y una pregunta que va a acompañarte el resto del curso:
+
+:::{.callout-important}
+# La pregunta central de esta sesión
+¿Quién paga el costo cuando la IA se equivoca?
+:::
+
+---
+
+### Sesgo Algorítmico
+
+El **sesgo algorítmico** ocurre cuando un sistema de IA produce resultados sistemáticamente injustos para ciertos grupos de personas.
+
+La palabra clave es *sistemáticamente*. Un error aleatorio no es sesgo, el sistema se equivoca por igual con todos. El sesgo algorítmico es cuando los errores se concentran de forma desproporcionada en ciertos grupos, y generalmente en grupos que ya están en desventaja.
+
+¿De dónde viene? De tres fuentes principales:
+
+- **Datos históricos sesgados:** si entrenas un modelo con datos del pasado, aprende los prejuicios del pasado.
+- **Características proxy:** la IA puede usar variables aparentemente neutrales (código postal, nombre, institución educativa) que correlacionan con *raza*, género o clase social.
+- **Bucles de retroalimentación:** un sistema sesgado produce resultados que refuerzan el sesgo. Si la policía patrulla más en ciertos barrios porque el algoritmo lo sugiere, encontrará más delitos ahí — no necesariamente porque haya más delitos, sino porque fueron ahí a buscarlos. En los barrios donde no patrullaron, los delitos que ocurrieron simplemente no se registraron. El resultado: más datos de delitos en los barrios patrullados → el algoritmo concluye que esos barrios son más peligrosos → manda más patrullas ahí → se registran más delitos → y el ciclo se repite.
+
+#### Los tres casos que debes conocer
+
+```{=html}
+<div class="caso-grid">
+  <div class="caso-card">
+    <div class="caso-card-header">
+      <span class="caso-card-emoji">⚖️</span>
+      <h5 class="caso-card-title">COMPAS</h5>
+      <span class="caso-card-badge">EE.UU. · 2016</span>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">02</span>
-      <h3>Conceptos clave</h3>
-      <p>Sesgo, privacidad, vigilancia, autoría y uso responsable.</p>
+    <p class="caso-card-body">Los tribunales de Estados Unidos usaban este algoritmo para predecir la probabilidad de que un criminal o acusado reincidiera. Los jueces lo usaban para decidir fianzas y sentencias.</p>
+    <p class="caso-card-body">Un análisis de ProPublica reveló que el sistema generaba falsos positivos al doble de tasa para acusados afroamericanos que para blancos con historial similar — marcándolos como "alto riesgo" cuando en realidad no reincidían.</p>
+    <p class="caso-card-body">La empresa desarrolladora respondió que su algoritmo <em>sí</em> era justo: entre todos los marcados como "alto riesgo", la tasa de reincidencia real era similar en ambos grupos. Ambas afirmaciones eran ciertas. Simplemente medían cosas distintas. Ese es el problema: no existe una sola definición de "justo".</p>
+    <div class="caso-card-key"><strong>Consecuencia:</strong> personas afroamericanas — incluyendo algunas que nunca fueron condenadas — pasaron más tiempo en prisión preventiva porque el algoritmo las marcó como de "alto riesgo". No fue un juez quien tomó la decisión: fue un puntaje.</div>
+  </div>
+  <div class="caso-card">
+    <div class="caso-card-header">
+      <span class="caso-card-emoji">👁</span>
+      <h5 class="caso-card-title">Gender Shades</h5>
+      <span class="caso-card-badge">MIT · 2018</span>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">03</span>
-      <h3>Actividad</h3>
-      <p>Debate guiado o análisis de casos con posturas encontradas.</p>
+    <p class="caso-card-body">Joy Buolamwini (MIT) descubrió que los sistemas de reconocimiento facial de Microsoft, IBM y Face++ funcionaban de forma muy desigual según género y tono de piel.</p>
+    <p class="caso-card-body">Reconocían correctamente a hombres de piel clara en más del 99% de los casos. Fallaban hasta en un 34.7% de los casos para mujeres de piel más oscura.</p>
+    <div class="caso-card-key"><strong>Consecuencia:</strong> si este sistema se usa en seguridad pública, las personas con mayor tasa de error son también las más afectadas por falsos positivos.</div>
+  </div>
+  <div class="caso-card">
+    <div class="caso-card-header">
+      <span class="caso-card-emoji">📋</span>
+      <h5 class="caso-card-title">Amazon Hiring Tool</h5>
+      <span class="caso-card-badge">EE.UU. · 2018</span>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">04</span>
-      <h3>Cierre</h3>
-      <p>Marco ético básico para el resto del curso.</p>
+    <p class="caso-card-body">Amazon desarrolló una herramienta de IA para preseleccionar CVs. El modelo aprendió de 10 años de contrataciones históricas — donde la gran mayoría de empleados eran hombres.</p>
+    <p class="caso-card-body">El resultado: el sistema penalizaba automáticamente CVs que contenían palabras como "mujeres" (ej. "equipo femenino de robótica") o que mencionaban universidades exclusivamente para mujeres. Nadie lo programó así. Lo aprendió solo.</p>
+    <div class="caso-card-key"><strong>Consecuencia:</strong> Amazon desechó la herramienta internamente en 2018, pero nunca sabremos cuántas candidatas fueron rechazadas antes de que se descubriera el problema. Ni cuántas herramientas similares siguen activas en otras empresas.</div>
+  </div>
+</div>
+```
+
+Los tres casos comparten el mismo problema de fondo: datos de entrenamiento que no representan a todos por igual. Y los tres tienen consecuencias que afectan significativamente la vida de ciertas personas.
+
+Ahora lo vas a ver en acción.
+
+```{=html}
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-ethics" id="bias-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Simulador de sesgo</p>
+        <h4 class="demo-title">Herramienta de contratación: mueve el umbral y observa la disparidad</h4>
+        <p class="demo-copy">Dos grupos de candidatos con una distribución de calidad muy similar. El modelo sobreestima sistemáticamente al Grupo A y subestima al Grupo B. Mueve el umbral de contratación y observa cómo cambia el resultado para cada grupo.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="bias-preview-diagram">
+              <div class="bias-preview-row">
+                <span class="bias-preview-label">Grupo A</span>
+                <span class="bias-preview-dot hired"></span>
+                <span class="bias-preview-dot hired"></span>
+                <span class="bias-preview-dot hired"></span>
+                <span class="bias-preview-dot hired"></span>
+                <span class="bias-preview-dot"></span>
+                <span class="bias-preview-dot"></span>
+              </div>
+              <div class="bias-preview-row">
+                <span class="bias-preview-label">Grupo B</span>
+                <span class="bias-preview-dot hired"></span>
+                <span class="bias-preview-dot fn"></span>
+                <span class="bias-preview-dot fn"></span>
+                <span class="bias-preview-dot fn"></span>
+                <span class="bias-preview-dot fn"></span>
+                <span class="bias-preview-dot fn"></span>
+              </div>
+              <div class="bias-preview-legend">
+                <span><span class="bias-preview-dot hired sm"></span> Contratado</span>
+                <span><span class="bias-preview-dot fn sm"></span> Calificado pero rechazado</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-copy">El mismo umbral, aplicado a dos grupos con calidad similar, produce tasas de aceptación muy distintas cuando el modelo presenta sesgos.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <p class="bias-group-label">Grupo A — puntajes del modelo ≈ calidad real</p>
+        <div id="bias-candidates-a" class="bias-candidates"></div>
+
+        <p class="bias-group-label">Grupo B — modelo subestima la calidad por ~2 puntos</p>
+        <div id="bias-candidates-b" class="bias-candidates"></div>
+
+        <div class="bias-threshold-control">
+          <div class="bias-threshold-label">
+            <span>Umbral de contratación (puntaje ≥ umbral → contratado)</span>
+            <span class="bias-threshold-value" id="bias-threshold-display">7.0</span>
+          </div>
+          <input id="bias-threshold" type="range" min="4.0" max="9.5" step="0.5" value="7.0" class="bias-threshold-slider" disabled>
+          <div class="bias-threshold-scale">
+            <span>4.0</span><span>5.0</span><span>6.0</span><span>7.0</span><span>8.0</span><span>9.0</span>
+          </div>
+        </div>
+
+        <div class="bias-stats-grid">
+          <div class="bias-stat-card is-group-a">
+            <p class="bias-stat-label">Grupo A · Tasa de aceptación</p>
+            <p class="bias-stat-num" id="bias-stat-num-a">—</p>
+            <p class="bias-stat-sub" id="bias-stat-sub-a"></p>
+          </div>
+          <div class="bias-stat-card is-group-b">
+            <p class="bias-stat-label">Grupo B · Tasa de aceptación</p>
+            <p class="bias-stat-num" id="bias-stat-num-b">—</p>
+            <p class="bias-stat-sub" id="bias-stat-sub-b"></p>
+          </div>
+          <div class="bias-fn-alert" id="bias-fn-alert" hidden></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5>Qué estás viendo</h5>
+        <p id="bias-seeing">Inicia el simulador para ver cómo el sesgo del modelo afecta a cada grupo de forma distinta.</p>
+      </div>
+      <div class="demo-insight">
+        <h5>Qué significa</h5>
+        <p id="bias-meaning">El mismo umbral, el mismo algoritmo — pero dos tasas de aceptación muy diferentes. Así funciona el sesgo algorítmico.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="bias-status" class="demo-status">Inicia el simulador para explorar el sesgo en acción.</p>
+      <div class="demo-actions">
+        <button id="bias-start" class="demo-btn demo-btn-primary">Iniciar simulador</button>
+        <button id="bias-reset" class="btn-restart" disabled>Reiniciar</button>
+      </div>
     </div>
   </div>
 </div>
 ```
 
-## Video de la sesión
+:::{.callout-note}
+# ¿Cómo se corrige el sesgo?
+No hay una fórmula universal, pero hay pasos concretos: auditar los datos de entrenamiento, medir tasas de error desagregadas por grupos, involucrar a las comunidades afectadas en el diseño de los algoritmos, y establecer revisiones humanas para decisiones de alto impacto. La solución técnica siempre viene acompañada de una solución organizacional.
+:::
+
+:::{.callout-important}
+# El problema de fondo
+
+La ciencia ha identificado al menos tres definiciones **matemáticas** de equidad, y son incompatibles entre sí cuando los grupos de partida son distintos:
+
+| Definición | Qué pregunta |
+|---|---|
+| Paridad demográfica | ¿Las tasas de aceptación son iguales entre grupos? |
+| Igualdad de oportunidad | Entre los calificados, ¿tienen igual probabilidad de ser seleccionados? |
+| Paridad predictiva | Si el modelo te da un puntaje alto, ¿tienes la misma probabilidad real de ser bueno sin importar tu grupo? |
+
+El caso COMPAS lo ilustra perfectamente: la empresa satisfacía la *paridad predictiva*. ProPublica mostró que fallaba en *igualdad de oportunidad*. Ninguno mentía. El algoritmo simplemente no puede cumplir ambas al mismo tiempo cuando los grupos de partida son distintos.
+
+Esto significa que diseñar un sistema "justo" siempre implica una decisión política: ¿cuál definición de justicia priorizamos? Esa no es una pregunta técnica — es una pregunta que debe responder la sociedad.
+:::
+
+---
+
+### Privacidad y Vigilancia
+
+Cada vez que usas TikTok, Google Maps, WhatsApp o cualquier app con IA, estás generando datos. Mucho más de lo que probablemente imaginas.
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video de la sesión — en desarrollo</p>
-  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+<figure class="flowchart-figure">
+  <svg viewBox="0 0 1040 270" xmlns="http://www.w3.org/2000/svg" class="flowchart-svg" role="img" aria-label="Flujo de datos de un celular hacia Maps, TikTok y WhatsApp, luego a un modelo de IA y finalmente a anuncios, recomendaciones o decisiones">
+    <defs>
+      <marker id="fcarr-privacy" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+        <polygon points="0 0, 8 4, 0 8" fill="#cbd5e1"/>
+      </marker>
+    </defs>
+
+    <line class="fc-line" x1="180" y1="134" x2="280" y2="55" marker-end="url(#fcarr-privacy)"/>
+    <line class="fc-line" x1="180" y1="134" x2="280" y2="134" marker-end="url(#fcarr-privacy)"/>
+    <line class="fc-line" x1="180" y1="134" x2="280" y2="213" marker-end="url(#fcarr-privacy)"/>
+    <line class="fc-line" x1="470" y1="55" x2="520" y2="55"/>
+    <line class="fc-line" x1="470" y1="134" x2="520" y2="134"/>
+    <line class="fc-line" x1="470" y1="213" x2="520" y2="213"/>
+    <line class="fc-line" x1="520" y1="55" x2="520" y2="134"/>
+    <line class="fc-line" x1="520" y1="213" x2="520" y2="134"/>
+    <line class="fc-line" x1="520" y1="134" x2="610" y2="134" marker-end="url(#fcarr-privacy)"/>
+    <line class="fc-line" x1="790" y1="134" x2="850" y2="134" marker-end="url(#fcarr-privacy)"/>
+
+    <rect x="30" y="99" width="150" height="70" rx="12" class="fc-node-source"/>
+    <text x="105" y="129" text-anchor="middle" class="fc-node-title fc-node-title-blue">📱 Tu celular</text>
+    <text x="105" y="149" text-anchor="middle" class="fc-node-subtitle">genera señales sobre ti</text>
+
+    <rect x="280" y="20" width="190" height="70" rx="12" class="fc-node-process"/>
+    <text x="375" y="49" text-anchor="middle" class="fc-node-title">🗺 Maps</text>
+    <text x="375" y="67" text-anchor="middle" class="fc-node-subtitle">ubicación, hora, velocidad</text>
+
+    <rect x="280" y="99" width="190" height="70" rx="12" class="fc-node-process"/>
+    <text x="375" y="128" text-anchor="middle" class="fc-node-title">🎵 TikTok</text>
+    <text x="375" y="146" text-anchor="middle" class="fc-node-subtitle">tiempo en cada video, likes, rebobinados</text>
+
+    <rect x="280" y="178" width="190" height="70" rx="12" class="fc-node-process"/>
+    <text x="375" y="207" text-anchor="middle" class="fc-node-title">💬 WhatsApp</text>
+    <text x="375" y="225" text-anchor="middle" class="fc-node-subtitle">contactos, horarios de mensaje, emojis</text>
+
+    <rect x="610" y="99" width="180" height="70" rx="12" class="fc-node-violet"/>
+    <text x="700" y="129" text-anchor="middle" class="fc-node-title">🤖 Modelo de IA</text>
+    <text x="700" y="149" text-anchor="middle" class="fc-node-subtitle">crea un perfil de comportamiento</text>
+
+    <rect x="688" y="188" width="122" height="18" rx="9" class="fc-pill-no"/>
+    <text x="749" y="200" text-anchor="middle" class="fc-label-soft">predicciones sobre ti</text>
+
+    <rect x="850" y="99" width="160" height="70" rx="12" class="fc-node-caution"/>
+    <text x="930" y="122" text-anchor="middle" class="fc-node-title">Anuncios</text>
+    <text x="930" y="140" text-anchor="middle" class="fc-node-title">Recomendaciones</text>
+    <text x="930" y="158" text-anchor="middle" class="fc-node-title">Decisiones</text>
+  </svg>
+</figure>
+```
+
+Todo eso es normal cuando lo sabes y consientes. El problema surge cuando los mismos sistemas de recopilación de datos se aplican sin tu conocimiento, especialmente en espacios públicos.
+
+#### **Reconocimiento facial en espacios públicos**
+
+El reconocimiento facial en cámaras de seguridad puede identificar a personas en tiempo real: en aeropuertos, estadios, calles, o — como propone discutirse en varias ciudades mexicanas — en el transporte público.
+
+Los argumentos a favor son claros: velocidad para identificar criminales conocidos, disuasión del delito, seguridad en eventos masivos.
+
+Los argumentos en contra también son claros: las mismas tasas de error que vimos en *Gender Shades* aplican aquí. Si el sistema falla más en personas de ciertos grupos étnicos, los *falsos positivos* — personas inocentes identificadas como sospechosas — no están distribuidos de forma equitativa.
+
+Y a diferencia de un error en un currículum, un falso positivo en reconocimiento facial puede resultar en una detención, y afectar la vida de una persona más allá de su empleabilidad.
+
+#### **México y el marco legal**
+
+```{=html}
+<div class="privacidad-compare">
+  <div class="priv-card">
+    <div class="priv-card-header">
+      <span class="priv-card-flag">🇲🇽</span>
+      <h5>México</h5>
+    </div>
+    <ul class="priv-list">
+      <li>El <strong>INAI</strong> (Instituto Nacional de Transparencia, Acceso a la Información, y Protección de Datos Personales) regula el uso de datos personales.</li>
+      <li>La Ley Federal de Protección de Datos Personales cubre a empresas privadas.</li>
+      <li><strong>No existe</strong> una ley específica de IA al momento de la publicación de este curso (Abril 2026).</li>
+      <li>El uso de reconocimiento facial por parte del Estado carece de un marco regulatorio claro.</li>
+    </ul>
+  </div>
+  <div class="priv-card">
+    <div class="priv-card-header">
+      <span class="priv-card-flag">🇪🇺</span>
+      <h5>Unión Europea</h5>
+    </div>
+    <ul class="priv-list">
+      <li>En 2024, la UE aprobó el <strong>EU AI Act</strong> — la primera ley de IA del mundo.</li>
+      <li>Clasifica los sistemas de IA por nivel de riesgo: inaceptable, alto, medio, bajo.</li>
+      <li><strong>Prohíbe</strong> el reconocimiento facial en tiempo real en espacios públicos, con excepciones limitadas.</li>
+      <li>Empresas que violen la ley pueden ser multadas hasta con el 7% de sus ingresos globales.</li>
+    </ul>
+  </div>
 </div>
 ```
 
-## Objetivos de aprendizaje
+---
 
-- Reflexionar sobre implicaciones éticas y riesgos reales de la IA.
-- Analizar sesgo algorítmico con casos locales e internacionales.
-- Discutir privacidad, deepfakes e impacto en empleos.
+### Deepfakes
 
-## Contenido previsto
+En la sesión 4 vimos cómo los modelos de difusión generan imágenes partiendo de ruido puro, refinándolas iterativamente hasta producir algo coherente. Esa misma tecnología puede aplicarse a videos y audio, y el resultado son los **deepfakes**: contenidos audiovisuales falsos que parecen completamente reales.
 
-### Apertura
+La calidad ha mejorado dramáticamente. En 2017, los primeros deepfakes eran fáciles de detectar. En 2025, algunos son indistinguibles para el ojo humano sin herramientas especializadas.
 
-- Se incorporará un caso real para mostrar por qué la ética no es un tema secundario.
+#### Cuatro tipos de daño
 
-### Desarrollo principal
+```{=html}
+<div class="df-quiz-grid">
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">🏛️</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Desinformación política</p>
+      <p class="df-quiz-desc">Un video muestra a un candidato presidencial diciendo que "el resultado de las elecciones ya está decidido de antemano". El video se vuelve viral horas antes de las elecciones.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué daño causa y cómo verificarlo?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Daño:</strong> supresión del voto y desconfianza institucional, incluso si se desmiente después. Los desmentidos no llegan tan lejos como el video original.<br><br>
+          <strong>Verificar:</strong> buscar la fuente original del video (¿en qué canal oficial se publicó?), consultar fact-checkers como <em>Animal Político</em> o <em>Verificado</em>, usar herramientas de detección como FakeCatcher de Intel.
+        </div>
+      </details>
+    </div>
+  </div>
 
-- Aquí irá la explicación base con ejemplos de sesgo, vigilancia y responsabilidad.
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">📞</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Fraude con clonación de voz</p>
+      <p class="df-quiz-desc">Recibes una llamada de "tu mamá" en pánico diciendo que tuvo un accidente y necesita que transfieras dinero urgentemente. La voz suena exactamente igual a la de ella.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué daño causa y cómo verificarlo?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Daño:</strong> fraude financiero. Los modelos de clonación de voz solo necesitan 3-10 segundos de audio para replicar una voz. Videos públicos en redes sociales son suficientes.<br><br>
+          <strong>Verificar:</strong> colgar y llamar directamente al número que ya tienes guardado de esa persona. Acordar una "palabra de seguridad" familiar para exactamente estas situaciones.
+        </div>
+      </details>
+    </div>
+  </div>
 
-### Actividad o demo
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">🎬</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Hostigamiento y reputación</p>
+      <p class="df-quiz-desc">Aparece un video de una persona conocida —compañera de escuela, influencer, figura pública— en una situación comprometedora. La persona jura que nunca grabó ese video.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué daño causa y cómo verificarlo?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Daño:</strong> acoso, daño reputacional permanente y trauma psicológico. El 96% de los deepfakes en circulación no son consentidos e involucran a mujeres.<br><br>
+          <strong>Verificar:</strong> buscar inconsistencias en la iluminación del rostro vs. el cuerpo, parpadeo anormal o bordes difusos alrededor del cabello. Reportar el contenido en la plataforma como posible deepfake.
+        </div>
+      </details>
+    </div>
+  </div>
 
-- Este bloque servirá para una dinámica de debate o análisis guiado.
+  <div class="df-quiz-card">
+    <div class="df-quiz-thumb">📰</div>
+    <div class="df-quiz-body">
+      <p class="df-quiz-question">Evidencia falsa</p>
+      <p class="df-quiz-desc">En un juicio, la defensa presenta un video que muestra al acusado en otro lugar el día del crimen. La fiscalía no puede demostrar con certeza si el video es real o generad con IA.</p>
+      <details class="foldout foldout-inline df-quiz-reveal">
+        <summary class="foldout-summary">¿Qué daño causa y cómo verificarlo?</summary>
+        <div class="foldout-body df-quiz-answer fake">
+          <strong>Daño:</strong> crisis del sistema judicial. Si los deepfakes son lo suficientemente convincentes, la evidencia en video pierde valor como prueba.<br><br>
+          <strong>Verificar:</strong> análisis forense digital (metadatos, huellas de compresión), herramientas especializadas como Deepware Scanner, cadena de custodia del archivo original.
+        </div>
+      </details>
+    </div>
+  </div>
+</div>
+```
 
-### Cierre
+:::{.callout-tip}
+# Hábito a formar: el protocolo de verificación
+Antes de compartir cualquier video o audio que te genere una reacción fuerte (indignación, urgencia, sorpresa), hazte tres preguntas: **¿de dónde viene?** (¿hay fuente original verificable?), **¿quién se beneficia de que esto circule?** y **¿hay una segunda fuente que lo confirme?** Si no puedes responder las tres, no lo compartas.
+:::
 
-- Se añadirá una síntesis sobre uso responsable y criterios mínimos de evaluación ética.
+---
 
-## Recursos y materiales por incorporar
+### IA y el Futuro del Trabajo
 
-- Ficha de casos COMPAS, Amazon Hiring y reconocimiento facial.
-- Preguntas de debate para trabajo individual o grupal.
-- Espacio para ejemplos locales y conexión con México.
+Una pregunta que probablemente ya te has hecho es: ¿la IA va a quitarme el trabajo?
+
+La respuesta es: *depende del trabajo, y más específicamente, del tipo de tarea*. La IA no automatiza empleos completos de golpe, automatiza **tareas específicas** dentro de los empleos.
+
+```{=html}
+<table class="jobs-risk-table">
+  <thead>
+    <tr>
+      <th>Tipo de tarea</th>
+      <th>Ejemplos</th>
+      <th>Riesgo de automatización</th>
+      <th>Por qué</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Rutinaria cognitiva</strong></td>
+      <td>Clasificar documentos, captura de datos, traducción básica, generación de reportes estándar</td>
+      <td><span class="risk-badge risk-high">Alto</span></td>
+      <td>Pattern matching — exactamente lo que los LLMs hacen bien</td>
+    </tr>
+    <tr>
+      <td><strong>Rutinaria física</strong></td>
+      <td>Ensamble repetitivo, caja en un supermercado, revisión de calidad visual</td>
+      <td><span class="risk-badge risk-high">Alto</span></td>
+      <td>Robots + visión artificial ya pueden hacer muchas de estas tareas</td>
+    </tr>
+    <tr>
+      <td><strong>Análisis complejo</strong></td>
+      <td>Diagnóstico médico, análisis financiero, investigación científica</td>
+      <td><span class="risk-badge risk-medium">Parcial</span></td>
+      <td>IA como copiloto, no como reemplazo; el juicio humano sigue siendo crítico</td>
+    </tr>
+    <tr>
+      <td><strong>Social y de cuidado</strong></td>
+      <td>Enfermería, trabajo social, enseñanza, psicología, negociación</td>
+      <td><span class="risk-badge risk-low">Bajo</span></td>
+      <td>Requieren empatía, confianza y adaptación a contextos únicos, que son habilidades que la IA no posee </td>
+    </tr>
+    <tr>
+      <td><strong>Creativa y estratégica</strong></td>
+      <td>Diseño, emprendimiento, investigación básica, liderazgo organizacional</td>
+      <td><span class="risk-badge risk-low">Bajo</span></td>
+      <td>La IA puede asistir, pero la novedad genuina y la toma de decisiones complejas siguen siendo humanas</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+**El contexto mexicano:** México tiene una economía donde el empleo en manufactura, centros de atención al cliente (*call centers*), captura de datos y servicios financieros básicos representa una fracción importante de los trabajos. Estas son precisamente las categorías con mayor riesgo de automatización en el mediano plazo.
+
+Pero hay algo que la tabla no captura: el trabajo que *aparece* como resultado de la IA. Alguien tiene que supervisar los sistemas, auditarlos por sesgos, explicar sus decisiones a la sociedad, y diseñar políticas para regular su uso. Esos trabajos no existían hace diez años.
+
+:::{.callout-note}
+# Lo que este curso está construyendo
+Entender cómo funciona la IA, reconocer sus límites y errores, y poder hacer preguntas éticas sobre sus aplicaciones. Esas son las habilidades que distinguen a alguien que usa la IA de alguien que *dirige* cómo se usa.
+:::
+
+---
+
+## Actividad: El Caso de San Luis Potosí
+
+Lee el siguiente escenario y elige un rol. Prepara dos argumentos desde esa perspectiva.
+
+```{=html}
+<div class="debate-scenario">
+  <div class="debate-scenario-header">
+    <span class="debate-scenario-icon">🚌</span>
+    <div>
+      <p class="debate-scenario-kicker">Escenario para debate</p>
+      <h4 class="debate-scenario-title">Propuesta: Reconocimiento Facial en el Transporte Público de SLP</h4>
+    </div>
+  </div>
+  <p class="debate-scenario-body">El gobierno del estado de San Luis Potosí propone instalar cámaras con reconocimiento facial en los camiones urbanos. El sistema identificaría en tiempo real a personas con órdenes de aprehensión activas. La empresa proveedora garantiza una tasa de acierto del 95% en condiciones de laboratorio. La inversión inicial sería de 80 millones de pesos.</p>
+</div>
+```
+
+Hay al menos cuatro perspectivas legítimas en este debate. Elige la que más te interese explorar:
+
+```{=html}
+<div class="stakeholder-grid">
+  <div class="stakeholder-card tone-neutral">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">🧑‍🎓</span>
+      <div>
+        <p class="stakeholder-card-name">Estudiante universitario</p>
+        <p class="stakeholder-card-role">Usuario diario del transporte público</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Usas el camión todos los días para ir a la universidad. Te preocupa tanto la seguridad como tu privacidad. Sabes que en el pasado has sido detenido brevemente por "perfil sospechoso" sin haber hecho nada malo.</p>
+      <p><strong>Pregunta guía:</strong> ¿Cuánto de tu privacidad estás dispuesto a ceder a cambio de cuánta seguridad garantizada?</p>
+    </div>
+  </div>
+
+  <div class="stakeholder-card tone-pro">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">👮</span>
+      <div>
+        <p class="stakeholder-card-name">Secretaria de Seguridad Pública</p>
+        <p class="stakeholder-card-role">Autoridad estatal</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Tienes 300 órdenes de aprehensión activas que no has podido ejecutar. El año pasado hubo 12 asaltos en el transporte público que quedaron impunes. Tu trabajo es reducir el delito con los recursos disponibles.</p>
+      <p><strong>Pregunta guía:</strong> ¿Cómo justificas el costo y los riesgos del sistema ante quienes más lo van a sentir?</p>
+    </div>
+  </div>
+
+  <div class="stakeholder-card tone-con">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">⚖️</span>
+      <div>
+        <p class="stakeholder-card-name">Activista de derechos digitales</p>
+        <p class="stakeholder-card-role">Organización de sociedad civil</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Sabes que el sistema tiene una tasa de error del 34% en ciertos grupos demográficos (*Gender Shades*). Un 5% de error en 500,000 viajes diarios significa 25,000 falsos positivos al día. Esas personas serán detenidas injustamente.</p>
+      <p><strong>Pregunta guía:</strong> ¿Cómo convences al gobierno de que el costo humano supera al beneficio prometido?</p>
+    </div>
+  </div>
+
+  <div class="stakeholder-card tone-mixed">
+    <div class="stakeholder-card-header">
+      <span class="stakeholder-card-icon">💼</span>
+      <div>
+        <p class="stakeholder-card-name">Directora técnica de la empresa</p>
+        <p class="stakeholder-card-role">Proveedora del sistema de IA</p>
+      </div>
+    </div>
+    <div class="stakeholder-card-body">
+      <p><strong>Tu situación:</strong> Tu empresa invirtió 3 años en desarrollar este sistema. Reconoces que el 95% de precisión es en condiciones de laboratorio y que en condiciones reales (iluminación variable, movimiento, calidad de la cámara) baja. Pero también crees que con supervisión humana adecuada puede ser útil.</p>
+      <p><strong>Pregunta guía:</strong> ¿Qué salvaguardas técnicas y legales propones para que el sistema sea responsable?</p>
+    </div>
+  </div>
+</div>
+```
+
+:::{.callout-tip}
+# Para pensar
+
+Con tu perspectiva elegida, responde:
+
+1. **¿Quién se beneficia directamente** de implementar este sistema? ¿Quién asume los riesgos?
+
+2. **¿Qué datos necesitarías** para tomar una decisión informada? ¿Están disponibles?
+
+3. **¿Qué pasaría** si el sistema comete un error contigo o con alguien que conoces? ¿A quién reclamarías?
+
+4. **¿Hay una alternativa** que logre el mismo objetivo con menor riesgo para los derechos de las personas?
+
+5. Si el sistema se aprueba, ¿quién debería ser **responsable** de auditarlo, de corregirlo y de compensar a quienes hayan sido perjudicados?
+:::
+
+---
+
+### ¿Qué pueden hacer los desarrolladores?
+
+Los problemas de sesgo no son inevitables. Existen tres momentos en el ciclo de vida de un modelo donde se puede intervenir:
+
+- **Pre-procesamiento:** corregir o rebalancear los datos de entrenamiento antes de entrenar el modelo. Si los datos históricos subrepresentan a ciertos grupos, el modelo aprenderá esa subrepresentación. Hay que detectarlo y corregirlo antes de que empiece a aprender.
+
+- **Durante el entrenamiento:** agregar restricciones de equidad al proceso mismo de entrenamiento, penalizando al modelo cuando su desempeño difiere demasiado entre grupos.
+
+- **Post-procesamiento:** ajustar los umbrales de decisión por grupo una vez que el modelo ya está entrenado. Es exactamente lo que el simulador de arriba te permitía explorar: cambiar el umbral para compensar el sesgo sistemático del modelo.
+
+Ninguna técnica es perfecta — y como vimos, no hay una sola definición de "justo" que se deba satisfacer. Pero estas intervenciones hacen que el sesgo sea visible, medible y, al menos en parte, corregible.
+
+:::{.callout-tip}
+# La auditoría como norma mínima
+Antes de desplegar cualquier sistema de IA en contextos de alto impacto — justicia, salud, empleo, crédito — se deben medir las tasas de error desagregadas por grupo demográfico. Si nadie ha hecho esa medición, no es posible afirmar que el sistema es justo.
+:::
+
+---
+
+### La idea central de esta sesión
+
+Los problemas éticos de la IA no son accidentes ni descuidos técnicos menores. Son el resultado predecible de entrenar sistemas con datos sesgados, desplegarlos sin supervisión adecuada y no preguntarse desde el principio a quién afectan y cómo.
+
+:::{.callout-important}
+# Marco ético básico
+
+Para evaluar cualquier sistema de IA con criterio, hazte estas tres preguntas:
+
+```{=html}
+<ul class="etica-checklist">
+  <li>
+    <span class="etica-num">1</span>
+    <div class="etica-text">
+      <h5>¿Quién se beneficia y quién paga el costo?</h5>
+      <p>Los beneficios y los riesgos de la IA no se distribuyen de forma equitativa. Identifica quién gana y quién asume las consecuencias de los errores.</p>
+    </div>
+  </li>
+  <li>
+    <span class="etica-num">2</span>
+    <div class="etica-text">
+      <h5>¿Los datos representan a todos los grupos afectados?</h5>
+      <p>Si el sistema fue entrenado principalmente con datos de un grupo pero se aplica a todos, los errores no serán aleatorios, se concentrarán en los grupos subrepresentados.</p>
+    </div>
+  </li>
+  <li>
+    <span class="etica-num">3</span>
+    <div class="etica-text">
+      <h5>¿Hay un humano que pueda rendir cuentas?</h5>
+      <p>"El algoritmo lo decidió" no es una respuesta aceptable cuando hay consecuencias negativas para personas reales. Alguien tiene que poder explicar, corregir y compensar.</p>
+    </div>
+  </li>
+</ul>
+```
+:::
+
+---
+
+### Recursos para explorar más
+
+- [Machine Bias — ProPublica](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) — el análisis original del caso COMPAS que detonó el debate sobre sesgo en sistemas de justicia criminal
+- [Gender Shades — MIT Media Lab](http://gendershades.org/) — el proyecto de Joy Buolamwini que documentó las tasas de error diferencial en reconocimiento facial
+- [Algorithmic Justice League](https://www.ajl.org/) — organización fundada por Buolamwini que trabaja en auditorías de sistemas de IA
+- [Detect Fakes — MIT](http://detectfakes.media.mit.edu/) — pon a prueba tu capacidad para distinguir videos reales de deepfakes
+- [AI Now Institute](https://ainowinstitute.org/) — reportes anuales sobre el impacto social de la IA
+- [Elements of AI](https://www.elementsofai.com/es) — curso gratuito en español que incluye una sección sobre ética de la IA
+
+---
 
 ```{=html}
 <nav class="sesion-nav">
@@ -101,6 +658,23 @@ format:
     <span class="nav-title">S4: IA Generativa</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot active" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 5 de 15</span>
   </div>
   <a href="sesion-06.html" class="sesion-nav-btn next">

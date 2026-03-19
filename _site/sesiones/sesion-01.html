@@ -68,9 +68,6 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script src="../site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="../site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="../site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
 
 <link rel="stylesheet" href="../styles/sesion.css">
@@ -233,6 +230,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
+<link rel="stylesheet" href="../styles/sessions/sesion-01.css">
 <script type="module" src="../interactives/sesion-01.js"></script>
 <section id="video-introducción-a-la-ia" class="level2">
 <h2 class="anchored" data-anchor-id="video-introducción-a-la-ia">Video: Introducción a la IA</h2>
@@ -554,12 +552,12 @@ La ecuación de la recta: ŷ = m · x + b <em>(forma pendiente-ordenada)</em>
     </div>
   </div>
 
-  <details class="expand-section">
-    <summary class="expand-summary">
+  <details class="foldout foldout-panel">
+    <summary class="foldout-summary">
       <span>🔢 Laboratorio corto — de dónde sale la línea azul</span>
-      <span class="expand-summary-hint">haz clic para ver</span>
+      <span class="foldout-summary-hint">Haz clic para enterarte</span>
     </summary>
-    <div class="expand-body">
+    <div class="foldout-body">
       <div class="lab-card">
         <div class="lab-card-grid">
           <div class="lab-card-section">
@@ -803,22 +801,37 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
 <h4 class="anchored" data-anchor-id="aprendizaje-no-supervisado"><strong>2. Aprendizaje No Supervisado</strong></h4>
 <p>Ahora imagina que tienes fotos de animales, pero sin ninguna etiqueta. Le dices a la máquina: “agrúpalas como consideres que van juntas”. Un humano nota que algunos tienen hocico largo, otros tienen bigotes, algunos tienen orejas paradas, y las puede ir agrupando sin que nadie le haya dicho qué buscar. Pero, ¿y una máquina?</p>
 <p>Eso es aprendizaje no supervisado: <strong>datos sin etiquetas → el modelo encuentra estructura por sí mismo</strong>.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A["📂 Datos sin etiquetas"] --&gt; B["🤖 Modelo buscando patrones"]
-    B --&gt; C["🔵 Grupo 1"]
-    B --&gt; D["🟠 Grupo 2"]
-    B --&gt; E["🟢 Grupo 3"]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<figure class="flowchart-figure figure">
+  <svg viewbox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" class="flowchart-svg" role="img" aria-label="Diagrama de aprendizaje no supervisado: datos sin etiquetas pasan a un modelo que encuentra patrones y forma tres grupos">
+    <defs>
+      <marker id="fcarr-unsup" markerwidth="8" markerheight="8" refx="7" refy="4" orient="auto">
+        <polygon points="0 0, 8 4, 0 8" fill="#cbd5e1"></polygon>
+      </marker>
+    </defs>
+
+    <line class="fc-line" x1="200" y1="126" x2="292" y2="126" marker-end="url(#fcarr-unsup)"></line>
+    <line class="fc-line" x1="468" y1="126" x2="560" y2="55" marker-end="url(#fcarr-unsup)"></line>
+    <line class="fc-line" x1="468" y1="126" x2="560" y2="126" marker-end="url(#fcarr-unsup)"></line>
+    <line class="fc-line" x1="468" y1="126" x2="560" y2="197" marker-end="url(#fcarr-unsup)"></line>
+
+    <rect x="24" y="92" width="176" height="68" rx="12" class="fc-node-source"></rect>
+    <text x="112" y="121" text-anchor="middle" class="fc-node-title fc-node-title-blue">📂 Datos sin etiquetas</text>
+    <text x="112" y="141" text-anchor="middle" class="fc-node-subtitle">ejemplos mezclados, sin respuesta</text>
+
+    <rect x="292" y="92" width="176" height="68" rx="12" class="fc-node-process"></rect>
+    <text x="380" y="121" text-anchor="middle" class="fc-node-title">🤖 Modelo buscando patrones</text>
+    <text x="380" y="141" text-anchor="middle" class="fc-node-subtitle">encuentra similitudes y separa grupos</text>
+
+    <rect x="560" y="20" width="168" height="52" rx="12" class="fc-node-source"></rect>
+    <text x="644" y="50" text-anchor="middle" class="fc-node-title">🔵 Grupo 1</text>
+
+    <rect x="560" y="100" width="168" height="52" rx="12" class="fc-node-caution"></rect>
+    <text x="644" y="130" text-anchor="middle" class="fc-node-title">🟠 Grupo 2</text>
+
+    <rect x="560" y="180" width="168" height="52" rx="12" class="fc-node-success"></rect>
+    <text x="644" y="210" text-anchor="middle" class="fc-node-title">🟢 Grupo 3</text>
+  </svg>
+</figure>
 <p><strong>Ejemplos:</strong></p>
 <ul>
 <li><p>Spotify agrupando canciones por similitud sonora (nadie etiquetó “esto suena a reggaetón”)</p></li>
@@ -882,21 +895,36 @@ print(f"ŷ = {m:.2f}·x + {b:.2f}")</code></pre>
 <h4 class="anchored" data-anchor-id="aprendizaje-por-refuerzo"><strong>3. Aprendizaje por Refuerzo</strong></h4>
 <p>Este es el más intuitivo de todos porque así aprenden los humanos muchas cosas. Piensa en cómo aprendiste a andar en bicicleta: nadie te explicó las ecuaciones de equilibrio. Intentaste. Te caíste. Ajustaste. Intentaste de nuevo. Con el tiempo, tu cuerpo encontró la estrategia que funciona.</p>
 <p>El aprendizaje por refuerzo funciona igual: un agente de IA toma acciones en un entorno, recibe recompensas cuando hace algo bien y penalizaciones cuando se equivoca, y con millones de intentos aprende la estrategia óptima.</p>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-    A["🤖 Agente"] --&gt;|"toma acción"| B["🌍 Entorno"]
-    B --&gt;|"nueva situación"| A
-    B --&gt;|"recompensa o penalización"| A
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<figure class="flowchart-figure figure">
+  <svg viewbox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" class="flowchart-svg" role="img" aria-label="Diagrama de aprendizaje por refuerzo: un agente actúa en un entorno y recibe nueva situación, recompensa o penalización">
+    <defs>
+      <marker id="fcarr-rl" markerwidth="8" markerheight="8" refx="7" refy="4" orient="auto">
+        <polygon points="0 0, 8 4, 0 8" fill="#cbd5e1"></polygon>
+      </marker>
+    </defs>
+
+    <line class="fc-line" x1="254" y1="98" x2="466" y2="98" marker-end="url(#fcarr-rl)"></line>
+    <path class="fc-line" d="M466 128 C 420 176, 300 176, 254 128" marker-end="url(#fcarr-rl)"></path>
+    <path class="fc-line" d="M466 144 C 414 214, 306 214, 254 144" marker-end="url(#fcarr-rl)"></path>
+
+    <rect x="54" y="64" width="200" height="70" rx="12" class="fc-node-source"></rect>
+    <text x="154" y="95" text-anchor="middle" class="fc-node-title fc-node-title-blue">🤖 Agente</text>
+    <text x="154" y="116" text-anchor="middle" class="fc-node-subtitle">toma una acción</text>
+
+    <rect x="466" y="64" width="200" height="70" rx="12" class="fc-node-caution"></rect>
+    <text x="566" y="95" text-anchor="middle" class="fc-node-title">🌍 Entorno</text>
+    <text x="566" y="116" text-anchor="middle" class="fc-node-subtitle">responde y cambia la situación</text>
+
+    <rect x="328" y="74" width="78" height="22" rx="11" class="fc-pill-no"></rect>
+    <text x="367" y="88" text-anchor="middle" class="fc-label-soft">toma acción</text>
+
+    <rect x="300" y="158" width="134" height="24" rx="12" class="fc-pill-no"></rect>
+    <text x="367" y="173" text-anchor="middle" class="fc-label-soft">nueva situación</text>
+
+    <rect x="278" y="202" width="178" height="24" rx="12" class="fc-pill-yes"></rect>
+    <text x="367" y="217" text-anchor="middle" class="fc-label">recompensa o penalización</text>
+  </svg>
+</figure>
 <p><strong>Ejemplos:</strong></p>
 <ul>
 <li><p>AlphaGo (DeepMind) aprendió a jugar Go mejor que cualquier humano sin que nadie le enseñara estrategias — solo jugó millones de partidas contra sí mismo</p></li>

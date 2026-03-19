@@ -1,5 +1,5 @@
 ---
-title: "Sesión 6: EN VIVO: IA en México: Investigación y Aplicaciones"
+title: "Sesión 6: EN VIVO — IA en México: Investigación y Aplicaciones"
 format:
   html:
     toc: true
@@ -24,66 +24,61 @@ format:
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
+```
 
-<div class="sesion-outline">
-  <p class="sesion-outline-kicker">Sesión Zoom</p>
-  <h2 class="sesion-outline-title">Contenedor base de la sesión en vivo</h2>
-  <p class="sesion-outline-copy">Esta página queda lista para alojar la grabación del Zoom, la agenda de la conversación con IPICYT y el material de seguimiento posterior.</p>
-  <div class="sesion-outline-grid">
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">01</span>
-      <h3>Antes del Zoom</h3>
-      <p>Contexto, invitado/a y preguntas guía.</p>
+```{=html}
+<link rel="stylesheet" href="../styles/sessions/sesion-06.css">
+```
+
+```{=html}
+<div class="live-session-header">
+  <span class="live-badge">EN VIVO · Sesión Zoom</span>
+  <p class="live-header-copy">Esta sesión es una conversación en vivo con un investigador de IA. Después del Zoom, la grabación y los recursos compartidos quedarán disponibles en esta página.</p>
+</div>
+```
+
+## Invitado
+
+```{=html}
+<div class="guest-card">
+  <img class="guest-avatar" src="img/salvador-ruiz-correa.jpg" alt="Dr. Salvador Ruiz-Correa">
+  <div class="guest-content">
+    <h3 class="guest-name">Dr. Salvador Ruiz-Correa</h3>
+    <p class="guest-title">Investigador Titular · Director del You-i Lab</p>
+    <p class="guest-institution">IPICyT — Instituto Potosino de Investigación Científica y Tecnológica · San Luis Potosí, México</p>
+    <div class="guest-tags">
+      <span class="guest-tag">Machine learning</span>
+      <span class="guest-tag">Visión por computadora</span>
+      <span class="guest-tag">Cómputo móvil</span>
+      <span class="guest-tag">IA para impacto social</span>
+      <span class="guest-tag">Salud y bienestar</span>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">02</span>
-      <h3>Durante la sesión</h3>
-      <p>Charla principal y preguntas abiertas de estudiantes.</p>
-    </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">03</span>
-      <h3>Después del Zoom</h3>
-      <p>Grabación, resumen y recursos compartidos.</p>
-    </div>
+    <p class="guest-bio">El Dr. Salvador Ruiz-Correa se doctoró en Ingeniería Eléctrica por la Universidad de Washington (Seattle), tras obtener su licenciatura y maestría en la UNAM. Desde 2014 dirige el <strong>You-i Lab</strong> (Laboratorio de Innovación Juvenil) en el IPICyT, en San Luis Potosí, donde lidera proyectos de IA aplicada a contextos sociales: desde el uso de sensores de smartphone para entender hábitos de salud y bienestar, hasta la visión por computadora aplicada al patrimonio cultural de México en colaboración con el INAH y el CIMAT. Sus colaboraciones internacionales incluyen instituciones en Suiza, Inglaterra, Países Bajos y Estados Unidos, entre otros.</p>
   </div>
 </div>
 ```
 
-## Video / grabación
+## Video / Grabación
 
 ```{=html}
 <div class="video-placeholder">
   <span class="vp-icon">▶</span>
-  <p class="vp-title">Grabación del Zoom — próximamente</p>
-  <p>Cuando termine la sesión en vivo, aquí se insertará el replay correspondiente.</p>
+  <p class="vp-title">Grabación de la sesión — próximamente</p>
+  <p>Aquí se publicará el replay del Zoom una vez que termine la sesión en vivo.</p>
 </div>
 ```
 
-## Propósito de la sesión
+## De qué trata esta sesión
 
-- Conocer cómo se hace investigación en IA desde México.
-- Conectar los conceptos del Bloque 1 con trabajo científico real.
-- Abrir posibilidades de carrera para estudiantes de San Luis Potosí.
+Conocer de primera mano cómo se hace investigación en IA desde México y desde San Luis Potosí.
 
-## Agenda tentativa
+## Recursos
 
-1. Bienvenida y presentación de la persona invitada.
-2. Charla libre sobre proyectos, trayectoria y aplicaciones actuales.
-3. Preguntas abiertas de estudiantes.
-4. Cierre con ideas de seguimiento y recursos.
+```{=html}
+<p class="recursos-placeholder">Los recursos que el Dr. Ruiz-Correa comparta durante la sesión — artículos, proyectos, instituciones, herramientas — se publicarán aquí después del Zoom.</p>
+```
 
-## Preguntas guía
-
-- ¿En qué proyectos de IA trabaja actualmente el IPICYT?
-- ¿Qué estudió y cómo llegó a trabajar con inteligencia artificial?
-- ¿Qué oportunidades hay para estudiantes de preparatoria en este campo?
-- ¿Qué diferencia hay entre investigar IA en México y en otros países?
-
-## Material que se añadirá después
-
-- Grabación de Zoom.
-- Resumen con ideas clave de la charla.
-- Recursos o instituciones mencionadas por la persona invitada.
+---
 
 ```{=html}
 <nav class="sesion-nav">
@@ -92,6 +87,23 @@ format:
     <span class="nav-title">S5: Ética y problemas reales</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot active" title="Sesión 6"></span>
+      <span class="sesion-nav-dot" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 6 de 15</span>
   </div>
   <a href="sesion-07.html" class="sesion-nav-btn next">

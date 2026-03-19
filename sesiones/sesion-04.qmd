@@ -25,74 +25,570 @@ format:
   </div>
 </div>
 
-<div class="sesion-outline">
-  <p class="sesion-outline-kicker">Modelos generativos</p>
-  <h2 class="sesion-outline-title">Arquitectura base de la sesión</h2>
-  <p class="sesion-outline-copy">Este andamio deja listo el espacio para explicar qué hace un LLM, cómo se diferencia de un buscador y por qué texto e imagen no se generan del mismo modo.</p>
-  <div class="sesion-outline-grid">
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">01</span>
-      <h3>Apertura</h3>
-      <p>Comparación inicial entre buscador, chatbot y modelo generativo.</p>
+<link rel="stylesheet" href="../styles/sessions/sesion-04.css">
+<script type="module" src="../interactives/sesion-04.js"></script>
+```
+
+## Video: IA Generativa — qué hace y cómo funciona
+
+```{=html}
+<div class="video-placeholder">
+  <span class="vp-icon">▶</span>
+  <p class="vp-title">Video: IA Generativa — qué hace y cómo funciona</p>
+</div>
+```
+
+---
+
+## Texto: IA Generativa — qué hace y cómo funciona
+
+---
+
+### Introducción
+
+Son las 11 de la noche. Estás en tu cuarto, a punto de dormir, cuando de repente recuerdas: mañana tienes que entregar una investigación sobre la mitosis para Biología. Abres Google y buscas. Aparecen diez enlaces: Wikipedia, Khan Academy, una página de una prepa de Guadalajara, un PDF de hace ocho años. Tienes que abrir varios, leer y armar algo coherente con lo que encuentras.
+
+Ahora decides hacer la misma búsqueda, pero en ChatGPT: "Explícame qué es la mitosis como si tuviera que explicárselo a alguien de mi edad". En veinte segundos recibes una explicación clara, con las fases en orden y ejemplos concretos.
+
+¿Cuál prefieres a las 11 de la noche? Probablemente el segundo 😉. Pero antes de copiar y pegar esa respuesta en tu tarea, hay algo que deberías saber sobre cómo funciona un LLM.
+
+:::{.callout-note}
+# La distinción crucial
+**Google busca** documentos que ya existen en internet. **ChatGPT genera** una respuesta nueva al instante, token por token, basándose en patrones aprendidos durante su entrenamiento.
+
+Uno es un índice. El otro es un modelo generativo.
+:::
+
+Ambos pueden equivocarse, pero se equivocan de formas distintas. Google puede devolverte información desactualizada o un sitio poco confiable. ChatGPT puede inventarse datos con total confianza. Y ese segundo tipo de error tiene nombre propio: **alucinación**.
+
+---
+
+### ¿Qué es un modelo de lenguaje grande (LLM)?
+
+Un LLM (*Large Language Model*) es un sistema entrenado con cantidades masivas de texto — artículos, libros, páginas web, código, conversaciones — para aprender a predecir qué fragmento de texto viene después de otro.
+
+No aprende hechos como tal. Aprende **patrones estadísticos entre fragmentos de texto**. Si vio millones de veces que después de "el agua hierve a" viene "100 grados Celsius", aprenderá a predecir eso. Si vio pocas veces (o ninguna) que un dato es falso, puede predecir ese dato incorrecto con la misma confianza que uno correcto.
+
+:::{.callout-important}
+# La idea crucial
+Un LLM no "sabe" cosas. Predice qué texto es estadísticamente probable en un contexto dado. A veces eso coincide con la verdad. A veces no.
+:::
+
+Esta distinción explica por qué los modelos generativos son tan útiles y, al mismo tiempo, tan peligrosos si no los usas con criterio.
+
+---
+
+### Los tokens: la unidad de trabajo de un LLM
+
+Antes de entender cómo genera texto un LLM, necesitas entender con qué trabaja. No con palabras completas. Con **tokens**: fragmentos de texto que pueden ser palabras enteras, partes de palabras, puntuación o incluso caracteres individuales.
+
+Una regla general: una palabra en inglés suele corresponder a ~1 token; una palabra en español puede necesitar 1.5–3 tokens. Eso no es un detalle menor: los modelos cobran por tokens, imponen límites por tokens y "ven" los documentos en tokens.
+
+```{=html}
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-gen" id="tok-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Tokens y vocabulario</p>
+        <h4 class="demo-title">¿Cómo divide el modelo el texto?</h4>
+        <p class="demo-copy">Selecciona un ejemplo y observa cómo el mismo texto se fragmenta en unidades más pequeñas que las palabras. Los colores no tienen significado, solo ayudan a distinguir los límites.</p>
+      </div>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">02</span>
-      <h3>Conceptos clave</h3>
-      <p>LLMs, contexto, tokens, alucinaciones y modelos de difusión.</p>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+          <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="tok-preview-row">
+              <span class="tok-preview-chip tok-preview-chip-a">La</span>
+              <span class="tok-preview-chip tok-preview-chip-b"> intelig</span>
+              <span class="tok-preview-chip tok-preview-chip-c">encia</span>
+              <span class="tok-preview-chip tok-preview-chip-d"> artif</span>
+              <span class="tok-preview-chip tok-preview-chip-e">icial</span>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del tokenizador</p>
+          <p class="demo-preview-copy">Cada bloque de color es un token. "inteligencia" se divide en dos, "artificial" también.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div id="tok-example-btns" class="tok-example-btns"></div>
+        <p class="tok-original" id="tok-original"></p>
+        <div id="tok-output" class="tok-output"></div>
+        <p id="tok-stats" class="tok-stats"></p>
+        <p class="tok-note">Nota: esta es una tokenización ilustrativa, no exactamente igual a ningún modelo específico.</p>
+      </div>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">03</span>
-      <h3>Actividad</h3>
-      <p>Comparar prompts y respuestas entre distintas herramientas.</p>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5>Qué estás viendo</h5>
+        <p id="tok-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5>Qué significa</h5>
+        <p id="tok-meaning"></p>
+      </div>
     </div>
-    <div class="sesion-outline-card">
-      <span class="sesion-outline-step">04</span>
-      <h3>Cierre</h3>
-      <p>Criterios para usar IA generativa con juicio crítico.</p>
+
+    <div class="demo-footer">
+      <p id="tok-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="tok-start" class="demo-btn demo-btn-primary">Explorar tokens</button>
+        <button id="tok-reset" class="btn-restart" disabled>Reiniciar</button>
+      </div>
     </div>
   </div>
 </div>
 ```
 
-## Video de la sesión
+Para ver cómo se tokeniza texto real en distintos idiomas, puedes usar [Tiktokenizer](https://tiktokenizer.vercel.app) — una herramienta gratuita que usa el mismo tokenizador de GPT-4.
+
+---
+
+### Cómo se genera texto: la predicción token por token
+
+Con eso en mente, ahora puedes entender el mecanismo completo. Un LLM genera texto haciendo lo siguiente, repetidamente:
+
+1. Toma el texto que ya existe (tu prompt + lo que ha generado hasta ahora).
+2. Asigna una probabilidad a cada token que podría seguir — una palabra, una sílaba, un signo de puntuación — basándose en todo lo que ya existe en el texto.
+3. Elige uno — generalmente el más probable, aunque no siempre el primero en la lista, para que las respuestas no sean siempre idénticas.
+4. Lo agrega al texto.
+5. Repite.
+
+Eso es todo. No hay "entendimiento" ni "intención". Es una función matemática muy sofisticada que, dado un texto de entrada, calcula qué texto tiene más probabilidad de aparecer después.
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video de la sesión — en desarrollo</p>
-  <p>Aquí se insertará la grabación principal cuando el guion final esté listo.</p>
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-gen" id="pred-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Generación autorregresiva</p>
+        <h4 class="demo-title">El modelo elige el siguiente token, una y otra vez</h4>
+        <p class="demo-copy">Observa cómo se construye una oración paso a paso. Cada barra muestra qué tan probable es cada opción en ese momento dado el contexto previo.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+          <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="pred-preview-list">
+              <div class="pred-preview-row">
+                <span class="pred-preview-label">puede</span>
+                <div class="pred-preview-track">
+                  <div class="pred-preview-fill pred-preview-fill-31"></div>
+                </div>
+                <span class="pred-preview-pct">31%</span>
+              </div>
+              <div class="pred-preview-row">
+                <span class="pred-preview-label">tiene</span>
+                <div class="pred-preview-track">
+                  <div class="pred-preview-fill pred-preview-fill-27"></div>
+                </div>
+                <span class="pred-preview-pct">27%</span>
+              </div>
+              <div class="pred-preview-row">
+                <span class="pred-preview-label">procesa</span>
+                <div class="pred-preview-track">
+                  <div class="pred-preview-fill pred-preview-fill-18"></div>
+                </div>
+                <span class="pred-preview-pct">18%</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del predictor</p>
+          <p class="demo-preview-copy">Cada paso muestra 5 opciones con su probabilidad estimada. La elegida se agrega a la oración y el proceso comienza de nuevo.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div id="pred-sentence" class="pred-sentence"></div>
+        <div id="pred-candidates" class="pred-candidates"></div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5>Qué estás viendo</h5>
+        <p id="pred-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5>Qué significa</h5>
+        <p id="pred-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="pred-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="pred-start" class="demo-btn demo-btn-primary">Ver animación</button>
+        <button id="pred-reset" class="btn-restart" disabled>Reiniciar</button>
+      </div>
+    </div>
+  </div>
 </div>
 ```
 
-## Objetivos de aprendizaje
+---
 
-- Entender qué es un modelo de lenguaje grande (LLM).
-- Identificar limitaciones como alucinaciones, sesgos y cortes de conocimiento.
-- Reconocer diferencias entre generación de texto e imagen.
+### Las tres limitaciones que más importan
 
-## Contenido previsto
+Entender cómo funciona un LLM hace que sus limitaciones sean obvias.
 
-### Apertura
+```{=html}
+<div class="callout callout-style-default callout-warning callout-titled">
+  <div class="callout-header d-flex align-content-center">
+    <div class="callout-icon-container"><i class="callout-icon"></i></div>
+    <div class="callout-title-container flex-fill">Alucinaciones</div>
+  </div>
+  <div class="callout-body-container callout-body">
+    <p>El modelo no distingue entre un dato verdadero y uno falso, solo distingue entre un token probable y uno improbable. Si el contexto hace probable una afirmación falsa, la generará con confianza.</p>
+    <p><strong>Ejemplo clásico:</strong> pedirle a un LLM que cite fuentes académicas. Puede inventar títulos, autores y DOIs perfectamente plausibles que simplemente no existen.</p>
+    <p><strong>Solución:</strong> verifica siempre los datos que el modelo presente como hechos, especialmente números, fechas, citas y afirmaciones específicas.</p>
+    <details class="foldout foldout-panel foldout-warning">
+      <summary class="foldout-summary">
+        <span>📋 Cuando la IA alucina: tres casos verídicos</span>
+        <span class="foldout-summary-hint">Ejemplos</span>
+      </summary>
+      <div class="foldout-body hallucination-foldout-body">
+        <div class="hallucination-cases">
+        <div class="hallucination-case hallucination-case-red">
+          <div class="hallucination-case-row">
+            <div class="hallucination-case-icon">⚖️</div>
+            <div>
+              <p class="hallucination-case-meta">Caso 1 · EE.UU., 2023</p>
+              <p class="hallucination-case-title">El abogado y las citas inventadas</p>
+              <p class="hallucination-case-copy">Un abogado de Nueva York usó ChatGPT para buscar precedentes legales. El modelo inventó 6 casos judiciales con nombres de jueces, fechas y citas que sonaban completamente reales. El abogado los presentó ante un juez federal sin verificar ninguno.</p>
+              <div class="hallucination-case-result hallucination-case-result-danger"><strong>Consecuencia:</strong> Multado con $5,000 USD. Tuvo que enviar cartas de disculpa a cada juez nombrado falsamente. El caso <em>Mata v. Avianca</em> se convirtió en referencia mundial sobre el uso irresponsable de IA en contextos legales.</div>
+            </div>
+          </div>
+        </div>
+        <div class="hallucination-case hallucination-case-orange">
+          <div class="hallucination-case-row">
+            <div class="hallucination-case-icon">📉</div>
+            <div>
+              <p class="hallucination-case-meta">Caso 2 · EE.UU., 2023</p>
+              <p class="hallucination-case-title">Google Bard y los $100,000 millones perdidos</p>
+              <p class="hallucination-case-copy">En febrero de 2023, Google presentó Bard con un video donde el chatbot afirmaba que el Telescopio James Webb había tomado <em>las primeras fotografías</em> de un exoplaneta — dato incorrecto (esa hazaña la realizó el VLT del Observatorio Europeo Austral en 2004). Astrónomos y periodistas detectaron el error de inmediato.</p>
+              <div class="hallucination-case-result hallucination-case-result-danger"><strong>Consecuencia:</strong> Las acciones de Alphabet cayeron <strong>7.7%</strong> en un solo día, borrando aproximadamente <strong>$100,000 millones de dólares</strong> en capitalización de mercado.</div>
+            </div>
+          </div>
+        </div>
+        <div class="hallucination-case hallucination-case-amber">
+          <div class="hallucination-case-row">
+            <div class="hallucination-case-icon">📚</div>
+            <div>
+              <p class="hallucination-case-meta">Caso 3 · Global, 2023–2024</p>
+              <p class="hallucination-case-title">Las citas académicas fantasma</p>
+              <p class="hallucination-case-copy">Un estudio en <a href="https://www.nature.com/articles/s41598-023-41032-5" target="_blank" rel="noopener" class="hallucination-case-link"><em>Scientific Reports</em> (Nature, 2023)</a> analizó 636 citas generadas por ChatGPT en 84 textos sobre 42 temas distintos. Con GPT-3.5, el <strong>55% de las citas eran completamente inventadas</strong>; con GPT-4 el porcentaje bajó al 18%, pero incluso las citas reales también contenían errores frecuentes.</p>
+              <div class="hallucination-case-result hallucination-case-result-caution"><strong>Consecuencia:</strong> Varios trabajos académicos tuvieron que corregirse o retractarse. Si usas ChatGPT para una tarea, nunca copies sus citas sin verificarlas una por una.</div>
+            </div>
+          </div>
+        </div>
+        </div>
+      </div>
+    </details>
+  </div>
+</div>
+```
 
-- Se añadirá una comparación corta entre buscar información y conversar con un modelo.
+:::{.callout-warning}
+# Límite de conocimiento (*knowledge cutoff*)
+El modelo fue entrenado con texto hasta cierta fecha. Todo lo que ocurrió después no existe para él, a menos que se lo proporciones tú en el prompt, o que el modelo tenga acceso a búsqueda web.
 
-### Desarrollo principal
+**Implicación:** para preguntas sobre eventos recientes, usa herramientas con búsqueda activa (como Perplexity) o verifica la información con fuentes actualizadas.
+:::
 
-- Aquí quedará la explicación base sobre texto generativo, imagen generativa y sus límites.
+:::{.callout-warning}
+# Sesgos del entrenamiento
+Los LLMs aprenden de texto humano, y el texto humano contiene sesgos: de género, raza, geografía, clase social. Un modelo entrenado principalmente con texto en inglés tendrá perspectivas distintas a las de una comunidad mexicana.
 
-### Actividad o demo
+**Implicación:** el modelo no es neutral. Sus respuestas reflejan los sesgos de los datos con los que fue entrenado.
+:::
 
-- Este espacio servirá para insertar ejemplos de prompts y comparación de resultados.
+---
 
-### Cierre
+### Generación de imágenes: un mecanismo diferente
 
-- Se integrará una síntesis breve sobre uso crítico y verificación.
+Hasta aquí hemos hablado de texto. Las imágenes generativas funcionan de forma distinta. El mecanismo principal detrás de esta tarea se llama **difusión** (*diffusion*):
 
-## Recursos y materiales por incorporar
+1. El modelo parte de ruido visual puro, algo así como la estática en una televisión vieja.
 
-- Comparativa entre ChatGPT, Gemini y Perplexity.
-- Galería breve de prompts buenos vs. vagos.
-- Espacio para un ejemplo visual de imagen generada.
+   ![](img/statictv.gif){fig-align="center" width="30%"}
+
+2. En pasos sucesivos, va "limpiando" ese ruido guiado por una descripción de texto.
+
+   ![](img/static.png){fig-align="center" width="25%"}
+
+3. Después de cientos de pasos, emerge una imagen coherente.
+
+   ![](img/static2.png){fig-align="center" width="25%"}
+
+
+El proceso no "dibuja" — elimina ruido de manera controlada hasta que lo que queda es coherente con la descripción.
+
+Si quieres profundizar en cómo funciona este proceso:
+
+```{=html}
+<a href="https://jalammar.github.io/illustrated-stable-diffusion/" target="_blank" rel="noopener" class="resource-card">
+  <div class="resource-card-icon">🎨</div>
+  <div class="resource-card-body">
+    <p class="resource-card-kicker">Recurso externo · Lectura ilustrada</p>
+    <p class="resource-card-title">The Illustrated Stable Diffusion — Jay Alammar</p>
+    <p class="resource-card-copy">Explicación visual paso a paso de cómo funciona la difusión: desde el ruido hasta la imagen final. Muy bien ilustrado. <strong>Nota:</strong> está en inglés y es más detallado y técnico que lo que vimos aquí — ideal si ya entendiste la idea general y quieres adentrarte en las partes técnicas del proceso.</p>
+  </div>
+  <span class="resource-card-arrow">→</span>
+</a>
+```
+
+---
+
+## Actividad: la calidad del prompt importa
+
+ChatGPT, Gemini y Perplexity son excelentes herramientas. Pero, como cualquier herramienta, la calidad de sus resultados depende del uso que le damos. Lo que separa una respuesta genérica e inútil de una que resuelve exactamente tu problema suele ser la precisión del prompt.
+
+```{=html}
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-supervised" id="pcomp-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Ingeniería de prompts</p>
+        <h4 class="demo-title">Prompt ambiguo vs. prompt específico: misma herramienta, resultado distinto</h4>
+        <p class="demo-copy">Elige un escenario y compara qué pasa cuando la instrucción es ambigua (izquierda) versus cuando es específica y contextualizada (derecha).</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+          <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div class="pcomp-preview-grid">
+              <div class="pcomp-preview-card pcomp-preview-card-vague">
+                <div class="pcomp-preview-kicker">Ambiguo</div>
+                <div class="pcomp-preview-example">"dame una receta"</div>
+              </div>
+              <div class="pcomp-preview-card pcomp-preview-card-specific">
+                <div class="pcomp-preview-kicker">Específico</div>
+                <div class="pcomp-preview-example">"receta vegetariana, 4 personas, 30 min, México"</div>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Vista previa del comparador</p>
+          <p class="demo-preview-copy">Tres escenarios: receta, correo y resumen. En cada uno verás cómo cambia la respuesta según la precisión del prompt.</p>
+        </div>
+      </div>
+
+      <div class="demo-stage-live">
+        <div id="pcomp-tabs" class="pcomp-tabs"></div>
+        <div class="pcomp-grid">
+          <div class="pcomp-panel pcomp-panel-vague">
+            <div class="pcomp-panel-header">Prompt ambiguo</div>
+            <div class="pcomp-panel-body">
+              <p class="pcomp-prompt-label">Prompt enviado</p>
+              <div class="pcomp-prompt" id="pcomp-left-prompt"></div>
+              <p class="pcomp-response-label">Respuesta recibida</p>
+              <div class="pcomp-response" id="pcomp-left-response"></div>
+            </div>
+          </div>
+          <div class="pcomp-panel pcomp-panel-specific">
+            <div class="pcomp-panel-header">Prompt específico</div>
+            <div class="pcomp-panel-body">
+              <p class="pcomp-prompt-label">Prompt enviado</p>
+              <div class="pcomp-prompt" id="pcomp-right-prompt"></div>
+              <p class="pcomp-response-label">Respuesta recibida</p>
+              <div class="pcomp-response" id="pcomp-right-response"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5>Qué estás viendo</h5>
+        <p id="pcomp-seeing"></p>
+      </div>
+      <div class="demo-insight">
+        <h5>Qué significa</h5>
+        <p id="pcomp-meaning"></p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="pcomp-status" class="demo-status"></p>
+      <div class="demo-actions">
+        <button id="pcomp-start" class="demo-btn demo-btn-primary">Ver comparativa</button>
+        <button id="pcomp-reset" class="btn-restart" disabled>Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+**Tres variables que mejoran un prompt:**
+
+1. **Contexto:** quién eres, para qué lo necesitas, a qué audiencia va dirigido.
+2. **Restricciones:** límite de palabras, tono, idioma, formato de la respuesta.
+3. **Ejemplo de lo que quieres:** si tienes uno, inclúyelo, el modelo lo usa como referencia.
+
+---
+
+## ChatGPT, Gemini y Perplexity: ¿cuándo usar cada uno?
+
+Las tres herramientas usan LLMs, pero representan enfoques distintos. Conocer las diferencias te permite elegir la que mejor se adapta a cada tarea.
+
+```{=html}
+<div class="tools-grid">
+
+  <!-- ChatGPT -->
+  <div class="tool-card tool-chatgpt">
+    <div class="tool-card-header">
+      <div class="tool-logo">💬</div>
+      <div>
+        <p class="tool-name">ChatGPT</p>
+        <p class="tool-maker">OpenAI</p>
+      </div>
+    </div>
+    <div class="tool-card-body">
+      <div class="tool-row">
+        <span class="tool-row-label">Mejor para</span>
+        <span class="tool-row-value">Redactar, resumir, programar, analizar documentos, generar ideas.</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Fortaleza</span>
+        <span class="tool-row-value">Contexto largo, razonamiento paso a paso, amplio ecosistema de plugins.</span>
+        <span class="tool-tag tag-strength">Razonamiento</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Alucinaciones</span>
+        <span class="tool-row-value">Moderadas. Pueden reducirse activando búsqueda web (GPT-4o).</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Acceso gratuito</span>
+        <span class="tool-row-value">Sí, con limitaciones en el modelo más potente.</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gemini -->
+  <div class="tool-card tool-gemini">
+    <div class="tool-card-header">
+      <div class="tool-logo">✨</div>
+      <div>
+        <p class="tool-name">Gemini</p>
+        <p class="tool-maker">Google</p>
+      </div>
+    </div>
+    <div class="tool-card-body">
+      <div class="tool-row">
+        <span class="tool-row-label">Mejor para</span>
+        <span class="tool-row-value">Preguntas con imágenes, integración con Google Workspace, búsquedas recientes.</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Fortaleza</span>
+        <span class="tool-row-value">Multimodal nativo: entiende texto, imágenes, audio y video en la misma conversación.</span>
+        <span class="tool-tag tag-multi">Multimodal</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Alucinaciones</span>
+        <span class="tool-row-value">Moderadas. Mejor acceso a información reciente gracias a su integración con Google Search.</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Acceso gratuito</span>
+        <span class="tool-row-value">Sí, con modelos básicos. Los modelos más potentes requieren Gemini Advanced (pago).</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Perplexity -->
+  <div class="tool-card tool-perplexity">
+    <div class="tool-card-header">
+      <div class="tool-logo">🔎</div>
+      <div>
+        <p class="tool-name">Perplexity</p>
+        <p class="tool-maker">Perplexity AI</p>
+      </div>
+    </div>
+    <div class="tool-card-body">
+      <div class="tool-row">
+        <span class="tool-row-label">Mejor para</span>
+        <span class="tool-row-value">Verificar datos recientes, investigar temas con fuentes citadas.</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Fortaleza</span>
+        <span class="tool-row-value">Busca en internet en tiempo real y cita las fuentes de cada afirmación.</span>
+        <span class="tool-tag tag-search">Búsqueda + fuentes</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Alucinaciones</span>
+        <span class="tool-row-value">Menores, porque ancla sus respuestas en documentos reales y verificables.</span>
+      </div>
+      <div class="tool-row">
+        <span class="tool-row-label">Acceso gratuito</span>
+        <span class="tool-row-value">Sí, con límite de consultas diarias en el plan gratuito.</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="tools-note">
+  <strong>El ecosistema es más amplio:</strong> además de estas tres herramientas, existen otros modelos relevantes — Claude (Anthropic), Llama (Meta), Mistral — cada uno con distintas fortalezas. La comparativa de arriba se centra en las herramientas de uso más común para estudiantes en 2026.
+</div>
+```
+
+---
+
+### Criterios para usar IA generativa con juicio crítico
+
+Con todo lo que vimos hoy, puedes hacerte una lista mental antes de confiar en una respuesta generada:
+
+
+**Antes de usar o compartir una respuesta de IA...**
+
+1. **¿El dato es verificable?** Si el modelo afirma algo específico (fecha, número, nombre, cita), búscalo en una fuente primaria.
+2. **¿El tema requiere información reciente?** En ese caso, usa una herramienta con búsqueda activa o verifica por tu cuenta.
+3. **¿Qué tan importante es que sea correcto?** Para una lluvia de ideas, la precisión importa menos. Para un trabajo académico o una decisión de salud, importa mucho.
+4. **¿El prompt fue suficientemente específico?** Si la respuesta es genérica, antes de asumir que el modelo es malo, revisa si tu instrucción fue clara.
+5. **¿Hay perspectivas que el modelo podría estar ignorando?** Recuerda el sesgo del entrenamiento.
+
+
+---
+
+### Actividad de reflexión
+
+:::{.callout-tip}
+# Para pensar
+
+1. **Piensa en la última vez que usaste un buscador para algo importante.** ¿Habrías obtenido el mismo resultado con un LLM? ¿Cuáles serían las ventajas y los riesgos de usar uno en ese caso?
+
+2. **¿En qué situaciones preferirías siempre usar un buscador** en lugar de un modelo generativo? ¿Por qué?
+
+3. **Si el modelo predice token por token sin "entender",** ¿qué implica eso para tareas como diagnósticos médicos, asesoría legal o información de emergencias?
+
+4. **¿Usaste alguna IA generativa esta semana?** Ahora que entiendes cómo funciona, ¿cambiarías algo de cómo la usaste?
+:::
+
+---
+
+### La idea central de esta sesión
+
+:::{.callout-important}
+# Importante
+Los modelos generativos no buscan información, la generan. No saben si lo que producen es verdad: solo saben si es probable. Para beneficiarnos de ellos, tenemos que tener clara esa diferencia, ser críticos al usarlos, y no dejar que la IA piense por nosotros.
+:::
+
+---
+
+### Recursos extra (en inglés)
+
+- [Tiktokenizer](https://tiktokenizer.vercel.app) — pega cualquier texto y ve cómo lo divide GPT-4 en tokens; puedes comparar el conteo entre español e inglés en tiempo real
+- [Transformer Explainer — Georgia Tech](https://poloclub.github.io/transformer-explainer/) — visualización interactiva de cómo funciona GPT-2 en tu navegador, sin instalación; ideal para ver la atención y la predicción de tokens en tiempo real
+- [LLM Visualization — Brendan Bycroft](https://bbycroft.net/llm) — navega por un transformer en 3D: cada capa, cada operación, la inferencia completa
+
+---
 
 ```{=html}
 <nav class="sesion-nav">
@@ -101,6 +597,23 @@ format:
     <span class="nav-title">S3: Algoritmos de IA</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot active" title="Sesión 4"></span>
+      <span class="sesion-nav-dot" title="Sesión 5"></span>
+      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot" title="Sesión 7"></span>
+      <span class="sesion-nav-dot" title="Sesión 8"></span>
+      <span class="sesion-nav-dot" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 4 de 15</span>
   </div>
   <a href="sesion-05.html" class="sesion-nav-btn next">
