@@ -1,5 +1,5 @@
 ---
-title: "Sesión 5: Ética y Problemas Reales de la IA"
+title: "Sesión 5: Ética y Problemas con la IA"
 format:
   html:
     toc: true
