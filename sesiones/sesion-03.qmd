@@ -487,7 +487,7 @@ Ahora te toca a ti. A continuación hay seis problemas que nos podemos encontrar
 
 ### Tabla comparativa
 
-Aquí está el mapa completo en una sola vista:
+Aquí tienes un resumen de la sesión en formato tabla:
 
 ```{=html}
 <table class="tabla-comparativa">

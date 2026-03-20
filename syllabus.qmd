@@ -1446,7 +1446,7 @@ print(f"Modelo: {nombre}")</pre>
     </summary>
     <div class="sy-sess-body">
       <div class="sy-live-note">
-        <strong>Invitads:</strong> Especialista de PIT Policy Lab (tecnología de interés público). La sesión será grabada.
+        <strong>Invitada:</strong> Especialista de PIT Policy Lab (tecnología de interés público). La sesión será grabada.
       </div>
       <ul class="sy-objectives-list">
         <li>Entender la IA como asunto ciudadano, no solo tecnológico</li>
