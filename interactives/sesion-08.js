@@ -48,9 +48,9 @@ function deactivateShell(prefix) {
 
 function initCreativeIteration() {
   const OBJETIVO = {
-    goal: "Cartel para un festival de cine joven en San Luis Potosí.",
+    goal: "Cartel para un festival de cine en San Luis Potosí.",
     audience: "Preparatoria y universidad; difusión en redes y pantallas del campus.",
-    constraint: "Debe sentirse local, legible desde celular y menos genérico que un cartel de ciencia ficción cualquiera.",
+    constraint: "Debe sentirse local, legible en cualquier celular y menos genérico que un cartel de ciencia ficción cualquiera.",
   };
 
   const ROUNDS = [
@@ -67,15 +67,15 @@ function initCreativeIteration() {
         img: "../assets/sesion-08/cartel1.png",
       },
       critique:
-        "La primera generación se ve vistosa, pero el problema no es técnico: falta identidad local y jerarquía visual.",
+        "La primera generación se ve apantallante, pero el problema no es técnico: falta identidad local y jerarquía visual.",
       next:
-        "Decisión humana: especificar referencias de lugar, formato concreto y uso real del cartel.",
+        "Decisión humana: especificar referencias de lugar, formato concreto y uso del cartel.",
     },
     {
       name: "Ronda 2",
       kicker: "Con contexto y lugar",
       prompt:
-        "Cartel vertical para festival de cine joven en San Luis Potosí, texturas de cantera rosa, área de título contundente, jerarquía clara, paleta de atardecer cálido, legible en espacio público",
+        "Cartel vertical para festival de cine en San Luis Potosí, texturas de cantera rosa, área de título contundente, jerarquía clara, paleta de atardecer cálido, legible en espacio público",
       result: {
         title: "Más local, mejor jerarquía",
         copy: "La referencia a la cantera rosa y el formato vertical le dan carácter propio. El resultado mejora no por escribir más palabras, sino por una dirección más específica.",
@@ -86,7 +86,7 @@ function initCreativeIteration() {
       critique:
         "Ahora hay dirección creativa. Ya aparecen contexto, materialidad y un objetivo claro de lectura.",
       next:
-        "Decisión humana: priorizar claridad sobre espectacularidad, pensando en el uso real de la pieza.",
+        "Decisión humana: priorizar claridad sobre espectacularidad, pensando en el uso práctico de la pieza.",
     },
     {
       name: "Ronda 3",
@@ -94,16 +94,16 @@ function initCreativeIteration() {
       prompt:
         "Cartel de festival de cine para estudiantes de San Luis Potosí, formato vertical, cantera rosa y luz de farol, título centrado en negrita, espacio negativo generoso, legible desde celular y pantallas del campus",
       result: {
-        title: "La más cercana a una propuesta real",
-        copy: "Combina identidad, claridad y atmósfera. Ya se siente como base de trabajo útil, no solo como imagen llamativa.",
+        title: "La más cercana a una propuesta legítima",
+        copy: "Combina identidad, claridad y atmósfera. Ya se siente como la base de un trabajo práctico e intencionado, no solo como imagen llamativa.",
         format: "poster",
         tone: "cobalt",
         img: "../assets/sesion-08/cartel3.png",
       },
       critique:
-        "La tercera versión ya traduce mejor el objetivo del encargo. No depende de estética exótica: depende de claridad, lugar y uso.",
+        "La tercera versión ya traduce mejor el objetivo establecido al inicio. No depende de estética exótica: depende de claridad, lugar y uso.",
       next:
-        "Aún falta trabajo humano: tipografía real, fechas del evento, exportación de formatos y verificación en contexto.",
+        "Aún falta trabajo humano: tipografía, fechas del evento, exportación de formatos y verificación en contexto.",
     },
   ];
 
@@ -198,12 +198,12 @@ function initCreativeIteration() {
     setInsights(
       "it",
       `${round.name}: ${round.kicker}. Observa cómo cambia la calidad del resultado cuando el objetivo se vuelve más específico.`,
-      "La mejora no viene solo de escribir más palabras. Viene de tomar decisiones más claras sobre lugar, uso, público y restricciones reales."
+      "La mejora no viene solo de escribir más palabras. Viene de tomar decisiones más claras sobre lugar, uso, público y restricciones prácticas."
     );
 
     setText(
       "it-status",
-      `${round.name} · ${round.kicker}: revisa el resultado y la decisión que empuja la siguiente iteración.`
+      `${round.name} · ${round.kicker}: revisa el resultado y la decisión que determina la siguiente iteración.`
     );
   }
 
@@ -254,7 +254,7 @@ function initCreativeIteration() {
     setInsights(
       "it",
       "Un objetivo creativo y tres rondas de iteración.",
-      "La creatividad con IA se parece más a dirigir y editar que a pedir algo una sola vez."
+      "La creatividad con IA es un proceso de dirección y edición."
     );
     setText("it-status", "Recorre las tres rondas para ver cómo mejora el resultado.");
   });
@@ -300,16 +300,16 @@ function initCreativeTools() {
             "Extender fondo de fotografía de producto con luz suave y espacio limpio para texto",
           access: "Web y apps Adobe",
           free: "freemium",
-          note: "Más útil para trabajo de diseño aplicado que para arte experimental puro.",
+          note: "Más útil para trabajo de diseño aplicado que para arte experimental.",
         },
         {
           logo: "🔮",
           name: "ImageFX",
           maker: "Google (Imagen 3)",
-          for_: "Generar imágenes de alta calidad desde texto, con control de estilo y composición",
+          for_: "Generar imágenes de alta calidad a partir de texto, con control de estilo y composición",
           sample:
             "Portada cuadrada para EP de cumbia electrónica, lluvia nocturna, textura analógica, tono íntimo",
-          access: "Web (aistudionfx.withgoogle.com)",
+          access: "Web",
           free: "free",
           note: "Más reciente y detallado que DALL·E. Destaca en composición y coherencia visual. Acceso gratuito sin suscripción.",
         },
@@ -465,7 +465,7 @@ function initCreativeTools() {
     live.innerHTML = `
       <div class="ct-tabs" id="ct-tabs"></div>
       <div class="ct-cards" id="ct-cards"></div>
-      <p class="ct-footnote">Las condiciones de acceso cambian con frecuencia. Verifica disponibilidad y costo antes de usar.</p>
+      <p class="ct-footnote">Las condiciones de acceso cambian con frecuencia. Verifica disponibilidad y costo antes de usar una app.</p>
     `;
 
     renderTabs();
@@ -482,7 +482,7 @@ function initCreativeTools() {
     setInsights(
       "ct",
       "Herramientas agrupadas por tipo de resultado: imagen, música y diseño.",
-      "Después de entender el proceso creativo, tiene más sentido comparar herramientas. Antes de eso, solo parecen nombres de marcas."
+      "Después de entender el proceso creativo, tiene más sentido comparar herramientas. Antes de eso, solo son nombres de marcas."
     );
     setText("ct-status", "Selecciona una categoría para comparar herramientas.");
   });

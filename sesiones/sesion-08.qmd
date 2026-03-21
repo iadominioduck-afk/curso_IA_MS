@@ -93,7 +93,7 @@ En esta sesión no solo nos preguntaremos *qué herramientas existen*, sino *en 
   <div class="creative-process-card">
     <span class="creative-process-step">5</span>
     <h5>Ser transparente sobre su uso</h5>
-    <p>Si la pieza entra en un concurso, se publica o se vende, se tiene que ser transparentes sobre qué parte fue generada con IA, qué parte fue editada (con IA) y qué decisiones tomó la persona autora.</p>
+    <p>Si la pieza entra en un concurso, se publica o se vende, se tiene que ser transparente sobre qué parte fue generada con IA, qué parte fue editada (con o sin IA) y qué decisiones tomó la persona autora.</p>
   </div>
 </div>
 ```
@@ -105,7 +105,7 @@ La creatividad no desaparece al usar la IA. La IA puede ayudarte a producir borr
 
 ### Arte generativo: del objetivo a la iteración
 
-La mejor manera de entender esto es dejar de pensar en prompts como fórmulas matemáticas y empezar a verlos como **borradores de dirección creativa**. Un buen resultado rara vez sale del primer intento. Lo normal es empezar con una idea general, ver qué falla y usar esa información para afinar.
+La mejor manera de entender esto es dejar de pensar en prompts como fórmulas matemáticas y empezar a verlos como **borradores de dirección creativa**. Un buen resultado rara vez sale del primer intento. Lo normal es empezar con una idea general, ver qué falla y usar esa información para mejorar el producto.
 
 #### **Demo: laboratorio de iteración visual**
 
@@ -166,13 +166,13 @@ En este demo no vas a “armar” un prompt desde cero. Vas a recorrer un proces
 </div>
 ```
 
-Una persona creativa no se distingue solo por imaginar una idea, sino por detectar cuándo algo todavía se siente genérico, confuso o fuera de propósito. La IA acelera la producción de variantes; el criterio humano decide cuál merece seguir viva.
+Una persona creativa no se distingue solo por imaginar una idea, sino por detectar cuándo algo todavía se siente genérico, confuso o falto de propósito o contexto. La IA acelera la producción de variantes; el criterio humano decide cuál merece ser presentada al mundo.
 
 ---
 
 ### Música generativa: dirigir no es lo mismo que componer
 
-Con música generativa ocurre algo parecido. Pedir *“haz una canción triste”* produce algo. Dirigir creativamente una pieza implica mucho más: decidir género, energía, textura, instrumentación, tono de la voz, estructura y contexto. La IA puede generar material; la dirección artística sigue siendo una tarea humana.
+Con música generativa ocurre algo parecido. Pedir *“haz una canción triste”* produce cualquier cosa. Dirigir creativamente una pieza implica mucho más: decidir género, energía, textura, instrumentación, tono de la voz, estructura y contexto. La IA puede generar material; la dirección artística sigue siendo una tarea humana.
 
 ```{=html}
 <div class="music8-compare">
@@ -229,7 +229,7 @@ Con música generativa ocurre algo parecido. Pedir *“haz una canción triste�
 
 ### Diseño con IA: acelerar no es resolver el objetivo
 
-En diseño, la IA puede ayudarte a producir borradores, extender imágenes, proponer paletas o generar variantes de layout. Pero una pieza visual no funciona porque “se ve impresionante”: funciona si responde al objetivo. Por eso, en diseño, la pregunta importante no es *“¿se ve cool?”* sino *“¿cumple su propósito?”*
+En diseño, la IA puede ayudarte a producir borradores, extender imágenes, proponer paletas o generar variantes de layout. Pero una pieza visual no funciona porque “se ve impresionante”, funciona si responde al objetivo. Imagínate un diseño de logo 3D que en pantalla causa gran impacto, pero al momento de repartirlo en folletos pierde impacto y, pero aún, legibilidad. Por eso, en diseño, la pregunta crucial no es *“¿se ve cool?”* sino *“¿cumple su propósito?”*
 
 ```{=html}
 <div class="design8-grid">
@@ -254,66 +254,81 @@ En diseño, la IA puede ayudarte a producir borradores, extender imágenes, prop
 
 Para estudiantes de diseño, esto deja una lección clara: la IA automatiza parte de la ejecución, pero no reemplaza la comprensión del problema, la lectura del contexto, la conversación con clientes o usuarios y la capacidad de argumentar por qué una solución es mejor que otra.
 
-#### **Canva IA en acción**
+#### **IA para Diseño: perspectiva internacional**
 
-Canva es probablemente la herramienta de diseño con IA más accesible para proyectos de comunicación y mercadotecnia. Sus funciones de IA están integradas directamente en el flujo de trabajo.
+Investigadores y profesionales del diseño llevan tiempo documentando cómo la IA está cambiando el proceso creativo. Estas dos referencias sintetizan bien el debate actual.
 
 ```{=html}
-<div class="design8-features">
-  <div class="design8-feature">
-    <span class="design8-feature-icon">✨</span>
-    <div>
-      <p class="design8-feature-name">Magic Design</p>
-      <p class="design8-feature-desc">Genera un diseño completo a partir de una descripción o una imagen de referencia.</p>
+<div class="ref8-block">
+  <a href="https://www.smashingmagazine.com/2025/08/prompting-design-act-brief-guide-iterate-ai/" target="_blank" rel="noopener" class="ref8-card">
+    <div class="ref8-img-wrap">
+      <img src="../assets/sesion-08/ref-smashing.png" alt="Captura del artículo de Smashing Magazine: Prompting Is A Design Act" class="ref8-img">
     </div>
-  </div>
-  <div class="design8-feature">
-    <span class="design8-feature-icon">🖼️</span>
-    <div>
-      <p class="design8-feature-name">Magic Media</p>
-      <p class="design8-feature-desc">Genera imágenes o videos desde texto, directamente dentro de tu diseño.</p>
+    <div class="ref8-body">
+      <span class="ref8-source">Smashing Magazine · Lyndon Cerejo · Ago 2025</span>
+      <h5 class="ref8-title">Prompting Is A Design Act: How To Brief, Guide And Iterate With AI</h5>
+      <p class="ref8-summary">Escribir un buen prompt no es solo escribir instrucciones: es un acto creativo equivalente a redactar un informe. Requiere definir el rol de la IA, el contexto del encargo, las restricciones del proyecto y el resultado esperado. Lo que hace que los diseñadores sean buenos —criterio, empatía, capacidad de iterar— es exactamente lo que produce buenos prompts. La habilidad técnica de usar la herramienta importa menos que saber qué se quiere de ella.</p>
+      <span class="ref8-link">Leer artículo →</span>
     </div>
-  </div>
-  <div class="design8-feature">
-    <span class="design8-feature-icon">🎨</span>
-    <div>
-      <p class="design8-feature-name">Brand Kit con IA</p>
-      <p class="design8-feature-desc">Extrae paleta de colores y tipografías de un logo o sitio web para mantener coherencia de marca.</p>
+  </a>
+  <div class="ref8-flow">
+    <span class="ref8-flow-intro">Estructura de un buen prompt de diseño</span>
+    <div class="ref8-flow-steps">
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Objetivo</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Contexto</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Restricciones</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-ai"><span class="ref8-flow-dot"></span>Resultado</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Evaluar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-both"><span class="ref8-flow-dot"></span>Iterar</div>
     </div>
-  </div>
-  <div class="design8-feature">
-    <span class="design8-feature-icon">✂️</span>
-    <div>
-      <p class="design8-feature-name">Eliminar fondo</p>
-      <p class="design8-feature-desc">Recorta objetos o personas de fotos en un clic, sin Photoshop.</p>
-    </div>
-  </div>
-  <div class="design8-feature">
-    <span class="design8-feature-icon">↔️</span>
-    <div>
-      <p class="design8-feature-name">Redimensionar con IA</p>
-      <p class="design8-feature-desc">Adapta una pieza a múltiples formatos (historia, post, instagram reel) preservando la composición.</p>
-    </div>
-  </div>
-  <div class="design8-feature">
-    <span class="design8-feature-icon">✍️</span>
-    <div>
-      <p class="design8-feature-name">Magic Write</p>
-      <p class="design8-feature-desc">Genera o mejora textos de la pieza: títulos, descripciones, llamadas a la acción.</p>
+    <div class="ref8-flow-legend">
+      <span class="ref8-legend-item ref8-step-human"><span class="ref8-flow-dot"></span>Decisión humana</span>
+      <span class="ref8-legend-item ref8-step-ai"><span class="ref8-flow-dot"></span>IA genera</span>
+      <span class="ref8-legend-item ref8-step-both"><span class="ref8-flow-dot"></span>Ambos</span>
     </div>
   </div>
 </div>
 ```
 
 ```{=html}
-<div class="design8-video-wrap">
-  <iframe
-    src="https://www.youtube.com/embed/v-E_u0AXlbY"
-    title="Canva IA en acción"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    referrerpolicy="strict-origin-when-cross-origin"
-    allowfullscreen>
-  </iframe>
+<div class="ref8-block">
+  <a href="https://www.belmont.edu/stories/articles/2025/ai-in-design.html" target="_blank" rel="noopener" class="ref8-card">
+    <div class="ref8-img-wrap">
+      <img src="../assets/sesion-08/ref-belmont.png" alt="Captura del artículo de Belmont University: AI in Design" class="ref8-img">
+    </div>
+    <div class="ref8-body">
+      <span class="ref8-source">Belmont University · Watkins College of Art · Sep 2025</span>
+      <h5 class="ref8-title">AI in Design: Practical Workflows, Ethics and Portfolio Tips from Agency Leaders</h5>
+      <p class="ref8-summary">Un grupo de directores de agencias creativas en EE.UU. han documentado cómo la IA entra en seis momentos clave del proceso de diseño: investigación, planeación, conceptualización, producción, distribución y validación. En cada etapa, la IA puede acelerar la ejecución, pero las decisiones de dirección —qué problema resolver, qué ruta tomar, qué vale la pena presentar— siguen siendo humanas. El resultado es una figura laboral nueva: el diseñador como director creativo que utiliza herramientas tecnológicas.</p>
+      <span class="ref8-link">Leer artículo →</span>
+    </div>
+  </a>
+  <div class="ref8-flow">
+    <span class="ref8-flow-intro">El diseñador como director creativo: fases del proceso</span>
+    <div class="ref8-flow-steps">
+      <div class="ref8-flow-step ref8-step-both"><span class="ref8-flow-dot"></span>Investigar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Planear</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Conceptualizar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-ai"><span class="ref8-flow-dot"></span>Ejecutar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-ai"><span class="ref8-flow-dot"></span>Multiplicar</div>
+      <span class="ref8-flow-arrow">→</span>
+      <div class="ref8-flow-step ref8-step-human"><span class="ref8-flow-dot"></span>Validar</div>
+    </div>
+    <div class="ref8-flow-legend">
+      <span class="ref8-legend-item ref8-step-human"><span class="ref8-flow-dot"></span>Decisión humana</span>
+      <span class="ref8-legend-item ref8-step-ai"><span class="ref8-flow-dot"></span>IA acelera</span>
+      <span class="ref8-legend-item ref8-step-both"><span class="ref8-flow-dot"></span>Ambos</span>
+    </div>
+  </div>
 </div>
 ```
 
@@ -388,7 +403,7 @@ Volvamos al punto de partida. En 2022, Jason Allen no ocultó que usó Midjourne
   <p class="colorado-headline">Théâtre D'Opéra Spatial: el primer gran debate sobre autoría y arte generativo</p>
   <p class="colorado-body">Jason Allen pasó semanas generando imágenes con Midjourney, eligiendo entre cientos de variantes, ajustando prompts y refinando el resultado. La imagen final la imprimió en lienzo de alta calidad y la presentó en la categoría "Arte Digital Emergente" de la Colorado State Fair. El jurado, sin saber el origen, le otorgó el primer lugar.</p>
   <p class="colorado-body">Cuando Allen publicó en Twitter que había ganado con IA, la reacción fue intensa. Artistas digitales profesionales denunciaron que el concurso debería haber tenido reglas explícitas. Otros argumentaron que Allen hizo un trabajo creativo genuino al seleccionar, iterar y curar el resultado. La controversia llevó a muchos concursos a actualizar sus bases para incluir o prohibir explícitamente el uso de IA.</p>
-  <p class="colorado-body">El caso no tiene una respuesta correcta única. Tiene, en cambio, varias preguntas muy buenas que todavía estamos aprendiendo a responder.</p>
+  <p class="colorado-body">El caso no tiene una respuesta correcta concreta. Tiene, en cambio, varias preguntas que todavía estamos aprendiendo a responder.</p>
 </div>
 ```
 
@@ -407,7 +422,7 @@ Volvamos al punto de partida. En 2022, Jason Allen no ocultó que usó Midjourne
 
 #### **Las perspectivas del debate**
 
-El caso Colorado concentra un debate que se repite en concursos de escritura, fotografía, composición musical y diseño. Cada posición tiene argumentos legítimos:
+El caso *Colorado* presenta un debate que se repite en concursos de escritura, fotografía, composición musical y diseño. Cada posición tiene argumentos legítimos:
 
 ```{=html}
 <div class="stakeholder8-grid">
@@ -417,7 +432,7 @@ El caso Colorado concentra un debate que se repite en concursos de escritura, fo
       <p class="stakeholder8-role">Artista digital profesional</p>
     </div>
     <span class="stakeholder8-position">"Competencia desleal"</span>
-    <p class="stakeholder8-arg">Pasé años aprendiendo a usar herramientas de diseño, desarrollar un estilo propio y construir técnica. Que alguien gane con un prompt de texto en el mismo concurso vacía de sentido la categoría. Los concursos deberían tener divisiones separadas.</p>
+    <p class="stakeholder8-arg">Pasé años aprendiendo a usar herramientas de diseño, desarrollar un estilo propio y construir mi técnica. Que alguien gane con un prompt de texto en el mismo concurso le quita el sentido a la categoría. Los concursos deberían tener divisiones separadas.</p>
   </div>
   <div class="stakeholder8-card">
     <div class="stakeholder8-header">
@@ -433,7 +448,7 @@ El caso Colorado concentra un debate que se repite en concursos de escritura, fo
       <p class="stakeholder8-role">Organizador de concurso</p>
     </div>
     <span class="stakeholder8-position">"Las reglas no anticiparon esto"</span>
-    <p class="stakeholder8-arg">Nuestras bases definen categorías por técnica: óleo, acuarela, arte digital. No teníamos categoría para "imagen generada por IA". Allen no mintió sobre la herramienta. Pero nuestras reglas no estaban diseñadas para este caso. Actualizamos las bases para el siguiente año.</p>
+    <p class="stakeholder8-arg">Nuestras bases definen categorías por técnica: óleo, acuarela, arte digital. No teníamos una  categoría para "imagen generada por IA". Allen no mintió sobre la herramienta. Pero nuestras reglas no estaban diseñadas para este caso. Actualizamos las bases para el siguiente año.</p>
   </div>
   <div class="stakeholder8-card">
     <div class="stakeholder8-header">
@@ -449,7 +464,7 @@ El caso Colorado concentra un debate que se repite en concursos de escritura, fo
       <p class="stakeholder8-role">Institución cultural</p>
     </div>
     <span class="stakeholder8-position">"Necesitamos nuevas categorías, no prohibiciones"</span>
-    <p class="stakeholder8-arg">Prohibir la IA en todos los concursos es como prohibir los sintetizadores en la música. La pregunta útil no es "¿se usó IA?", sino "¿qué decisiones creativas tomó la persona que firmó la obra?" Eso es lo que debería evaluarse.</p>
+    <p class="stakeholder8-arg">Prohibir la IA en todos los concursos es como prohibir los sintetizadores en la música. Lo que nos debemos preguntar no es si "¿se usó IA?", sino "¿qué decisiones creativas tomó la persona que firmó la obra?" Eso es lo que debería evaluarse.</p>
   </div>
   <div class="stakeholder8-card">
     <div class="stakeholder8-header">
@@ -462,13 +477,13 @@ El caso Colorado concentra un debate que se repite en concursos de escritura, fo
 </div>
 ```
 
-No hay una posición correcta única en este debate. Lo que sí hay es una distinción útil: el debate más interesante no es "¿es esto arte?" sino "¿bajo qué condiciones, con qué transparencia y en qué contextos es legítimo usar IA generativa en una práctica creativa?"
+No hay una posición correcta en este debate. Sin embargo, es importante reflexionar bajo qué condiciones, con qué transparencia y en qué contextos es legítimo usar IA generativa en una práctica creativa.
 
 ---
 
 ### Autoría y derechos de autor
 
-El caso Colorado abre también una pregunta legal que los tribunales de varios países están respondiendo activamente: ¿a quién pertenece una imagen generada con IA?
+El caso *Colorado* abre también una pregunta legal que los tribunales de varios países están respondiendo activamente: ¿a quién pertenece una imagen generada con IA?
 
 ```{=html}
 <div class="copyright8-compare">
@@ -476,7 +491,7 @@ El caso Colorado abre también una pregunta legal que los tribunales de varios p
     <span class="cr8-col-kicker">🧑 Obra humana</span>
     <h5>Marco legal establecido</h5>
     <ul>
-      <li>El autor tiene derechos de autor desde que la obra se crea</li>
+      <li>El artisa/autor tiene derechos de autor desde que la obra se crea</li>
       <li>Puede registrarla, licenciarla y recibir regalías</li>
       <li>La protección dura décadas después de la muerte del autor</li>
       <li>Aplica a pintura, fotografía, música, texto y diseño</li>
@@ -487,11 +502,11 @@ El caso Colorado abre también una pregunta legal que los tribunales de varios p
     <span class="cr8-col-kicker">🤖 Obra generada con IA</span>
     <h5>Marco legal en construcción</h5>
     <ul>
-      <li>En EE.UU., la Oficina de Derechos de Autor ha rechazado registros de obras "puramente generadas por IA"</li>
+      <li>En EE.UU., la Oficina de Derechos de Autor ha rechazado registros de obras "meramente generadas por IA"</li>
       <li>Obras con "contribución humana suficiente" pueden calificar para protección parcial</li>
       <li>El umbral de "contribución humana" no está bien definido todavía</li>
       <li>Los datos de entrenamiento de los modelos son objeto de demandas activas</li>
-      <li>México, la UE y otros países desarrollan marcos regulatorios propios que aún no están consolidados</li>
+      <li>México, la UE y otros países aún están desarrollando marcos regulatorios propios que todavía no están consolidados</li>
     </ul>
   </div>
 </div>
@@ -499,7 +514,7 @@ El caso Colorado abre también una pregunta legal que los tribunales de varios p
 
 La pregunta de los **datos de entrenamiento** es particularmente relevante: los modelos se entrenaron con imágenes tomadas de internet, muchas de ellas obra de artistas que no dieron permiso explícito. Varias demandas colectivas —incluyendo la de Getty Images contra Stability AI— argumentan que esto constituye infracción de derechos de autor a escala masiva. Los resultados de esas demandas definirán el marco legal de las próximas décadas.
 
-Para uso personal o educativo, estas preguntas son menos urgentes. Para uso comercial —vender imágenes generadas, usarlas en publicidad, presentarlas en concursos— conviene entender el estado legal actual y que ese estado está cambiando rápidamente.
+Para uso personal o educativo, estas preguntas son menos urgentes. Para uso comercial —vender imágenes generadas, usarlas en publicidad, presentarlas en concursos— conviene informarse sobre el marco legal local, y estar conscientes de que puede cambiar de un momento a otro. 
 
 ---
 
@@ -523,6 +538,8 @@ La IA generativa ha democratizado el acceso a herramientas de creación visual, 
 - [Canva IA](https://www.canva.com/ai-image-generator/) — diseño visual con generación de imágenes integrada
 - [Runway: guía de prompting para video](https://help.runwayml.com/hc/en-us/articles/42460036199443-Text-to-Video-Prompting-Guide) — útil para ver cómo cambian los prompts cuando, además de imagen, importa el movimiento
 - [Blob Opera](https://artsandculture.google.com/experiment/blob-opera/AAHWrq360NcGbw) — forma accesible de experimentar con armonía y juego vocal asistido por IA
+- [Smashing Magazine: Prompting Is A Design Act](https://www.smashingmagazine.com/2025/08/prompting-design-act-brief-guide-iterate-ai/) — cómo las habilidades de diseño se transfieren directamente al trabajo con IA generativa (Lyndon Cerejo, 2025)
+- [Belmont University: AI in Design — Practical Workflows, Ethics and Portfolio Tips](https://www.belmont.edu/stories/articles/2025/ai-in-design.html) — perspectiva de directores de agencias creativas sobre el rol del diseñador en la era de la IA (2025)
 - [Observatorio Tec: el rol de la IA generativa en la creatividad](https://observatorio.tec.mx/edu-news/el-rol-de-la-ia-generativa-en-el-proceso-creativo/) — buena lectura para pensar la IA como apoyo dentro del proceso creativo, no como sustituto
 - [U.S. Copyright Office: Copyright and Artificial Intelligence](https://www.copyright.gov/ai/) — posición oficial de EE.UU. sobre obras generadas con IA
 - [Demanda de Getty Images contra Stability AI](https://newsroom.gettyimages.com/en/getty-images/getty-images-statement) — comunicado sobre la demanda por datos de entrenamiento
