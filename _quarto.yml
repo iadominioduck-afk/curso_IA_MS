@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - assets/google-maps-pin.svg
+    - assets/gmail-icon-2020.svg
 
 website:
   title: "Intro a la IA"
