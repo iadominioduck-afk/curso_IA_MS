@@ -356,7 +356,7 @@ Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proce
   </div>
   <a href="sesion-11.html" class="sesion-nav-btn next">
     <span class="nav-label">Siguiente →</span>
-    <span class="nav-title">S11: EN VIVO: Educación Global</span>
+    <span class="nav-title">S11: EN VIVO: Política Pública</span>
   </a>
 </nav>
 ```

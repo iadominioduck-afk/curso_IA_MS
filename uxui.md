@@ -123,17 +123,48 @@ Pattern:
 - keep session-specific additions in `styles/sessions/sesion-XX.css`
 - keep per-session interactivity in `interactives/sesion-XX.js`
 
-### D. Video Placeholder
+### D. Opening Capsule Sequence
 
-If no video exists yet, keep a polished placeholder instead of omitting the section.
+Session 1 now uses a specific opening sequence that should be treated as a repeated course-wide convention.
+
+Canonical order:
+- `## Introducción a la IA`
+- opening video capsule or placeholder
+- the complement/disclaimer note
+- `### Introducción`
+- the written teaching sequence
+
+This order matters because it makes the first learning unit feel consistent from session to session.
+
+If a session has a real video:
+- embed it in the opening capsule slot
+
+If a session does not yet have a real video:
+- keep the same opening slot
+- use a polished placeholder instead of omitting the section
+- preserve the complement/disclaimer note anyway so the learning logic stays consistent
+
+### E. Video/Text Complement Disclaimer
+
+This note should be standardized across sessions.
+
+Requirements:
+- same class: `capsule-complement-note`
+- same structural placement, between the opening capsule and the written introduction
+- ideally the exact same wording
+
+Reference wording from Session 1:
+
+“Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!”
 
 Purpose:
-- preserves the future content structure
-- avoids a broken or incomplete feeling
+- tells students the video and text are complementary, not redundant
+- reduces confusion about why both exist
+- creates a repeated course rhythm students can trust
 
-### E. Text Content Section
+### F. Text Content Section
 
-After the video area, the page shifts to full text and interactive content.
+After the opening capsule and disclaimer, the page shifts to full text and interactive content.
 
 Typical order in Session 1:
 - introduction hook
@@ -146,7 +177,7 @@ Typical order in Session 1:
 - resources
 - next/previous navigation
 
-### F. Reflection and Closure
+### G. Reflection and Closure
 
 Every session should end with:
 - a reflection block
@@ -158,6 +189,14 @@ Purpose:
 - reflection consolidates learning
 - the central idea compresses the session into one memorable takeaway
 - resources extend learning without cluttering the body
+
+Non-negotiable closing conventions:
+- the heading must be exactly `### La idea central de esta sesión`
+- the summary block must use the `central-idea` class
+- the resources heading must be exactly `### Recursos para explorar más sobre el tema`
+- the resources block must use the `resource-list` class
+
+These four items should be standardized across all sessions even if the inner text and links change.
 
 ## Visual Language
 
@@ -253,6 +292,18 @@ Good fits:
 
 Definitions should not open the page. They should stabilize language after relevance has been established.
 
+### 2.5. Repeated headers create cohesion
+
+Session 1 now relies more strongly on repeated headers and repeated content transitions. These should be preserved across the course wherever the same structural role exists.
+
+Important repeated headers:
+- `## Introducción a la IA`
+- `### Introducción`
+- `### La idea central de esta sesión`
+- `### Recursos para explorar más sobre el tema`
+
+This consistency helps students quickly understand where they are in the learning arc of each session.
+
 ### 3. “Key moment” block
 
 This is a signature teaching move.
@@ -310,13 +361,17 @@ These are safe to apply broadly in one pass.
 
 - Add the session banner at the top of every session.
 - Standardize the page asset block that links session CSS and JS.
-- Keep the video placeholder section if no video exists yet.
+- Standardize the opening capsule sequence:
+- `## Introducción a la IA`
+- video embed or polished placeholder
+- the exact complement/disclaimer note using `capsule-complement-note`
+- `### Introducción`
 - Standardize section rhythm with `---` separators between major phases.
 - Use the same interactive shell pattern for demos.
 - Add “Qué estás viendo” and “Qué significa” to interactive sections where missing.
 - Add the reflection block near the end of each session.
-- Add the “La idea central de esta sesión” block near the end.
-- Add the resources section in the same visual style.
+- Add the exact heading `### La idea central de esta sesión` near the end using `central-idea`.
+- Add the exact heading `### Recursos para explorar más sobre el tema` using `resource-list`.
 - Add the previous/next session navigation footer.
 - Maintain consistent wording for time/progress metadata.
 - Keep Quarto TOC settings aligned with Session 1.
@@ -390,10 +445,14 @@ Good example:
 Apply these to every session:
 - top banner
 - stylesheet and JS asset block
-- video placeholder structure if needed
+- opening capsule sequence:
+- `## Introducción a la IA`
+- video embed or placeholder
+- the exact complement/disclaimer note
+- `### Introducción`
 - reflection block
-- central idea block
-- resources block
+- central idea block with exact heading and `central-idea`
+- resources block with exact heading and `resource-list`
 - session navigation block
 
 ### Pass 2: Demo-shell normalization
@@ -429,7 +488,11 @@ Goals:
 Apply these patterns from `sesion-01.qmd`:
 - session banner with block, progress, date, duration, and syllabus link
 - session-specific CSS/JS include block
-- polished video placeholder if needed
+- opening capsule sequence in this order:
+- `## Introducción a la IA`
+- video embed or polished placeholder
+- the exact complement/disclaimer note in `capsule-complement-note`
+- `### Introducción`
 - strong opening hook before formal definition
 - clear content rhythm with separators and section hierarchy
 - “key moment” style concept-compression block where appropriate
@@ -437,8 +500,8 @@ Apply these patterns from `sesion-01.qmd`:
   `.demo-wrap` -> `.demo-shell` -> head -> preview/live -> insights -> footer
 - “Qué estás viendo / Qué significa” explanatory pair for interactive sections
 - reflection block near the end
-- “La idea central de esta sesión” block
-- resources list
+- exact heading `### La idea central de esta sesión` using the `central-idea` class
+- exact heading `### Recursos para explorar más sobre el tema` using the `resource-list` class
 - previous/next session navigation
 
 Do standardize:
@@ -463,6 +526,12 @@ Important implementation rules:
 - prefer plain Markdown for simple tables and setup lists
 - only use custom cards when they add pedagogical value
 - keep mobile stacking logical
+- preserve repeated course headers exactly where they serve the same structural role
+- preserve the complement/disclaimer note and its `capsule-complement-note` class
+- preserve the exact heading `La idea central de esta sesión`
+- preserve the `central-idea` class for that block
+- preserve the exact heading `Recursos para explorar más sobre el tema`
+- preserve the `resource-list` class for that block
 - use plain ASCII quotes inside raw HTML
 - avoid broken HTML comments and unclosed `:::`
 - preserve accessibility labels and reduced-motion behavior

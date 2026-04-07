@@ -19,8 +19,8 @@ format:
     <span class="sesion-progress-label">2 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 Mayo de 2026</span>
-    <span class="sesion-meta-chip">⏱ 45 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> Mayo de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 45 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
@@ -28,66 +28,41 @@ format:
 
 ```{=html}
 <link rel="stylesheet" href="../styles/sessions/sesion-02.css">
-```
-
-```{=html}
 <script src="../interactives/sesion-02.js"></script>
 ```
 
-## Video: Redes neuronales
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
   <span class="vp-icon">▶</span>
   <p class="vp-title">Video de la sesión: próximamente</p>
-  <p>Mientras publicamos el video propio de la clase, puedes apoyarte con este <a href="https://www.youtube.com/watch?v=MRIv2IwFTPg&list=PL-Ogd76BhmcB9OjPucsnc2-piEE96jJDQ" target="_blank" rel="noopener noreferrer">video recomendado de DotCSV</a>.</p>
+  <p>Mientras publicamos el video propio de esta clase, puedes apoyarte con este <a href="https://www.youtube.com/watch?v=MRIv2IwFTPg&list=PL-Ogd76BhmcB9OjPucsnc2-piEE96jJDQ" target="_blank" rel="noopener noreferrer">video recomendado de DotCSV</a>.</p>
 </div>
 ```
 
 ---
 
-## Texto: Redes neuronales
+```{=html}
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
+```
 
 ---
 
 ### Introducción
 
-En la sesión pasada vimos que una máquina puede aprender a trazar una recta que separa datos. Pero, ¿qué pasa cuando el problema es más complicado? Por ejemplo: ¿cómo distingue tu teléfono tu cara de la de otra persona, o cómo sabe Spotify qué canción quieres escuchar después? Para eso no basta una recta. Ahí entran las **redes neuronales**.
-
-Esta sesión va a usar dos ejemplos concretos:
-
-- **imágenes**, para entender cómo una red detecta patrones visuales;
-- **LLMs**, para entender cómo un modelo usa contexto para predecir la siguiente palabra.
-
-La idea no es memorizar definiciones, sino construir una intuición clara de tres cosas: qué hace una neurona, por qué una sola neurona no basta y qué diferencia hay entre **entrenar** una red y **usar** una red ya entrenada.
-
-:::{.callout-note}
-# Conceptos clave
-
-- Una **neurona artificial** recibe números, les asigna pesos y produce una salida.
-- Una **red neuronal** conecta muchas neuronas en capas para resolver patrones que ya no se pueden visualizar con una sola línea.
-- **Entrenamiento** e **inferencia** son etapas distintas: durante el entrenamiento la red ajusta sus pesos; durante la inferencia usa esos pesos ya fijos para responder casos nuevos.
-:::
-
 ```{=html}
-<div class="sesion-mapa">
-  <h4 class="sesion-mapa-title">Ruta de la sesión</h4>
-  <p class="sesion-mapa-copy">Vamos a seguir la siguiente secuencia y luego ubicarla en dos ejemplos: reconocer una imagen y predecir texto.</p>
-  <div class="sesion-mapa-grid">
-    <div class="sesion-mapa-card">
-      <span class="sesion-mapa-step">1</span>
-      <h5>Una neurona</h5>
-      <p>Recibe señales, les asigna un peso y decide si la evidencia es suficiente.</p>
-    </div>
-    <div class="sesion-mapa-card">
-      <span class="sesion-mapa-step">2</span>
-      <h5>Muchas imágenes</h5>
-      <p>Convertimos cada imagen en números y entendemos de dónde salen los puntos de una gráfica.</p>
-    </div>
-    <div class="sesion-mapa-card">
-      <span class="sesion-mapa-step">3</span>
-      <h5>Red completa</h5>
-      <p>Vemos cómo aprende corrigiendo pesos y cómo la misma lógica aparece en un modelo de texto.</p>
+<div class="intro-two-col">
+  <div class="intro-text-col">
+    <p>Si conoces los teléfonos smartphone, entonces sabrás que algunos utilizan reconocimiento facial para desbloquearse. Lo que quizá no sepas es qué sucede tras bambalinas. Cada vez que tu teléfono reconoce tu cara, o un filtro sigue tus ojos en tiempo real, detrás hay un sistema que hoy vamos a estudiar: una red neuronal. Las redes neuronales están por todos lados; se usan en filtros de TikTok e Instagram, en aplicaciones que generan texto como el Traductor de Google, e incluso para darle color a fotografías del siglo pasado.</p>
+    <p>En la sesión pasada vimos cómo una máquina puede aprender a partir de datos y una ecuación muy sencilla: la recta. Para problemas de predicción simple, eso es todo lo que necesitamos. Pero cuando los datos presentan muchos patrones y éstos se mezclan entre sí, necesitamos más que trazar una sola línea para conectar los puntos.</p>
+    <p>En esta sesión vamos a ver, de manera intuitiva, cómo funciona una neurona y por qué muchas neuronas juntas resuelven lo que una recta no puede resolver. También aprenderemos a distinguir dos momentos clave en la vida de cualquier red neuronal: cuando aprende (entrenarla) y cuando ya aprendió (usarla). Las redes neuronales son un puente: con ellas, el aprendizaje supervisado escala hasta problemas que antes parecían inalcanzables, y también se abre la puerta al aprendizaje no supervisado, donde la máquina descubre estructura y patrones sin que nadie le indique exactamente qué buscar.</p>
+  </div>
+  <div class="intro-phone-col">
+    <div style="width:280px;height:560px;border-radius:46px;overflow:hidden;display:inline-block;">
+      <video autoplay loop muted playsinline style="width:280px;height:560px;display:block;">
+        <source src="img/sesion-02-intro.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </div>
@@ -95,196 +70,139 @@ La idea no es memorizar definiciones, sino construir una intuición clara de tre
 
 ---
 
-### Una neurona: la unidad mínima
+### Una neurona artificial
 
-Imagina que una computadora recibe una imagen y quiere decidir si ahí hay un gato. No "ve" como tú. Lo que hace es convertir esa imagen en señales numéricas y combinarlas.
+Si queremos entender lo que hace una red neuronal artificial, primero debemos aprender sobre su elemento más pequeño: la neurona artificial. La neurona, también conocida como nodo, es una función matemática relativamente sencilla, y el componente fundamental de una red neuronal. Su rol en el sistema es el de un interruptor; ella decide si se activa (produce una señal de salida) o se apaga (no produce nada). ¿Cómo es que logra esto?  
 
-Los rasgos que evalúa son señales numéricas: ¿qué tan marcadas están las orejas? ¿hay bigotes? ¿los ojos están al frente? Cada señal llega con un **peso**: un número que le dice a la neurona cuánta importancia darle. La neurona los suma y, si el total supera cierto umbral, se activa. Si no, no.
+Imagina que una computadora recibe una imagen y quiere reconocerla. Su misión es decidir si en la imagen se encuentra un gato, u otro animal. Para ello, necesita convertir la imagen en señales númericas - el lenguaje de las máquinas - y trabajar a partir de esos datos.
 
-En el interactivo de abajo puedes ajustar esos pesos tú mismo y ver cómo cambia la decisión de la neurona.
+Cada rasgo de la imagen se vuelve una señal numérica. Por ejemplo, si en efecto hay un gato, entonces el tamaño y rasgo de sus ojos, la existencia de bigotes, o qué tan puntiagudas están las orejas se vuelven señales que ayudan a identificar al felino. La neurona recibe cada señal y le asigna un peso (o ponderación). Despues, suma todas las señales y decide: ¿hay evidencia suficiente para identificar a un gato? Si la evidencia - el total de las señales - alcanza cierto nivel, se activa. Si no, se apaga.
+
 
 ```{=html}
-<div class="feature-flow">
-  <div class="feature-photo-card">
-    <p class="feature-card-label">Entrada</p>
-    <div class="feature-photo-frame">
-      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <ellipse cx="50" cy="74" rx="20" ry="13" fill="#94a3b8" opacity="0.25"/>
-        <circle cx="50" cy="48" r="24" fill="#64748b" opacity="0.35"/>
-        <polygon points="30,41 25,20 42,36" fill="#475569"/>
-        <polygon points="70,41 75,20 58,36" fill="#475569"/>
-        <polygon points="32,39 28,24 41,35" fill="#fda4af" opacity="0.7"/>
-        <polygon points="68,39 72,24 59,35" fill="#fda4af" opacity="0.7"/>
-        <ellipse cx="40" cy="46" rx="5" ry="6" fill="#1e293b"/>
-        <ellipse cx="60" cy="46" rx="5" ry="6" fill="#1e293b"/>
-        <circle cx="41" cy="44.5" r="1.4" fill="#fff"/>
-        <circle cx="61" cy="44.5" r="1.4" fill="#fff"/>
-        <line x1="27" y1="54" x2="43" y2="55" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="27" y1="58" x2="43" y2="58" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="73" y1="54" x2="57" y2="55" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-        <line x1="73" y1="58" x2="57" y2="58" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-        <polygon points="50,54 47,57 53,57" fill="#fda4af"/>
-      </svg>
-    </div>
-    <h4 class="feature-card-title">Imagen observada</h4>
-    <p class="feature-card-copy">La red no “entiende un gato” de golpe. Empieza detectando rasgos.</p>
-    <div class="feature-badges">
-      <span class="feature-badge">orejas</span>
-      <span class="feature-badge">bigotes</span>
-      <span class="feature-badge">ojos</span>
-    </div>
+<div class="neurona-storyboard">
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">1</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Lo que entra</p>
+      <h4 class="neurona-story-title">Imagen de entrada</h4>
+      <p class="neurona-story-copy">La máquina recibe una imagen. Para ella, esto todavía no significa “gato”: es solo un dato de entrada.</p>
+      <div class="neurona-photo-card">
+        <img src="img/cat.jpg" alt="Foto de un gato" class="neurona-photo">
+        <span class="neurona-photo-chip">dato de entrada</span>
+      </div>
+    </article>
   </div>
 
-  <div class="feature-arrow">→</div>
-
-  <div class="feature-vector-card">
-    <p class="feature-card-label">Señales</p>
-    <h4 class="feature-card-title">Vector de entrada</h4>
-    <div class="feature-vector-stack">
-      1<br>
-      1<br>
-      1
-    </div>
-    <p class="feature-card-copy">Aquí simplificamos: las tres señales están presentes.</p>
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">2</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Lo que la máquina busca</p>
+      <h4 class="neurona-story-title">Rasgos o señales</h4>
+      <p class="neurona-story-copy">Busca patrones simples que pueden ayudar a reconocer al animal: orejas puntiagudas, bigotes y ojos al frente.</p>
+      <div class="neurona-photo-card neurona-photo-annotated">
+        <img src="img/cat.jpg" alt="Foto de un gato con rasgos destacados" class="neurona-photo">
+        <span class="neurona-sketch sketch-ears"></span>
+        <span class="neurona-sketch sketch-whiskers"></span>
+        <span class="neurona-sketch sketch-eyes"></span>
+        <span class="neurona-tag tag-ears">orejas</span>
+        <span class="neurona-tag tag-whiskers">bigotes</span>
+        <span class="neurona-tag tag-eyes">ojos</span>
+      </div>
+    </article>
   </div>
 
-  <div class="feature-arrow">→</div>
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">3</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Cómo lo convierte en valores</p>
+      <h4 class="neurona-story-title">De rasgos a números</h4>
+      <p class="neurona-story-copy">Cada rasgo se transforma en un valor que indica qué tan presente está.</p>
+      <div class="neurona-values-card">
+        <div class="neurona-value-row">
+          <span>orejas</span>
+          <strong>0.7</strong>
+        </div>
+        <div class="neurona-value-row">
+          <span>bigotes</span>
+          <strong>1.0</strong>
+        </div>
+        <div class="neurona-value-row">
+          <span>ojos</span>
+          <strong>0.8</strong>
+        </div>
+      </div>
+      <p class="neurona-story-note">Para simplificar, aquí usamos valores entre 0 y 1.</p>
+    </article>
+  </div>
 
-  <div class="feature-output-card">
-    <p class="feature-card-label">Decisión</p>
-    <h4 class="feature-card-title">Una neurona suma y decide</h4>
-    <p class="feature-card-copy">Toma las señales, las pondera y produce una salida.</p>
-    <span class="feature-output-chip" id="neurona-z-chip">z = 0.1</span>
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">4</div>
+    <article class="neurona-story-card">
+      <p class="neurona-story-kicker">Cómo suma la evidencia</p>
+      <h4 class="neurona-story-title">La neurona combina señales</h4>
+      <p class="neurona-story-copy">No todas las señales tienen la misma importancia: cada una se multiplica por un peso y luego se suma. Piensa por ejemplo, en que un zorro también tiene orejas puntiagudas, así que ese rasgo no es único del gato. No puede tener tanto peso como otros rasgos que quizá sí sean únicos de un gato. Aquí es importante distinguir dos cosas: los valores <strong>salen de la imagen</strong>; los pesos y el sesgo <strong>no salen de la foto</strong>, sino que la red neuronal los aprendió antes durante el entrenamiento.</p>
+      <div class="neurona-score-card">
+        <div class="neurona-score-row">
+          <span>orejas x peso aprendido</span>
+          <code>0.7 × 0.6</code>
+        </div>
+        <div class="neurona-score-row">
+          <span>bigotes x peso aprendido</span>
+          <code>1.0 × 1.2</code>
+        </div>
+        <div class="neurona-score-row">
+          <span>ojos x peso aprendido</span>
+          <code>0.8 × 0.7</code>
+        </div>
+        <div class="neurona-score-row">
+          <span>sesgo aprendido</span>
+          <code>-0.8</code>
+        </div>
+        <div class="neurona-score-total">evidencia total = 1.38</div>
+      </div>
+      <p class="neurona-story-note">En otras palabras: esta foto aporta las señales; el entrenamiento previo aporta qué tan importantes son y dónde queda el umbral de activación de la neurona.</p>
+    </article>
+  </div>
+
+  <div class="neurona-story-item">
+    <div class="neurona-story-num" aria-hidden="true">5</div>
+    <article class="neurona-story-card neurona-story-card-final">
+      <p class="neurona-story-kicker">La decisión</p>
+      <h4 class="neurona-story-title">La neurona se activa</h4>
+      <p class="neurona-story-copy">Si la evidencia supera cierto umbral, produce una señal de salida.</p>
+      <div class="neurona-decision-card">
+        <div class="neurona-threshold-wrap">
+          <div class="neurona-threshold-track">
+            <span class="neurona-threshold-fill"></span>
+            <span class="neurona-threshold-marker"></span>
+          </div>
+          <div class="neurona-threshold-labels">
+            <span>umbral 1.0</span>
+            <strong>evidencia 1.38</strong>
+          </div>
+        </div>
+        <div class="neurona-decision-badge">Se activa</div>
+      </div>
+    </article>
   </div>
 </div>
 ```
 
-```{=html}
-<div class="reto-neurona">
-  <p class="reto-neurona-eyebrow">Perceptrón en miniatura</p>
-  <h4 class="reto-neurona-title">Ahora tú decides qué rasgos "pesan" (importan) más</h4>
-  <p class="reto-neurona-desc">
-    En esta imagen las tres señales están presentes. Mueve los pesos y observa cómo cambia la salida de la neurona.
-  </p>
+Ahora ya entiendes la intuición detrás de una neurona y su activación. Los valores que recibe la neurona vienen de los datos: dependen de qué tan presente está cada rasgo en la imagen. Un rasgo no siempre vale exactamente `1`; puede valer `0.7` u `0.8`, y representa qué tan claro o menos claro se distingue el rasgo en la imagen.
 
-  <div class="neurona-lab-grid">
-    <div>
-      <div class="gato-stage">
-        <div class="gato-svg-wrap">
-          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <ellipse cx="50" cy="72" rx="20" ry="14" fill="#94a3b8" opacity="0.25"/>
-            <circle cx="50" cy="50" r="22" fill="#94a3b8" opacity="0.2"/>
-            <g id="gato-orejas" class="gato-capa" style="opacity:0.38">
-              <polygon points="30,42 25,22 42,38" fill="#475569"/>
-              <polygon points="70,42 75,22 58,38" fill="#475569"/>
-              <polygon points="32,40 28,25 41,37" fill="#fda4af" opacity="0.7"/>
-              <polygon points="68,40 72,25 59,37" fill="#fda4af" opacity="0.7"/>
-            </g>
-            <circle cx="50" cy="50" r="22" fill="#64748b" opacity="0.35"/>
-            <g id="gato-bigotes" class="gato-capa" style="opacity:0.38">
-              <line x1="26" y1="52" x2="43" y2="53" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="26" y1="56" x2="43" y2="56" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="74" y1="52" x2="57" y2="53" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-              <line x1="74" y1="56" x2="57" y2="56" stroke="#1e293b" stroke-width="1.8" stroke-linecap="round"/>
-              <polygon points="50,54 47,57 53,57" fill="#fda4af"/>
-            </g>
-            <g id="gato-ojos" class="gato-capa" style="opacity:0.38">
-              <ellipse cx="40" cy="46" rx="5" ry="6" fill="#1e293b"/>
-              <ellipse cx="60" cy="46" rx="5" ry="6" fill="#1e293b"/>
-              <circle cx="41" cy="44.5" r="1.5" fill="#fff"/>
-              <circle cx="61" cy="44.5" r="1.5" fill="#fff"/>
-            </g>
-          </svg>
-        </div>
-        <span class="gato-label" id="gato-label">La decisión todavía es ambigua.</span>
-      </div>
+Si te interesa verlo en lenguaje matemático, esta idea suele escribirse así: 
+$$
+z = w_1x_1 + w_2x_2 + w_3x_3 + b
+$$ 
 
-      <div class="calc-datos">
-        <span class="calc-dato">x orejas = 1</span>
-        <span class="calc-dato">x bigotes = 1</span>
-        <span class="calc-dato">x ojos = 1</span>
-        <span class="calc-dato">sesgo = -1.4</span>
-      </div>
+En nuestro ejemplo, los símbolos se pueden reemplazar con los valores observados:
 
-      <div class="formula-full-box" id="neurona-formula-main">z = 0.5 + 0.5 + 0.5 - 1.4 = 0.1</div>
-      <p class="neurona-formula-note">La fórmula completa es: <strong>z = w₁x₁ + w₂x₂ + w₃x₃ + b</strong>. Aquí los tres <strong>x</strong> valen 1 porque asumimos que los tres rasgos están presentes. Los <strong>w</strong> son los pesos que tú controlas con los deslizadores.</p>
-    </div>
+$$
+z = (0.7)(0.6) + (1.0)(1.2) + (0.8)(0.7) - 0.8 = 1.38
+$$
 
-    <div>
-      <div class="reto-pistas-grid">
-        <div class="reto-pista">
-          <span class="reto-pista-emoji">🐱</span>
-          <span class="reto-pista-nombre">Peso de<br>orejas</span>
-          <input type="range" id="r1" class="reto-slider" min="0" max="3" value="1">
-          <div class="reto-pista-nivel"><span id="r1-val">poco · 0.5</span></div>
-        </div>
-        <div class="reto-pista">
-          <span class="reto-pista-emoji">😺</span>
-          <span class="reto-pista-nombre">Peso de<br>bigotes</span>
-          <input type="range" id="r2" class="reto-slider" min="0" max="3" value="1">
-          <div class="reto-pista-nivel"><span id="r2-val">poco · 0.5</span></div>
-        </div>
-        <div class="reto-pista">
-          <span class="reto-pista-emoji">👁️</span>
-          <span class="reto-pista-nombre">Peso de<br>ojos</span>
-          <input type="range" id="r3" class="reto-slider" min="0" max="3" value="1">
-          <div class="reto-pista-nivel"><span id="r3-val">poco · 0.5</span></div>
-        </div>
-      </div>
-
-      <div class="reto-resultado-wrap">
-        <span class="reto-resultado-label">Salida:</span>
-        <div class="reto-barra-wrap">
-          <div class="reto-barra" id="reto-barra"></div>
-        </div>
-        <span class="reto-concl" id="reto-concl">z queda cerca del umbral: la neurona duda.</span>
-      </div>
-
-      <div class="reto-reveal">
-        <strong>Ésta es la idea base.</strong>
-        La neurona recibe entradas, les pone pesos, suma y produce una señal de salida.
-      </div>
-    </div>
-  </div>
-</div>
-```
-
-```{=html}
-<details class="foldout foldout-panel">
-  <summary class="foldout-summary">
-    <span>Notación matemática mínima</span>
-    <span class="foldout-summary-hint">opcional</span>
-  </summary>
-  <div class="foldout-body">
-    <div class="formula-full-box">
-      z = <strong>w₁</strong>x₁ + <strong>w₂</strong>x₂ + <strong>w₃</strong>x₃ + <strong>b</strong>
-    </div>
-    <div class="formula-steps">
-      <div class="formula-step">
-        <div class="formula-step-num">1</div>
-        <div>
-          <p class="formula-step-title">x</p>
-          <p class="formula-step-desc">Las señales de entrada. En el ejemplo de arriba valen 1 porque los rasgos sí aparecen.</p>
-        </div>
-      </div>
-      <div class="formula-step">
-        <div class="formula-step-num">2</div>
-        <div>
-          <p class="formula-step-title">w</p>
-          <p class="formula-step-desc">Los pesos. Le dicen a la neurona qué señales importan más.</p>
-        </div>
-      </div>
-      <div class="formula-step">
-        <div class="formula-step-num">3</div>
-        <div>
-          <p class="formula-step-title">b</p>
-          <p class="formula-step-desc">El sesgo o ajuste base. Ayuda a fijar el umbral de activación.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</details>
-```
+Con esto basta para hacernos una nueva pregunta: si una sola neurona puede decidir a partir de unos cuantos rasgos ya identificados, ¿cómo pasan esos rasgos de los píxeles a algo que una neurona pueda usar?
 
 ---
 
@@ -774,35 +692,52 @@ Aquí ya no se trata de memorizar definiciones. Se trata de comprobar con tus oj
 
 ### ¿Las máquinas realmente “entienden”?
 
+Has visto todo el mecanismo: pesos, capas, entrenamiento, backpropagation. Ahora viene la pregunta que los propios investigadores llevan décadas discutiendo.
+
 Ya sabes cómo funciona una red: recibe señales, ajusta pesos y produce una salida. Puede reconocer imágenes y generar texto. Pero queda una pregunta abierta: ¿eso cuenta como entender?
 
 La respuesta corta es: **no**. ChatGPT puede escribirte una disculpa muy sentida... pero no siente nada mientras lo hace. No tiene recuerdos entre conversaciones, ni intención, ni experiencia propia. Lo que tiene es una habilidad enorme para detectar patrones en el lenguaje y producir texto que suena coherente.
 
 ```{=html}
-<div class="debate-card">
+<div class=”debate-card”>
   <h4>Para reflexionar</h4>
-  <p>Si una máquina puede escribirte una disculpa que te hace sentir mejor, ¿importa que no sienta nada al hacerlo? ¿Dónde está la diferencia entre "entender" y "simular entender muy bien"?</p>
+  <p>Si una máquina puede escribirte una disculpa que te hace sentir mejor, ¿importa que no sienta nada al hacerlo? ¿Dónde está la diferencia entre “entender” y “simular entender muy bien”?</p>
+</div>
+```
+
+No hay respuesta correcta aquí — y eso es parte del punto. La pregunta de qué significa “entender” es filosófica tanto como técnica. Lo que sí puedes hacer ahora es razonar sobre ella con herramientas reales: sabes cómo funciona el mecanismo por dentro.
+
+---
+
+### La idea central de esta sesión
+
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 2</span>
+  <p class="central-idea-text">Una neurona artificial recibe señales, les asigna pesos y produce una salida. Una red neuronal conecta muchas de esas neuronas para resolver patrones que ya no caben en una sola frontera. Durante el entrenamiento ajusta pesos; durante la inferencia usa esos pesos para responder. Esa misma lógica aparece tanto en modelos de imagen como en LLMs.</p>
 </div>
 ```
 
 ---
 
-### Para cerrar la sesión
+### Recursos para explorar más sobre el tema
 
-Pasaste de entender una sola neurona a ver cómo esa lógica escala hasta modelos que generan texto. Ese es el meollo del asunto: pequeñas operaciones matemáticas, repetidas millones de veces, producen comportamientos que parecen inteligentes.
-
-:::{.callout-important}
-# Idea central
-Una neurona artificial recibe señales, les asigna pesos y produce una salida. Una red neuronal conecta muchas de esas neuronas para resolver patrones que ya no caben en una sola frontera. Durante el entrenamiento ajusta pesos; durante la inferencia usa esos pesos para responder. Esa misma lógica aparece tanto en modelos de imagen como en LLMs.
-:::
-
----
-
-### Recursos para explorar más
-
-- [TensorFlow Playground](https://playground.tensorflow.org/) para experimentar con redes sin código
-- [Teachable Machine](https://teachablemachine.withgoogle.com/) para entrenar modelos sencillos con imágenes, sonidos o poses
-- [Quick, Draw!](https://quickdraw.withgoogle.com/) para jugar con una red que intenta reconocer tus dibujos
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://playground.tensorflow.org/" target="_blank" rel="noopener">TensorFlow Playground <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Experimenta con redes neuronales en el navegador y observa cómo cambian las fronteras de decisión sin escribir código.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://teachablemachine.withgoogle.com/" target="_blank" rel="noopener">Teachable Machine <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Entrena modelos sencillos con imágenes, sonidos o poses para ver cómo se comporta una red con datos reales.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://quickdraw.withgoogle.com/" target="_blank" rel="noopener">Quick, Draw! <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Juega con una red que intenta reconocer tus dibujos y observa cómo la clasificación depende de patrones aprendidos.</p>
+  </li>
+</ul>
+```
 
 ---
 

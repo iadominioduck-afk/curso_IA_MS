@@ -13,16 +13,16 @@ Panorama de la IA para estudiantes de nivel medio-superior en San Luis Potosí.
 | Bloque                                        | Sesiones | Temas                                                                                                  |
 | --------------------------------------------- | -------- | ------------------------------------------------------------------------------------------------------ |
 | **1: Fundamentos + Ética**             | 1–6     | Qué es la IA, cómo aprenden las máquinas, algoritmos, IA generativa, ética, sesión en vivo IPICYT |
-| **2: Herramientas Prácticas**          | 7–11    | IA para lenguaje, creatividad, organización, tutor académico, sesión en vivo Boston College         |
-| **3: Creación, Aplicaciones y Futuro** | 12–15   | Programación con IA, robótica, IA en medicina y sociedad, sesión en vivo PIT Policy México         |
+| **2: Herramientas Prácticas**          | 7–11    | IA para lenguaje, creatividad, organización, tutor académico, sesión en vivo PIT Policy México      |
+| **3: Creación, Aplicaciones y Futuro** | 12–15   | Programación con IA, robótica, IA en medicina y sociedad, sesión en vivo Boston College              |
 
 ## Sesiones en vivo
 
 | Sesión | Fecha          | Invitado                                                      |
 | ------- | -------------- | ------------------------------------------------------------- |
 | S6      | 9 junio 2026   | IPICYT — IA en México: investigación y aplicaciones reales |
-| S11     | 14 julio 2026  | Boston College — IA en la educación global                  |
-| S15     | 11 agosto 2026 | PIT Policy México — IA, política pública y ciudadanía    |
+| S11     | 14 julio 2026  | PIT Policy México — IA, política pública y ciudadanía       |
+| S15     | 11 agosto 2026 | Boston College — IA en la educación global                  |
 
 ## Cronograma
 

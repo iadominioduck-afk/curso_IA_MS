@@ -31,19 +31,21 @@ format:
 <script type="module" src="../interactives/sesion-01.js"></script>
 ```
 
-## Video: Introducción a la IA
+## Introducción a la IA
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video de la sesión — próximamente</p>
-  <p>Mientras tanto, puedes leer el contenido completo abajo.</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/oEnlDhVJWh0" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
 ---
 
-## Texto: Introducción a la IA
+##
+
+```{=html}
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
+```
 
 ---
 
@@ -245,6 +247,13 @@ format:
 
 
 ---
+
+```{=html}
+<!-- TODO: replace TODO_C2_ID with the actual Descript embed ID for Cápsula 2 -->
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/U6oQWyrMF4j" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+</div>
+```
 
 ### ¿Qué es la Inteligencia Artificial?
 
@@ -725,6 +734,13 @@ Volvamos a las apps del inicio, pero ahora con un enfoque más claro: ya sabes q
 
 ---
 
+```{=html}
+<!-- TODO: replace TODO_C3_ID with the actual Descript embed ID for Cápsula 3 -->
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/bt2c9Ze4iQ0" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+</div>
+```
+
 ### ¿Cómo más puede aprender una máquina?
 
 Ya viste el caso más fácil de explicar: **aprendizaje supervisado**. Le damos al modelo ejemplos donde sí conocemos la respuesta correcta, y el sistema intenta encontrar un patrón que conecte entrada y salida.
@@ -754,7 +770,7 @@ En la recta de arriba, eso significó ajustar `m` y `b`. El mismo paradigma sirv
 </div>
 ```
 
-El aprendizaje supervisado es solo uno de tres grandes paradigmas. Los otros dos los verás en profundidad en la Sesión 3:
+El aprendizaje supervisado es solo uno de varios paradigmas del ML — el video de esta sesión menciona cuatro, incluyendo el aprendizaje auto-supervisado. En este curso nos enfocamos en los tres más fundamentales; los verás con más detalle en la Sesión 3. Por otro lado, en la Sesión 2 exploraremos el mecanismo interno del algoritmo más popular del aprendizaje de máquinas: cómo funcionan las redes neuronales.
 
 ```{=html}
 <div class="paradigm-cards">
@@ -776,7 +792,9 @@ El aprendizaje supervisado es solo uno de tres grandes paradigmas. Los otros dos
 </div>
 ```
 
-La Sesión 2 te lleva al mecanismo interno: cómo funcionan las redes neuronales. En la Sesión 3 verás las otras dos familias en acción.
+**¿Puede la IA ir más allá de encontrar patrones y hacer predicciones?** Esta es una pregunta que aún no tiene respuesta: Judea Pearl, ganador del Premio Turing, argumenta que la IA del futuro necesitará razonar sobre causas y contrafactuales, no solo predecir. Lo viste en el video de esta sección. Aunque este razonamiento es de suma importancia para el futuro de la inteligencia artificial, no lo desarrollaremos en este curso. Sin embargo, valdría la pena tener la idea en mente mientras vamos aprendiendo sobre el proceso de aprendizaje, predicción, y simulación de la inteligencia artificial.
+
+
 
 ::: {.content-hidden}
 
@@ -1089,7 +1107,7 @@ El aprendizaje por refuerzo funciona igual: un agente de IA toma acciones en un 
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 1</span>
-  <p class="central-idea-text">La inteligencia artificial no es magia ni consciencia. En su versión más simple, puede empezar con algo tan familiar como una recta: <strong>datos, error, pendiente e intersección</strong>. Cuando entiendes eso, la IA deja de verse como magia inexplicable y empieza a verse como <strong>matemáticas aplicadas a reconocer patrones</strong>.</p>
+  <p class="central-idea-text">La inteligencia artificial no es magia ni consciencia. En su versión más simple, puede empezar con algo tan familiar como lo es la ecuación de la recta: <strong>datos, error, pendiente e intersección</strong>. Cuando entiendes eso, la IA deja de verse como magia inexplicable y empieza a verse como <strong>matemáticas aplicadas a reconocer patrones.</strong>.</p>
 </div>
 ```
 

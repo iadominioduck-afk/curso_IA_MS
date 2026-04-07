@@ -43,7 +43,7 @@ website:
             href: sesiones/sesion-09.qmd
           - text: "S10 · Tutor Académico"
             href: sesiones/sesion-10.qmd
-          - text: "S11 · EN VIVO: Educación Global"
+          - text: "S11 · EN VIVO: Política Pública"
             href: sesiones/sesion-11.qmd
           - text: "— Bloque 3: Creación, Aplicaciones y Futuro —"
           - text: "S12 · Programación con IA"
@@ -52,7 +52,7 @@ website:
             href: sesiones/sesion-13.qmd
           - text: "S14 · IA en Salud, Ciencia y Sociedad"
             href: sesiones/sesion-14.qmd
-          - text: "S15 · EN VIVO: Política Pública"
+          - text: "S15 · EN VIVO: Educación Global"
             href: sesiones/sesion-15.qmd
 
   page-footer:

@@ -840,7 +840,7 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 <nav class="sesion-nav">
   <a href="sesion-11.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Anterior</span>
-    <span class="nav-title">S11: EN VIVO: Educación Global</span>
+    <span class="nav-title">S11: EN VIVO: Política Pública</span>
   </a>
   <div class="sesion-nav-center">
     <span class="sesion-nav-progress">Sesión 12 de 15</span>

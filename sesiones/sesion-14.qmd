@@ -409,7 +409,7 @@ Estas preguntas tienen respaldo académico: investigadoras del área de informá
   </div>
   <a href="sesion-15.html" class="sesion-nav-btn next">
     <span class="nav-label">Siguiente →</span>
-    <span class="nav-title">S15: EN VIVO: Política Pública</span>
+    <span class="nav-title">S15: EN VIVO: Educación Global</span>
   </a>
 </nav>
 ```
