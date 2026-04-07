@@ -202,94 +202,195 @@ $$
 z = (0.7)(0.6) + (1.0)(1.2) + (0.8)(0.7) - 0.8 = 1.38
 $$
 
-Con esto basta para hacernos una nueva pregunta: si una sola neurona puede decidir a partir de unos cuantos rasgos ya identificados, ¿cómo pasan esos rasgos de los píxeles a algo que una neurona pueda usar?
+Con esto basta para hacernos una nueva pregunta: si una sola neurona puede decidir a partir de unos cuantos rasgos ya identificados, ¿cómo se resume una imagen completa en rasgos que la neurona pueda usar?
 
 ---
 
-### De una imagen a los puntos de una gráfica
+### De píxeles a números: el idioma de la máquina
 
-Acabas de ver cómo una sola neurona evalúa tres rasgos de una imagen. Pero ¿de dónde vienen esos rasgos? Cuando nosotros miramos una foto, la interpretamos de golpe. Una computadora no puede hacer eso. Lo que hace es desglosar la imagen en píxeles y convertir cada píxel en un número: así traduce lo visual al único lenguaje que entiende.
+Acabas de ver cómo una neurona toma los rasgos de una imagen —orejas, bigotes, ojos— y toma una decisión. Pero ¿de dónde vienen esos rasgos? La máquina no nace sabiendo identificarlos: parte desde los píxeles. Cada píxel es un número que indica qué tan brillante es ese punto en la imagen. A partir de esos números, la red aprende a detectar rasgos. Y esos rasgos, a su vez, son los valores que alimentan a la neurona.
 
-Ahora imagina que haces eso con miles de imágenes y para cada una mides solo dos cosas. **Cada punto en la gráfica representa una imagen resumida con esas dos mediciones.** Por ejemplo:
+En una red neuronal artificial pueden intervenir cientos de rasgos. Aquí vamos a quedarnos con dos para no perdernos. Por ejemplo:
 
 - qué tanto se parecen a "orejas puntiagudas";
 - qué tanto se parecen a "bigotes";
 
-entonces cada imagen queda representada por un par de números. Y con dos números, puedes colocar cada imagen como un punto en una gráfica. **Eso es exactamente lo que pasó en la sesión anterior: cada punto era una imagen resumida con dos mediciones.**
+Con esos dos rasgos, cada imagen queda representada por un par de valores. Y con dos valores, puedes ubicar cada imagen como un punto en una gráfica. **Es la misma idea que vimos en la sesión anterior: cada punto representaba un ejemplo resumido en dos valores.** La gráfica no era decoración visual, es la forma en que la máquina convierte diferencias visuales en algo que puede medir.
 
-Sigue el recorrido de esta imagen de gato, paso a paso:
+Veámoslo paso a paso. No vamos a explicar todavía todo el mecanismo de una red neuronal. Vamos a construir una intuición: cómo una imagen completa pasa de píxeles a rasgos medibles, y cómo esos rasgos se convierten en puntos que una neurona puede usar.
 
 ```{=html}
-<div class="plano-secuencia">
-  <div class="plano-card">
-    <p class="plano-step">Escena 1</p>
-    <h5>Partimos de una imagen</h5>
-    <div class="plano-mini">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect x="10" y="10" width="100" height="100" rx="18" fill="#ffffff" stroke="#cbd5e1"/>
-        <ellipse cx="60" cy="78" rx="22" ry="14" fill="#94a3b8" opacity="0.22"/>
-        <circle cx="60" cy="56" r="24" fill="#64748b" opacity="0.35"/>
-        <polygon points="39,48 33,26 48,41" fill="#475569"/>
-        <polygon points="81,48 87,26 72,41" fill="#475569"/>
-        <ellipse cx="49" cy="55" rx="5" ry="6" fill="#1e293b"/>
-        <ellipse cx="71" cy="55" rx="5" ry="6" fill="#1e293b"/>
-        <line x1="34" y1="65" x2="52" y2="66" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
-        <line x1="86" y1="65" x2="68" y2="66" stroke="#1e293b" stroke-width="2" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <p class="plano-copy">La computadora no entiende "gato". Solo ve píxeles con valores numéricos. Para razonar sobre la imagen, primero necesita resumirla en algo manejable.</p>
-  </div>
-  <div class="plano-card">
-    <p class="plano-step">Escena 2</p>
-    <h5>La convertimos en rasgos</h5>
-    <div class="plano-mini">
-      <div class="metric-list">
-        <div class="metric-chip"><span>orejas puntiagudas</span><span>0.9</span></div>
-        <div class="metric-chip"><span>bigotes visibles</span><span>0.8</span></div>
-        <div class="metric-chip"><span>ojos frontales</span><span>0.7</span></div>
+<div class="pixel-flow-list">
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">1</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Lo que entra</p>
+      <h4 class="pixel-flow-title">Una imagen completa</h4>
+      <p class="pixel-flow-copy">La máquina recibe una imagen completa. Todavía no hay un “gato”, solo hay información visual.</p>
+      <div class="pixel-photo-card">
+        <img src="img/cat.jpg" alt="Foto de un gato" class="pixel-photo">
+        <span class="pixel-photo-chip">datos visuales</span>
       </div>
-    </div>
-    <p class="plano-copy">Cada número va de 0 a 1: 0 = el rasgo no aparece, 1 = está muy marcado. Las orejas puntiagudas tienen 0.9 —casi al máximo— y los bigotes 0.8.</p>
+    </article>
   </div>
-  <div class="plano-card">
-    <p class="plano-step">Escena 3</p>
-    <h5>Elegimos dos ejes</h5>
-    <div class="plano-mini">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line x1="20" y1="96" x2="104" y2="96" stroke="#cbd5e1" stroke-width="2"/>
-        <line x1="20" y1="96" x2="20" y2="18" stroke="#cbd5e1" stroke-width="2"/>
-        <text x="64" y="112" text-anchor="middle" fill="#94a3b8" font-size="8">bigotes</text>
-        <text x="9" y="58" text-anchor="middle" fill="#94a3b8" font-size="8" transform="rotate(-90,9,58)">orejas</text>
-        <circle cx="76" cy="32" r="7" fill="#2780e3"/>
-        <text x="84" y="29" fill="#1a365d" font-size="8">(0.8, 0.9)</text>
-      </svg>
-    </div>
-    <p class="plano-copy">Usamos esos dos números como ejes. Bigotes=0.8 en horizontal, orejas=0.9 en vertical. Eso es exactamente el punto (0.8, 0.9) que ves marcado en la gráfica.</p>
-  </div>
-  <div class="plano-card">
-    <p class="plano-step">Escena 4</p>
-    <h5>Muchas imágenes, muchos puntos</h5>
-    <div class="plano-mini">
-      <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <line x1="18" y1="96" x2="104" y2="96" stroke="#cbd5e1" stroke-width="2"/>
-        <line x1="18" y1="96" x2="18" y2="16" stroke="#cbd5e1" stroke-width="2"/>
-        <circle cx="38" cy="78" r="5" fill="#22c55e"/>
-        <circle cx="48" cy="66" r="5" fill="#22c55e"/>
-        <circle cx="58" cy="72" r="5" fill="#22c55e"/>
-        <circle cx="74" cy="42" r="5" fill="#2780e3"/>
-        <circle cx="88" cy="30" r="5" fill="#2780e3"/>
-        <circle cx="98" cy="24" r="5" fill="#2780e3"/>
-        <line x1="28" y1="76" x2="96" y2="28" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
-      </svg>
-    </div>
-    <p class="plano-copy">Repetimos el proceso con cientos de imágenes. Azul = gato, verde = no gato. Con suficientes puntos, la neurona puede trazar una línea que separe ambos grupos.</p>
-  </div>
-</div>
-```
 
-```{=html}
-<div class="plano-note">
-  <strong>Ésta es la traducción importante:</strong> imagen → números → punto. La gráfica no es otro tema. Es la misma información, pero vista desde arriba para entender si una sola regla basta.
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">2</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Para la máquina</p>
+      <h4 class="pixel-flow-title">La imagen son píxeles</h4>
+      <p class="pixel-flow-copy">Antes de hablar de orejas o bigotes, la computadora solo recibe una cuadrícula de píxeles: pequeños valores de color e intensidad. En este punto todavía no hay “rasgos”; solo hay muchos números.</p>
+      <div class="pixel-grid-card">
+        <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="16" y="16" width="188" height="88" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
+          <g transform="translate(34 28)">
+            <rect x="0" y="0" width="16" height="16" fill="#d9c5a1"/>
+            <rect x="18" y="0" width="16" height="16" fill="#c4ab84"/>
+            <rect x="36" y="0" width="16" height="16" fill="#8c6b4f"/>
+            <rect x="54" y="0" width="16" height="16" fill="#f2efe8"/>
+            <rect x="72" y="0" width="16" height="16" fill="#7d5f48"/>
+            <rect x="90" y="0" width="16" height="16" fill="#b18a65"/>
+            <rect x="108" y="0" width="16" height="16" fill="#d7c1a1"/>
+            <rect x="0" y="18" width="16" height="16" fill="#d8c9b1"/>
+            <rect x="18" y="18" width="16" height="16" fill="#6b4f3a"/>
+            <rect x="36" y="18" width="16" height="16" fill="#4a3529"/>
+            <rect x="54" y="18" width="16" height="16" fill="#f8f6f1"/>
+            <rect x="72" y="18" width="16" height="16" fill="#3f2a1e"/>
+            <rect x="90" y="18" width="16" height="16" fill="#77563f"/>
+            <rect x="108" y="18" width="16" height="16" fill="#d9c5a3"/>
+            <rect x="0" y="36" width="16" height="16" fill="#d9c5a3"/>
+            <rect x="18" y="36" width="16" height="16" fill="#4b3627"/>
+            <rect x="36" y="36" width="16" height="16" fill="#0f172a"/>
+            <rect x="54" y="36" width="16" height="16" fill="#f5f5f4"/>
+            <rect x="72" y="36" width="16" height="16" fill="#0f172a"/>
+            <rect x="90" y="36" width="16" height="16" fill="#5e4332"/>
+            <rect x="108" y="36" width="16" height="16" fill="#d7b892"/>
+            <rect x="0" y="54" width="16" height="16" fill="#cfb08a"/>
+            <rect x="18" y="54" width="16" height="16" fill="#7f5f45"/>
+            <rect x="36" y="54" width="16" height="16" fill="#f6ede4"/>
+            <rect x="54" y="54" width="16" height="16" fill="#fef3c7"/>
+            <rect x="72" y="54" width="16" height="16" fill="#f7efe8"/>
+            <rect x="90" y="54" width="16" height="16" fill="#6d4d37"/>
+            <rect x="108" y="54" width="16" height="16" fill="#caa079"/>
+          </g>
+        </svg>
+      </div>
+      <p class="pixel-flow-note"><strong>Importante:</strong> el paso que sigue consiste en resumir todos esos píxeles en medidas que la neurona puede interpretar.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">3</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">La imagen se resume</p>
+      <h4 class="pixel-flow-title">Buscamos rasgos medibles</h4>
+      <p class="pixel-flow-copy">Para entender la idea, imaginemos que en un proceso previo se observan todos esos píxeles y se producen dos medidas resumidas: qué tan visibles son las <strong>orejas</strong> y los <strong>bigotes</strong>. No usamos todos los píxeles uno por uno: los condensamos en dos señales.</p>
+      <div style="display:flex;align-items:center;gap:14px;padding:8px 0;">
+        <svg viewBox="0 0 78 70" width="78" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
+          <rect x="2" y="2" width="74" height="66" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
+          <rect x="9"  y="9"  width="11" height="11" fill="#d9c5a1"/>
+          <rect x="22" y="9"  width="11" height="11" fill="#8c6b4f"/>
+          <rect x="35" y="9"  width="11" height="11" fill="#f2efe8"/>
+          <rect x="48" y="9"  width="11" height="11" fill="#7d5f48"/>
+          <rect x="61" y="9"  width="11" height="11" fill="#b18a65"/>
+          <rect x="9"  y="22" width="11" height="11" fill="#6b4f3a"/>
+          <rect x="22" y="22" width="11" height="11" fill="#4a3529"/>
+          <rect x="35" y="22" width="11" height="11" fill="#f8f6f1"/>
+          <rect x="48" y="22" width="11" height="11" fill="#3f2a1e"/>
+          <rect x="61" y="22" width="11" height="11" fill="#77563f"/>
+          <rect x="9"  y="35" width="11" height="11" fill="#d9c5a3"/>
+          <rect x="22" y="35" width="11" height="11" fill="#0f172a"/>
+          <rect x="35" y="35" width="11" height="11" fill="#f5f5f4"/>
+          <rect x="48" y="35" width="11" height="11" fill="#0f172a"/>
+          <rect x="61" y="35" width="11" height="11" fill="#5e4332"/>
+          <rect x="9"  y="48" width="11" height="11" fill="#7f5f45"/>
+          <rect x="22" y="48" width="11" height="11" fill="#f6ede4"/>
+          <rect x="35" y="48" width="11" height="11" fill="#fef3c7"/>
+          <rect x="48" y="48" width="11" height="11" fill="#f7efe8"/>
+          <rect x="61" y="48" width="11" height="11" fill="#6d4d37"/>
+        </svg>
+        <span style="font-size:1.4rem;color:#94a3b8;flex-shrink:0;" aria-hidden="true">&#8594;</span>
+        <div class="pixel-metric-card" style="flex:1;">
+          <div class="pixel-metric-row"><span>orejas</span><strong>?</strong></div>
+          <div class="pixel-metric-row"><span>bigotes</span><strong>?</strong></div>
+        </div>
+      </div>
+      <p class="pixel-flow-note"><strong>En la práctica:</strong> estos rasgos no aparecen “solos”. Capas o procesos anteriores los extraen a partir de los píxeles y se los entregan a la neurona como entradas más manejables.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">4</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Esos rasgos se vuelven puntajes</p>
+      <h4 class="pixel-flow-title">Cada rasgo recibe un valor</h4>
+      <p class="pixel-flow-copy">Ahora sí convertimos esas dos medidas en números entre 0 y 1. Esos puntajes no salen “mágicamente” de la foto: son la forma simplificada de decir cuánto se detectó cada rasgo, dados los valores de color e intensidad de cada píxel.</p>
+      <div class="pixel-metric-card">
+        <div class="pixel-metric-row">
+          <span>orejas puntiagudas</span>
+          <strong>0.7</strong>
+        </div>
+        <div class="pixel-metric-row">
+          <span>bigotes visibles</span>
+          <strong>0.9</strong>
+        </div>
+      </div>
+      <p class="pixel-flow-note"><strong>Ojo:</strong> estas no son “las coordenadas verdaderas” escondidas dentro de la foto. Son valores resumidos que usaremos como entradas para construir una gráfica y, después, tomar una decisión.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">5</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Dos números forman un punto</p>
+      <h4 class="pixel-flow-title">Elegimos dos ejes</h4>
+      <p class="pixel-flow-copy">Si usamos dos rasgos como ejes, cada imagen se convierte en una coordenada. En este ejemplo: <strong>bigotes</strong> en el eje horizontal, <strong>orejas</strong> en el eje vertical. La intersección no significa que los rasgos se crucen físicamente: significa que esa imagen tiene esos dos valores al mismo tiempo.</p>
+      <div class="pixel-graph-card">
+        <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="28" y1="128" x2="196" y2="128" stroke="#cbd5e1" stroke-width="2"/>
+          <line x1="28" y1="128" x2="28" y2="22" stroke="#cbd5e1" stroke-width="2"/>
+          <text x="112" y="148" text-anchor="middle" fill="#94a3b8" font-size="10">bigotes</text>
+          <text x="12" y="78" text-anchor="middle" fill="#94a3b8" font-size="10" transform="rotate(-90,12,78)">orejas</text>
+          <line x1="145" y1="56" x2="145" y2="128" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"/>
+          <line x1="28" y1="56" x2="145" y2="56" stroke="#bfdbfe" stroke-width="2" stroke-dasharray="4 4"/>
+          <circle cx="145" cy="56" r="8" fill="#2780e3"/>
+          <text x="153" y="52" fill="#1a365d" font-size="10" font-weight="700">(0.9, 0.7)</text>
+          <text x="145" y="120" text-anchor="middle" fill="#2780e3" font-size="9" font-weight="700">bigotes = 0.9</text>
+          <text x="66" y="50" fill="#2780e3" font-size="9" font-weight="700">orejas = 0.7</text>
+        </svg>
+      </div>
+      <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> un solo punto que representa una imagen. Su posición depende de los dos puntajes que elegimos usar como ejes. En otras palabras, ese punto resume cuánto se detectan los bigotes y cuánto se detectan las orejas en esa misma imagen.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">6</div>
+    <article class="pixel-flow-card pixel-flow-card-final">
+      <p class="pixel-flow-kicker">Muchos puntos forman un patrón</p>
+      <h4 class="pixel-flow-title">Ahora ya podemos comparar muchas imágenes</h4>
+      <p class="pixel-flow-copy">Cuando repetimos este proceso con muchas imágenes, cada una queda representada como un punto. Entonces ya no vemos un solo ejemplo, sino un conjunto completo de ejemplos resumidos de la misma manera. Eso nos permite buscar una regla para distinguir grupos.</p>
+      <div class="pixel-graph-card pixel-graph-card-final">
+        <svg viewBox="0 0 220 178" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <line x1="24" y1="128" x2="198" y2="128" stroke="#cbd5e1" stroke-width="2"/>
+          <line x1="24" y1="128" x2="24" y2="18" stroke="#cbd5e1" stroke-width="2"/>
+          <text x="110" y="142" text-anchor="middle" fill="#94a3b8" font-size="10">bigotes</text>
+          <text x="10" y="74" text-anchor="middle" fill="#94a3b8" font-size="10" transform="rotate(-90,10,74)">orejas</text>
+          <circle cx="58" cy="100" r="7" fill="#22c55e"/>
+          <circle cx="72" cy="88" r="7" fill="#22c55e"/>
+          <circle cx="88" cy="96" r="7" fill="#22c55e"/>
+          <circle cx="128" cy="62" r="7" fill="#2780e3"/>
+          <circle cx="148" cy="46" r="7" fill="#2780e3"/>
+          <circle cx="166" cy="34" r="7" fill="#2780e3"/>
+          <circle cx="46" cy="160" r="5" fill="#22c55e"/>
+          <text x="56" y="164" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
+          <circle cx="130" cy="160" r="5" fill="#2780e3"/>
+          <text x="140" y="164" fill="#2780e3" font-size="10" font-weight="700">gato</text>
+        </svg>
+      </div>
+      <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> cada punto es una imagen distinta ya resumida en dos valores. Lo importante aquí es notar que algunos ejemplos quedan más cerca entre sí que otros.</p>
+      <p class="pixel-flow-note"><strong>Ésta es la cadena completa:</strong> imagen → píxeles → rasgos medibles → puntajes → punto. La gráfica no es un tema aparte: es la misma imagen traducida al lenguaje que la neurona entiende.</p>
+    </article>
+  </div>
 </div>
 ```
 
