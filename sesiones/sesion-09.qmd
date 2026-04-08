@@ -34,7 +34,7 @@ format:
 <script src="../interactives/sesion-09.js" defer></script>
 ```
 
-## Video: IA para Organización y Productividad Estudiantil
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -45,9 +45,7 @@ format:
 
 ---
 
-## Texto: IA para Organización y Productividad Estudiantil
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -467,7 +465,12 @@ Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. L
 
 ### La idea central de esta sesión
 
-La IA puede ayudarte a pasar del caos a una primera versión de orden. Lo que no puede hacer es sustituir tu criterio para priorizar, verificar y decidir qué te sirve de verdad.
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 9</span>
+  <p class="central-idea-text">La IA puede ayudarte a pasar del caos a una primera versión de orden. Lo que no puede hacer es sustituir tu criterio para priorizar, verificar y decidir qué te sirve de verdad.</p>
+</div>
+```
 
 :::{.callout-important}
 # Tres preguntas antes de usar IA para organizarte
@@ -481,8 +484,9 @@ La IA puede ayudarte a pasar del caos a una primera versión de orden. Lo que no
 
 ---
 
-### Recursos
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 **Organizar y planificar**
 
 - [Notion AI](https://www.notion.com/product/ai) — resumir notas y convertir páginas en listas o esquemas
@@ -499,6 +503,7 @@ La IA puede ayudarte a pasar del caos a una primera versión de orden. Lo que no
 - [Perplexity](https://www.perplexity.ai/) — respuestas iniciales con enlaces para seguir investigando
 - [Consensus](https://consensus.app/) — búsqueda orientada a literatura científica
 - [Google Scholar](https://scholar.google.com/) — búsqueda directa de publicaciones académicas
+:::
 
 ---
 

@@ -34,7 +34,7 @@ format:
 <script src="../interactives/sesion-08.js" defer></script>
 ```
 
-## Video: IA para Creatividad
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -45,9 +45,7 @@ format:
 
 ---
 
-## Texto: IA para Creatividad
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -520,16 +518,18 @@ Para uso personal o educativo, estas preguntas son menos urgentes. Para uso come
 
 ### La idea central de esta sesión
 
-:::{.callout-important}
-# Idea Central
-
-La IA generativa ha democratizado el acceso a herramientas de creación visual, musical y de diseño. Pero esa democratización viene con preguntas sin respuesta: sobre autoría, sobre derechos, sobre qué significa "crear" y qué valor tiene lo que los humanos hacemos cuando las máquinas pueden producir resultados formalmente similares. Usar estas herramientas con criterio requiere entender tanto su funcionamiento técnico como las implicaciones éticas de su uso.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 8</span>
+  <p class="central-idea-text">La IA generativa ha democratizado el acceso a herramientas de creación visual, musical y de diseño. Pero esa democratización viene con preguntas sin respuesta: sobre autoría, sobre derechos, sobre qué significa crear y qué valor tiene lo que los humanos hacemos cuando las máquinas pueden producir resultados formalmente similares. Usar estas herramientas con criterio requiere entender tanto su funcionamiento técnico como las implicaciones éticas de su uso.</p>
+</div>
+```
 
 ---
 
-### Recursos para explorar más
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 - [Midjourney](https://www.midjourney.com/) — generación de imágenes artísticas vía Discord y web
 - [Adobe Firefly](https://firefly.adobe.com/) — generación e edición de imágenes para flujos de trabajo de diseño
 - [DALL·E 3 en ChatGPT](https://chatgpt.com/) — generación de imágenes integrada en ChatGPT
@@ -543,6 +543,7 @@ La IA generativa ha democratizado el acceso a herramientas de creación visual, 
 - [Observatorio Tec: el rol de la IA generativa en la creatividad](https://observatorio.tec.mx/edu-news/el-rol-de-la-ia-generativa-en-el-proceso-creativo/) — buena lectura para pensar la IA como apoyo dentro del proceso creativo, no como sustituto
 - [U.S. Copyright Office: Copyright and Artificial Intelligence](https://www.copyright.gov/ai/) — posición oficial de EE.UU. sobre obras generadas con IA
 - [Demanda de Getty Images contra Stability AI](https://newsroom.gettyimages.com/en/getty-images/getty-images-statement) — comunicado sobre la demanda por datos de entrenamiento
+:::
 
 ---
 

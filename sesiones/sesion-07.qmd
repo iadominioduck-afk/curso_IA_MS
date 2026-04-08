@@ -34,7 +34,7 @@ format:
 <script src="../interactives/sesion-07.js" defer></script>
 ```
 
-## Video: IA como Tutor de Lenguaje
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -45,9 +45,7 @@ format:
 
 ---
 
-## Texto: IA como Tutor de Lenguaje
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -532,16 +530,18 @@ Si no estás seguro de si cierta forma de usar la IA está permitida en un conte
 
 ### La idea central de esta sesión
 
-:::{.callout-important}
-# Idea Central
-
-La IA puede ser el mejor tutor de lenguaje que hayas tenido, o puede convertirse en la razón por la que nunca desarrolles las habilidades que necesitas para desenvolverte en el mundo académico y laboral. La diferencia no está en la herramienta: está en qué le pides y para qué.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 7</span>
+  <p class="central-idea-text">La IA puede ser el mejor tutor de lenguaje que hayas tenido, o puede convertirse en la razón por la que nunca desarrolles las habilidades que necesitas para desenvolverte en el mundo académico y laboral. La diferencia no está en la herramienta: está en qué le pides y para qué.</p>
+</div>
+```
 
 ---
 
-### Recursos para explorar más
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 - [NotebookLM](https://notebooklm.google.com/) — para estudiar PDFs, apuntes y fuentes subidas por ti con preguntas y citas
 - [ChatGPT](https://chatgpt.com/) — tutor conversacional general para explicación, retroalimentación y práctica
 - [Gemini](https://gemini.google.com/) — alternativa generalista, útil si ya trabajas en el ecosistema de Google
@@ -559,6 +559,7 @@ La IA puede ser el mejor tutor de lenguaje que hayas tenido, o puede convertirse
 - [UNAM: Andamiajes para la escritura académica](https://recursoseducativos.unam.mx/handle/123456789/27425) — recurso útil si escribes trabajos académicos en español
 - [UNAM: ¿Cómo citar bibliografía?](https://recursoseducativos.unam.mx/handle/123456789/23428) — guía breve para referencias y citas
 - [Elements of AI](https://www.elementsofai.com/es) — curso gratuito en español sobre IA, con contexto de uso ético
+:::
 
 ---
 

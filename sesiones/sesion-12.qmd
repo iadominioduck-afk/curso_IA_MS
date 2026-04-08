@@ -31,7 +31,7 @@ format:
 <script src="../interactives/sesion-12.js" defer></script>
 ```
 
-## Video de la sesión
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -42,9 +42,7 @@ format:
 
 ---
 
-## Texto: Tu primer modelo de Machine Learning en Python
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -759,8 +757,9 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 
 ---
 
-### Si quieres seguir aprendiendo
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 ```{=html}
 <div class="route-grid">
 
@@ -817,22 +816,18 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 
 </div>
 ```
+:::
 
 ---
 
-### Cierre
+### La idea central de esta sesión
 
-:::{.callout-important}
-# Ojalá te puedas quedar con estas ideas
-
-1. **El árbol que corriste hoy aprendió solo.** Nadie le dijo cómo distinguir un 4 de un 9 — lo dedujo a partir de 1,347 imágenes etiquetadas. Eso es machine learning.
-
-2. **La regla de oro: nunca entrenes con los datos de prueba.** Si el modelo ya vio las respuestas, la precisión no significa nada — como ver las preguntas del examen antes de hacerlo.
-
-3. **Más complejidad no siempre es mejor.** Un árbol sin límite de profundidad memoriza en vez de aprender. El objetivo de todo modelo es generalizar; es decir, acertar con datos nuevos, no solo con los que ya vio.
-
-4. **Hoy experimentaste como lo hace un equipo de ML.** Cambiaste parámetros, observaste efectos, leíste una matriz de errores y buscaste patrones. No tuviste que entender cada línea de código para aprender algo.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 12</span>
+  <p class="central-idea-text">Tu primer modelo en Python no aprendió porque alguien le escribió reglas a mano, sino porque encontró patrones en ejemplos etiquetados. Lo importante de esta sesión no fue memorizar código, sino entender que entrenar, probar y ajustar un modelo también es una forma de pensar.</p>
+</div>
+```
 
 ---
 

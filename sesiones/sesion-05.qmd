@@ -34,7 +34,7 @@ format:
 <script src="../interactives/sesion-05.js" defer></script>
 ```
 
-## Video: Ética y Problemas con la IA
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -45,9 +45,7 @@ format:
 
 ---
 
-## Texto: Ética y Problemas con la IA
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -646,7 +644,12 @@ Antes de desplegar cualquier sistema de IA en contextos de alto impacto — just
 
 ### La idea central de esta sesión
 
-Los problemas éticos de la IA no son accidentes ni descuidos técnicos menores. Hoy viste tres formas concretas en que aparecen: decisiones injustas, vigilancia basada en datos y contenido sintético engañoso. Las tres surgen cuando entrenamos sistemas con datos sesgados, los desplegamos sin supervisión adecuada y no preguntamos desde el principio a quién afectan y cómo.
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 5</span>
+  <p class="central-idea-text">Los problemas éticos de la IA no son accidentes ni descuidos técnicos menores. Hoy viste tres formas concretas en que aparecen: decisiones injustas, vigilancia basada en datos y contenido sintético engañoso. Las tres surgen cuando entrenamos sistemas con datos sesgados, los desplegamos sin supervisión adecuada y no preguntamos desde el principio a quién afectan y cómo.</p>
+</div>
+```
 
 :::{.callout-important}
 # Marco ético básico
@@ -682,14 +685,16 @@ Para evaluar cualquier sistema de IA con criterio, hazte estas tres preguntas:
 
 ---
 
-### Recursos para explorar más
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 - [Machine Bias — ProPublica](https://www.propublica.org/article/machine-bias-risk-assessments-in-criminal-sentencing) — el análisis original del caso COMPAS que detonó el debate sobre sesgo en sistemas de justicia criminal
 - [Gender Shades — MIT Media Lab](http://gendershades.org/) — el proyecto de Joy Buolamwini que documentó las tasas de error diferencial en reconocimiento facial
 - [Algorithmic Justice League](https://www.ajl.org/) — organización fundada por Buolamwini que trabaja en auditorías de sistemas de IA
 - [Detect Fakes — MIT](http://detectfakes.media.mit.edu/) — pon a prueba tu capacidad para distinguir videos reales de deepfakes
 - [AI Now Institute](https://ainowinstitute.org/) — reportes anuales sobre el impacto social de la IA
 - [Elements of AI](https://www.elementsofai.com/es) — curso gratuito en español que incluye una sección sobre ética de la IA
+:::
 
 ---
 

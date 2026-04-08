@@ -30,7 +30,7 @@ format:
 <link rel="stylesheet" href="../styles/sessions/sesion-10.css">
 ```
 
-## Video: IA para estudiar matemáticas
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -41,9 +41,7 @@ format:
 
 ---
 
-## Texto: IA para estudiar matemáticas
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -54,7 +52,7 @@ En enero de 2024, [AlphaGeometry](https://deepmind.google/blog/alphageometry-an-
 Lo que esto revela es que "matemáticas" no es una sola habilidad. Un sistema de IA puede ser muy útil para **entender** conceptos, puede encontrar **demostraciones formales** en entornos especializados, y aun así cometer errores en un paso algebraico si lo usas como asistente de estudio cotidiano.
 
 :::{.callout-important}
-# La idea central de esta sesión
+# Una brújula para esta sesión
 Para usar la IA como tutor en matemáticas, debemos abordar el tema desde tres enfoques distintos:
 
 1. **Entender** un concepto o un procedimiento.
@@ -305,21 +303,20 @@ Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proce
 
 ---
 
-### Cierre
+### La idea central de esta sesión
 
-:::{.callout-important}
-# Si estudias matemáticas con IA, quédate con esto
-
-1. **Usa asistentes de IA para entender**: pide explicaciones, ejemplos y comparaciones de métodos.
-2. **Usa herramientas exactas para verificar** cualquier resultado numérico o simbólico antes de entregarlo.
-3. **Usa gráficas para interpretar** lo que una expresión hace visualmente.
-4. **Practica sin ayuda después**. Si siempre estudias acompañada o acompañado por la IA, nunca sabrás si ya puedes resolver sola o solo.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 10</span>
+  <p class="central-idea-text">La IA puede ser muy útil para estudiar matemáticas si distingues tres tareas distintas: entender, verificar y practicar. Un asistente conversacional puede ayudarte a comprender; herramientas exactas sirven para comprobar; y el aprendizaje real ocurre cuando después practicas sin ayuda.</p>
+</div>
+```
 
 ---
 
-### Recursos
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 **Casos y contexto**
 
 - [AlphaGeometry, Google DeepMind, 17 de enero de 2024](https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/)
@@ -342,6 +339,7 @@ Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proce
 - [Ejemplos resueltos y autoexplicación, 2024](https://doi.org/10.1080/19345747.2023.2243254)
 - [Práctica intercalada en matemáticas, IES](https://nces.ed.gov/use-work/awards/interleaved-mathematics-practice)
 - [Práctica de recuperación en matemáticas superiores, 2025](https://link.springer.com/article/10.1007/s10763-025-10607-1)
+:::
 
 ---
 

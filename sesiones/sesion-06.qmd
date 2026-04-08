@@ -72,11 +72,22 @@ format:
 
 Conocer de primera mano cómo se hace investigación en IA desde México y desde San Luis Potosí.
 
-## Recursos
+### La idea central de esta sesión
 
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 6</span>
+  <p class="central-idea-text">La IA no solo se investiga en Silicon Valley ni en laboratorios lejanos. También se construye desde México y desde San Luis Potosí, en diálogo con problemas reales, comunidades concretas y trayectorias científicas que pueden estar mucho más cerca de lo que parece.</p>
+</div>
+```
+
+### Recursos para explorar más sobre el tema
+
+::: {.resource-list}
 ```{=html}
 <p class="recursos-placeholder">Los recursos que el Dr. Ruiz-Correa comparta durante la sesión — artículos, proyectos, instituciones, herramientas — se publicarán aquí después del Zoom.</p>
 ```
+:::
 
 ---
 

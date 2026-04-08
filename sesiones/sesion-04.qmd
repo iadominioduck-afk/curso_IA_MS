@@ -29,7 +29,7 @@ format:
 <script type="module" src="../interactives/sesion-04.js"></script>
 ```
 
-## Video: IA Generativa — qué hace y cómo funciona
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -40,9 +40,7 @@ format:
 
 ---
 
-## Texto: IA Generativa — qué hace y cómo funciona
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -575,18 +573,22 @@ Con todo lo que vimos hoy, puedes hacerte una lista mental antes de confiar en u
 
 ### La idea central de esta sesión
 
-:::{.callout-important}
-# Importante
-Los modelos generativos no buscan información, la generan. No saben si lo que producen es verdad: solo saben si es probable. Para beneficiarnos de ellos, tenemos que tener clara esa diferencia, ser críticos al usarlos, y no dejar que la IA piense por nosotros.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 4</span>
+  <p class="central-idea-text">Los modelos generativos no buscan información: la generan. No saben si lo que producen es verdad; solo saben si es probable. Para beneficiarnos de ellos, tenemos que tener clara esa diferencia, ser críticos al usarlos y no dejar que la IA piense por nosotros.</p>
+</div>
+```
 
 ---
 
-### Recursos extra (en inglés)
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 - [Tiktokenizer](https://tiktokenizer.vercel.app) — pega cualquier texto y ve cómo lo divide GPT-4 en tokens; puedes comparar el conteo entre español e inglés en tiempo real
 - [Transformer Explainer — Georgia Tech](https://poloclub.github.io/transformer-explainer/) — visualización interactiva de cómo funciona GPT-2 en tu navegador, sin instalación; ideal para ver la atención y la predicción de tokens en tiempo real
 - [LLM Visualization — Brendan Bycroft](https://bbycroft.net/llm) — navega por un transformer en 3D: cada capa, cada operación, la inferencia completa
+:::
 
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: "Sesión 2: Redes neuronales: ¿Cómo 'piensa' la IA?"
+title: "Sesión 2: Redes neuronales"
 format:
   html:
     toc: true
@@ -31,20 +31,20 @@ format:
 <script src="../interactives/sesion-02.js"></script>
 ```
 
-## Introducción a la IA
+## Introducción a las Redes Neuronales Artificiales
+
+Antes de empezar con el tema que nos compete el día de hoy, iniciemos con un video que nos brinda más claridad sobre los tipos de Aprendizaje de Máquinas. Tema con el cuál cerramos la primera sesión de este curso. 
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video de la sesión: próximamente</p>
-  <p>Mientras publicamos el video propio de esta clase, puedes apoyarte con este <a href="https://www.youtube.com/watch?v=MRIv2IwFTPg&list=PL-Ogd76BhmcB9OjPucsnc2-piEE96jJDQ" target="_blank" rel="noopener noreferrer">video recomendado de DotCSV</a>.</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/eSPk2x05QSg" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
 ---
 
 ```{=html}
-<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
+<p class="capsule-complement-note">Recuerda: los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 ```
 
 ---
@@ -65,6 +65,16 @@ format:
       </video>
     </div>
   </div>
+</div>
+```
+
+---
+
+En este video, resumimos, de manera general e intuitiva, qué es una red neuronal. Lo que verás en el resto de esta sesión es exactamente eso; pero armado paso a paso, desde la pieza más pequeña: la neurona.
+
+```{=html}
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/ARqeQ2GCLKj" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -208,16 +218,13 @@ Con esto basta para hacernos una nueva pregunta: si una sola neurona puede decid
 
 ### De píxeles a números: el idioma de la máquina
 
-Acabas de ver cómo una neurona toma los rasgos de una imagen —orejas, bigotes, ojos— y toma una decisión. Pero ¿de dónde vienen esos rasgos? La máquina no nace sabiendo identificarlos: parte desde los píxeles. Cada píxel es un número que indica qué tan brillante es ese punto en la imagen. A partir de esos números, la red aprende a detectar rasgos. Y esos rasgos, a su vez, son los valores que alimentan a la neurona.
+Acabas de ver cómo una neurona toma algunos rasgos de una imagen y produce una decisión. Pero una computadora no recibe una foto ya convertida en “orejas” o “bigotes”. Recibe muchísimos píxeles: números que describen color e intensidad.
 
-En una red neuronal artificial pueden intervenir cientos de rasgos. Aquí vamos a quedarnos con dos para no perdernos. Por ejemplo:
+Entonces, ¿cómo pasamos de todos esos píxeles a unos pocos valores numéricos que una neurona puede interpretar?
 
-- qué tanto se parecen a "orejas puntiagudas";
-- qué tanto se parecen a "bigotes";
+En la sección anterior usamos **tres rasgos** para explicar cómo funciona una neurona. Aquí vamos a usar **solo dos** porque queremos representarlos en una gráfica (plano cartesiano): **orejas** y **bigotes**.
 
-Con esos dos rasgos, cada imagen queda representada por un par de valores. Y con dos valores, puedes ubicar cada imagen como un punto en una gráfica. **Es la misma idea que vimos en la sesión anterior: cada punto representaba un ejemplo resumido en dos valores.** La gráfica no era decoración visual, es la forma en que la máquina convierte diferencias visuales en algo que puede medir.
-
-Veámoslo paso a paso. No vamos a explicar todavía todo el mecanismo de una red neuronal. Vamos a construir una intuición: cómo una imagen completa pasa de píxeles a rasgos medibles, y cómo esos rasgos se convierten en puntos que una neurona puede usar.
+No vamos a explicar todavía todo el mecanismo de una red neuronal. Vamos a construir una intuición: cómo una imagen completa pasa de píxeles a rasgos medibles, y cómo esos rasgos se convierten en un punto en una gráfica que una neurona puede interpetar.
 
 ```{=html}
 <div class="pixel-flow-list">
@@ -239,7 +246,7 @@ Veámoslo paso a paso. No vamos a explicar todavía todo el mecanismo de una red
     <article class="pixel-flow-card">
       <p class="pixel-flow-kicker">Para la máquina</p>
       <h4 class="pixel-flow-title">La imagen son píxeles</h4>
-      <p class="pixel-flow-copy">Antes de hablar de orejas o bigotes, la computadora solo recibe una cuadrícula de píxeles: pequeños valores de color e intensidad. En este punto todavía no hay “rasgos”; solo hay muchos números.</p>
+      <p class="pixel-flow-copy">La computadora observs muchísimos píxeles. Cada píxel guarda valores de color e intensidad. En este punto todavía no hay “rasgos”; solo hay muchos números.</p>
       <div class="pixel-grid-card">
         <svg viewBox="0 0 220 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect x="16" y="16" width="188" height="88" rx="14" fill="#f8fafc" stroke="#e2e8f0"/>
@@ -273,58 +280,122 @@ Veámoslo paso a paso. No vamos a explicar todavía todo el mecanismo de una red
             <rect x="90" y="54" width="16" height="16" fill="#6d4d37"/>
             <rect x="108" y="54" width="16" height="16" fill="#caa079"/>
           </g>
+          <text x="110" y="104" text-anchor="middle" fill="#64748b" font-size="10">cada píxel = números de color e intensidad</text>
         </svg>
       </div>
-      <p class="pixel-flow-note"><strong>Importante:</strong> el paso que sigue consiste en resumir todos esos píxeles en medidas que la neurona puede interpretar.</p>
+      <p class="pixel-flow-note"><strong>Importante:</strong> el paso que sigue consiste en resumir todos esos píxeles en medidas que la neurona pueda interpretar.</p>
     </article>
   </div>
 
   <div class="pixel-flow-item">
     <div class="pixel-flow-num" aria-hidden="true">3</div>
     <article class="pixel-flow-card">
-      <p class="pixel-flow-kicker">La imagen se resume</p>
-      <h4 class="pixel-flow-title">Buscamos rasgos medibles</h4>
-      <p class="pixel-flow-copy">Para entender la idea, imaginemos que en un proceso previo se observan todos esos píxeles y se producen dos medidas resumidas: qué tan visibles son las <strong>orejas</strong> y los <strong>bigotes</strong>. No usamos todos los píxeles uno por uno: los condensamos en dos señales.</p>
-      <div style="display:flex;align-items:center;gap:14px;padding:8px 0;">
-        <svg viewBox="0 0 78 70" width="78" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="flex-shrink:0;">
-          <rect x="2" y="2" width="74" height="66" rx="7" fill="#f8fafc" stroke="#e2e8f0"/>
-          <rect x="9"  y="9"  width="11" height="11" fill="#d9c5a1"/>
-          <rect x="22" y="9"  width="11" height="11" fill="#8c6b4f"/>
-          <rect x="35" y="9"  width="11" height="11" fill="#f2efe8"/>
-          <rect x="48" y="9"  width="11" height="11" fill="#7d5f48"/>
-          <rect x="61" y="9"  width="11" height="11" fill="#b18a65"/>
-          <rect x="9"  y="22" width="11" height="11" fill="#6b4f3a"/>
-          <rect x="22" y="22" width="11" height="11" fill="#4a3529"/>
-          <rect x="35" y="22" width="11" height="11" fill="#f8f6f1"/>
-          <rect x="48" y="22" width="11" height="11" fill="#3f2a1e"/>
-          <rect x="61" y="22" width="11" height="11" fill="#77563f"/>
-          <rect x="9"  y="35" width="11" height="11" fill="#d9c5a3"/>
-          <rect x="22" y="35" width="11" height="11" fill="#0f172a"/>
-          <rect x="35" y="35" width="11" height="11" fill="#f5f5f4"/>
-          <rect x="48" y="35" width="11" height="11" fill="#0f172a"/>
-          <rect x="61" y="35" width="11" height="11" fill="#5e4332"/>
-          <rect x="9"  y="48" width="11" height="11" fill="#7f5f45"/>
-          <rect x="22" y="48" width="11" height="11" fill="#f6ede4"/>
-          <rect x="35" y="48" width="11" height="11" fill="#fef3c7"/>
-          <rect x="48" y="48" width="11" height="11" fill="#f7efe8"/>
-          <rect x="61" y="48" width="11" height="11" fill="#6d4d37"/>
-        </svg>
-        <span style="font-size:1.4rem;color:#94a3b8;flex-shrink:0;" aria-hidden="true">&#8594;</span>
-        <div class="pixel-metric-card" style="flex:1;">
-          <div class="pixel-metric-row"><span>orejas</span><strong>?</strong></div>
-          <div class="pixel-metric-row"><span>bigotes</span><strong>?</strong></div>
+      <p class="pixel-flow-kicker">Cada píxel ya es un número</p>
+      <h4 class="pixel-flow-title">Una región se vuelve una matriz</h4>
+      <p class="pixel-flow-copy">Si haces zoom en una pequeña región de la imagen, ves cuadritos. A cada píxel se le asigna un número según su brillo o color. Para simplificar, aquí imaginamos primero la claridad en una escala de <strong>0 a 255</strong>: <strong>oscuro = valor bajo</strong>, <strong>claro = valor alto</strong>.</p>
+      <div class="pixel-number-bridge">
+        <div class="pixel-number-panel">
+          <span class="pixel-number-label">región de la imagen</span>
+          <svg viewBox="0 0 92 92" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="88" height="88" rx="12" fill="#f8fafc" stroke="#e2e8f0"/>
+            <rect x="10" y="10" width="14" height="14" fill="#d9c5a1"/>
+            <rect x="26" y="10" width="14" height="14" fill="#b18a65"/>
+            <rect x="42" y="10" width="14" height="14" fill="#7d5f48"/>
+            <rect x="58" y="10" width="14" height="14" fill="#d9c5a1"/>
+            <rect x="10" y="26" width="14" height="14" fill="#f2efe8"/>
+            <rect x="26" y="26" width="14" height="14" fill="#8c6b4f"/>
+            <rect x="42" y="26" width="14" height="14" fill="#4a3529"/>
+            <rect x="58" y="26" width="14" height="14" fill="#8c6b4f"/>
+            <rect x="10" y="42" width="14" height="14" fill="#f8f6f1"/>
+            <rect x="26" y="42" width="14" height="14" fill="#d9c5a3"/>
+            <rect x="42" y="42" width="14" height="14" fill="#0f172a"/>
+            <rect x="58" y="42" width="14" height="14" fill="#5e4332"/>
+            <rect x="10" y="58" width="14" height="14" fill="#fef3c7"/>
+            <rect x="26" y="58" width="14" height="14" fill="#f7efe8"/>
+            <rect x="42" y="58" width="14" height="14" fill="#6d4d37"/>
+            <rect x="58" y="58" width="14" height="14" fill="#caa079"/>
+            <path d="M18 60 C22 40, 30 22, 44 14" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M44 14 C56 20, 62 34, 60 56" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+            <path d="M22 58 C34 52, 48 50, 58 54" fill="none" stroke="#2563eb" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="pixel-number-arrow" aria-hidden="true">→</span>
+        <div class="pixel-number-panel">
+          <span class="pixel-number-label">los mismos píxeles, pero ya como valores</span>
+          <div class="pixel-number-grid" aria-hidden="true">
+            <span>210</span><span>165</span><span>92</span><span>210</span>
+            <span>244</span><span>131</span><span>54</span><span>131</span>
+            <span>248</span><span>217</span><span>15</span><span>88</span>
+            <span>254</span><span>247</span><span>77</span><span>192</span>
+          </div>
+          <p class="pixel-number-scale">0 = muy oscuro | 255 = muy claro</p>
         </div>
       </div>
-      <p class="pixel-flow-note"><strong>En la práctica:</strong> estos rasgos no aparecen “solos”. Capas o procesos anteriores los extraen a partir de los píxeles y se los entregan a la neurona como entradas más manejables.</p>
+      <p class="pixel-flow-note"><strong>Idea clave:</strong> antes de detectar una “oreja”, la máquina ya tradujo esa parte de la imagen a una pequeña matriz de números.</p>
+      <p class="pixel-flow-note"><strong>Ojo:</strong> esos números no “son” una oreja y no basta con sumarlos todos. Lo importante es el patrón que forman juntos.</p>
     </article>
   </div>
 
   <div class="pixel-flow-item">
     <div class="pixel-flow-num" aria-hidden="true">4</div>
     <article class="pixel-flow-card">
-      <p class="pixel-flow-kicker">Esos rasgos se vuelven puntajes</p>
-      <h4 class="pixel-flow-title">Cada rasgo recibe un valor</h4>
-      <p class="pixel-flow-copy">Ahora sí convertimos esas dos medidas en números entre 0 y 1. Esos puntajes no salen “mágicamente” de la foto: son la forma simplificada de decir cuánto se detectó cada rasgo, dados los valores de color e intensidad de cada píxel.</p>
+      <p class="pixel-flow-kicker">La red busca patrones</p>
+      <h4 class="pixel-flow-title">De muchos píxeles a un rasgo</h4>
+      <p class="pixel-flow-copy">La red no usa cada píxel por separado para decidir. Primero, capas o detectores anteriores leen muchos valores juntos y buscan patrones visuales. Por ejemplo: una combinación de números puede parecerse más o menos a <strong>orejas</strong>; otra puede parecerse más o menos a <strong>bigotes</strong>.</p>
+      <div class="pixel-detector-flow">
+        <div class="pixel-detector-source">
+          <svg viewBox="0 0 92 82" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="2" y="2" width="88" height="78" rx="10" fill="#f8fafc" stroke="#e2e8f0"/>
+            <rect x="10" y="10" width="14" height="14" fill="#d9c5a1"/>
+            <rect x="26" y="10" width="14" height="14" fill="#8c6b4f"/>
+            <rect x="42" y="10" width="14" height="14" fill="#f2efe8"/>
+            <rect x="58" y="10" width="14" height="14" fill="#7d5f48"/>
+            <rect x="10" y="26" width="14" height="14" fill="#6b4f3a"/>
+            <rect x="26" y="26" width="14" height="14" fill="#4a3529"/>
+            <rect x="42" y="26" width="14" height="14" fill="#f8f6f1"/>
+            <rect x="58" y="26" width="14" height="14" fill="#3f2a1e"/>
+            <rect x="10" y="42" width="14" height="14" fill="#d9c5a3"/>
+            <rect x="26" y="42" width="14" height="14" fill="#0f172a"/>
+            <rect x="42" y="42" width="14" height="14" fill="#f5f5f4"/>
+            <rect x="58" y="42" width="14" height="14" fill="#0f172a"/>
+            <rect x="10" y="58" width="14" height="14" fill="#7f5f45"/>
+            <rect x="26" y="58" width="14" height="14" fill="#f6ede4"/>
+            <rect x="42" y="58" width="14" height="14" fill="#fef3c7"/>
+            <rect x="58" y="58" width="14" height="14" fill="#6d4d37"/>
+          </svg>
+          <span class="pixel-detector-source-label">muchos píxeles</span>
+        </div>
+        <div class="pixel-detector-column">
+          <div class="pixel-detector-box">
+            <div class="pixel-detector-top">
+              <span class="pixel-detector-name">detector de orejas</span>
+              <span class="pixel-detector-state">respuesta media</span>
+            </div>
+            <div class="pixel-detector-meter">
+              <span class="pixel-detector-fill pixel-detector-fill-mid"></span>
+            </div>
+          </div>
+          <div class="pixel-detector-box">
+            <div class="pixel-detector-top">
+              <span class="pixel-detector-name">detector de bigotes</span>
+              <span class="pixel-detector-state">respuesta alta</span>
+            </div>
+            <div class="pixel-detector-meter">
+              <span class="pixel-detector-fill pixel-detector-fill-high"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p class="pixel-flow-note"><strong>En la práctica:</strong> estos rasgos no aparecen “solos”. El detector combina muchos de esos valores con pesos y produce una respuesta: baja, media o alta. Eso es lo que luego se convierte en una entrada más manejable para la neurona.</p>
+    </article>
+  </div>
+
+  <div class="pixel-flow-item">
+    <div class="pixel-flow-num" aria-hidden="true">5</div>
+    <article class="pixel-flow-card">
+      <p class="pixel-flow-kicker">Cada rasgo recibe un puntaje</p>
+      <h4 class="pixel-flow-title">Dos medidas resumidas</h4>
+      <p class="pixel-flow-copy">Esos detectores producen puntajes entre 0 y 1. No son coordenadas escondidas en la foto: son valores resumidos que indican qué tan fuerte apareció cada rasgo.</p>
       <div class="pixel-metric-card">
         <div class="pixel-metric-row">
           <span>orejas puntiagudas</span>
@@ -335,16 +406,16 @@ Veámoslo paso a paso. No vamos a explicar todavía todo el mecanismo de una red
           <strong>0.9</strong>
         </div>
       </div>
-      <p class="pixel-flow-note"><strong>Ojo:</strong> estas no son “las coordenadas verdaderas” escondidas dentro de la foto. Son valores resumidos que usaremos como entradas para construir una gráfica y, después, tomar una decisión.</p>
+      <p class="pixel-flow-note"><strong>Ojo:</strong> estos valores no salen “mágicamente” de la foto. Son el resultado resumido de un proceso previo que leyó muchos píxeles.</p>
     </article>
   </div>
 
   <div class="pixel-flow-item">
-    <div class="pixel-flow-num" aria-hidden="true">5</div>
+    <div class="pixel-flow-num" aria-hidden="true">6</div>
     <article class="pixel-flow-card">
-      <p class="pixel-flow-kicker">Dos números forman un punto</p>
-      <h4 class="pixel-flow-title">Elegimos dos ejes</h4>
-      <p class="pixel-flow-copy">Si usamos dos rasgos como ejes, cada imagen se convierte en una coordenada. En este ejemplo: <strong>bigotes</strong> en el eje horizontal, <strong>orejas</strong> en el eje vertical. La intersección no significa que los rasgos se crucen físicamente: significa que esa imagen tiene esos dos valores al mismo tiempo.</p>
+      <p class="pixel-flow-kicker">Una imagen se vuelve un punto</p>
+      <h4 class="pixel-flow-title">Dos valores, una coordenada</h4>
+      <p class="pixel-flow-copy">Si usamos dos rasgos como ejes, una imagen se convierte en una coordenada. En este ejemplo, usamos <strong>bigotes</strong> en el eje horizontal y <strong>orejas</strong> en el eje vertical.</p>
       <div class="pixel-graph-card">
         <svg viewBox="0 0 220 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <line x1="28" y1="128" x2="196" y2="128" stroke="#cbd5e1" stroke-width="2"/>
@@ -359,46 +430,62 @@ Veámoslo paso a paso. No vamos a explicar todavía todo el mecanismo de una red
           <text x="66" y="50" fill="#2780e3" font-size="9" font-weight="700">orejas = 0.7</text>
         </svg>
       </div>
-      <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> un solo punto que representa una imagen. Su posición depende de los dos puntajes que elegimos usar como ejes. En otras palabras, ese punto resume cuánto se detectan los bigotes y cuánto se detectan las orejas en esa misma imagen.</p>
-    </article>
-  </div>
-
-  <div class="pixel-flow-item">
-    <div class="pixel-flow-num" aria-hidden="true">6</div>
-    <article class="pixel-flow-card pixel-flow-card-final">
-      <p class="pixel-flow-kicker">Muchos puntos forman un patrón</p>
-      <h4 class="pixel-flow-title">Ahora ya podemos comparar muchas imágenes</h4>
-      <p class="pixel-flow-copy">Cuando repetimos este proceso con muchas imágenes, cada una queda representada como un punto. Entonces ya no vemos un solo ejemplo, sino un conjunto completo de ejemplos resumidos de la misma manera. Eso nos permite buscar una regla para distinguir grupos.</p>
-      <div class="pixel-graph-card pixel-graph-card-final">
-        <svg viewBox="0 0 220 178" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <line x1="24" y1="128" x2="198" y2="128" stroke="#cbd5e1" stroke-width="2"/>
-          <line x1="24" y1="128" x2="24" y2="18" stroke="#cbd5e1" stroke-width="2"/>
-          <text x="110" y="142" text-anchor="middle" fill="#94a3b8" font-size="10">bigotes</text>
-          <text x="10" y="74" text-anchor="middle" fill="#94a3b8" font-size="10" transform="rotate(-90,10,74)">orejas</text>
-          <circle cx="58" cy="100" r="7" fill="#22c55e"/>
-          <circle cx="72" cy="88" r="7" fill="#22c55e"/>
-          <circle cx="88" cy="96" r="7" fill="#22c55e"/>
-          <circle cx="128" cy="62" r="7" fill="#2780e3"/>
-          <circle cx="148" cy="46" r="7" fill="#2780e3"/>
-          <circle cx="166" cy="34" r="7" fill="#2780e3"/>
-          <circle cx="46" cy="160" r="5" fill="#22c55e"/>
-          <text x="56" y="164" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
-          <circle cx="130" cy="160" r="5" fill="#2780e3"/>
-          <text x="140" y="164" fill="#2780e3" font-size="10" font-weight="700">gato</text>
-        </svg>
-      </div>
-      <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> cada punto es una imagen distinta ya resumida en dos valores. Lo importante aquí es notar que algunos ejemplos quedan más cerca entre sí que otros.</p>
-      <p class="pixel-flow-note"><strong>Ésta es la cadena completa:</strong> imagen → píxeles → rasgos medibles → puntajes → punto. La gráfica no es un tema aparte: es la misma imagen traducida al lenguaje que la neurona entiende.</p>
+      <p class="pixel-flow-note"><strong>Qué estás viendo:</strong> un solo punto que representa una sola imagen. Ese punto junta dos medidas de la misma foto: cuánto se detectan los bigotes y cuánto se detectan las orejas.</p>
+      <p class="pixel-flow-note"><strong>Importante:</strong> los puntos no son neuronas. Cada punto representa una imagen distinta. Las neuronas son las que después usan esos valores para intentar separar ejemplos.</p>
     </article>
   </div>
 </div>
 ```
 
-### Cuando una sola línea sí basta, y cuando ya no
+Hasta aquí, una sola imagen ya se convirtió en un punto en una gráfica. **¿Qué pasa cuando hacemos esto mismo con muchas imágenes distintas?**
 
-Imagina que ya tienes todos los puntos en la gráfica. La pregunta ahora es: ¿se pueden separar con una sola regla? A veces sí: trazas una línea y los gatos quedan de un lado, el resto del otro. Pero a veces los puntos están tan mezclados que ninguna línea recta puede separarlos sin cometer errores.
+---
 
-Eso es exactamente el límite de una sola neurona: solo puede trazar una **frontera de decisión** recta. Cuando el problema es más enredado, necesitamos combinar varias neuronas.
+### De neurona a red neuronal artificial
+
+En la sesión 1 vimos que una máquina podía aprender una **línea recta** para encontrar patrones en una gráfica. Aquí pasa algo parecido, pero con una diferencia importante: ahora cada punto no representa un dato cualquiera, sino una **imagen resumida en dos rasgos**.
+
+
+```{=html}
+<div style="display:flex;justify-content:center;margin:1.2rem 0;">
+  <svg viewBox="0 0 260 200" width="280" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <line x1="32" y1="148" x2="232" y2="148" stroke="#cbd5e1" stroke-width="2"/>
+    <line x1="32" y1="148" x2="32" y2="24" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="132" y="166" text-anchor="middle" fill="#475569" font-size="10" font-style="italic">bigotes</text>
+    <text x="14" y="90" text-anchor="middle" fill="#475569" font-size="10" font-style="italic" transform="rotate(-90,14,90)">orejas</text>
+    <circle cx="62"  cy="118" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="80"  cy="104" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="98"  cy="112" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="72"  cy="130" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="148" cy="72"  r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="170" cy="54"  r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="192" cy="40"  r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="158" cy="88"  r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <circle cx="48"  cy="182" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+    <text x="59" y="186" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
+    <circle cx="158" cy="182" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+    <text x="169" y="186" fill="#2780e3" font-size="10" font-weight="700">gato</text>
+  </svg>
+</div>
+```
+
+Cada punto en la gráfica representa una imagen. Cuando llega una imagen nueva, ¿cómo decide la neurona de qué grupo forma parte? Necesita una **regla**, así como la ecuación de la recta: una manera de predecir en qué grupo cae cualquier ejemplo nuevo.
+
+En este caso, la neurona intenta aprender una **recta** que divida la gráfica en dos zonas. Si el punto cae de un lado, responderá “gato”; si cae del otro, responderá “no gato”. A esta nueva recta la llamamos **frontera de decisión**.
+
+La frontera de decisión no la dibuja una persona: la neurona la aprende durante su entrenamiento. Es la versión geométrica de la regla que encontró para clasificar ejemplos nuevos.
+
+Sin embargo, **una neurona solo puede aprender una frontera recta**. Y, a veces, eso no es suficiente. Entre más patrones entrelazados o más complejas las imágenes, menos eficaz se vuelve la neurona. 
+
+```{=html}
+<details class="math-bridge">
+  <summary>Continuidad matemática</summary>
+  <p>Si quieres verlo como continuidad con la sesión 1, piensa en esto: la ecuación de la recta, <code>y = mx + b</code>, fue nuestra regla matemática. Aquí la neurona hace algo parecido, pero usando rasgos de entrada: calcula un valor <code>z = w_1x_1 + w_2x_2 + b</code>.</p>
+  <p>Después entra una función de activación. Una de las más conocidas es la <strong>función sigmoide</strong>, escrita como <code>\sigma(z)</code>, que suele expresarse así: <code>\sigma(z) = 1 / (1 + e<sup>-z</sup>)</code>.</p>
+  <p>La idea intuitiva es simple: toma el valor <code>z</code> y lo convierte en un número entre <code>0</code> y <code>1</code>. Si <code>z</code> es muy grande y positivo, la salida se acerca a <code>1</code>; si es muy negativo, se acerca a <code>0</code>. Eso permite interpretar la respuesta de la neurona como una activación más baja o más alta. Si <code>z > 0.5</code>, la neurona se activa. Si es menor, no se activa. Esa es nuestra frontera de decisión</p>
+  <p>No vamos a profundizar en estas matemáticas en el curso, pero vale la pena tener esta secuencia en mente: la neurona combina entradas, obtiene un valor <code>z</code> y luego una función como <code>\sigma(z)</code> transforma ese cálculo en una respuesta.</p>
+</details>
+```
 
 ```{=html}
 <div class="limite-grid">
@@ -408,24 +495,26 @@ Eso es exactamente el límite de una sola neurona: solo puede trazar una **front
     <svg viewBox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"/>
       <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"/>
-      <text x="94" y="136" text-anchor="middle" fill="#94a3b8" font-size="9">bigotes</text>
-      <text x="10" y="68" text-anchor="middle" fill="#94a3b8" font-size="9" transform="rotate(-90,10,68)">orejas</text>
-      <circle cx="56" cy="94" r="7" fill="#22c55e"/>
-      <circle cx="72" cy="76" r="7" fill="#22c55e"/>
-      <circle cx="92" cy="86" r="7" fill="#22c55e"/>
-      <circle cx="112" cy="52" r="7" fill="#2780e3"/>
-      <circle cx="130" cy="40" r="7" fill="#2780e3"/>
-      <circle cx="146" cy="28" r="7" fill="#2780e3"/>
-      <line class="limite-line" x1="36" y1="92" x2="152" y2="24" stroke="#f59e0b" stroke-width="4" stroke-linecap="round"/>
-      <text x="105" y="20" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
-      <text x="118" y="64" fill="#2780e3" font-size="8.5" font-weight="700">gatos</text>
-      <text x="44" y="106" fill="#22c55e" font-size="8.5" font-weight="700">no gatos</text>
-      <circle cx="30" cy="148" r="5" fill="#22c55e"/>
+      <text x="94" y="136" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">bigotes</text>
+      <text x="10" y="68" text-anchor="middle" fill="#475569" font-size="9" font-style="italic" transform="rotate(-90,10,68)">orejas</text>
+      <polygon points="24,18 82,18 144,118 24,118" fill="#dcfce7" opacity="0.55"/>
+      <polygon points="82,18 164,18 164,118 144,118" fill="#dbeafe" opacity="0.7"/>
+      <circle cx="56" cy="94" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="72" cy="76" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="92" cy="86" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="112" cy="52" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="130" cy="40" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="146" cy="28" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+      <line class="limite-line" x1="80" y1="18" x2="142" y2="118" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+      <text x="88" y="14" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
+      <text x="112" y="56" fill="#2780e3" font-size="8.5" font-weight="700">lado gato</text>
+      <text x="34" y="112" fill="#16a34a" font-size="8.5" font-weight="700">lado no gato</text>
+      <circle cx="30" cy="148" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
       <text x="38" y="152" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
-      <circle cx="85" cy="148" r="5" fill="#2780e3"/>
+      <circle cx="85" cy="148" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
       <text x="93" y="152" fill="#2780e3" font-size="10" font-weight="700">gato</text>
     </svg>
-    <p class="limite-copy">Cada punto azul es una imagen de un gato; cada punto verde, de un no-gato. Todos los gatos tienen muchas orejas y bigotes, y quedan arriba a la derecha. La línea los divide perfectamente: la neurona siempre acierta.</p>
+    <p class="limite-copy">Aquí sí existe una recta que deja a todos los gatos de un lado y a todos los no gatos del otro. La línea funciona como una frontera clara entre dos regiones del plano.</p>
   </div>
 
   <div class="limite-card">
@@ -434,13 +523,13 @@ Eso es exactamente el límite de una sola neurona: solo puede trazar una **front
     <svg viewBox="0 0 180 155" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <line x1="24" y1="10" x2="24" y2="122" stroke="#cbd5e1" stroke-width="2"/>
       <line x1="24" y1="122" x2="164" y2="122" stroke="#cbd5e1" stroke-width="2"/>
-      <text x="94" y="136" text-anchor="middle" fill="#94a3b8" font-size="9">bigotes</text>
-      <text x="10" y="68" text-anchor="middle" fill="#94a3b8" font-size="9" transform="rotate(-90,10,68)">orejas</text>
-      <circle cx="56" cy="94" r="7" fill="#22c55e"/>
-      <circle cx="132" cy="36" r="7" fill="#22c55e"/>
-      <circle cx="56" cy="36" r="7" fill="#2780e3"/>
-      <circle cx="132" cy="94" r="7" fill="#2780e3"/>
-      <line class="limite-line delay" x1="38" y1="98" x2="150" y2="42" stroke="#f59e0b" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 6"/>
+      <text x="94" y="136" text-anchor="middle" fill="#475569" font-size="9" font-style="italic">bigotes</text>
+      <text x="10" y="68" text-anchor="middle" fill="#475569" font-size="9" font-style="italic" transform="rotate(-90,10,68)">orejas</text>
+      <circle cx="56" cy="94" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="132" cy="36" r="7" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="56" cy="36" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+      <circle cx="132" cy="94" r="7" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
+      <line class="limite-line delay" x1="38" y1="98" x2="150" y2="42" stroke="#f59e0b" stroke-width="3" stroke-linecap="round" stroke-dasharray="8 6"/>
       <text x="105" y="38" fill="#f59e0b" font-size="8" font-weight="700">frontera de decisión</text>
       <text x="36" y="32" fill="#2780e3" font-size="8" font-weight="700">gato</text>
       <text x="35" y="108" fill="#22c55e" font-size="8" font-weight="700">no gato</text>
@@ -448,30 +537,26 @@ Eso es exactamente el límite de una sola neurona: solo puede trazar una **front
       <circle cx="132" cy="94" r="11" fill="none" stroke="#dc2626" stroke-width="2" stroke-dasharray="3 2"/>
       <text x="145" y="33" fill="#dc2626" font-size="10" font-weight="900">✗</text>
       <text x="145" y="91" fill="#dc2626" font-size="10" font-weight="900">✗</text>
-      <circle cx="30" cy="148" r="5" fill="#22c55e"/>
+      <circle cx="30" cy="148" r="5" fill="#22c55e" stroke="#fff" stroke-width="1.5"/>
       <text x="38" y="152" fill="#22c55e" font-size="10" font-weight="700">no gato</text>
-      <circle cx="85" cy="148" r="5" fill="#2780e3"/>
+      <circle cx="85" cy="148" r="5" fill="#2780e3" stroke="#fff" stroke-width="1.5"/>
       <text x="93" y="152" fill="#2780e3" font-size="10" font-weight="700">gato</text>
     </svg>
-    <p class="limite-copy">Hay gatos con pocas orejas y no-gatos con muchas. Sin importar cómo traces la línea, siempre quedarán puntos del lado equivocado —los marcados con ✗. No hay solución con una sola regla recta.</p>
+    <p class="limite-copy">Aquí los ejemplos están mezclados. No importa dónde traces una recta, siempre habrá algunos puntos del lado equivocado. El problema no es encontrar “la línea correcta”, sino que ninguna recta será capaz de separar este patrón complejo. Por eso, una sola neurona no es suficiente.</p>
   </div>
 </div>
 ```
 
-Estos dos casos no son excepciones raras: en el mundo, la mayoría de los problemas interesantes se parecen más al caso difícil que al fácil. Los patrones reales son complicados y se mezclan. Por eso no basta con una neurona, necesitamos varias trabajando juntas.
+Cuando nos encontramos en una situación como el Caso Difícil, una neurona ha llegado a su límite. Necesitaremos muchas neuronas, y empezaremos a construir una *red neuronal*. 
 
-:::{.callout-important}
-# Importante
-El salto clave de esta sesión es éste: **cuando una sola frontera no alcanza, conectamos varias neuronas**. Eso es exactamente lo que hace una red neuronal.
-:::
 
 ---
 
-### De varias neuronas a una red
+#### **Red Neuronal Artificial**
 
-Ya vimos que una sola neurona no siempre alcanza. La solución es encadenarlas: la salida de unas se convierte en la entrada de otras. Así la red puede construir ideas más complejas a partir de señales simples.
+Ahora que sabemos que necesitamos muchas neuronas para problemas complejos, el siguiente paso es *encadenarlas*. Es decir que, la salida de unas neuronas (la decisión que tomaron) se convierte en la entrada de otras. Así es como una red neuronal puede construir ideas complejas a partir de señales simples.
 
-Para eso organizamos neuronas en capas:
+Para ello, organizamos las neuronas en capas:
 
 - La **capa de entrada** recibe las señales directas: en nuestro ejemplo, "orejas", "bigotes" y "ojos".
 - Las **capas ocultas** combinan esas señales para detectar patrones más abstractos. En lugar de preguntar "¿hay orejas?", preguntan cosas como "¿hay cara felina?" o "¿la silueta es de un animal?".
@@ -555,258 +640,69 @@ Entre más capas tenga la red, más complejas pueden ser las ideas que construye
 
 ---
 
-### Entrenamiento vs inferencia
+### Entrenamiento vs. inferencia
 
-Hasta aquí hemos visto cómo funciona una red. Ahora viene una distinción clave: **aprender** a hacer algo es muy distinto a **ya saber hacerlo**.
+Hay dos momentos clave en la vida de cualquier red neuronal: cuando aprende (**entrenamiento**) y cuando ya aprendió (**inferencia**).
 
-- Durante el **entrenamiento**: la red todavía no sabe nada. Recibe ejemplos, comete errores y ajusta sus pesos una y otra vez hasta que mejora.
-- Durante la **inferencia**: la red ya aprendió. Sus pesos están fijos y solo los usa para responder.
+Imagina que tienes 50,000 imágenes, cada una etiquetada como "gato" o "no gato". La red empieza con pesos completamente aleatorios: no sabe absolutamente nada. El entrenamiento es el proceso por el cual esos pesos cambian, poco a poco, hasta que la red aprende a distinguir los dos grupos. No ocurre de golpe: es un ciclo que se repite miles de veces, imagen por imagen.
 
-Piénsalo así: entrenar es como estudiar para un examen; la inferencia es ya estar respondiendo el examen. El proceso de entrenamiento sigue siempre el mismo ciclo:
+Ese ciclo siempre tiene los mismos cuatro pasos:
 
 ```{=html}
 <div class="learning-loop">
   <div class="learning-step">
-    <p class="learning-step-num">Paso 1</p>
-    <h5>Pase hacia adelante</h5>
-    <p>La entrada atraviesa la red capa por capa y produce una predicción inicial.</p>
+    <p class="learning-step-num" aria-hidden="true">1</p>
+    <h5><strong>Forward pass</strong> — la imagen entra a la red</h5>
+    <p>La imagen viaja capa por capa hasta producir una predicción. Al inicio, con pesos aleatorios.</p>
   </div>
   <div class="learning-step">
-    <p class="learning-step-num">Paso 2</p>
-    <h5>Error</h5>
-    <p>Comparamos esa predicción con la respuesta correcta y medimos qué tan mal salió.</p>
+    <p class="learning-step-num" aria-hidden="true">2</p>
+    <h5><strong>Loss</strong> — se mide el error</h5>
+    <p>Se compara la predicción con la etiqueta correcta usando una función matemática. El resultado es un número —el <em>loss</em>— que nos dice qué tan equivocada estuvo la red. Mientras más alto, peor.</p>
   </div>
   <div class="learning-step">
-    <p class="learning-step-num">Paso 3</p>
-    <h5>Ajuste</h5>
-    <p>La red cambia un poco sus pesos para reducir ese error la próxima vez.</p>
+    <p class="learning-step-num" aria-hidden="true">3</p>
+    <h5><strong>Backpropagation</strong> — el error regresa por la red</h5>
+    <p>El error viaja de nuevo por todas las capas e indica a cada peso cuánto y en qué dirección debe ajustarse. A eso le llamamos <em>backpropagation</em>: la señal de corrección que hace que la red aprenda.</p>
   </div>
   <div class="learning-step">
-    <p class="learning-step-num">Paso 4</p>
-    <h5>Repetición</h5>
-    <p>Ese ciclo ocurre miles o millones de veces hasta que el error baja.</p>
+    <p class="learning-step-num" aria-hidden="true">4</p>
+    <h5><strong>Epoch</strong> — una vuelta completa por los datos</h5>
+    <p>Cuando la red ha procesado todas las imágenes del conjunto al menos una vez, decimos que completó una <em>época</em>. El entrenamiento puede durar decenas o cientos de épocas, dependiendo de qué tan difícil es el problema.</p>
   </div>
 </div>
 ```
 
-El entrenamiento es el proceso largo: probar, equivocarse, medir error y ajustar pesos una y otra vez.
+Cuando el error deja de bajar de manera significativa, el entrenamiento termina y los pesos quedan fijos. A partir de ese momento, la red entra en modo **inferencia**: recibe imágenes nuevas, nunca antes vistas, y produce predicciones. Los pesos ya no cambian; la red solo usa lo que aprendió.
 
-```{=html}
-<div class="train-wrap">
-  <p class="train-eyebrow">Entrenamiento</p>
-  <p class="train-titulo">Aprender = equivocarse, corregir, repetir</p>
-
-  <div class="train-visual">
-    <div class="train-panel">
-      <p class="train-panel-label">Clase predicha</p>
-      <p class="train-pred wrong" id="train-pred">❌ no gato</p>
-    </div>
-    <div class="train-panel">
-      <p class="train-panel-label">Qué tan equivocada está</p>
-      <p class="train-error-label">Error actual</p>
-      <div class="train-error-wrap">
-        <div class="train-error-bar" id="train-error-bar"></div>
-      </div>
-      <span class="train-error-pct" id="train-error-pct">85%</span>
-    </div>
-  </div>
-
-  <div class="train-pesos-wrap">
-    <span class="train-pesos-label">pesos:</span>
-    <span class="train-peso" id="tp1">orejas = 0.30</span>
-    <span class="train-peso" id="tp2">bigotes = 0.45</span>
-    <span class="train-peso" id="tp3">ojos = 0.25</span>
-  </div>
-
-  <div class="train-controls">
-    <button class="train-play-btn" id="train-play-btn">▶ Ver cómo aprende</button>
-    <span class="train-ciclo-wrap">
-      Ciclo <span class="train-ciclo-num" id="train-ciclo-num">0</span> de 10,000
-    </span>
-  </div>
-
-  <div class="train-insight">
-    Cada vez que la red falla, ajusta sus pesos un poquito. Después de muchas repeticiones, el error baja.
-    A ese proceso le llamamos <strong>entrenamiento</strong>.
-  </div>
-</div>
-```
-
-:::{.callout-note}
-# Si escuchas la palabra "backpropagation" por ahí
-Por ahora basta con esta intuición: cuando la red se equivoca, usa ese error para corregir sus conexiones internas hacia atrás, capa por capa. En eso consiste el concepto.
-:::
 
 ---
 
-### La misma idea, en imágenes y en LLMs
-
-Una vez que entiendes el caso de imágenes, puedes aplicar la misma intuición a un LLM. La tarea es distinta, pero la lógica es la misma: **reciben una entrada, calculan patrones internos y producen la salida más probable**.
-
-Por ejemplo: si le escribes a ChatGPT "La capital de México es...", la red toma todo ese contexto, calcula qué palabras son más probables a continuación y elige la mejor. No "sabe" geografía; aprendió patrones en millones de textos que la llevan a esa respuesta.
+### Para reflexionar
 
 ```{=html}
-<div class="transfer-grid">
-  <div class="transfer-card">
-    <p class="transfer-kicker">Ejemplo 1</p>
-    <h4>Predicción en imágenes</h4>
-    <p>La entrada es una imagen. La salida puede ser una clase: "gato", "perro", "spam visual", "tumor", etc.</p>
-    <div class="transfer-flow">
-      <div class="transfer-row">
-        <span class="transfer-row-num">1</span>
-        <div><strong>Entrada</strong><br><span>Píxeles o rasgos visuales de una imagen.</span></div>
-      </div>
-      <div class="transfer-row">
-        <span class="transfer-row-num">2</span>
-        <div><strong>Capas ocultas</strong><br><span>La red combina señales y detecta bordes, formas y patrones más complejos.</span></div>
-      </div>
-      <div class="transfer-row">
-        <span class="transfer-row-num">3</span>
-        <div><strong>Puntajes</strong><br><span>La red calcula qué tan compatible es la imagen con cada posible clase.</span></div>
-      </div>
-      <div class="transfer-row">
-        <span class="transfer-row-num">4</span>
-        <div><strong>Salida</strong><br><span>Elige la clase con mejor puntaje.</span></div>
-      </div>
-    </div>
-  </div>
-  <div class="transfer-card">
-    <p class="transfer-kicker">Ejemplo 2</p>
-    <h4>Predicción en un LLM</h4>
-    <p>La entrada es texto previo. La salida no es una etiqueta, sino la siguiente palabra o token más probable.</p>
-    <div class="transfer-flow">
-      <div class="transfer-row">
-        <span class="transfer-row-num">1</span>
-        <div><strong>Entrada</strong><br><span>Un contexto como: "Hoy hablamos de redes ..."</span></div>
-      </div>
-      <div class="transfer-row">
-        <span class="transfer-row-num">2</span>
-        <div><strong>Capas ocultas</strong><br><span>La red combina las palabras previas para construir una representación del contexto.</span></div>
-      </div>
-      <div class="transfer-row">
-        <span class="transfer-row-num">3</span>
-        <div><strong>Puntajes</strong><br><span>Asigna probabilidades a muchas palabras posibles: "neuronales", "sociales", "secretas"...</span></div>
-      </div>
-      <div class="transfer-row">
-        <span class="transfer-row-num">4</span>
-        <div><strong>Salida</strong><br><span>Elige la siguiente palabra y repite el proceso una y otra vez.</span></div>
-      </div>
-    </div>
-  </div>
-</div>
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿En qué se parece una neurona a ti?</strong> Una neurona acumula señales y solo se activa si la evidencia supera un umbral. ¿Se te ocurre alguna decisión que tomes así, donde busques señales y solo actúes si hay suficiente evidencia de algo?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué se parece tu forma de aprender al entrenamiento de una neurona?</strong> Una red aprende ajustando sus pesos a partir de sus errores, ciclo tras ciclo. ¿En qué se parece eso a cómo aprendes tú algo nuevo? ¿En qué es diferente?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>¿Cambia algo saber cómo funcionan los LLMs?</strong> ChatGPT no "entiende" de emociones: aprendió patrones en millones de textos. ¿Cambia eso la manera en que lo usarías, o la confianza que le tendrías a sus respuestas?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Explícalo en dos oraciones.</strong> Si tuvieras que describirle a alguien de tu familia qué es una red neuronal, sin tecnicismos, ¿qué dirías?</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver la tecnología con otros ojos.</p>
 ```
-
-```{=html}
-<div class="transfer-note">
-  <strong>Algo importante:</strong> un LLM no mira solo la última palabra. Considera todo el contexto acumulado. Por eso la palabra siguiente depende de toda la secuencia anterior, no de una sola pista aislada.
-</div>
-```
-
----
-
-### Tu laboratorio final
-
-Aquí ya no se trata de memorizar definiciones. Se trata de comprobar con tus ojos cuándo una red pequeña basta y cuándo ya no.
-
-```{=html}
-<div class="demo-wrap">
-  <div class="demo-shell demo-tone-unsupervised demo-shell-live-only">
-    <div class="demo-shell-head">
-      <div class="demo-shell-copy">
-        <div class="reto-tf-header">
-          <p class="demo-eyebrow">Práctica interactiva</p>
-          <span class="reto-tf-badge">Reto final</span>
-        </div>
-        <h4 class="demo-title">TensorFlow Playground: ahora tú prueba</h4>
-        <p class="demo-copy">Cambia una sola cosa a la vez y observa qué pasa con la frontera de decisión.</p>
-      </div>
-    </div>
-
-    <div class="demo-stage">
-      <div class="demo-stage-live">
-        <div class="reto-tf-objetivo">
-          <p class="reto-tf-objetivo-label">Qué queremos aprender</p>
-          <p>Cuando el patrón se complica, una sola frontera deja de funcionar. Entonces necesitas más capacidad: más neuronas, más capas o ambas.</p>
-        </div>
-        <div class="playground-mission-grid">
-          <div class="playground-mission-card">
-            <span class="nn-column-label">Paso 1</span>
-            <h5>Empieza con una línea</h5>
-            <p>Elige un patrón sencillo y una red mínima. Observa cómo una sola frontera separa los datos.</p>
-          </div>
-          <div class="playground-mission-card">
-            <span class="nn-column-label">Paso 2</span>
-            <h5>Complica el patrón</h5>
-            <p>Cambia a círculos o espirales y detecta el momento exacto en que esa frontera deja de bastar.</p>
-          </div>
-          <div class="playground-mission-card">
-            <span class="nn-column-label">Paso 3</span>
-            <h5>Hazla crecer</h5>
-            <p>Agrega neuronas o capas poco a poco y observa si la nueva frontera se ajusta mejor.</p>
-          </div>
-        </div>
-        <div class="lab-card">
-          <div class="lab-card-grid">
-            <div class="lab-card-section">
-              <h5>Configuración inicial</h5>
-              <p>Empieza con una sola capa oculta y pocas neuronas. No cambies todo a la vez.</p>
-            </div>
-            <div class="lab-card-section">
-              <h5>Qué ver</h5>
-              <p>La frontera de decisión, los puntos mal clasificados y la curva de error.</p>
-            </div>
-            <div class="lab-card-section">
-              <h5>Qué aprender</h5>
-              <p>La arquitectura importa porque determina qué patrones puede representar la red.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="demo-footer">
-      <p class="demo-status">Cambia solo una variable cada vez para entender qué efecto tuvo.</p>
-      <div class="demo-actions">
-        <a class="demo-btn demo-btn-primary" href="https://playground.tensorflow.org/" target="_blank" rel="noopener noreferrer">Abrir Playground →</a>
-      </div>
-    </div>
-  </div>
-</div>
-```
-
----
-
-```{=html}
-<details class="foldout foldout-panel">
-  <summary class="foldout-summary">
-    <span>Opcional: por qué 2012 importa tanto</span>
-    <span class="foldout-summary-hint">Historia</span>
-  </summary>
-  <div class="foldout-body">
-    <p>En 2012, una red llamada AlexNet bajó el error en un concurso de reconocimiento de imágenes del 26% al 16%. Puede sonar como un detalle técnico, pero fue un golpe en la mesa: demostró que con suficientes datos y poder de cómputo, el deep learning podía superar a cualquier método anterior.</p>
-    <p>Ese momento abrió el camino al reconocimiento facial en tu teléfono, a los sistemas de diagnóstico médico por imagen y, con el tiempo, a los modelos de lenguaje que usamos hoy. 2012 no fue el inicio de las redes neuronales, pero sí la prueba de que eran el camino.</p>
-  </div>
-</details>
-```
-
----
-
-### ¿Las máquinas realmente “entienden”?
-
-Has visto todo el mecanismo: pesos, capas, entrenamiento, backpropagation. Ahora viene la pregunta que los propios investigadores llevan décadas discutiendo.
-
-Ya sabes cómo funciona una red: recibe señales, ajusta pesos y produce una salida. Puede reconocer imágenes y generar texto. Pero queda una pregunta abierta: ¿eso cuenta como entender?
-
-La respuesta corta es: **no**. ChatGPT puede escribirte una disculpa muy sentida... pero no siente nada mientras lo hace. No tiene recuerdos entre conversaciones, ni intención, ni experiencia propia. Lo que tiene es una habilidad enorme para detectar patrones en el lenguaje y producir texto que suena coherente.
-
-```{=html}
-<div class=”debate-card”>
-  <h4>Para reflexionar</h4>
-  <p>Si una máquina puede escribirte una disculpa que te hace sentir mejor, ¿importa que no sienta nada al hacerlo? ¿Dónde está la diferencia entre “entender” y “simular entender muy bien”?</p>
-</div>
-```
-
-No hay respuesta correcta aquí — y eso es parte del punto. La pregunta de qué significa “entender” es filosófica tanto como técnica. Lo que sí puedes hacer ahora es razonar sobre ella con herramientas reales: sabes cómo funciona el mecanismo por dentro.
 
 ---
 
@@ -815,7 +711,7 @@ No hay respuesta correcta aquí — y eso es parte del punto. La pregunta de qu�
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 2</span>
-  <p class="central-idea-text">Una neurona artificial recibe señales, les asigna pesos y produce una salida. Una red neuronal conecta muchas de esas neuronas para resolver patrones que ya no caben en una sola frontera. Durante el entrenamiento ajusta pesos; durante la inferencia usa esos pesos para responder. Esa misma lógica aparece tanto en modelos de imagen como en LLMs.</p>
+  <p class="central-idea-text">Una neurona artificial recibe señales, les asigna pesos y decide si activarse. Una red conecta muchas neuronas para trazar fronteras de decisión cuando el problema es complejo. Esa misma lógica está detrás del reconocimiento facial y de los LLMs que generan texto: la tarea cambia, pero el mecanismo es el mismo.</p>
 </div>
 ```
 

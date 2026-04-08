@@ -30,7 +30,7 @@ format:
 <link rel="stylesheet" href="../styles/sessions/sesion-03.css">
 ```
 
-## Video: Algoritmos de IA — ¿qué método para qué problema?
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -42,9 +42,7 @@ format:
 
 ---
 
-## Texto: Algoritmos de IA — ¿qué método para qué problema?
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -562,10 +560,12 @@ Aquí tienes un resumen de la sesión en formato tabla:
 </table>
 ```
 
-:::{.callout-important}
-# La idea central de esta sesión
-El algoritmo correcto no es el más complejo ni el más famoso — es el que mejor encaja con el tipo de problema que tienes. Un transformer no es mejor que un árbol de decisión en absoluto: son herramientas para trabajos distintos. La habilidad no es saber todos los algoritmos de memoria; es saber hacer las dos preguntas del mapa.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 3</span>
+  <p class="central-idea-text">El algoritmo correcto no es el más complejo ni el más famoso: es el que mejor encaja con el tipo de problema que tienes. Un transformer no es mejor que un árbol de decisión en absoluto; son herramientas para trabajos distintos. La habilidad no es saber todos los algoritmos de memoria, sino saber hacer las dos preguntas del mapa.</p>
+</div>
+```
 
 ---
 
@@ -587,14 +587,16 @@ No hay respuestas correctas o incorrectas. El objetivo es que el mapa empiece a 
 
 ---
 
-## Recursos para explorar más
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 - [R2D3 — Visual intro to machine learning](https://r2d3.us/visual-intro-to-machine-learning-part-1/) — el mejor scrollytelling sobre árboles de decisión que existe; sin código, en inglés con visulaes que se explican solos
 - [MLU-Explain](https://mlu-explain.github.io/) — ensayos visuales e interactivos sobre algoritmos clave, de Amazon Machine Learning University
 - [Transformer Explainer](https://poloclub.github.io/transformer-explainer/) — GPT-2 en vivo en tu navegador; observa el mecanismo de atención en acción
 - [Visualizing K-Means](https://www.naftaliharris.com/blog/visualizing-k-means-clustering/) — demo interactiva del clustering paso a paso
 - [TensorFlow Playground](https://playground.tensorflow.org/) — experimenta con redes neuronales cambiando parámetros en tiempo real
 - [Elements of AI](https://www.elementsofai.com/es) — curso introductorio gratuito en español (Universidad de Helsinki), cubre varios de los algoritmos de esta sesión
+:::
 
 ---
 

@@ -31,7 +31,7 @@ format:
 <script src="../interactives/sesion-13.js" defer></script>
 ```
 
-## Video de la sesión
+## Introducción a la IA
 
 ```{=html}
 <div class="video-placeholder">
@@ -43,9 +43,7 @@ format:
 ---
 
 
-## Texto: Robótica e IA en el Mundo Físico
-
----
+<p class="capsule-complement-note">Los videos y el texto de esta sesión son complementarios. Los videos amplían el contexto histórico y conceptual; el texto va a los mecanismos y te pone a interactuar con ellos. Encontrarás ideas en los videos que el texto no repite exactamente. ¡Disfruta de esta dinámica!</p>
 
 ### Introducción
 
@@ -59,7 +57,7 @@ Esa misión de 2011 nos da el contexto que necesitamos para hacernos una pregunt
 
 
 :::{.callout-note}
-# La idea central
+# La pregunta central de esta sesión
 En robótica, ¿qué parte se resuelve con hardware y reglas fijas, y qué parte necesita IA para percibir, decidir o aprender?
 :::
 
@@ -582,8 +580,9 @@ No empieces por el robot — empieza por el problema. Cada uno de los tres casos
 
 ---
 
-### Recursos extra: videos y simulaciones para seguir aprendiendo de robótica
+### Recursos para explorar más sobre el tema
 
+::: {.resource-list}
 ```{=html}
 <div class="route-grid">
 
@@ -654,22 +653,18 @@ No empieces por el robot — empieza por el problema. Cada uno de los tres casos
 
 </div>
 ```
+:::
 
 ---
 
-### Cierre
+### La idea central de esta sesión
 
-:::{.callout-important}
-# Si te quedas con cuatro ideas, que sean estas
-
-1. **La robótica tiene consecuencias en el mundo físico.** Por eso un error es más visibles y más costosos que en otras aplicaciones de la IA.
-
-2. **La autonomía siempre tiene límites.** Un sistema responsable no solo hace cosas; también sabe en qué situaciones no debería actuar solo.
-
-3. **La simulación es parte del aprendizaje y de la seguridad.** Muchos robots modernos aprenden primero en entornos virtuales antes de salir al mundo físico.
-
-4. **No pienses en construit robots, piensa en qué problemas pueden ser solucionados con robots.** Y cuando ese problema ocurre en un entorno cambiante, la IA puede ser parte de la solución.
-:::
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 13</span>
+  <p class="central-idea-text">Un robot no se vuelve inteligente solo por tener motores y sensores. La IA entra cuando esa máquina debe percibir, decidir o adaptarse en un entorno cambiante. Por eso, en robótica, la pregunta importante no es solo qué se mueve, sino qué problema se intenta resolver y con qué margen de seguridad.</p>
+</div>
+```
 
 ---
 

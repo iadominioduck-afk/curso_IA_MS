@@ -72,11 +72,22 @@ format:
 
 Conocer de primera mano cómo se hace investigación en IA con impacto social desde México y en el contexto universitario global, y explorar oportunidades académicas internacionales para estudiantes de San Luis Potosí.
 
-## Recursos
+### La idea central de esta sesión
 
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 15</span>
+  <p class="central-idea-text">La investigación en IA también puede orientarse al impacto social, la equidad y el acceso. Esta sesión cierra el curso mostrando que estudiar IA no solo abre puertas técnicas, sino también caminos académicos y profesionales conectados con problemas reales y con comunidades concretas.</p>
+</div>
+```
+
+### Recursos para explorar más sobre el tema
+
+::: {.resource-list}
 ```{=html}
 <p class="recursos-placeholder">Los recursos que el Dr. Marmolejo-Cossio comparta durante la sesión — artículos, proyectos, instituciones, herramientas — se publicarán aquí después del Zoom.</p>
 ```
+:::
 
 ---
 
