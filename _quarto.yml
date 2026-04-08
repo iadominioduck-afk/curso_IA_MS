@@ -24,13 +24,13 @@ website:
           - text: "— Bloque 1: Fundamentos + Ética —"
           - text: "S1 · ¿Qué es la IA?"
             href: sesiones/sesion-01.qmd
-          - text: "S2 · Redes Neuronales — ¿Cómo 'piensa' la IA?"
+          - text: "S2 · Redes Neuronales Artificiales"
             href: sesiones/sesion-02.qmd
           - text: "S3 · Algoritmos de IA"
             href: sesiones/sesion-03.qmd
           - text: "S4 · IA Generativa"
             href: sesiones/sesion-04.qmd
-          - text: "S5 · Ética y problemas reales"
+          - text: "S5 · Ética en la IA"
             href: sesiones/sesion-05.qmd
           - text: "S6 · EN VIVO: IA en México"
             href: sesiones/sesion-06.qmd
@@ -59,7 +59,7 @@ website:
     left: "Intro a la IA · San Luis Potosí · 2026"
     right:
       - icon: github
-        href: https://github.com
+        href: https://github.com/michelleg06
 
 format:
   html:
