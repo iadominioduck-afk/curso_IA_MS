@@ -4,6 +4,7 @@ project:
   resources:
     - assets/google-maps-pin.svg
     - assets/gmail-icon-2020.svg
+    - assets/sesion-04/intro-chatgpt.mp4
 
 website:
   title: "Intro a la IA"
