@@ -714,8 +714,6 @@ Desde la perspectiva que más te interese abordar, responde lo siguiente:
 
 ---
 
-### Para reflexionar
-
 ```{=html}
 <span class="reflexion-kicker">Reflexión · 5 min</span>
 <h3 class="reflexion-heading">Actividad de reflexión</h3>

@@ -69,3 +69,6 @@ format:
     toc-depth: 3
     number-sections: false
     css: styles/sesion.css
+    include-in-header:
+      text: |
+        <script defer src="https://cloud.umami.is/script.js" data-website-id="225b59d4-82fc-4df6-9c47-98afac4a8c13"></script>

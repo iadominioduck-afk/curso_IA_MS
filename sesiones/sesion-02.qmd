@@ -801,8 +801,6 @@ Cuando el error deja de bajar de manera significativa, el entrenamiento termina 
 
 ---
 
-### Para reflexionar
-
 ```{=html}
 <span class="reflexion-kicker">Reflexión · 5 min</span>
 <h3 class="reflexion-heading">Actividad de reflexión</h3>

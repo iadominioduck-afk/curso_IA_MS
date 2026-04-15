@@ -817,8 +817,6 @@ Aquí tienes un resumen de la sesión.
 
 ---
 
-### Para reflexionar
-
 ```{=html}
 <span class="reflexion-kicker">Reflexión · 5 min</span>
 <h3 class="reflexion-heading">Actividad de reflexión</h3>

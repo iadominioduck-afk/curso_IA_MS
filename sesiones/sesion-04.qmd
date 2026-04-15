@@ -691,8 +691,6 @@ Antes de usar o compartir información generada con IA, intenta preguntarte lo s
 
 ---
 
-### Para reflexionar
-
 ```{=html}
 <span class="reflexion-kicker">Reflexión · 5 min</span>
 <h3 class="reflexion-heading">Actividad de reflexión</h3>
