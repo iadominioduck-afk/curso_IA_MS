@@ -543,6 +543,7 @@ El caso *Colorado* plantea también una cuestión jurídica que los tribunales e
 La cuestión de los **datos de entrenamiento** resulta particularmente relevante: muchos modelos se entrenan con imágenes obtenidas de internet, una proporción significativa de ellas creadas por artistas que no otorgaron consentimiento explícito. Diversas demandas colectivas —incluida la de Getty Images contra Stability AI— sostienen que este uso podría constituir una infracción de derechos de autor a gran escala. Las resoluciones de estos casos serán determinantes para configurar el marco legal en los próximos años.
 
 Para usos personales o educativos, estas implicaciones suelen ser menos inmediatas. Sin embargo, en contextos comerciales, como la venta de imágenes generadas, su uso en publicidad o su presentación en concursos, resulta recomendable revisar el marco legal aplicable en cada jurisdicción y asumir que se trata de un entorno regulatorio aún en evolución.
+
 ---
 
 ```{=html}
