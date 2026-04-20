@@ -672,6 +672,11 @@ Sin embargo, **una neurona solo puede aprender una frontera recta**. Y, a veces,
 
 Cuando nos encontramos en una situación como el Caso Difícil, una neurona ha llegado a su límite. Necesitaremos muchas neuronas, y empezaremos a construir una *red neuronal*. 
 
+```{=html}
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/Q7YPe6edtEZ" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+</div>
+```
 
 ---
 
@@ -760,6 +765,11 @@ Entre más capas tenga la red, más complejas pueden ser las ideas que construye
 </div>
 ```
 
+```{=html}
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/fZMktqhEBxK" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+</div>
+```
 
 ---
 

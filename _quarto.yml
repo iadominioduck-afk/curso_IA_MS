@@ -5,6 +5,9 @@ project:
     - assets/google-maps-pin.svg
     - assets/gmail-icon-2020.svg
     - assets/sesion-04/intro-chatgpt.mp4
+    - assets/sesion-08/cartel1.png
+    - assets/sesion-08/cartel2.png
+    - assets/sesion-08/cartel3.png
 
 website:
   title: "Intro a la IA"
