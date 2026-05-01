@@ -19,16 +19,16 @@ format:
     <span class="sesion-progress-label">12 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 21 de julio de 2026</span>
-    <span class="sesion-meta-chip">⏱ 40 minutos</span>
-    <a href="../syllabus.html">Ver código completo →</a>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 21 de julio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 40 minutos</span>
+    <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
 ```
 
 ```{=html}
 <link rel="stylesheet" href="../styles/sessions/sesion-12.css">
-<script src="../interactives/sesion-12.js" defer></script>
+<script type="module" src="../interactives/sesion-12.js"></script>
 ```
 
 ## Introducción a la IA
@@ -50,10 +50,12 @@ En la [sesión 3](sesion-03.html) describimos cómo funciona un algoritmo `árbo
 
 Ahora vamos a hacer exactamente lo mismo, pero con Python 🐍. No es necesario memorizar el código, la idea es que puedas **comprender** qué hace cada línea y conectarla con conceptos que ya conoces.
 
-:::{.callout-note}
-# Recuerda: sesión 3
-Describimos el `árbol de decisión` (Random Forest) como el juego de las 20 preguntas: el modelo hace preguntas [sí = 1/no = 0] sobre los datos hasta llegar a una respuesta. Hoy, Python va a construir ese árbol automáticamente a partir de miles de ejemplos etiquetados.
-:::
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">Recuerda: sesión 3</h5>
+  <p>Describimos el <code>árbol de decisión</code> (Random Forest) como el juego de las 20 preguntas: el modelo hace preguntas [sí = 1/no = 0] sobre los datos hasta llegar a una respuesta. Hoy, Python va a construir ese árbol automáticamente a partir de miles de ejemplos etiquetados.</p>
+</div>
+```
 
 ---
 
@@ -127,10 +129,12 @@ La solución es siempre la misma: **separar** los datos antes de empezar.
 </div>
 ```
 
-:::{.callout-important}
-# La regla de oro
-Nunca uses los datos de prueba durante el entrenamiento. La precisión que obtienes al final solo tiene sentido si el modelo no vio esas imágenes antes.
-:::
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">La regla de oro</h5>
+  <p>Nunca uses los datos de prueba durante el entrenamiento. La precisión que obtienes al final solo tiene sentido si el modelo no vio esas imágenes antes.</p>
+</div>
+```
 
 ---
 
@@ -219,10 +223,12 @@ Para escribir y ejecutar Python no necesitas instalar nada. **Google Colab** es 
 </div>
 ```
 
-:::{.callout-tip}
-# Abrir Colab
-[colab.research.google.com →](https://colab.research.google.com) Necesitas una cuenta de Google. Crea un cuaderno nuevo desde "Archivo → Nuevo notebook" y copia el código de esta sesión.
-:::
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">Abrir Colab</h5>
+  <p><a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com →</a> Necesitas una cuenta de Google. Crea un cuaderno nuevo desde "Archivo → Nuevo notebook" y copia el código de esta sesión.</p>
+</div>
+```
 
 ---
 
@@ -573,18 +579,18 @@ plt.tight_layout()
 plt.show()
 ```
 
-:::{.callout-note}
-# Cómo leer este diagrama
-
-Cada **recuadro azul** es un punto de decisión. El árbol revisa el valor de un píxel específico de la imagen (en una cuadrícula de 8×8) y hace una pregunta binaria:
-
-- **Flecha verde → Sí**: el valor de ese píxel es menor o igual al umbral → el árbol sigue por la rama izquierda.
-- **Flecha naranja → No**: el valor es mayor → el árbol sigue por la rama derecha.
-
-Los **nodos del fondo** son el resultado de seguir esas dos ramas dos veces: muestran el dígito (clase 0–9) que el modelo predice si una imagen llega hasta ese punto.
-
-Este diagrama solo muestra los **primeros 3 niveles**. El árbol real tiene 10 en total — después de esas 10 preguntas, el modelo da su predicción final.
-:::
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">Cómo leer este diagrama</h5>
+  <p>Cada <strong>recuadro azul</strong> es un punto de decisión. El árbol revisa el valor de un píxel específico de la imagen (en una cuadrícula de 8×8) y hace una pregunta binaria:</p>
+  <ul>
+    <li><strong>Flecha verde → Sí</strong>: el valor de ese píxel es menor o igual al umbral → el árbol sigue por la rama izquierda.</li>
+    <li><strong>Flecha naranja → No</strong>: el valor es mayor → el árbol sigue por la rama derecha.</li>
+  </ul>
+  <p>Los <strong>nodos del fondo</strong> son el resultado de seguir esas dos ramas dos veces: muestran el dígito (clase 0–9) que el modelo predice si una imagen llega hasta ese punto.</p>
+  <p>Este diagrama solo muestra los <strong>primeros 3 niveles</strong>. El árbol real tiene 10 en total — después de esas 10 preguntas, el modelo da su predicción final.</p>
+</div>
+```
 
 Esto es el árbol de decisión que describimos en la [sesión 3](sesion-03.html), construido automáticamente por Python a partir de 1,347 ejemplos. Cada umbral (el número después de ≤) fue elegido por el algoritmo para separar mejor los dígitos durante el entrenamiento.
 
@@ -620,44 +626,38 @@ plt.tight_layout()
 plt.show()
 ```
 
-:::{.callout-note}
-# Cómo leer la matriz — celda por celda
-
-La matriz tiene **10 filas y 10 columnas** (una por cada dígito, del 0 al 9). Para leer cualquier celda usa esta regla:
-
-> **Fila** = el dígito que **realmente** era la imagen escrita a mano.
->
-> **Columna** = lo que el modelo **predijo** que era.
->
-> **Número en la celda** = cuántas veces ocurrió esa combinación exacta.
-
----
-
-**Los aciertos: la diagonal**
-
-Todas las celdas donde fila = columna son aciertos. El modelo predijo el dígito correcto.
-
-- Celda **[fila 0, columna 0]**: el modelo vio imágenes del dígito **0** y predijo **0** ✓. Si el número es 41, eso pasó 41 veces.
-- Celda **[fila 1, columna 1]**: vio un **1** y predijo **1** ✓.
-- Cuanto más brillante (más azul) es la diagonal, mejor está funcionando el modelo en ese dígito.
-
-**Los errores: todo lo que está fuera de la diagonal**
-
-Cada celda fuera de la diagonal es un tipo de error específico.
-
-- Celda **[fila 1, columna 0]**: el modelo vio una imagen del dígito **1** pero predijo **0** ✗. Si el número es 0, ese error nunca ocurrió.
-- Celda **[fila 3, columna 8]** (por ejemplo): vio un **3**, pero lo confundió con un **8** ✗.
-- Cuanto más brillante sea una celda fuera de la diagonal, más frecuente es ese error.
-
----
-
-**Cómo encontrar el error más común del modelo:**
-
-1. Ignora la diagonal brillante.
-2. Busca la celda más intensa (más azul) que esté fuera de esa diagonal.
-3. Lee su **fila** (dígito real) y su **columna** (dígito que predijo el modelo).
-4. Pregúntate: ¿se parecen visualmente esos dos dígitos escritos a mano? ¿Por qué crees que el árbol los confundió?
-:::
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">Cómo leer la matriz — celda por celda</h5>
+  <p>La matriz tiene <strong>10 filas y 10 columnas</strong> (una por cada dígito, del 0 al 9). Para leer cualquier celda usa esta regla:</p>
+  <blockquote>
+    <p><strong>Fila</strong> = el dígito que <strong>realmente</strong> era la imagen escrita a mano.</p>
+    <p><strong>Columna</strong> = lo que el modelo <strong>predijo</strong> que era.</p>
+    <p><strong>Número en la celda</strong> = cuántas veces ocurrió esa combinación exacta.</p>
+  </blockquote>
+  <p><strong>Los aciertos: la diagonal</strong></p>
+  <p>Todas las celdas donde fila = columna son aciertos. El modelo predijo el dígito correcto.</p>
+  <ul>
+    <li>Celda <strong>[fila 0, columna 0]</strong>: el modelo vio imágenes del dígito <strong>0</strong> y predijo <strong>0</strong> ✓. Si el número es 41, eso pasó 41 veces.</li>
+    <li>Celda <strong>[fila 1, columna 1]</strong>: vio un <strong>1</strong> y predijo <strong>1</strong> ✓.</li>
+    <li>Cuanto más brillante (más azul) es la diagonal, mejor está funcionando el modelo en ese dígito.</li>
+  </ul>
+  <p><strong>Los errores: todo lo que está fuera de la diagonal</strong></p>
+  <p>Cada celda fuera de la diagonal es un tipo de error específico.</p>
+  <ul>
+    <li>Celda <strong>[fila 1, columna 0]</strong>: el modelo vio una imagen del dígito <strong>1</strong> pero predijo <strong>0</strong> ✗. Si el número es 0, ese error nunca ocurrió.</li>
+    <li>Celda <strong>[fila 3, columna 8]</strong> (por ejemplo): vio un <strong>3</strong>, pero lo confundió con un <strong>8</strong> ✗.</li>
+    <li>Cuanto más brillante sea una celda fuera de la diagonal, más frecuente es ese error.</li>
+  </ul>
+  <p><strong>Cómo encontrar el error más común del modelo:</strong></p>
+  <ol>
+    <li>Ignora la diagonal brillante.</li>
+    <li>Busca la celda más intensa (más azul) que esté fuera de esa diagonal.</li>
+    <li>Lee su <strong>fila</strong> (dígito real) y su <strong>columna</strong> (dígito que predijo el modelo).</li>
+    <li>Pregúntate: ¿se parecen visualmente esos dos dígitos escritos a mano? ¿Por qué crees que el árbol los confundió?</li>
+  </ol>
+</div>
+```
 
 
 
@@ -680,10 +680,12 @@ El parámetro `max_depth` controla el número máximo de preguntas que puede hac
 | `max_depth=10` | El original | ~85 % |
 | `max_depth=None` | Sin límite — el árbol crece todo lo que pueda | ¿sube o baja? |
 
-:::{.callout-tip}
-## Pista: el peligro de un árbol sin límite
-Un árbol sin `max_depth` puede memorizar cada imagen de entrenamiento en vez de aprender reglas generales — como estudiar copiando las respuestas de la guía sin entender nada. En entrenamiento funciona perfectamente; con imágenes nuevas, falla. Eso se llama **sobreajuste**.
-:::
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">Pista: el peligro de un árbol sin límite</h5>
+  <p>Un árbol sin <code>max_depth</code> puede memorizar cada imagen de entrenamiento en vez de aprender reglas generales — como estudiar copiando las respuestas de la guía sin entender nada. En entrenamiento funciona perfectamente; con imágenes nuevas, falla. Eso se llama <strong>sobreajuste</strong>.</p>
+</div>
+```
 
 > **Pregunta:** ¿Por qué un árbol con solo 2 preguntas acierta tan poco? ¿Y por qué quitarle el límite del todo tampoco mejora mucho?
 
@@ -757,9 +759,45 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 
 ---
 
+```{=html}
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Habías escrito código antes de esta sesión?</strong> Si nunca, ¿qué se te hizo más extraño o más natural? Si ya sabías programar, ¿qué fue distinto a usar otros lenguajes?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué se parece estudiar para un examen a entrenar un modelo?</strong> Piensa en la guía de estudio, en preguntas que ya viste y en preguntas nuevas. ¿Qué sería el "sobreajuste" en tu propia forma de estudiar?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Si tuvieras que entrenar un modelo para algo de tu vida</strong> (por ejemplo, predecir cuánto tiempo te tomará llegar a la escuela), ¿qué datos etiquetados necesitarías? ¿Qué cosas serían difíciles de medir?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Explícale a alguien menor que tú, en dos oraciones,</strong> por qué un modelo de machine learning con 100 % de precisión en entrenamiento no necesariamente es un buen modelo.</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el código y los datos con otros ojos.</p>
+```
+
+---
+
+### La idea central de esta sesión
+
+```{=html}
+<div class="central-idea">
+  <span class="central-idea-label">Idea central · Sesión 12</span>
+  <p class="central-idea-text">Tu primer modelo en Python no aprendió porque alguien le escribió reglas a mano, sino porque encontró patrones en ejemplos etiquetados. Lo importante de esta sesión no fue memorizar código, sino entender que entrenar, probar y ajustar un modelo también es una forma de pensar.</p>
+</div>
+```
+
+---
+
 ### Recursos para explorar más sobre el tema
 
-::: {.resource-list}
 ```{=html}
 <div class="route-grid">
 
@@ -816,18 +854,6 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 
 </div>
 ```
-:::
-
----
-
-### La idea central de esta sesión
-
-```{=html}
-<div class="central-idea">
-  <span class="central-idea-label">Idea central · Sesión 12</span>
-  <p class="central-idea-text">Tu primer modelo en Python no aprendió porque alguien le escribió reglas a mano, sino porque encontró patrones en ejemplos etiquetados. Lo importante de esta sesión no fue memorizar código, sino entender que entrenar, probar y ajustar un modelo también es una forma de pensar.</p>
-</div>
-```
 
 ---
 
@@ -838,6 +864,23 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
     <span class="nav-title">S11: EN VIVO: Política Pública</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 7"></span>
+      <span class="sesion-nav-dot published" title="Sesión 8"></span>
+      <span class="sesion-nav-dot published" title="Sesión 9"></span>
+      <span class="sesion-nav-dot published" title="Sesión 10"></span>
+      <span class="sesion-nav-dot published" title="Sesión 11"></span>
+      <span class="sesion-nav-dot active" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 12 de 15</span>
   </div>
   <a href="sesion-13.html" class="sesion-nav-btn next">

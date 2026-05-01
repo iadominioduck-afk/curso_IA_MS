@@ -19,8 +19,8 @@ format:
     <span class="sesion-progress-label">9 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 30 de junio de 2026</span>
-    <span class="sesion-meta-chip">⏱ 35 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 30 de junio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 45 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
@@ -28,13 +28,10 @@ format:
 
 ```{=html}
 <link rel="stylesheet" href="../styles/sessions/sesion-09.css">
+<script type="module" src="../interactives/sesion-09.js"></script>
 ```
 
-```{=html}
-<script src="../interactives/sesion-09.js" defer></script>
-```
-
-## Introducción a la IA
+## Introducción a la IA para Organización y Productividad Estudiantil
 
 ```{=html}
 <div class="video-placeholder">
@@ -49,65 +46,243 @@ format:
 
 ### Introducción
 
-Era lunes por la noche. Valentina tenía tres parciales y una presentación en equipo en tan solo siete días. Química el jueves, Matemáticas el viernes, Historia el lunes siguiente y la presentación de Comunicación el miércoles. Tenía los apuntes regados entre cuadernos, el Drive del equipo y un grupo de WhatsApp donde nadie se ponía de acuerdo en qué había que estudiar para el examen.
+Era lunes por la noche. Valentina tenía tres parciales y una presentación en equipo en solo siete días: Química el jueves, Matemáticas el viernes, Historia el lunes siguiente y la presentación de Comunicación el miércoles.
 
-Revisó los grupos: 54 mensajes sin leer en cuatro chats distintos. Alguien decía que Química solo era hasta la unidad 3. Alguien más decía que también incluía la 4. El equipo de Comunicación había mandado cuatro versiones distintas del guión en las últimas dos horas.
+Tenía los apuntes regados entre cuadernos, el Drive del equipo y un grupo de WhatsApp donde nadie se ponía de acuerdo ni sobre qué temás vendrían en el examen.
 
-Valentina cerró el teléfono y pensó: *¿por dónde empiezo?*
+Revisó los chats: 54 mensajes sin leer en cuatro grupos distintos. Alguien decía que Química solo llegaba hasta la unidad 3. Otro juraba que también venía la 4. El equipo de Comunicación había mandado cuatro versiones distintas del guion en las últimas dos horas.
 
-Ese momento, el caos antes de poder estudiar, es exactamente donde la IA puede ayudarte más: poner tareas en orden, convertir una semana confusa en un primer plan y reorganizar material para estudiar.
+Valentina cerró el celular y pensó: *¿por dónde empiezo?*
 
-:::{.callout-important}
-# La pregunta central de esta sesión
-¿Cómo puedes usar la IA para organizarte mejor?
-:::
+Ese momento, el caos antes de siquiera poder empezar a estudiar, es justo donde la IA puede ayudarte más. No porque tenga la app perfecta, sino porque puede acelerar algo que tú ya sabes hacer: poner todo sobre la mesa, decidir por dónde empezar y armar un plan de acción.
+
+
+**¿Cómo puedes usar la IA para organizarte mejor?**
+
 
 ---
 
-### Tres usos útiles de la IA
-
-En esta sesión nos enfocaremos en tres tareas concretas que ayudan cuando tienes unos días ajetreados o agobiantes por delante.
+Cuando todo se te junta, el problema casi nunca es la falta de herramientas, sino la falta de un proceso. Antes de abrir cualquier app, tienes que pensar en la estructura:
 
 ```{=html}
 <div class="modo-grid">
   <div class="modo-card">
-    <span class="modo-icon">🧭</span>
+    <span class="modo-icon">1</span>
     <span class="modo-tag">Paso 1</span>
-    <h5>Hacer visible el caos</h5>
-    <p>Tomar fechas, materias, entregas y horas disponibles para convertirlas en una lista clara de restricciones concretas.</p>
-    <span class="modo-example">"Tengo una presentación el miércoles, Química el jueves y Matemáticas el viernes. Solo puedo estudiar 2 o 3 horas por tarde."</span>
+    <h5>Vaciar</h5>
+    <p>Sacar todo de tu cabeza: fechas, materias, entregas, horas disponibles, pendientes del equipo, dudas. Todo. Si no está escrito, no cuenta a la hora de planear.</p>
+    <span class="modo-example">"Tengo presentación el miércoles, Química el jueves, Mate el viernes, Historia el lunes. Solo puedo estudiar 2–3 horas por tarde. El equipo de Comunicación no se ha puesto de acuerdo."</span>
   </div>
   <div class="modo-card">
-    <span class="modo-icon">📅</span>
+    <span class="modo-icon">2</span>
     <span class="modo-tag">Paso 2</span>
-    <h5>Proponer un primer plan</h5>
-    <p>Repartir el tiempo según la urgencia, dificultad y energía disponible. El plan es un borrador, no una orden automática.</p>
-    <span class="modo-example">"Dame una propuesta de semana priorizando Química porque es donde voy más atrasada."</span>
+    <h5>Ordenar</h5>
+    <p>Priorizar por urgencia, dificultad y dependencias. ¿Qué materia tiene más peso? ¿Qué tarea depende de otra persona? ¿Qué día está más cargado? Ordenar no es hacer un horario bonito: es decidir qué vas a dejar fuera si el tiempo no alcanza.</p>
+    <span class="modo-example">"Química es donde voy más atrasada y el examen es primero. La presentación depende del equipo, así que necesito cerrar eso antes del miércoles."</span>
   </div>
   <div class="modo-card">
-    <span class="modo-icon">📝</span>
+    <span class="modo-icon">3</span>
     <span class="modo-tag">Paso 3</span>
-    <h5>Reorganizar material propio</h5>
-    <p>Resumir apuntes, ordenar ideas y convertir material de estudio extenso en una guía más manejable para estudiar.</p>
-    <span class="modo-example">"Aquí están mis apuntes del Porfiriato. Reorganízalos en 5 ideas clave y 4 preguntas de repaso."</span>
+    <h5>Evaluar</h5>
+    <p>El primer plan nunca es el definitivo. Hay que revisarlo: ¿sí es realista? ¿Qué día quedó imposible? ¿Qué falta por confirmar? ¿Qué no tomé en cuenta? Un plan sin revisión es solo una lista de buenos deseos.</p>
+    <span class="modo-example">"El miércoles tengo la presentación y un bloque de Química. Eso no cabe. Tengo que mover Química al martes por la noche o aceptar que ese día es solo Comunicación."</span>
+  </div>
+  <div class="modo-card">
+    <span class="modo-icon">4</span>
+    <span class="modo-tag">Paso 4</span>
+    <h5>Ajustar</h5>
+    <p>Ya en la semana, todo cambia. Si una tarea te toma más tiempo, si llegas sin energía o si el equipo no responde, el plan se tiene que ajustar. Organizarse también implica revisar y corregir conforme se vaya requiriendo.</p>
+    <span class="modo-example">"Si el martes no termino Química, entonces el miércoles no meto Historia. Hago solo un repaso rápido y paso Historia al viernes."</span>
   </div>
 </div>
 ```
 
-La IA puede proponer, resumir y ordenar. El criterio para decidir si ese resultado sirve sigue siendo tuyo.
-
+Este proceso funciona con un cuaderno, con una hoja de cálculo o con inteligencia artificial. La IA lo acelera, pero las decisiones son tuyas. Lo importante no es que el primer plan se vea bien, sino que te funcione y que sepas ajustarlo si las cosas llegasen a cambiar.
 
 ---
 
-### Tres herramientas para tres tipos de problemas de organización
+### Cómo pedir ayuda a la IA
 
-No todos los problemas de productividad se parecen. A veces necesitas centralizar fechas. A veces trabajar con tus propios apuntes. A veces solo convertir una tarea ambigua en acciones concretas.
+La calidad del plan que genera la IA depende del contexto que le des. Mientras más claro seas, mejor resultado obtienes. Compara:
 
-#### **1. Notion AI + Notion Calendar: cuando las actividades de tu semana están dispersas**
+**Prompt genérico:**
 
-Si ya tomas notas en formato digital, Notion puede servirte como **tablero central**: materias, tareas, fecha de entrega y estatus en un mismo lugar. La parte de **Notion AI** ayuda a resumir páginas largas, convertir apuntes en listas de tareas y proponer una primera organización. **Notion Calendar** sirve para organizar tus actividades diarias y tener el panorama semanal, incluso mensual, y detectar en qué días se te enciman las entregas.
+> "Organízame la semana."
+
+Con eso, la IA solo puede inventar un horario genérico. No sabe qué materias tienes, cuándo son los exámenes, cuántas horas puedes estudiar ni qué tan preparada estás en cada una.
+
+**Prompt con contexto:**
+
+>Soy estudiante de preparatoria y necesito organizar mi semana.
+>Tengo presentación de Comunicación el miércoles, examen de Química el jueves, examen de Matemáticas el viernes y examen de Historia el lunes siguiente.
+>Puedo estudiar 2 horas por la tarde. Química es la materia en la que voy más atrasada. La presentación ya tiene contenido, pero falta darle estructura y repartir tareas con el equipo.
+>Dame un plan semanal, día por día, que priorice lo más urgente y explique por qué se le asigna más tiempo a ciertas tareas. Incluye también qué debería revisar o ajustar al final de cada día.
+
+
+La diferencia no está en “saber usar la app”, sino en saber traducir tu situación a cosas concretas: tiempos, prioridades y límites. Justo lo que hiciste en el paso de *Vaciar* de la sección previa.
+
+---
+
+### Laboratorio: construye la semana de Valentina
+
+Ahora ponlo en práctica. En este simulador, tú eliges las restricciones de Valentina y la IA genera un borrador de la semana. Después, revisa las decisiones que la IA **no puede tomar por ti**.
 
 ```{=html}
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-productivity" id="sp-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">Organización con IA</p>
+        <h4 class="demo-title">Planificador semanal</h4>
+        <p class="demo-copy">Elige las restricciones de Valentina — horas disponibles, materia crítica y estado de la presentación — y observa cómo cambia el plan generado.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div style="text-align:center; padding:1.5rem 1rem;">
+              <div class="sp-preview-chips">
+                <span class="sp-preview-chip">Horas disponibles</span>
+                <span class="sp-preview-chip">Materia crítica</span>
+                <span class="sp-preview-chip">Estado del equipo</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Simulador de planificación semanal</p>
+          <p class="demo-preview-copy">Verás cómo el mismo escenario produce planes distintos según las restricciones que elijas. Al final, el simulador te muestra las decisiones que siguen dependiendo de ti.</p>
+        </div>
+      </div>
+      <div class="demo-stage-live"></div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5>Qué estás viendo</h5>
+        <p id="sp-seeing">Inicia el simulador para ver cómo una IA convierte restricciones en un borrador de semana.</p>
+      </div>
+      <div class="demo-insight">
+        <h5>Qué significa</h5>
+        <p id="sp-meaning">Planificar con IA no es obedecer un calendario generado. Es hacer visibles las prioridades, revisar los compromisos y ajustar el plan a tu semana.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <div class="demo-actions">
+        <button id="sp-start" class="demo-btn demo-btn-primary">Abrir simulador</button>
+        <button id="sp-reset" class="btn-restart" disabled>Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+### Transformar material escolar en acciones de estudio
+
+Organizar tu semana es solo una parte del problema. La otra es convertir tus apuntes en algo que realmente te sirva para estudiar.
+
+La IA puede ayudarte a ordenar tus propias notas. La clave está en cómo se lo pides:
+
+
+>Aquí están mis apuntes del Porfiriato. No inventes información nueva.
+>1. Reorganízalos en 5 ideas clave.
+>2. Señala qué conceptos aparecen repetidos.
+>3. Cierra con 4 preguntas de repaso.
+>Si algo no está claro en mis apuntes, márcalo como duda sin completarlo.
+
+
+Fíjate en la estructura: le das tu material, le pides un formato de salida concreto y le pones un límite explícito ("no inventes", "márcalo como duda"). Eso es vaciar, ordenar, evaluar y ajustar aplicado a tus notas, así como previamente lo hiciste para tu calendario semanal.
+
+---
+
+### La ciencia de estudiar con IA
+
+Estudiar mejor no se trata solo de tener tus apuntes más bonitos o tu calendario más ordenado. También se trata de usar tu tiempo de estudio de una forma que sí produzca aprendizaje. Y aquí aparece una idea incómoda: releer, subrayar o pedirle a la IA un resumen puede sentirse productivo, pero no siempre ayuda tanto como **intentar recordar**, **resolver problemas**, **explicar con tus propias palabras** y **volver a practicar después de un tiempo**.
+
+Ordenar el material sí ayuda. Un resumen puede darte claridad inicial: te muestra los temas principales, le baja al desorden y te ayuda a detectar qué falta. Pero si solo lees ese resumen, todavía no sabes si puedes recuperar la información de tu memoria, explicarla sin copiar o usarla cuando aparezca en un examen.
+
+Además de ayudarte a organizar ideas, un modelo de IA también te puede apoyar a estudiar de forma eficaz. A partir de tus apuntes de estudio, pídele que te genere preguntas, ejercicios, repasos espaciados y te ayudea a replantear los temas que más se te dificultan.
+
+Esta recomendación viene de varias líneas de investigación sobre el aprendizaje. Estudios científicos sobre técnicas de estudio, como [Dunlosky et al. (2013)](https://journals.sagepub.com/doi/full/10.1177/1529100612453266), han encontrado que la práctica de recuperación y la práctica distribuida suelen ser más efectivas que releer o subrayar. La evidencia empírica sobre la [práctica espaciada y la práctica de recuperación](https://www.nature.com/articles/s44159-022-00089-1) apunta en la misma dirección: recordar activamente, equivocarte, corregir y volver a intentarlo fortalece más el aprendizaje que solo volver a leer el material.
+
+También hay investigaciones sobre la *planificación* que ayuda a entender por qué conviene preparar respuestas concretas para obstáculos previsibles. Los planes tipo ["si pasa X, entonces haré Y"](https://cancercontrol.cancer.gov/brp/research/constructs/implementation-intentions) convierten una intención general en una acción más fácil de ejecutar. Y, en el caso específico de la IA generativa, hay estudios recientes sobre aprendizaje autorregulado, como [Anders y Speltz (2025)](https://www.sciencedirect.com/science/article/pii/S2666920X25001225) y [Fütterer et al. (2026)](https://link.springer.com/article/10.1007/s10648-026-10133-8), que insisten en una idea parecida: la IA puede acompañar el proceso, pero quien tiene que planear, monitorear y evaluar el aprendizaje eres tú.
+
+Una forma práctica de llevar esto a una sesión de estudio sería:
+
+```{=html}
+<div class="modo-grid">
+  <div class="modo-card">
+    <span class="modo-icon">1</span>
+    <span class="modo-tag">Antes</span>
+    <h5>Organizar</h5>
+    <p>Pídele a la IA que convierta tus apuntes en temas generales, conceptos clave y preguntas.</p>
+    <span class="modo-example">"Organiza estos apuntes en 5 temas generales y marca qué secciones están incompletas o parecen ambiguas y se beneficiarían de mayor claridad."</span>
+  </div>
+  <div class="modo-card">
+    <span class="modo-icon">2</span>
+    <span class="modo-tag">Durante</span>
+    <h5>Practicar recordar</h5>
+    <p>Pídele a la IA que prepare una serie de preguntas, pero que no te dé la respuesta de forma inmediata. Primero intenta contestarlas tú. Luego compara con la respuesta que de propone la IA, corrige tu respuesta o compleméntala y reflexiona qué le hizo falta a tu análisis para estar completo.</p>
+    <span class="modo-example">"Hazme 8 preguntas de repaso. No me des las respuestas correctas hasta que yo intente responder al menos una vez."</span>
+  </div>
+  <div class="modo-card">
+    <span class="modo-icon">3</span>
+    <span class="modo-tag">Después</span>
+    <h5>Espaciar</h5>
+    <p>Distribuye repasos o sesiones de estudio breves en varios días. Estudiar todo en una sola noche puede sentirse intenso, pero no suele ser la mejor opción si quieres recordar lo que estudiaste después de varios días.</p>
+    <span class="modo-example">"Convierte estos temas en un plan de repaso de 20 minutos para hoy, mañana y el domingo."</span>
+  </div>
+  <div class="modo-card">
+    <span class="modo-icon">4</span>
+    <span class="modo-tag">Si pasa X</span>
+    <h5>Preparar respuestas</h5>
+    <p>Anticipa los obstáculos más probables y decide de antemano qué harás si aparecen. Preparar un plan bajo el paradigma de "si pasa esto, haré aquello" te ayuda a ser productivo incluso cuando estás cansado o no tienes mucha claridad.</p>
+    <span class="modo-example">"Si llego con poca energía, entonces hago 15 minutos de preguntas de repaso, en lugar de una lectura pasiva."</span>
+  </div>
+</div>
+```
+
+En lugar de pedir solo un resumen, podrías tamnbién usar un prompt como este:
+
+```text
+Aquí están mis apuntes de Historia. Primero organízalos por temas principales.
+Después hazme 10 preguntas de "recuperación", mezclando conceptos fáciles
+y difíciles. No incluyas respuestas todavía. Cuando yo conteste,
+evalúa mis respuestas, marca errores y sugiere qué tema debo repasar
+mañana en un bloque de 20 minutos.
+```
+
+La IA puede ayudarte a diseñar ejercicios, encontrar tus puntos débiles y organizar tus repasos. Lo que no puede hacer por ti es el esfuerzo de "recuperar" la información de tu memoria, equivocarte, corregir y volver a intentar.
+
+Si también usas la IA para investigar o preparar un trabajo, aplica el mismo principio: no te quedes con la primera respuesta. Tómala como punto de partida, pero revisa por tu cuenta la información importante.
+
+```{=html}
+<div class="callout-card">
+  <h5 class="callout-card-title">¡Cuidado! Nunca cites sin abrir la fuente</h5>
+  <p>Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. Acuérdate de lo que hemos discutido en sesiones pasadas, la IA suele alucinar citas bibliográficas.</p>
+</div>
+```
+
+---
+
+```{=html}
+<!-- ============================================================
+     MOCKUPS ORIGINALES — Comentados durante la reestructuración
+     pedagógica de la sesión. Se conservan por su diseño visual
+     para posible reutilización futura.
+     ============================================================
+
+<h3>Tres herramientas para tres tipos de problemas de organización</h3>
+
+<p>No todos los problemas de productividad se parecen. A veces necesitas centralizar fechas. A veces trabajar con tus propios apuntes. A veces solo convertir una tarea ambigua en acciones concretas.</p>
+
+<h4><strong>1. Notion AI + Notion Calendar: cuando las actividades de tu semana están dispersas</strong></h4>
+
+<p>Si ya tomas notas en formato digital, Notion puede servirte como <strong>tablero central</strong>: materias, tareas, fecha de entrega y estatus en un mismo lugar. La parte de <strong>Notion AI</strong> ayuda a resumir páginas largas, convertir apuntes en listas de tareas y proponer una primera organización. <strong>Notion Calendar</strong> sirve para organizar tus actividades diarias y tener el panorama semanal, incluso mensual, y detectar en qué días se te enciman las entregas.</p>
+
 <div class="toolspot-card">
   <div class="toolspot-head">
     <span class="toolspot-kicker">Organizar y calendarizar</span>
@@ -172,14 +347,11 @@ Si ya tomas notas en formato digital, Notion puede servirte como **tablero centr
     </div>
   </div>
 </div>
-```
 
+<h4>2. NotebookLM: cuando quieres estudiar con tus propias fuentes</h4>
 
-#### 2. NotebookLM: cuando quieres estudiar con tus propias fuentes
+<p><strong>NotebookLM</strong> es muy útil cuando quieres trabajar sobre un PDF, tus apuntes o una lectura concreta. Su ventaja principal es que responde con base en el material que <strong>tú subiste</strong>, lo que mantiene la sesión enfocada en síntesis basada en tus fuentes, no en información inventada. También puede generar una <strong>guía de estudio</strong> o un <strong>resumen en audio</strong> a partir de tus documentos.</p>
 
-**NotebookLM** es muy útil cuando no quieres trabajar sobre un PDF, tus apuntes o una lectura concreta. Su ventaja principal es que responde con base en el material que **tú subiste**, lo que mantiene la sesión enfocada en síntesis basada en tus fuentes, no en información inventada. También puede generar una **guía de estudio** o un **resumen en audio** a partir de tus documentos.
-
-```{=html}
 <div class="toolspot-card">
   <div class="toolspot-head">
     <span class="toolspot-kicker">Estudiar desde tus fuentes</span>
@@ -226,24 +398,11 @@ Si ya tomas notas en formato digital, Notion puede servirte como **tablero centr
     </div>
   </div>
 </div>
-```
 
-Una forma útil de pedirlo sería:
+<h4>3. Goblin.tools: cuando el problema no es estudiar, sino empezar</h4>
 
-```text
-Aquí están mis apuntes del Porfiriato. No inventes información nueva.
-1. Reorganízalos en 5 ideas clave.
-2. Señala qué conceptos aparecen repetidos.
-3. Cierra con 4 preguntas de repaso.
-Si algo no está claro en mis apuntes, márcalo como duda sin completarlo.
-```
+<p>Hay semanas en las que el bloqueo no viene de la dificultad del contenido, sino de no saber por dónde empezar. <strong>Goblin.tools</strong> te ayuda con eso: escribe una tarea, aunque esté planteada de forma ambigua, y la herramienta la descompone en <strong>pasos accionables concretos</strong>. No reemplaza un calendario, pero sí destraba el primer movimiento.</p>
 
-
-#### 3. Goblin.tools: cuando el problema no es estudiar, sino empezar
-
-Hay semanas en las que el bloqueo no viene de la dificultad del contenido, sino de no saber por dónde empezar. **Goblin.tools** te ayuda con eso: escribe una tarea, aunque esté planteada de forma ambigua, y la herramienta la descompone en **pasos accionables concretos**. No reemplaza un calendario, pero sí destraba el primer movimiento.
-
-```{=html}
 <div class="goblin-mockup">
   <div class="goblin-mockup-bar">
     <span class="goblin-mockup-dots"><span></span><span></span><span></span></span>
@@ -268,11 +427,7 @@ Hay semanas en las que el bloqueo no viene de la dificultad del contenido, sino 
     <span class="goblin-mockup-tag">goblin.tools — completamente gratuito · sin registro · en español</span>
   </div>
 </div>
-```
 
-Además de `Magic ToDo`, Goblin incluye dos utilidades más:
-
-```{=html}
 <div class="goblin-tools-row">
   <div class="goblin-mini">
     <div class="goblin-mini-bar">
@@ -331,21 +486,15 @@ Además de `Magic ToDo`, Goblin incluye dos utilidades más:
     </div>
   </div>
 </div>
-```
 
-```{=html}
 <a class="tool-demo-link" href="https://goblin.tools" target="_blank" rel="noopener" style="display:inline-flex;margin-bottom:0.5rem;">▶ Probar Goblin.tools gratis →</a>
-```
 
----
+<h3>Cuando hace falta investigar algo nuevo</h3>
 
-### Cuando hace falta investigar algo nuevo
+<p>A veces tu problema de organización incluye una tarea de investigación: una presentación, una duda puntual o un dato que no está en tus apuntes. En ese caso, la IA puede ayudarte a <strong>encontrar fuentes</strong> o <strong>resumir fuentes</strong>, pero no a verificar por ti.</p>
 
-A veces tu problema de organización incluye una tarea de investigación: una presentación, una duda puntual o un dato que no está en tus apuntes. En ese caso, la IA puede ayudarte a **encontrar fuentes** o **resumir fuentes**, pero no a verificar por ti.
+<p>Si necesitas investigar, vale la pena organizar las herramientas por función:</p>
 
-Si necesitas investigar, vale la pena organizar las herramientas por función:
-
-```{=html}
 <div class="fuente-grid">
   <div class="fuente-card">
     <div class="fuente-card-header">
@@ -416,16 +565,11 @@ Si necesitas investigar, vale la pena organizar las herramientas por función:
     <span class="fuente-when-tag fuente-when-all">Búsqueda directa</span>
   </div>
 </div>
+
+     END MOCKUPS ORIGINALES ========================== -->
 ```
 
-:::{.callout-tip}
-# Hábito a formar: nunca cites sin abrir la fuente
-Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. La cita de tu trabajo debe salir de lo que la fuente realmente dice después de que la abriste y la revisaste tú.
-:::
-
----
-
-### Lista de verificación: Productividad responsable con IA
+### Productividad responsable con IA
 
 ```{=html}
 <div class="checklist9-grid">
@@ -433,32 +577,123 @@ Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. L
     <span class="checklist9-col-kicker">Puedes delegar esta parte</span>
     <h5>Sí pedirle a la IA</h5>
     <ul>
-      <li><span class="ch9-icon">✅</span> Convertir fechas, materias y horas disponibles en un primer borrador de semana</li>
-      <li><span class="ch9-icon">✅</span> Reorganizar tus apuntes en ideas clave, preguntas de repaso o listas de conceptos</li>
-      <li><span class="ch9-icon">✅</span> Sugerir cómo dividir una tarea grande en subtareas más manejables</li>
+      <li><span class="ch9-icon">✅</span> Armar un primer borrador del calendario de la semana a partir de tus fechas, materias y horas disponibles</li>
+      <li><span class="ch9-icon">✅</span> Convertir tus apuntes en ideas clave, preguntas de repaso o listas de conceptos</li>
+      <li><span class="ch9-icon">✅</span> Crear preguntas para practicar, ejercicios cortos y repasos distribuidos a partir de tus materiales</li>
+      <li><span class="ch9-icon">✅</span> Proponer cómo dividir una tarea grande en pasos más pequeños y manejables</li>
     </ul>
   </div>
 
   <div class="checklist9-col checklist9-col-verify">
     <span class="checklist9-col-kicker">Antes de aceptar el resultado</span>
     <h5>Siempre verificar</h5>
-    <ul>
-      <li><span class="ch9-icon">⚠️</span> Si el plan es viable para tus tiempos, energía y compromisos de esa semana</li>
-      <li><span class="ch9-icon">⚠️</span> Si el resumen realmente conserva lo importante de tus apuntes</li>
-      <li><span class="ch9-icon">⚠️</span> Si las fuentes existen, son pertinentes y dicen lo que el resumen asegura</li>
-    </ul>
+      <ul>
+        <li><span class="ch9-icon">⚠️</span> Si el plan es viable dados tus tiempos, tu energía y tus compromisos de esa semana</li>
+        <li><span class="ch9-icon">⚠️</span> Si el resumen conserva lo más importante de tus apuntes</li>
+        <li><span class="ch9-icon">⚠️</span> Si estás practicando recordar y resolver, no solo leyendo una explicación generada por IA</li>
+        <li><span class="ch9-icon">⚠️</span> Si las fuentes existen, son relevantes y realmente dicen lo que el resumen afirma</li>
+      </ul>
   </div>
 
   <div class="checklist9-col checklist9-col-no">
-    <span class="checklist9-col-kicker">Esto sigue siendo tuyo</span>
+    <span class="checklist9-col-kicker">Esto debe ser tu responsabilidad</span>
     <h5>No delegar a la IA</h5>
-    <ul>
-      <li><span class="ch9-icon">❌</span> Decidir qué tan bien entiendes un tema y qué necesitas volver a repasar</li>
-      <li><span class="ch9-icon">❌</span> Citar una fuente que no abriste o no entendiste</li>
-      <li><span class="ch9-icon">❌</span> Entregar como propio un texto que no revisaste críticamente</li>
-    </ul>
+      <ul>
+        <li><span class="ch9-icon">❌</span> Decidir por ti qué tan bien entiendes un tema o qué necesitas repasar otra vez</li>
+        <li><span class="ch9-icon">❌</span> Reemplazar el estudio activo con resúmenes que solo lees, pero no intentas recordar ni aplicar</li>
+        <li><span class="ch9-icon">❌</span> Citar una fuente que no abriste o que no entendiste</li>
+        <li><span class="ch9-icon">❌</span> Entregar como propio un texto que no revisaste con cuidado</li>
+      </ul>
   </div>
 </div>
+```
+
+---
+
+### Caja de herramientas
+
+Las herramientas (apps, modelos de IA) cambian: algunas aparecen, otras desaparecen y otras cambian de precio. Lo importante es tener claro qué necesitas hacer: planificar, sintetizar o investigar con fuentes. Aquí puedes explorar algunas opciones actuales organizadas por función:
+
+```{=html}
+<div class="demo-wrap">
+  <div class="demo-shell demo-tone-productivity" id="ht-shell">
+    <div class="demo-shell-head">
+      <div class="demo-shell-copy">
+        <p class="demo-eyebrow">IA generativa para cada tipo de tarea</p>
+        <h4 class="demo-title">Explorador de herramientas</h4>
+        <p class="demo-copy">Selecciona una categoría para ver qué herramientas pueden ayudarte. Cada una incluye un ejemplo de uso y una nota sobre sus limitaciones.</p>
+      </div>
+    </div>
+
+    <div class="demo-stage">
+      <div class="demo-stage-preview">
+        <div class="demo-preview-card">
+          <div class="demo-preview-visual">
+            <div style="text-align:center; padding:1.5rem 1rem;">
+              <div class="sp-preview-chips">
+                <span class="sp-preview-chip">Planificar</span>
+                <span class="sp-preview-chip">Sintetizar</span>
+                <span class="sp-preview-chip">Investigar</span>
+              </div>
+            </div>
+          </div>
+          <p class="demo-preview-title">Explorador interactivo de herramientas</p>
+          <p class="demo-preview-copy">Apps organizadas según lo que necesites hacer.</p>
+        </div>
+      </div>
+      <div class="demo-stage-live"></div>
+    </div>
+
+    <div class="demo-insights">
+      <div class="demo-insight">
+        <h5>Qué estás viendo</h5>
+        <p id="ht-seeing">Inicia el explorador para ver qué herramienta ayuda para qué tipo de tarea.</p>
+      </div>
+      <div class="demo-insight">
+        <h5>Qué significa</h5>
+        <p id="ht-meaning">Una herramienta útil para resumir no necesariamente sirve para citar. Una herramienta que encuentra fuentes no necesariamente organiza tu semana de la manera más eficaz. Cada modelo de IA ha sido entrenado para optimizar diferentes tareas.</p>
+      </div>
+    </div>
+
+    <div class="demo-footer">
+      <p id="ht-status" class="demo-status">Inicia el explorador para comparar apps.</p>
+      <div class="demo-actions">
+        <button id="ht-start" class="demo-btn demo-btn-primary">Explorar apps de IA</button>
+        <button id="ht-reset" class="btn-restart" disabled>Reiniciar</button>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+---
+
+```{=html}
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Cómo organizas actualmente una semana difícil?</strong> Piensa en la última vez que se te juntaron varias entregas o exámenes. ¿Qué hiciste primero? ¿Funcionó?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿Qué parte del proceso — vaciar, ordenar, evaluar o ajustar — es la que más te cuesta?</strong> Hay quien sabe qué tiene que hacer pero no sabe por dónde empezar. Hay quien empieza rápido pero no prioriza, y a veces no se prepara bien para una entrega o examen como consecuencia. Hay quien hace un plan y no lo corrige cuando cambia la semana. ¿Dónde te atoras tú?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Si una IA te generara un plan "perfecto" para tu semana, ¿cómo sabrías que realmente funciona para ti?</strong> Piensa en qué revisarías, qué cambiarías y qué información solo tú puedes ajustar.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>¿Qué cambiarías del plan que generó el simulador si fuera una semana típica para ti?</strong> ¿Hay algo que la IA no puede saber, como tu energía, tu ánimo, tus traslados o tus compromisos familiares?</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">05</span>
+    <p class="reflexion-q"><strong>¿Tu forma de estudiar te hace practicar tu memoria?</strong> Piensa si normalmente solo relees y subrayas, o si también explicas con tus propias palabras, contestas preguntas, resuelves ejercicios y revisas tus errores.</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a implementar nuevas estrategias de organización y de estudio para que seas más productivo en la escuela.</p>
 ```
 
 ---
@@ -468,42 +703,97 @@ Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. L
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 9</span>
-  <p class="central-idea-text">La IA puede ayudarte a pasar del caos a una primera versión de orden. Lo que no puede hacer es sustituir tu criterio para priorizar, verificar y decidir qué te sirve de verdad.</p>
+  <p class="central-idea-text">La IA puede ayudarte a ordenar el caos y convertir tus materiales en práctica activa. Pero no puede reemplazar tu criterio para priorizar, verificar, recordar, corregir y ajustar lo que realmente te sirve.</p>
 </div>
 ```
-
-:::{.callout-important}
-# Tres preguntas antes de usar IA para organizarte
-
-1. **¿Le di suficiente contexto?** Fechas, horas disponibles, materia más difícil, compromisos fijos y estatus de cada tarea. Sin eso, la IA solo reparte tiempo de forma genérica.
-
-2. **¿Estoy usando la herramienta correcta?** Una herramienta para resumir apuntes no reemplaza una búsqueda con fuentes. Una herramienta que encuentra artículos no organiza tu semana por ti.
-
-3. **¿Qué parte sigo teniendo que decidir yo?** La priorización final, la verificación de fuentes y la decisión de si algo ya se entiende o no siguen siendo trabajo humano.
-:::
 
 ---
 
 ### Recursos para explorar más sobre el tema
 
-::: {.resource-list}
+**Evidencia sobre aprendizaje, planificación e IA**
+
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.nature.com/articles/s44159-022-00089-1" target="_blank" rel="noopener">Nature Reviews Psychology: spacing and retrieval practice <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Revisión científica sobre práctica espaciada, práctica de recuperación y metacognición.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://journals.sagepub.com/doi/full/10.1177/1529100612453266" target="_blank" rel="noopener">Dunlosky et al.: técnicas efectivas de aprendizaje <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Artículo clásico que compara estrategias de estudio y destaca la utilidad de práctica de recuperación y práctica distribuida.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.learningscientists.org/blog/2022/8/18-1" target="_blank" rel="noopener">The Learning Scientists: spaced retrieval practice <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Explicación accesible para docentes y estudiantes sobre práctica espaciada y recuperación.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://cancercontrol.cancer.gov/brp/research/constructs/implementation-intentions" target="_blank" rel="noopener">Implementation intentions: planes si-entonces <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Marco de psicología de la planificación para convertir obstáculos previsibles en respuestas concretas.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.sciencedirect.com/science/article/pii/S2666920X25001225" target="_blank" rel="noopener">Generative AI literacies through self-regulated learning <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Propone un ciclo humano de planear, iterar y evaluar para usar IA sin perder agencia.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://link.springer.com/article/10.1007/s10648-026-10133-8" target="_blank" rel="noopener">GenAI y aprendizaje autorregulado en secundaria <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Ensayo controlado reciente sobre intervenciones con IA generativa para apoyar aprendizaje autorregulado en estudiantes de secundaria.</p>
+  </li>
+</ul>
+```
+
 **Organizar y planificar**
 
-- [Notion AI](https://www.notion.com/product/ai) — resumir notas y convertir páginas en listas o esquemas
-- [Notion Calendar](https://www.notion.com/product/calendar) — ver tareas y fechas límite dentro de la semana
-- [Goblin.tools](https://goblin.tools/) — completamente gratuito, sin registro, descompone tareas grandes en pasos concretos
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.notion.com/product/ai" target="_blank" rel="noopener">Notion AI <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Resumir notas y convertir páginas en listas o esquemas.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.notion.com/product/calendar" target="_blank" rel="noopener">Notion Calendar <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Ver tareas y fechas límite dentro de la semana.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://goblin.tools/" target="_blank" rel="noopener">Goblin.tools <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Completamente gratuito, sin registro — descompone tareas grandes en pasos concretos.</p>
+  </li>
+</ul>
+```
 
 **Sintetizar material propio**
 
-- [NotebookLM](https://notebooklm.google/) — gratuito de Google, trabaja solo con los documentos que tú subes, sin inventar
-- [Gamma](https://gamma.app/) — estructura visual rápida para esquemas o presentaciones que luego debes editar
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://notebooklm.google/" target="_blank" rel="noopener">NotebookLM <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Gratuito de Google — trabaja solo con los documentos que tú subes, sin inventar.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://gamma.app/" target="_blank" rel="noopener">Gamma <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Estructura visual rápida para esquemas o presentaciones que luego debes editar.</p>
+  </li>
+</ul>
+```
 
 **Investigar con fuentes**
 
-- [Perplexity](https://www.perplexity.ai/) — respuestas iniciales con enlaces para seguir investigando
-- [Consensus](https://consensus.app/) — búsqueda orientada a literatura científica
-- [Google Scholar](https://scholar.google.com/) — búsqueda directa de publicaciones académicas
-:::
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.perplexity.ai/" target="_blank" rel="noopener">Perplexity <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Respuestas iniciales con enlaces para seguir investigando.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://consensus.app/" target="_blank" rel="noopener">Consensus <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Búsqueda orientada a literatura científica.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Búsqueda directa de publicaciones académicas.</p>
+  </li>
+</ul>
+```
 
 ---
 
@@ -514,6 +804,23 @@ Si una herramienta te da un resumen con enlaces, úsalo como punto de partida. L
     <span class="nav-title">S8: IA para Creatividad</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 7"></span>
+      <span class="sesion-nav-dot published" title="Sesión 8"></span>
+      <span class="sesion-nav-dot active" title="Sesión 9"></span>
+      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 9 de 15</span>
   </div>
   <a href="sesion-10.html" class="sesion-nav-btn next">

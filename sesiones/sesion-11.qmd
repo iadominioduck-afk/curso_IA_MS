@@ -19,8 +19,8 @@ format:
     <span class="sesion-progress-label">11 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 14 de julio de 2026</span>
-    <span class="sesion-meta-chip">⏱ 60 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 14 de julio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 60 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
@@ -70,7 +70,7 @@ format:
 
 ## De qué trata esta sesión
 
-Entender la IA como asunto ciudadano —no solo tecnológico—, conocer cómo se está regulando en México y América Latina, y explorar carreras en la intersección de tecnología y política pública.
+Entender la IA como asunto ciudadano y no solo tecnológico, conocer cómo se está regulando en México y América Latina, y explorar carreras en la intersección de tecnología y política pública.
 
 ### La idea central de esta sesión
 
@@ -83,11 +83,13 @@ Entender la IA como asunto ciudadano —no solo tecnológico—, conocer cómo s
 
 ### Recursos para explorar más sobre el tema
 
-::: {.resource-list}
 ```{=html}
-<p class="recursos-placeholder">Los recursos que la Mtra. Martínez Pinto comparta durante la sesión — reportes, iniciativas, herramientas de política pública, instituciones — se publicarán aquí después del Zoom.</p>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <p class="recursos-placeholder">Los recursos que la Mtra. Martínez Pinto comparta durante la sesión: reportes, iniciativas, herramientas de política pública, instituciones, etc., se publicarán aquí después del Zoom.</p>
+  </li>
+</ul>
 ```
-:::
 
 ---
 
@@ -104,11 +106,11 @@ Entender la IA como asunto ciudadano —no solo tecnológico—, conocer cómo s
       <span class="sesion-nav-dot published" title="Sesión 3"></span>
       <span class="sesion-nav-dot published" title="Sesión 4"></span>
       <span class="sesion-nav-dot published" title="Sesión 5"></span>
-      <span class="sesion-nav-dot" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
       <span class="sesion-nav-dot published" title="Sesión 7"></span>
       <span class="sesion-nav-dot published" title="Sesión 8"></span>
-      <span class="sesion-nav-dot" title="Sesión 9"></span>
-      <span class="sesion-nav-dot" title="Sesión 10"></span>
+      <span class="sesion-nav-dot published" title="Sesión 9"></span>
+      <span class="sesion-nav-dot published" title="Sesión 10"></span>
       <span class="sesion-nav-dot active" title="Sesión 11"></span>
       <span class="sesion-nav-dot" title="Sesión 12"></span>
       <span class="sesion-nav-dot" title="Sesión 13"></span>

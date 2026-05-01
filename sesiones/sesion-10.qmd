@@ -19,8 +19,8 @@ format:
     <span class="sesion-progress-label">10 de 15</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip">📅 7 de julio de 2026</span>
-    <span class="sesion-meta-chip">⏱ 40 minutos</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 7 de julio de 2026</span>
+    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 40 minutos</span>
     <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
@@ -28,6 +28,7 @@ format:
 
 ```{=html}
 <link rel="stylesheet" href="../styles/sessions/sesion-10.css">
+<script type="module" src="../interactives/sesion-10.js"></script>
 ```
 
 ## Introducción a la IA
@@ -47,20 +48,18 @@ format:
 
 La discusión pública sobre la IA y las matemáticas casi siempre se va a los extremos: o dicen que la herramienta “resuelve cosas imposibles”, o que “ni siquiera puede hacer operaciones sencillas”. Y lo curioso es que las dos pueden ser verdad al mismo tiempo.
 
-En enero de 2024, [AlphaGeometry](https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/) resolvió **25 de 30** problemas de geometría de nivel olímpico. En julio de 2025, una versión avanzada de [Gemini Deep Think](https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/) alcanzó el nivel de medalla de oro en la Olimpiada Internacional de Matemáticas. Al mismo tiempo, investigaciones recientes muestran que los LLMs siguen teniendo fallas en aritmética, suma y manipulación simbólica cuando funcionan como asistentes de chat generales ([ACL 2023](https://aclanthology.org/2023.acl-long.516/), [EMNLP 2025](https://aclanthology.org/2025.emnlp-main.681/)).
+Un sistema de IA puede ser muy útil para **entender** conceptos, puede encontrar **demostraciones formales** en entornos especializados, y aun así cometer errores en un paso algebraico si lo usas como asistente de estudio cotidiano.
 
-Lo que esto revela es que "matemáticas" no es una sola habilidad. Un sistema de IA puede ser muy útil para **entender** conceptos, puede encontrar **demostraciones formales** en entornos especializados, y aun así cometer errores en un paso algebraico si lo usas como asistente de estudio cotidiano.
+```{=html}
+  <p>Para usar la IA como tutor(a) en matemáticas, debemos abordar el tema desde tres enfoques distintos:</p>
+  <ol>
+    <li><strong>Entender</strong> un concepto o un procedimiento.</li>
+    <li><strong>Verificar</strong> un resultado con una herramienta exacta.</li>
+    <li><strong>Practicar</strong> hasta poder resolver el problema sin ayuda.</li>
+  </ol>
+  <p>El error más común es usar la misma herramienta para las tres cosas.</p>
+```  
 
-:::{.callout-important}
-# Una brújula para esta sesión
-Para usar la IA como tutor en matemáticas, debemos abordar el tema desde tres enfoques distintos:
-
-1. **Entender** un concepto o un procedimiento.
-2. **Verificar** un resultado con una herramienta exacta.
-3. **Practicar** hasta poder resolver sin ayuda.
-
-El error más común es usar la misma herramienta para las tres cosas.
-:::
 
 ---
 
@@ -84,8 +83,7 @@ El error más común es usar la misma herramienta para las tres cosas.
   </article>
 </div>
 ```
-
-Estas noticias nos dejan en claro que: **hay distintos tipos de tareas matemáticas, y cada una pide una herramienta diferente**.
+En enero de 2024, [AlphaGeometry](https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/) resolvió **25 de 30** problemas de geometría de nivel olímpico. En julio de 2025, una versión avanzada de [Gemini Deep Think](https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/) alcanzó el nivel de medalla de oro en la Olimpiada Internacional de Matemáticas. Al mismo tiempo, investigaciones recientes muestran que los LLMs siguen teniendo fallas en aritmética, suma y manipulación simbólica cuando funcionan como asistentes de chat generales ([ACL 2023](https://aclanthology.org/2023.acl-long.516/), [EMNLP 2025](https://aclanthology.org/2025.emnlp-main.681/)).
 
 ---
 
@@ -98,8 +96,8 @@ Estas noticias nos dejan en claro que: **hay distintos tipos de tareas matemáti
     <h4>Para entender</h4>
     <ul>
       <li>Explicar un procedimiento con palabras más sencillas.</li>
-      <li>Dar un ejemplo resuelto y luego uno similar para practicar.</li>
-      <li>Comparar métodos: factorización, fórmula general, completar el cuadrado.</li>
+      <li>Dar un ejemplo resuelto y luego generar uno similar para practicar.</li>
+      <li>Comparar métodos: factorización, fórmula general, binomios cuadrados perfectos.</li>
       <li>Relacionar una expresión algebraica con su gráfica y su descripción en palabras.</li>
       <li>Hacer preguntas para identificar en qué paso te atoraste.</li>
     </ul>
@@ -118,10 +116,19 @@ Estas noticias nos dejan en claro que: **hay distintos tipos de tareas matemáti
 </div>
 ```
 
-Las evaluaciones del desempeño de la IA en matemáticas apuntan en esa dirección. El artículo de [ACL 2023](https://aclanthology.org/2023.acl-long.516/) señala limitaciones importantes en aritmética y razonamiento simbólico. El estudio de [EMNLP 2025](https://aclanthology.org/2025.emnlp-main.681/) muestra que incluso tareas tan básicas como la suma siguen revelando fallas estructurales. Y una investigación en [PNAS 2024](https://pubmed.ncbi.nlm.nih.gov/38830100/) encontró que una conversación puede sentirse útil aunque la respuesta no sea completamente correcta.
+Las evaluaciones del desempeño de la IA generativa en tareas matemáticas apuntan en esta dirección. El artículo de [ACL (2023)](https://aclanthology.org/2023.acl-long.516/) señala limitaciones importantes en aritmética y razonamiento simbólico. Por otro lado, el estudio de [EMNLP (2025)](https://aclanthology.org/2025.emnlp-main.681/) muestra que incluso tareas tan básicas como la suma siguen revelando fallas estructurales. Y una investigación en [PNAS (2024)](https://pubmed.ncbi.nlm.nih.gov/38830100/) encontró que una conversación puede sentirse útil aunque la respuesta no sea completamente correcta. Es por ello que, aunque hayamos tenido interacciones positivas con IA generativa cuando le pedimos ayuda para estudiar matemáticas, no nos fíemos al cien por ciento. En lo que resta de la sesión presentaremos una estrategía para utilizar la IA generativa como tutor(a) de matemáticas de forma eficiente, minimizando la probabilidad de que aprendamos algo erróneo por accidente.
 
 ---
 
+### Por qué los sistemas de olimpiada son distintos al asistente de estudio
+
+AlphaGeometry o Gemini Deep Think operan en condiciones muy distintas a las del asistente de chat que abres para estudiar la noche antes de un examen. Trabajan en contextos acotados, con búsqueda más profunda, validación formal y arquitecturas especializadas para ese propósito.
+
+Lo que debemos entender, entonces, es que cada herramienta de IA tiene condiciones en las que funciona bien y condiciones en las que falla; saber cuáles son esas condiciones define si estudias bien o si depositaste tu confianza en el lugar equivocado.
+
+---
+
+<!--
 ### Taxonomía de herramientas y sus aplicaciones
 
 ```{=html}
@@ -186,10 +193,56 @@ Antes de ver más ejemplos de instrucciones para la IA, vale la pena entender qu
 ```
 
 ---
+-->
+
+### El ciclo EVP: Entender, Verificar, Practicar
+
+Ahora presentaremos un ciclo sencillo que nos ayudará a identificar cómo, y en qué momento usar las apps de IA para aprender matemáticas:
+
+```{=html}
+<div class="evp-cycle">
+  <article class="evp-step evp-step-understand">
+    <span class="evp-letter">E</span>
+    <h4>Entender</h4>
+    <p>Usa un asistente conversacional para construir una intuición matemática, pedir consejos, comparar métodos y detectar en qué paso te atoraste.</p>
+    <p class="evp-prompt"><strong>Prompt:</strong> "Explícame la lógica detrás de este método y hazme algunas preguntas para que yo encuentre el siguiente paso".</p>
+    <p class="evp-warning">Riesgo: una explicación clara puede esconder un error algebraico.</p>
+  </article>
+  <article class="evp-step evp-step-verify">
+    <span class="evp-letter">V</span>
+    <h4>Verificar</h4>
+    <p>Usa Wolfram Alpha, Symbolab o Desmos para comprobar si el resultado, los pasos y la interpretación visual tienen sentido.</p>
+    <p class="evp-prompt"><strong>Prompt:</strong> "Verifica mi procedimiento. Señala exactamente dónde cambia el signo, la operación o la conclusión".</p>
+    <p class="evp-warning">Riesgo: "entender" un problema ya resuelto no significa que puedas resolverlo sin ayuda de la IA.</p>
+  </article>
+  <article class="evp-step evp-step-practice">
+    <span class="evp-letter">P</span>
+    <h4>Practicar</h4>
+    <p>Resuelve el problema, intenta un problema nuevo y usa la IA solo para recibir consejos de cómo abordar el problema, retroalimentación o para generar más ejemplos de práctica.</p>
+    <p class="evp-prompt"><strong>Prompt:</strong> "Dame tres ejercicios parecidos, sin solución. Después revisa mis respuestas y, si me he equivocado, dame una pista o sugiéreme una estrategia para resolverlos, pero no me des la respuesta".</p>
+    <p class="evp-warning">Riesgo: si ves la respuesta correcta constantemente, podrías estar entrenando reconocimiento, no resolución.</p>
+  </article>
+</div>
+```
+
+La idea es que cada herramienta, análoga o digital, se use en el momento en que más ayuda. Primero usas la IA para aclarar el concepto, ver un ejemplo y explicarlo con tus propias palabras. Luego revisas el resultado con una herramienta más exacta o con una gráfica. Y al final haces lo más importante: intentas otro problema sin tener la solución enfrente. Ahí se nota si solo seguiste una explicación o si de verdad puedes usar el método por tu cuenta.
+
+```{=html}
+<div class="evp-template">
+  <span class="evp-template-label">Plantilla rápida para estudiar un problema</span>
+  <ol>
+    <li><strong>Entender:</strong> "Explícame la idea sin resolver el problema. Dame solo la primera pista para empezar". Resuelve tú un paso antes de pedir el siguiente.</li>
+    <li><strong>Verificar:</strong> compara tu resultado expandiendo, sustituyendo, graficando o usando una herramienta exacta.</li>
+    <li><strong>Practicar:</strong> pide ejercicios parecidos y resuélvelos sin ver la solución.</li>
+  </ol>
+</div>
+```
+
+---
 
 ### Cuando la IA suena segura pero se equivoca
 
-Así se ve una conversación con un asistente de IA al resolver $x^2 - 5x + 6 = 0$:
+Así se ve el ciclo EVP aplicado a una conversación con un asistente de IA al resolver $x^2 - 5x + 6 = 0$:
 
 ```{=html}
 <div class="chat-window">
@@ -242,19 +295,19 @@ Así se ve una conversación con un asistente de IA al resolver $x^2 - 5x + 6 = 
 
   <!-- Análisis -->
   <div class="chat-analysis">
-    <span class="chat-analysis-tag">Qué pasó en esta conversación</span>
+    <span class="chat-analysis-tag">EVP en acción</span>
     <ul class="chat-analysis-list">
       <li>
-        <span class="chat-analysis-icon">❌</span>
-        <span>La primera respuesta sonaba ordenada y usaba lenguaje técnico correcto. Pero los números estaban mal: −2 × 3 = −6 (no 6) y −2 + 3 = 1 (no −5). Ninguna de las dos condiciones se cumplía.</span>
+        <span class="chat-analysis-icon">E</span>
+        <span><strong>Entender:</strong> la IA explicó el procedimiento con lenguaje técnico correcto. Eso ayudó a ubicar el método, pero no garantizó que cada operación fuera correcta.</span>
       </li>
       <li>
-        <span class="chat-analysis-icon">✅</span>
-        <span>El error se detectó con una pregunta sencilla: "¿puedes verificar expandiendo?" No hicieron falta conocimientos avanzados, solo pedir que se comprobara el resultado.</span>
+        <span class="chat-analysis-icon">V</span>
+        <span><strong>Verificar:</strong> el error apareció al pedir que se expandiera la factorización. −2 × 3 = −6, no 6; y −2 + 3 = 1, no −5.</span>
       </li>
       <li>
-        <span class="chat-analysis-icon">⚠️</span>
-        <span>Sin esa pregunta, las soluciones incorrectas x = 2 y x = −3 habrían pasado como válidas. Una respuesta fluida no garantiza una respuesta correcta.</span>
+        <span class="chat-analysis-icon">P</span>
+        <span><strong>Practicar:</strong> después de corregir, el siguiente paso es resolver una cuadrática parecida sin ayuda y revisar con ayuda de la IA solo al final.</span>
       </li>
     </ul>
 
@@ -273,33 +326,72 @@ Así se ve una conversación con un asistente de IA al resolver $x^2 - 5x + 6 = 
 
 ---
 
-### Por qué los sistemas de olimpiada son distintos al asistente de estudio
-
-AlphaGeometry o Gemini Deep Think operan en condiciones muy distintas a las del asistente de chat que abres para estudiar la noche antes de un examen. Trabajan en contextos acotados, con búsqueda más profunda, validación formal y arquitecturas especializadas para ese propósito.
-
-Lo que debemos entender, entonces, es que cada herramienta de IA tiene condiciones en las que funciona bien y condiciones en las que falla; saber cuáles son esas condiciones define si estudias bien o si depositaste tu confianza en el lugar equivocado.
-
----
 
 ### Actividad: diagnostica una solución
 
-Trabaja con un problema de tu curso o usa este:
+Elige un nivel o trabaja con un problema que estés viendo en tu curso de matemáticas actualmente. Documenta cómo aplicaste el ciclo **EVP**.
 
-$$f(x) = x^3 - 3x^2 - 9x + 5$$
+```{=html}
+<div class="evp-activity-grid">
+  <article class="evp-activity-card">
+    <span class="evp-activity-level">Nivel 1 · Álgebra</span>
+    <h4>Factorización</h4>
+    <p>Resuelve <code>x^2 - 7x + 12 = 0</code>.</p>
+    <p>Verifica expandiendo la factorización y sustituyendo cada raíz en la ecuación original.</p>
+  </article>
+  <article class="evp-activity-card">
+    <span class="evp-activity-level">Nivel 2 · Funciones</span>
+    <h4>Interpretación gráfica</h4>
+    <p>Analiza <code>y = x^2 - 4x - 5</code>.</p>
+    <p>Encuentra las raíces algebraicamente y confirma en Desmos dónde cruza el eje x.</p>
+  </article>
+  <article class="evp-activity-card">
+    <span class="evp-activity-level">Nivel 3 · Cálculo</span>
+    <h4>Puntos críticos</h4>
+    <p>Trabaja con <code>f(x) = x^3 - 3x^2 - 9x + 5</code>.</p>
+    <p>Encuentra <code>f'(x)</code>, resuelve <code>f'(x) = 0</code>, usa <code>f''(x)</code> y verifica con Wolfram Alpha y Desmos.</p>
+  </article>
+</div>
+```
 
-La tarea es encontrar los **puntos críticos** de $f$ y determinar si cada uno es un máximo local, un mínimo local o ninguno de los dos.
+Haz cuatro cosas y documenta el proceso:
 
-Haz tres cosas y documenta el proceso:
+1. **Entender:** pídele a un asistente que explique el método sin darte toda la respuesta de golpe. Resuelve tú el problema a mano. Escribe tus pasos, aunque no estés seguro.
+2. **Verificar:** usa una herramienta exacta o visual: expandir, sustituir, Wolfram Alpha, Symbolab o Desmos.
+3. **Practicar:** pide un problema parecido y resuélvelo sin ver la solución. Después solicita retroalimentación sobre tu intento.
 
-1. Pide a un asistente de IA que encuentre $f'(x)$, iguale a cero y clasifique los puntos críticos usando el criterio de la segunda derivada. Copia la respuesta completa.
-2. Repite el proceso tú a mano: calcula $f'(x)$, resuelve $f'(x) = 0$, calcula $f''(x)$ y aplica el criterio.
-3. Verifica en Wolfram Alpha escribiendo `critical points of x^3 - 3x^2 - 9x + 5` y grafica en Desmos para confirmar visualmente dónde están los máximos y mínimos.
-
-Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proceso:
+La idea no es solo documentar tus respuestas, sino también lo que aprendiste sobre el proceso:
 
 - ¿Qué herramienta te ayudó a entender el procedimiento?
 - ¿Qué herramienta te ayudó a verificar el resultado?
+- ¿Qué problema nuevo resolviste sin ayuda?
 - ¿Cambiaría tu estrategia si el problema viniera en un examen y no tuvieras acceso a estas herramientas?
+
+---
+
+```{=html}
+<span class="reflexion-kicker">Reflexión · 5 min</span>
+<h3 class="reflexion-heading">Actividad de reflexión</h3>
+<ol class="reflexion-list">
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">01</span>
+    <p class="reflexion-q"><strong>¿Cuándo has usado una IA generativa para una tarea de matemáticas?</strong> Sé específico: qué herramienta, qué problema y si entendiste o solo copiaste la respuesta.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">02</span>
+    <p class="reflexion-q"><strong>¿En qué se parecen y en qué se distinguen un asistente conversacional como ChatGPT y una herramienta exacta como Wolfram Alpha?</strong> Piensa en una analogía propia (cocina, deportes, lo que se te ocurra).</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">03</span>
+    <p class="reflexion-q"><strong>Si mañana tuvieras que estudiar un tema nuevo de matemáticas,</strong> ¿cómo aplicarías el ciclo EVP? Menciona una herramienta para entender, una para verificar y una forma de practicar sin ayuda.</p>
+  </li>
+  <li class="reflexion-item">
+    <span class="reflexion-num" aria-hidden="true">04</span>
+    <p class="reflexion-q"><strong>Explícale en dos oraciones a alguien menor que tú</strong> por qué pedirle a la IA "aquí está un problema, resuélvelo" no completa el ciclo EVP.</p>
+  </li>
+</ol>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. Solo queremos que empiezas a reflexionar sobre usar la IA para estudiar matemáticas de manera eficiente.</p>
+```
 
 ---
 
@@ -308,7 +400,7 @@ Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proce
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 10</span>
-  <p class="central-idea-text">La IA puede ser muy útil para estudiar matemáticas si distingues tres tareas distintas: entender, verificar y practicar. Un asistente conversacional puede ayudarte a comprender; herramientas exactas sirven para comprobar; y el aprendizaje real ocurre cuando después practicas sin ayuda.</p>
+  <p class="central-idea-text">La IA puede ser muy útil para estudiar matemáticas si la usas dentro del ciclo EVP: primero entiendes el método, después verificas el resultado con una herramienta independiente y al final practicas sin ayuda. Un asistente conversacional puede acompañarte, pero debes complementarlo con otras herramientas para obtener mejores resultados.</p>
 </div>
 ```
 
@@ -316,30 +408,82 @@ Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proce
 
 ### Recursos para explorar más sobre el tema
 
-::: {.resource-list}
-**Casos y contexto**
+#### Casos y contexto
 
-- [AlphaGeometry, Google DeepMind, 17 de enero de 2024](https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/)
-- [Gemini Deep Think en la IMO, Google DeepMind, 21 de julio de 2025](https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/)
-- [Limitations of Language Models in Arithmetic and Symbolic Induction, ACL 2023](https://aclanthology.org/2023.acl-long.516/)
-- [Do Large Language Models Truly Grasp Addition?, EMNLP 2025](https://aclanthology.org/2025.emnlp-main.681/)
-- [Evaluating language models for mathematics through interactions, PNAS 2024](https://pubmed.ncbi.nlm.nih.gov/38830100/)
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://deepmind.google/blog/alphageometry-an-olympiad-level-ai-system-for-geometry/" target="_blank" rel="noopener">AlphaGeometry · Google DeepMind, 2024 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Anuncio oficial del sistema que resolvió 25 de 30 problemas de geometría olímpica.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://deepmind.google/blog/advanced-version-of-gemini-with-deep-think-officially-achieves-gold-medal-standard-at-the-international-mathematical-olympiad/" target="_blank" rel="noopener">Gemini Deep Think en la IMO · DeepMind, 2025 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Cómo una versión avanzada de Gemini alcanzó nivel de medalla de oro en la Olimpiada Internacional.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://aclanthology.org/2023.acl-long.516/" target="_blank" rel="noopener">Limitations of Language Models in Arithmetic · ACL 2023 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Documenta las fallas estructurales de los LLMs cuando hacen aritmética y razonamiento simbólico.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://aclanthology.org/2025.emnlp-main.681/" target="_blank" rel="noopener">Do Large Language Models Truly Grasp Addition? · EMNLP 2025 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Evidencia reciente de que incluso la suma sigue revelando errores estructurales en modelos generales.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://pubmed.ncbi.nlm.nih.gov/38830100/" target="_blank" rel="noopener">Evaluating language models for mathematics · PNAS 2024 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Una conversación puede sentirse útil aunque la respuesta no sea completamente correcta.</p>
+  </li>
+</ul>
+```
 
-**Herramientas**
+#### Herramientas
 
-- [ChatGPT](https://chatgpt.com/)
-- [Gemini](https://gemini.google.com/)
-- [Wolfram Alpha](https://www.wolframalpha.com/)
-- [Symbolab](https://www.symbolab.com/)
-- [Desmos](https://www.desmos.com/)
-- [NotebookLM](https://notebooklm.google/)
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://chatgpt.com/" target="_blank" rel="noopener">ChatGPT <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Asistente conversacional para entender procedimientos, comparar métodos y pedir explicaciones paso a paso.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://gemini.google.com/" target="_blank" rel="noopener">Gemini <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Asistente de Google con capacidades similares; integrado a tus apuntes y al ecosistema de Workspace.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.wolframalpha.com/" target="_blank" rel="noopener">Wolfram Alpha <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Motor de cálculo simbólico exacto: úsalo para verificar resultados y revisar pasos intermedios.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.symbolab.com/" target="_blank" rel="noopener">Symbolab <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Resuelve y explica paso a paso ecuaciones, derivadas e integrales — útil para auditar tu propio procedimiento.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.desmos.com/" target="_blank" rel="noopener">Desmos <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Graficador interactivo: visualiza funciones, intersecciones y cambios de pendiente en tiempo real.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://notebooklm.google/" target="_blank" rel="noopener">NotebookLM <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Sube tus apuntes y deja que la IA te ayude a extraer definiciones y armar preguntas de repaso.</p>
+  </li>
+</ul>
+```
 
-**Estrategias de estudio**
+#### Estrategias de estudio
 
-- [Ejemplos resueltos y autoexplicación, 2024](https://doi.org/10.1080/19345747.2023.2243254)
-- [Práctica intercalada en matemáticas, IES](https://nces.ed.gov/use-work/awards/interleaved-mathematics-practice)
-- [Práctica de recuperación en matemáticas superiores, 2025](https://link.springer.com/article/10.1007/s10763-025-10607-1)
-:::
+```{=html}
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://doi.org/10.1080/19345747.2023.2243254" target="_blank" rel="noopener">Ejemplos resueltos y autoexplicación · 2024 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Estudio que muestra por qué combinar un ejemplo resuelto con tu propia explicación mejora la comprensión.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://nces.ed.gov/use-work/awards/interleaved-mathematics-practice" target="_blank" rel="noopener">Práctica intercalada en matemáticas · IES <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Por qué mezclar tipos de problema funciona mejor que repetir el mismo formato veinte veces.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://link.springer.com/article/10.1007/s10763-025-10607-1" target="_blank" rel="noopener">Práctica de recuperación en matemáticas · 2025 <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Evidencia reciente sobre por qué recordar sin ver la solución fortalece más que releer.</p>
+  </li>
+</ul>
+```
 
 ---
 
@@ -350,6 +494,23 @@ Lo que documentes no es solo la respuesta, sino lo que aprendiste sobre el proce
     <span class="nav-title">S9: IA para Organización</span>
   </a>
   <div class="sesion-nav-center">
+    <div class="sesion-nav-dots">
+      <span class="sesion-nav-dot published" title="Sesión 1"></span>
+      <span class="sesion-nav-dot published" title="Sesión 2"></span>
+      <span class="sesion-nav-dot published" title="Sesión 3"></span>
+      <span class="sesion-nav-dot published" title="Sesión 4"></span>
+      <span class="sesion-nav-dot published" title="Sesión 5"></span>
+      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      <span class="sesion-nav-dot published" title="Sesión 7"></span>
+      <span class="sesion-nav-dot published" title="Sesión 8"></span>
+      <span class="sesion-nav-dot published" title="Sesión 9"></span>
+      <span class="sesion-nav-dot active" title="Sesión 10"></span>
+      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      <span class="sesion-nav-dot" title="Sesión 12"></span>
+      <span class="sesion-nav-dot" title="Sesión 13"></span>
+      <span class="sesion-nav-dot" title="Sesión 14"></span>
+      <span class="sesion-nav-dot" title="Sesión 15"></span>
+    </div>
     <span class="sesion-nav-progress">Sesión 10 de 15</span>
   </div>
   <a href="sesion-11.html" class="sesion-nav-btn next">

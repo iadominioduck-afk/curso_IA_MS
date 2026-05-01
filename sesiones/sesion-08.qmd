@@ -1,5 +1,5 @@
 ---
-title: "Sesión 8: IA para Creatividad: Arte, Música y Diseño"
+title: "Sesión 8: IA para la Creatividad: Arte, Música y Diseño"
 format:
   html:
     toc: true
@@ -31,12 +31,12 @@ format:
 <script type="module" src="../interactives/sesion-08.js"></script>
 ```
 
-## Introducción a la IA
+## IA para la Creatividad: Arte, Música y Diseño
 
 ```{=html}
 <div class="video-placeholder">
   <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: IA para Creatividad: Arte, Música y Diseño</p>
+  <p class="vp-title">Video: IA para la Creatividad: Arte, Música y Diseño</p>
 </div>
 ```
 
@@ -161,7 +161,7 @@ Una persona creativa no se distingue solo por imaginar una idea, sino por detect
 
 ---
 
-### Música generativa: dirigir no es lo mismo que componer
+### Música con IA generativa
 
 Con música generativa ocurre algo parecido. Pedirle a un modelo *“haz una canción triste"* tiende a producir cualquier cosa. Dirigir creativamente una pieza implica mucho más: decidir género, energía, textura, instrumentación, el tono de la voz, estructura y contexto. La IA puede generar material; la dirección artística sigue siendo una tarea humana.
 
@@ -218,7 +218,7 @@ Con música generativa ocurre algo parecido. Pedirle a un modelo *“haz una can
 
 ---
 
-### Diseño con IA: una pieza no es un sistema
+### Diseño con IA
 
 Con el cartel y la canción ya aprendimos que iterar mejora el resultado. Sin embargo, el diseño plantea un reto adicional: un concepto no se materializa en una sola pieza, sino en un sistema de componentes interrelacionados que deben mantener coherencia y operar de forma integrada.
 
@@ -421,7 +421,7 @@ En conjunto, estos ejemplos evidencian que la IA no reemplaza el proceso de dise
 ````
 ---
 
-### El caso Colorado: cuando la IA gana un concurso de arte
+### Cuando la IA gana un concurso de arte
 
 Volvamos al punto de partida. En 2022, Jason Allen no ocultó el uso de Midjourney; lo declaró explícitamente en su formulario de inscripción como “Jason Allen via Midjourney”. El concurso, en ese momento, no contemplaba lineamientos sobre el uso de IA. Su participación, por tanto, se ajustó a las reglas vigentes y resultó ganadora bajo ese marco.
 
@@ -543,6 +543,7 @@ El caso *Colorado* plantea también una cuestión jurídica que los tribunales e
 La cuestión de los **datos de entrenamiento** resulta particularmente relevante: muchos modelos se entrenan con imágenes obtenidas de internet, una proporción significativa de ellas creadas por artistas que no otorgaron consentimiento explícito. Diversas demandas colectivas —incluida la de Getty Images contra Stability AI— sostienen que este uso podría constituir una infracción de derechos de autor a gran escala. Las resoluciones de estos casos serán determinantes para configurar el marco legal en los próximos años.
 
 Para usos personales o educativos, estas implicaciones suelen ser menos inmediatas. Sin embargo, en contextos comerciales, como la venta de imágenes generadas, su uso en publicidad o su presentación en concursos, resulta recomendable revisar el marco legal aplicable en cada jurisdicción y asumir que se trata de un entorno regulatorio aún en evolución.
+
 
 ---
 
