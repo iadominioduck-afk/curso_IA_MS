@@ -34,9 +34,8 @@ format:
 ## Introducción a la IA
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: IA para estudiar matemáticas</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/onbcqr8Q27E" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -46,7 +45,7 @@ format:
 
 ### Introducción
 
-La discusión pública sobre la IA y las matemáticas casi siempre se va a los extremos: o dicen que la herramienta “resuelve cosas imposibles”, o que “ni siquiera puede hacer operaciones sencillas”. Y lo curioso es que las dos pueden ser verdad al mismo tiempo.
+La discusión pública sobre la IA y las matemáticas casi siempre se va a los extremos: o dicen que la herramienta “resuelve cosas imposibles”, o que “ni siquiera puede hacer operaciones sencillas”. Y lo curioso es que las dos aseveraciones pueden ser verdad al mismo tiempo.
 
 Un sistema de IA puede ser muy útil para **entender** conceptos, puede encontrar **demostraciones formales** en entornos especializados, y aun así cometer errores en un paso algebraico si lo usas como asistente de estudio cotidiano.
 

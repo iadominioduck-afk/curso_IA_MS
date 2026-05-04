@@ -34,9 +34,8 @@ format:
 ## Video
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: Ética en la IA</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/GdWiKqbqmKv" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -745,7 +744,7 @@ Desde la perspectiva que más te interese abordar, responde lo siguiente:
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 5</span>
-  <p class="central-idea-text">Los problemas éticos de la IA no son accidentes ni descuidos técnicos menores. Hoy viste tres formas concretas en que aparecen: decisiones injustas, vigilancia basada en datos y contenido sintético engañoso. Las tres surgen cuando entrenamos sistemas con datos sesgados, los desplegamos sin supervisión adecuada y no preguntamos desde el principio a quién afectan y cómo.</p>
+  <p class="central-idea-text">Los problemas éticos de la IA no son accidentes ni descuidos técnicos menores. Hoy viste dónde pueden presentarse: decisiones injustas, vigilancia basada en datos y contenido sintético engañoso. Las tres surgen cuando entrenamos sistemas con datos sesgados, los desplegamos sin supervisión adecuada y no preguntamos desde el principio a quién afectan y cómo.</p>
 </div>
 ```
 

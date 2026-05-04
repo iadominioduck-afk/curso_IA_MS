@@ -32,9 +32,8 @@ format:
 ## Introducción a la IA
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: IA Generativa — qué hace y cómo funciona</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/0U5xGeXtXPm" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -159,6 +158,13 @@ En 2026, muchas herramientas combinan ambas cosas, pero la diferencia sigue sien
   setTimeout(typeUser,800);
 })();
 </script>
+```
+---
+
+```{=html}
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/bvvLW1HJ7A7" width="640" height="360" frameborder="0" allowfullscreen></iframe>
+</div>
 ```
 
 ---

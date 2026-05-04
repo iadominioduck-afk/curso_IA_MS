@@ -8,6 +8,7 @@ project:
     - assets/sesion-08/cartel1.png
     - assets/sesion-08/cartel2.png
     - assets/sesion-08/cartel3.png
+    - assets/sesion-13/zipline.webm
 
 website:
   title: "Intro a la IA"

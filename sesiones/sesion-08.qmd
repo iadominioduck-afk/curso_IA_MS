@@ -34,9 +34,8 @@ format:
 ## IA para la Creatividad: Arte, Música y Diseño
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: IA para la Creatividad: Arte, Música y Diseño</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/5t4gEuOzE96" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -53,6 +52,16 @@ Cuando se supo que Allen la había creado con Midjourney, un modelo generativo d
 Ese debate aún no tiene respuesta definitiva. Lo que sí podemos hacer es entender qué está pasando técnicamente, qué herramientas existen hoy, y qué preguntas hacernos sobre el futuro de la creatividad en un mundo con IA.
 
 **Cuando una IA genera algo que consideramos bello o expresivo, ¿quién o qué está siendo creativo?**
+
+```{=html}
+<figure style="max-width: 560px; margin: 1.4rem auto; aspect-ratio: 3 / 2; border-radius: 8px; border: 1.5px solid #e2e8f0; box-shadow: 0 8px 24px rgba(15,23,42,0.08); overflow: hidden;">
+  <video autoplay loop muted playsinline
+    style="width: 100%; height: 100%; display: block; object-fit: cover; object-position: center;"
+    aria-label="Animación generada con IA de un robot que vuela">
+    <source src="../assets/media/fly_robot.mp4" type="video/mp4">
+  </video>
+</figure>
+```
 
 ---
 
@@ -578,7 +587,7 @@ Para usos personales o educativos, estas implicaciones suelen ser menos inmediat
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 8</span>
-  <p class="central-idea-text">La IA generativa ha ampliado de forma significativa el acceso a herramientas de creación visual, musical y de diseño. Sin embargo, esta *democratización* introduce preguntas aún no resueltas: en torno a la autoría, los derechos y el significado mismo de la creación, así como el valor de la producción humana en un contexto donde las máquinas pueden generar resultados formalmente equivalentes. El uso de estas herramientas con criterio exige no solo comprender su funcionamiento técnico, sino también reconocer y evaluar las implicaciones éticas asociadas a su aplicación.</p>
+  <p class="central-idea-text">La IA generativa ha ampliado de forma significativa el acceso a herramientas de creación visual, musical y de diseño. Sin embargo, esta *democratización* presenta preguntas aún no resueltas: en torno a la autoría, los derechos y el significado mismo de la creación, así como el valor de la producción humana en un contexto donde las máquinas pueden generar resultados formalmente equivalentes. El uso de estas herramientas con criterio exige no solo comprender su funcionamiento técnico, sino también reconocer y evaluar las implicaciones éticas asociadas a su aplicación.</p>
 </div>
 ```
 

@@ -1,5 +1,6 @@
 ---
 title: "Sesión 12: Tu primer modelo de Machine Learning en Python"
+jupyter: py_env
 format:
   html:
     toc: true
@@ -31,12 +32,11 @@ format:
 <script type="module" src="../interactives/sesion-12.js"></script>
 ```
 
-## Introducción a la IA
+## Tu primer modelo de machine learning en Python
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: Tu primer modelo de Machine Learning en Python</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/JWClZGbAwy6" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -46,22 +46,13 @@ format:
 
 ### Introducción
 
-En la [sesión 3](sesion-03.html) describimos cómo funciona un algoritmo `árbol de decisión`: el modelo hace preguntas binarias [sí/no] sobre los datos hasta llegar a una respuesta.
+En la [sesión 3](sesion-03.html) describimos cómo funciona el algoritmo `árbol de decisión`: el modelo hace preguntas binarias [sí/no] sobre los datos hasta llegar a una respuesta.
 
 Ahora vamos a hacer exactamente lo mismo, pero con Python 🐍. No es necesario memorizar el código, la idea es que puedas **comprender** qué hace cada línea y conectarla con conceptos que ya conoces.
 
-```{=html}
-<div class="callout-card">
-  <h5 class="callout-card-title">Recuerda: sesión 3</h5>
-  <p>Describimos el <code>árbol de decisión</code> (Random Forest) como el juego de las 20 preguntas: el modelo hace preguntas [sí = 1/no = 0] sobre los datos hasta llegar a una respuesta. Hoy, Python va a construir ese árbol automáticamente a partir de miles de ejemplos etiquetados.</p>
-</div>
-```
+#### Cinco pasos que todo modelo de Machine Learning recorre
 
----
-
-### Cinco pasos que todo modelo de Machine Learning recorre
-
-Antes de pasar al código, vamos a familiarizarnos con el flujo de un modelo de machine learning (aprendizaje de máquinas). Cada sección del `experimento` corresponde a uno de estos pasos.
+Antes de pasar al código, vamos a familiarizarnos con el flujo de un modelo de machine learning (aprendizaje de máquinas). Cada sección un `experimento` corresponde a uno de estos pasos.
 
 ```{=html}
 <div class="py-progression">
@@ -97,17 +88,17 @@ Antes de pasar al código, vamos a familiarizarnos con el flujo de un modelo de 
 </div>
 ```
 
-Estos cinco pasos son universales. Un modelo que detecta tumores en radiografías, uno que predice el precio de una casa o uno que reconoce tu voz siguen exactamente este mismo flujo.
+Estos cinco pasos son universales. Un modelo que detecta tumores en radiografías, uno que predice el precio de una casa o uno que reconoce tu voz siguen exactamente este flujo de trabajo.
 
 ---
 
-### Por qué dividimos los datos: una analogía sencilla
+### ¿Por qué dividimos los datos?
 
-Imagina que estudias para un examen con una guía de estudio: cada pregunta tiene una respuesta. Si el día del examen el profesor usa exactamente las mismas preguntas, sacas diez — pero eso no significa que aprendiste. Solo memorizaste las respuestas.
+Imagina que estudias para un examen con una guía de estudio: cada pregunta tiene una respuesta. Si el día del examen el profesor usa exactamente las mismas preguntas, probablemente saques una calificación perfecta. Pero eso no significa que hayas aprendido el material, puede ser que simplemente memorizaste las respuestas de las preguntas en la guía.
 
-Con los modelos de machine learning pasa exactamente lo mismo. Si entrenamos con las mismas imágenes que usamos para evaluar, el modelo puede "recordar" las respuestas correctas sin haber aprendido nada útil para imágenes nuevas.
+Con los modelos de machine learning pasa exactamente lo mismo. Si evaluamos el modelo con las mismas imágenes que usamos para entrenar, el modelo puede "recordar" las respuestas correctas sin haber aprendido patrones que le ayuden a predecir nuevas imágenes.
 
-La solución es siempre la misma: **separar** los datos antes de empezar.
+La solución a este problema en particular es: **separar** los datos antes de empezar.
 
 ```{=html}
 <div class="split-vis">
@@ -129,18 +120,15 @@ La solución es siempre la misma: **separar** los datos antes de empezar.
 </div>
 ```
 
-```{=html}
-<div class="callout-card">
-  <h5 class="callout-card-title">La regla de oro</h5>
-  <p>Nunca uses los datos de prueba durante el entrenamiento. La precisión que obtienes al final solo tiene sentido si el modelo no vio esas imágenes antes.</p>
-</div>
-```
+
+>¡Ojo! Nunca uses los datos de prueba durante el entrenamiento. La precisión que obtienes al final solo tiene sentido si el modelo no vio esas imágenes antes.
+
 
 ---
 
-### El experimento: reconocer dígitos escritos a mano
+### Experimento: reconocer dígitos escritos a mano
 
-El conjunto de datos que usaremos se llama **digits**. Contiene 1,797 imágenes en escala de grises de dígitos escritos a mano (del 0 al 9), cada una de 8×8 píxeles. Es pequeño, claro y perfecto para un primer experimento.
+Para nuestro primer experimento en Pytho, usaremos un conjunto de datos que se llama **digits**. Contiene 1,797 imágenes en escala de grises de dígitos escritos a mano (del 0 al 9), cada una de 8×8 píxeles. Es pequeño, claro y perfecto para empezar.
 
 Primero observa cómo se ven algunos de estos dígitos:
 
@@ -174,13 +162,13 @@ plt.tight_layout()
 plt.show()
 ```
 
-Cada imagen es una cuadrícula de 8×8 = **64 valores numéricos** entre 0 (blanco) y 16 (negro). Eso es lo que el `árbol de decisión` va a analizar para decidir qué dígito es cada imagen.
+Cada imagen es una cuadrícula de 8×8 = **64 valores numéricos** entre 0 (blanco) y 16 (negro). Eso es lo que el algoritmo de machine learning `árbol de decisión` va a analizar para decidir qué dígito es cada imagen. ¿Por qué usamos este algorimo en específico? Esta es una pregunta que tú ya puedes responder. Vuelve a la sesión 3 si es necesario, y reflexiona si otros modelos, arquitecturas, u algoritmos podrían usarse para este apliación.
 
 ---
 
 ### Google Colab — tu laboratorio
 
-Para escribir y ejecutar Python no necesitas instalar nada. **Google Colab** es un cuaderno de código que corre directo en el navegador.
+Para escribir y ejecutar Python no necesitas instalar algo nuevo en tu computadora. Para empezar, puedes usar **Google Colab:** un cuaderno de código que corre directo en el navegador.
 
 ```{=html}
 <div class="colab-window">
@@ -223,18 +211,14 @@ Para escribir y ejecutar Python no necesitas instalar nada. **Google Colab** es 
 </div>
 ```
 
-```{=html}
-<div class="callout-card">
-  <h5 class="callout-card-title">Abrir Colab</h5>
-  <p><a href="https://colab.research.google.com" target="_blank" rel="noopener">colab.research.google.com →</a> Necesitas una cuenta de Google. Crea un cuaderno nuevo desde "Archivo → Nuevo notebook" y copia el código de esta sesión.</p>
-</div>
-```
+Para usar [Google Colab](https://colab.research.google.com) necesitas una cuenta de Google. Crea un cuaderno nuevo desde "Archivo → Nuevo notebook" y copia el código de esta sesión.
+
 
 ---
 
 ### Introducción breve a Python
 
-No necesitas conocer todo el lenguage de Python para entender este experimento. Estas cuatro piezas son suficientes.
+Abajo una breve introducción a las cuatro piezas esenciales del lenguaje de programación Python. Si dominas estas cuatro piezas, podrás seguir la sesión sin problema. No se requiere ser un experto en el lenguaje, pero sí tener estas 4 piezas presentes al momento de leer o escribir tu código.
 
 ```{=html}
 <div class="py-concept-grid">
@@ -290,7 +274,7 @@ No necesitas conocer todo el lenguage de Python para entender este experimento. 
 
 ### Del árbol de decisión al código: cada línea explicada
 
-Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puedes leer el experimento completo. **Haz clic en cualquier línea** para ver qué hace exactamente.
+Con los cinco pasos del flujo de ML en mente y una idea general de cómo funciona Python, ya puedes leer el experimento completo. **Haz clic en cualquier línea** para ver qué hace exactamente.
 
 ```{=html}
 <div class="ca-wrap">
@@ -310,11 +294,11 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
         <span class="ln">2</span>
         <span class="code-text"><span class="ck">from</span> <span class="cv">sklearn.datasets</span> <span class="ck">import</span> <span class="cf">load_digits</span></span>
       </div>
-      <div class="code-line" data-line="3" data-note="Aquí importamos el árbol de decisión — el mismo algoritmo que describimos en la sesión 3 con la analogía del juego de las 20 preguntas. sklearn lo tiene implementado y listo para usar en dos líneas de código.">
+      <div class="code-line" data-line="3" data-note="Aquí importamos el árbol de decisión, el mismo algoritmo que describimos en la sesión 3 con la analogía del juego de las 20 preguntas. sklearn lo tiene implementado y listo para usar en dos líneas de código.">
         <span class="ln">3</span>
         <span class="code-text"><span class="ck">from</span> <span class="cv">sklearn.tree</span> <span class="ck">import</span> <span class="cf">DecisionTreeClassifier</span></span>
       </div>
-      <div class="code-line" data-line="4" data-note="train_test_split es la función que hace la separación. Le dices qué fracción reservar para prueba (test_size=0.25 = 25%) y te devuelve cuatro grupos: X_train y X_test (las imágenes) más y_train e y_test (las etiquetas correctas).">
+      <div class="code-line" data-line="4" data-note="train_test_split divide el conjunto de datos en dos: entrenamiento y prueba. 'X' son las imágenes convertidas en números; 'y' son las respuestas correctas. Así, X_train son las imágenes que el modelo estudia y y_train sus etiquetas; X_test son imágenes que guardamos para probarlo después y y_test sus etiquetas correctas. Con stratify=digits.target mantenemos proporciones parecidas de cada dígito en ambos grupos.">
         <span class="ln">4</span>
         <span class="code-text"><span class="ck">from</span> <span class="cv">sklearn.model_selection</span> <span class="ck">import</span> <span class="cf">train_test_split</span></span>
       </div>
@@ -327,7 +311,7 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
         <span class="ln">6</span>
         <span class="code-text"><span class="cc"># ── Paso 1: Cargar los datos ───────────────────────────</span></span>
       </div>
-      <div class="code-line" data-line="7" data-note="Esta función carga los 1,797 dígitos y sus etiquetas correctas. Todo queda guardado en la variable digits. Desde aquí, digits.data son las imágenes (en números) y digits.target son los dígitos reales (0–9).">
+      <div class="code-line" data-line="7" data-note="load_digits() carga 1,797 dígitos escritos a mano. Cada uno viene con su imagen convertida en números y con su respuesta correcta: qué número era realmente. Todo queda guardado en digits: digits.data son las imágenes y digits.target son las respuestas correctas del 0 al 9.">
         <span class="ln">7</span>
         <span class="code-text"><span class="cv">digits</span> <span class="co">=</span> <span class="cf">load_digits</span>()</span>
       </div>
@@ -340,15 +324,15 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
         <span class="ln">9</span>
         <span class="code-text"><span class="cc"># ── Paso 2: Separar entrenamiento y prueba ─────────────</span></span>
       </div>
-      <div class="code-line" data-line="10" data-note="La separación crucial: 75% de las imágenes van al grupo de entrenamiento (X_train, y_train). El 25% restante queda bloqueado en el grupo de prueba (X_test, y_test). El modelo nunca verá esas 450 imágenes durante el aprendizaje.">
+      <div class="code-line" data-line="10" data-note="La separación crucial: 75% de las imágenes van al grupo de entrenamiento (X_train, y_train). El 25% restante queda reservado para el grupo de prueba (X_test, y_test). stratify=digits.target ayuda a que ambos grupos tengan una mezcla equilibrada de dígitos del 0 al 9. El modelo nunca verá esas 450 imágenes reservadas durante el aprendizaje.">
         <span class="ln">10</span>
         <span class="code-text"><span class="cv">X_train</span><span class="co">,</span> <span class="cv">X_test</span><span class="co">,</span> <span class="cv">y_train</span><span class="co">,</span> <span class="cv">y_test</span> <span class="co">=</span> <span class="cf">train_test_split</span>(</span>
       </div>
-      <div class="code-line" data-line="10" data-note="La separación crucial: 75% de las imágenes van al grupo de entrenamiento (X_train, y_train). El 25% restante queda bloqueado en el grupo de prueba (X_test, y_test). El modelo nunca verá esas 450 imágenes durante el aprendizaje.">
+      <div class="code-line" data-line="10" data-note="La separación crucial: 75% de las imágenes van al grupo de entrenamiento (X_train, y_train). El 25% restante queda bloqueado en el grupo de prueba (X_test, y_test). stratify=digits.target ayuda a que ambos grupos tengan una mezcla equilibrada de dígitos del 0 al 9. El modelo nunca verá esas 450 imágenes reservadas durante el aprendizaje.">
         <span class="ln">11</span>
-        <span class="code-text">    <span class="cv">digits</span><span class="co">.</span><span class="cm">data</span><span class="co">,</span> <span class="cv">digits</span><span class="co">.</span><span class="cm">target</span><span class="co">,</span> <span class="cv">test_size</span><span class="co">=</span><span class="cn">0.25</span><span class="co">,</span> <span class="cv">random_state</span><span class="co">=</span><span class="cn">42</span></span>
+        <span class="code-text">    <span class="cv">digits</span><span class="co">.</span><span class="cm">data</span><span class="co">,</span> <span class="cv">digits</span><span class="co">.</span><span class="cm">target</span><span class="co">,</span> <span class="cv">test_size</span><span class="co">=</span><span class="cn">0.25</span><span class="co">,</span> <span class="cv">random_state</span><span class="co">=</span><span class="cn">42</span><span class="co">,</span> <span class="cv">stratify</span><span class="co">=</span><span class="cv">digits</span><span class="co">.</span><span class="cm">target</span></span>
       </div>
-      <div class="code-line" data-line="10" data-note="La separación crucial: 75% de las imágenes van al grupo de entrenamiento (X_train, y_train). El 25% restante queda bloqueado en el grupo de prueba (X_test, y_test). El modelo nunca verá esas 450 imágenes durante el aprendizaje.">
+      <div class="code-line" data-line="10" data-note="La separación crucial: 75% de las imágenes van al grupo de entrenamiento (X_train, y_train). El 25% restante queda bloqueado en el grupo de prueba (X_test, y_test). stratify=digits.target ayuda a que ambos grupos tengan una mezcla equilibrada de dígitos del 0 al 9. El modelo nunca verá esas 450 imágenes reservadas durante el aprendizaje.">
         <span class="ln">12</span>
         <span class="code-text">)</span>
       </div>
@@ -361,7 +345,7 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
         <span class="ln">14</span>
         <span class="code-text"><span class="cc"># ── Paso 3: Crear el árbol de decisión ────────────────</span></span>
       </div>
-      <div class="code-line" data-line="15" data-note="Crea el árbol. max_depth=10 limita su profundidad máxima. Sin ese límite, el árbol puede crecer hasta memorizar cada imagen de entrenamiento — lo que funciona en entrenamiento pero falla con imágenes nuevas. Eso se llama sobreajuste.">
+      <div class="code-line" data-line="15" data-note="Aquí creamos el modelo, pero todavía no ha aprendido nada. max_depth=10 limita cuántas preguntas puede hacer el árbol antes de dar una respuesta. Ese límite ayuda a evitar que memorice las imágenes de entrenamiento en vez de aprender patrones para predecir imágenes nuevas. Eso se llama sobreajuste.">
         <span class="ln">15</span>
         <span class="code-text"><span class="cv">modelo</span> <span class="co">=</span> <span class="cf">DecisionTreeClassifier</span>(<span class="cv">max_depth</span><span class="co">=</span><span class="cn">10</span><span class="co">,</span> <span class="cv">random_state</span><span class="co">=</span><span class="cn">42</span>)</span>
       </div>
@@ -374,7 +358,7 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
         <span class="ln">17</span>
         <span class="code-text"><span class="cc"># ── Paso 4: Entrenar (aquí ocurre el aprendizaje) ─────</span></span>
       </div>
-      <div class="code-line" data-line="18" data-note="Aquí ocurre el aprendizaje: el árbol analiza 1,347 imágenes con sus etiquetas y construye las reglas para distinguir cada dígito. Al terminar esta línea, el modelo ya sabe clasificar imágenes.">
+      <div class="code-line" data-line="18" data-note="Aquí ocurre el aprendizaje: el árbol analiza 1,347 imágenes con sus etiquetas y, a partir de patrones observados, construye las reglas para distinguir cada dígito. Al terminar esta línea, el modelo ya sabe clasificar imágenes.">
         <span class="ln">18</span>
         <span class="code-text"><span class="cv">modelo</span><span class="co">.</span><span class="cm">fit</span>(<span class="cv">X_train</span><span class="co">,</span> <span class="cv">y_train</span>)</span>
       </div>
@@ -387,15 +371,15 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
         <span class="ln">20</span>
         <span class="code-text"><span class="cc"># ── Paso 5: Predecir y evaluar ────────────────────────</span></span>
       </div>
-      <div class="code-line" data-line="21" data-note="El modelo recibe la imagen número 12 del grupo de prueba — una imagen que nunca vio durante el entrenamiento — y decide qué dígito cree que es. Eso es una predicción.">
+      <div class="code-line" data-line="21" data-note="El modelo recibe la imagen número 12 del grupo de prueba (una imagen que nunca vio durante el entrenamiento) y decide qué dígito cree que es. A esto le llamamos predicción.">
         <span class="ln">21</span>
         <span class="code-text"><span class="cv">prediccion</span> <span class="co">=</span> <span class="cv">modelo</span><span class="co">.</span><span class="cm">predict</span>([<span class="cv">X_test</span>[<span class="cn">12</span>]])[<span class="cn">0</span>]</span>
       </div>
-      <div class="code-line" data-line="22" data-note="Evaluación final: el modelo intenta predecir las 450 imágenes del grupo de prueba. score es la fracción de aciertos. Si vale 0.85, el modelo acertó el 85% de los dígitos que nunca había visto antes.">
+      <div class="code-line" data-line="22" data-note="Evaluación final: el modelo intenta predecir las 450 imágenes del grupo de prueba. score es la fracción de aciertos. Si te regresa la cifra 0.84, quiere decir que el modelo acertó con el 84% de los dígitos que nunca había visto antes.">
         <span class="ln">22</span>
         <span class="code-text"><span class="cv">score</span> <span class="co">=</span> <span class="cv">modelo</span><span class="co">.</span><span class="cm">score</span>(<span class="cv">X_test</span><span class="co">,</span> <span class="cv">y_test</span>)</span>
       </div>
-      <div class="code-line" data-line="23" data-note="Muestra la precisión en pantalla con tres decimales. Por ejemplo, 0.853 significa que el modelo acertó el 85.3% de los 450 dígitos del grupo de prueba — los que nunca había visto durante el entrenamiento.">
+      <div class="code-line" data-line="23" data-note="Muestra la precisión en pantalla con tres decimales. Por ejemplo, 0.836 significa que el modelo acertó con el 83.6% de los 450 dígitos del grupo de prueba.">
         <span class="ln">23</span>
         <span class="code-text"><span class="cf">print</span>(<span class="cs">f"Precisión: </span><span class="cv">{score</span><span class="co">:</span><span class="cn">.3f</span><span class="cv">}</span><span class="cs">"</span>)</span>
       </div>
@@ -403,7 +387,7 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
     </div>
     <div class="ca-output">
       <span class="ca-output-label">Output »</span>
-      <span class="ca-output-text">Precisión: 0.853</span>
+      <span class="ca-output-text">Precisión: 0.836</span>
     </div>
   </div>
 
@@ -418,9 +402,14 @@ Con los cinco pasos del flujo de ML en mente y el Python mínimo claro, ya puede
 
 ---
 
-### El experimento completo: el árbol en acción
+### El árbol en acción
 
-Tres ventanas para ver el modelo funcionar: primero una predicción concreta, luego la estructura interna del árbol, y finalmente el rendimiento global.
+Ahora vamos a ver el modelo desde tres ángulos: una predicción individual, las preguntas que aprendió el árbol y el patrón general de aciertos y errores. Así pasamos de programar unas líneas de código a analizar el resultado y entender qué es lo que está haciendo.
+
+Antes de evaluar todo el modelo, empecemos con un solo caso. Vamos a tomar una imagen del grupo de prueba (`X_test`); es decir, una imagen que el modelo no vio durante el entrenamiento, y le pediremos que nos diga qué dígito cree que es.
+
+En este bloque, las primeras líneas repiten el experimento completo para que el ejemplo funcione por sí solo: cargar datos, separar entrenamiento/prueba, crear el árbol y entrenarlo. A partir de `indice = 12` estaremos viendo algo nuevo. Ahí es donde elegimos una imagen específica, comparamos la respuesta correcta (`real`) con la respuesta del modelo (`prediccion`) y mostramos el resultado.
+
 
 **1 · Una predicción**
 
@@ -473,13 +462,14 @@ plt.show()
 print(f"Precisión global: {score:.3f}  ({int(score * 450)}/450 imágenes de prueba)")
 ```
 
-Una sola predicción dice poco: el árbol acierta el \~85% de las veces y se equivoca en el resto. Lo importante es entender el **patrón** de errores, que veremos a continuación con una `matriz de confusión`. Pero primero, visualicemos árbol.
+Esta predicción individual nos ayuda a ver cómo se comporta el modelo en un caso concreto, pero esto no basta para saber si el modelo funciona bien en general. Para eso necesitamos mirar muchas predicciones juntas. Para ello, primero veremos qué preguntas aprendió a hacer el árbol y después analizaremos sus errores con una **matriz de confusión**.
+
 
 ---
 
 **2 · El árbol de decisión: las preguntas que hace el modelo**
 
-Aquí está lo que construyó Python. Cada nodo hace una pregunta sobre el valor de un píxel: si la respuesta es sí (≤ umbral), el árbol va a la izquierda; si no, va a la derecha. El árbol completo tiene 10 niveles — aquí mostramos los primeros 3 para que sean legibles.
+Aquí está lo que construyó Python. Cada nodo hace una pregunta sobre el valor de un píxel: si la respuesta es sí (≤ umbral), el árbol va a la izquierda; si no, va a la derecha. El árbol completo tiene 10 niveles. Aquí mostramos los primeros 3 para que la imagen sea legible.
 
 ```{python}
 #| label: fig-arbol
@@ -579,24 +569,22 @@ plt.tight_layout()
 plt.show()
 ```
 
-```{=html}
-<div class="callout-card">
-  <h5 class="callout-card-title">Cómo leer este diagrama</h5>
-  <p>Cada <strong>recuadro azul</strong> es un punto de decisión. El árbol revisa el valor de un píxel específico de la imagen (en una cuadrícula de 8×8) y hace una pregunta binaria:</p>
-  <ul>
-    <li><strong>Flecha verde → Sí</strong>: el valor de ese píxel es menor o igual al umbral → el árbol sigue por la rama izquierda.</li>
-    <li><strong>Flecha naranja → No</strong>: el valor es mayor → el árbol sigue por la rama derecha.</li>
-  </ul>
-  <p>Los <strong>nodos del fondo</strong> son el resultado de seguir esas dos ramas dos veces: muestran el dígito (clase 0–9) que el modelo predice si una imagen llega hasta ese punto.</p>
-  <p>Este diagrama solo muestra los <strong>primeros 3 niveles</strong>. El árbol real tiene 10 en total — después de esas 10 preguntas, el modelo da su predicción final.</p>
-</div>
-```
+**Cómo leer este diagrama**
 
-Esto es el árbol de decisión que describimos en la [sesión 3](sesion-03.html), construido automáticamente por Python a partir de 1,347 ejemplos. Cada umbral (el número después de ≤) fue elegido por el algoritmo para separar mejor los dígitos durante el entrenamiento.
+Lee el árbol de arriba hacia abajo. Cada **recuadro azul** es una pregunta sobre un píxel específico de la imagen. Según la respuesta, el árbol toma una rama:
+
+- **Flecha verde → Sí**: el valor de ese píxel es menor o igual al umbral → el árbol sigue por la rama izquierda.
+- **Flecha naranja → No**: el valor de ese píxel es mayor que el umbral → el árbol sigue por la rama derecha.
+
+Los **recuadros inferiores visibles** muestran qué dígito parece más probable si una imagen llega hasta ese punto. No son necesariamente la predicción final: este diagrama solo muestra los **primeros 3 niveles** para que se pueda leer con claridad.
+
+El árbol final puede seguir haciendo más preguntas, hasta un máximo de 10 niveles. Al final de ese recorrido, el modelo da su predicción.
+
+Esto es el árbol de decisión que describimos en la [sesión 3](sesion-03.html), ahora construido automáticamente por Python a partir de 1,347 ejemplos. Cada pregunta y cada umbral fueron elegidos por el algoritmo durante el entrenamiento para separar mejor los dígitos.
 
 ---
 
-**3 · ¿Dónde acierta y dónde se confunde? La matriz de confusión**
+**3 · ¿Dónde acierta el árbol y dónde se confunde? La matriz de confusión**
 
 ```{python}
 #| label: fig-confusion
@@ -626,38 +614,27 @@ plt.tight_layout()
 plt.show()
 ```
 
-```{=html}
-<div class="callout-card">
-  <h5 class="callout-card-title">Cómo leer la matriz — celda por celda</h5>
-  <p>La matriz tiene <strong>10 filas y 10 columnas</strong> (una por cada dígito, del 0 al 9). Para leer cualquier celda usa esta regla:</p>
-  <blockquote>
-    <p><strong>Fila</strong> = el dígito que <strong>realmente</strong> era la imagen escrita a mano.</p>
-    <p><strong>Columna</strong> = lo que el modelo <strong>predijo</strong> que era.</p>
-    <p><strong>Número en la celda</strong> = cuántas veces ocurrió esa combinación exacta.</p>
-  </blockquote>
-  <p><strong>Los aciertos: la diagonal</strong></p>
-  <p>Todas las celdas donde fila = columna son aciertos. El modelo predijo el dígito correcto.</p>
-  <ul>
-    <li>Celda <strong>[fila 0, columna 0]</strong>: el modelo vio imágenes del dígito <strong>0</strong> y predijo <strong>0</strong> ✓. Si el número es 41, eso pasó 41 veces.</li>
-    <li>Celda <strong>[fila 1, columna 1]</strong>: vio un <strong>1</strong> y predijo <strong>1</strong> ✓.</li>
-    <li>Cuanto más brillante (más azul) es la diagonal, mejor está funcionando el modelo en ese dígito.</li>
-  </ul>
-  <p><strong>Los errores: todo lo que está fuera de la diagonal</strong></p>
-  <p>Cada celda fuera de la diagonal es un tipo de error específico.</p>
-  <ul>
-    <li>Celda <strong>[fila 1, columna 0]</strong>: el modelo vio una imagen del dígito <strong>1</strong> pero predijo <strong>0</strong> ✗. Si el número es 0, ese error nunca ocurrió.</li>
-    <li>Celda <strong>[fila 3, columna 8]</strong> (por ejemplo): vio un <strong>3</strong>, pero lo confundió con un <strong>8</strong> ✗.</li>
-    <li>Cuanto más brillante sea una celda fuera de la diagonal, más frecuente es ese error.</li>
-  </ul>
-  <p><strong>Cómo encontrar el error más común del modelo:</strong></p>
-  <ol>
-    <li>Ignora la diagonal brillante.</li>
-    <li>Busca la celda más intensa (más azul) que esté fuera de esa diagonal.</li>
-    <li>Lee su <strong>fila</strong> (dígito real) y su <strong>columna</strong> (dígito que predijo el modelo).</li>
-    <li>Pregúntate: ¿se parecen visualmente esos dos dígitos escritos a mano? ¿Por qué crees que el árbol los confundió?</li>
-  </ol>
-</div>
-```
+**¿Cómo leer la matriz de confusión?**
+
+La matriz resume las 450 predicciones del grupo de prueba. En vez de mirar una imagen a la vez, aquí vemos todos los aciertos y errores juntos.
+
+Cada fila y cada columna representa un dígito del 0 al 9:
+
+- **Fila**: el dígito correcto de la imagen.
+- **Columna**: el dígito que predijo el modelo.
+- **Número en la celda**: cuántas imágenes tuvieron esa combinación exacta.
+
+La **diagonal** muestra los aciertos. Son las celdas donde la fila y la columna coinciden: por ejemplo, fila 0 / columna 0 significa que la imagen era un 0 y el modelo predijo 0. Cuanto más azul sea una celda de la diagonal, más veces acertó el modelo en ese dígito.
+
+Las celdas **fuera de la diagonal** muestran errores. Por ejemplo, fila 3 / columna 8 significa: la imagen era un 3, pero el modelo predijo 8. Cuanto más azul sea una celda fuera de la diagonal, más frecuente fue ese tipo de confusión.
+
+Para encontrar el error más común del modelo:
+
+1. Ignora la diagonal.
+2. Busca la celda más azul fuera de la diagonal.
+3. Lee la fila para saber cuál era el dígito correcto.
+4. Lee la columna para saber qué predijo el modelo.
+5. Pregúntate si esos dos dígitos se parecen visualmente y por qué el árbol pudo confundirlos.
 
 
 
@@ -665,7 +642,7 @@ plt.show()
 
 ### Actividad: tres experimentos
 
-Vamos a intentar mejorar nuestro modelo. Queremos que acierte más del ~84% de las veces. Lo que intentaremos hacer es cambiar los parámetros del modelo. A cada modificación le denominaremos experimento. Cada experimento tiene un objetivo claro — no hace falta dominar todo el código completo para aprender algo valioso.
+Vamos a intentar mejorar nuestro modelo. El árbol original acierta cerca del ~84% de las veces. Lo que haremos es cambiar los parámetros del modelo. A cada modificación le denominaremos experimento. Cada experimento tiene un objetivo claro, no hace falta dominar todo el código completo para aprender algo valioso de estos ejercicios.
 
 ---
 
@@ -675,39 +652,38 @@ El parámetro `max_depth` controla el número máximo de preguntas que puede hac
 
 | Valor | Qué significa | Precisión esperada |
 |---|---|---|
-| `max_depth=2` | Solo 2 preguntas — árbol muy simple | ~50–65 % |
-| `max_depth=5` | 5 preguntas — árbol moderado | ~75–80 % |
-| `max_depth=10` | El original | ~85 % |
-| `max_depth=None` | Sin límite — el árbol crece todo lo que pueda | ¿sube o baja? |
+| `max_depth=2` | Solo 2 preguntas — árbol muy simple | ~31 % |
+| `max_depth=5` | 5 preguntas — árbol moderado | ~66 % |
+| `max_depth=10` | El original | ~84 % |
+| `max_depth=None` | Sin límite — el árbol crece todo lo que pueda | ~82 % |
 
-```{=html}
-<div class="callout-card">
-  <h5 class="callout-card-title">Pista: el peligro de un árbol sin límite</h5>
-  <p>Un árbol sin <code>max_depth</code> puede memorizar cada imagen de entrenamiento en vez de aprender reglas generales — como estudiar copiando las respuestas de la guía sin entender nada. En entrenamiento funciona perfectamente; con imágenes nuevas, falla. Eso se llama <strong>sobreajuste</strong>.</p>
-</div>
-```
 
-> **Pregunta:** ¿Por qué un árbol con solo 2 preguntas acierta tan poco? ¿Y por qué quitarle el límite del todo tampoco mejora mucho?
+**El peligro de un árbol sin límite**
+
+Un árbol sin `max_depth` corre el riesgo de memorizar cada imagen de entrenamiento en vez de aprender patrones y establecer reglas generales. Algo así como estudiar copiando las respuestas de la guía de estudio pero sin entender el contenido. En la etapa de entrenamiento funciona perfectamente; con imágenes nuevas, falla. A esto se llama **sobreajuste**.
+
+
+> ¿Por qué un árbol con solo 2 preguntas acierta tan poco? ¿Y por qué quitarle el límite tampoco mejora mucho?
 
 ---
 
 **Experimento B · Dale nombre a un error de la matriz**
 
-La matriz de confusión te dice qué pares de dígitos confunde el modelo. Ahora vas a encontrar ese error en una imagen :
+La matriz de confusión te dice qué pares de dígitos "confunde" el modelo. Ahora vas a encontrar ese error en una imagen:
 
 1. Mira la matriz y localiza la celda más brillante **fuera de la diagonal**. Anota: ¿qué dígito (fila) se confunde con qué predicción (columna)?
-2. Busca la línea `indice = 12` y cámbiala por números entre `0` y `449` hasta que el modelo cometa **ese error exacto** — que prediga el dígito incorrecto que encontraste en el paso 1.
+2. Busca la línea `indice = 12` y cámbiala por números entre `0` y `449` hasta que el modelo cometa **ese error exacto**; es decir, que prediga el dígito incorrecto que encontraste en el paso 1.
 3. Observa la imagen: ¿puedes ver a simple vista por qué el árbol se confundió?
 
-> **Pregunta:** ¿Esos dos dígitos se parecen visualmente cuando alguien los escribe a mano? ¿Crees que un humano también los confundiría?
+>¿Esos dos dígitos se parecen visualmente cuando alguien los escribe a mano? ¿Crees que un humano también los confundiría?
 
 ---
 
 **Experimento C · ¿Qué pasa si el árbol aprende con menos datos?**
 
-Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 50 % de las imágenes al grupo de prueba — el árbol aprende solo con las 898 imágenes restantes en vez de las 1,347 originales.
+Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 50 % de las imágenes al grupo de prueba y hace que el árbol aprenda solo con las 898 imágenes restantes en vez de las 1,347 originales.
 
-> **Pregunta:** ¿Sube o baja la precisión? ¿Por qué crees que tener menos imágenes de entrenamiento cambia el resultado?
+>¿Sube o baja la precisión? ¿Por qué crees que tener menos imágenes de entrenamiento cambia el resultado?
 
 ---
 
@@ -746,14 +722,14 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 
 **De machine learning**
 
-- Un modelo aprende de ejemplos etiquetados — nadie le programó las reglas a mano.
-- La separación entrenamiento/prueba es la condición mínima para que la precisión tenga significado. Sin ella, no sabes si el modelo aprendió o memorizó.
-- La profundidad del árbol es un un arma de doble filo: muy baja = no aprende lo suficiente, sin límite = memoriza en vez de generalizar. El punto óptimo está en el medio.
-- La matriz de confusión te dice *qué errores* comete el modelo, no solo cuántos — es más útil que la precisión sola.
+- Un modelo aprende de ejemplos etiquetados; nadie le programó las reglas a mano.
+- La separación entrenamiento/prueba es la condición mínima para que la precisión tenga significado; es decir, la condición mínima para evaluar nuestro modelo. Sin ella, no sabes si el modelo aprendió patrones o memorizó los datos.
+- La profundidad del árbol es un arma de doble filo: muy baja = no aprende lo suficiente, sin límite = memoriza en vez de generalizar. El punto óptimo está en el medio (y te toca a ti encontrarlo).
+- La matriz de confusión te dice *qué errores* comete el modelo, no solo cuántos, es un excelente complemento para la precisión, cuando queremos evaluar y mejorar nuestro modelo.
 
 **De Python**
 
-- Con seis líneas de sklearn puedes entrenar un clasificador que reconoce el ~85 % de imágenes de  dígitos que nunca ha visto.
+- Con pocas líneas de sklearn puedes entrenar un clasificador que reconoce el ~84 % de imágenes de dígitos que nunca ha visto.
 - Un solo parámetro (`max_depth`, `test_size`) puede cambiar el resultado por completo.
 - Modificar un experimento existente ya es programar, no hace falta empezar desde cero.
 
@@ -765,7 +741,7 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 <ol class="reflexion-list">
   <li class="reflexion-item">
     <span class="reflexion-num" aria-hidden="true">01</span>
-    <p class="reflexion-q"><strong>¿Habías escrito código antes de esta sesión?</strong> Si nunca, ¿qué se te hizo más extraño o más natural? Si ya sabías programar, ¿qué fue distinto a usar otros lenguajes?</p>
+    <p class="reflexion-q"><strong>¿Habías escrito código antes de esta sesión?</strong> Si nunca lo habías hecho, ¿qué se te hizo más extraño o más natural? Si ya sabías programar, ¿qué fue distinto a usar otros lenguajes?</p>
   </li>
   <li class="reflexion-item">
     <span class="reflexion-num" aria-hidden="true">02</span>
@@ -780,7 +756,7 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
     <p class="reflexion-q"><strong>Explícale a alguien menor que tú, en dos oraciones,</strong> por qué un modelo de machine learning con 100 % de precisión en entrenamiento no necesariamente es un buen modelo.</p>
   </li>
 </ol>
-<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el código y los datos con otros ojos.</p>
+<p class="reflexion-close">No hay respuestas correctas o incorrectas. El objetivo es que empieces a ver el código y los datos con familiaridad.</p>
 ```
 
 ---
@@ -790,7 +766,7 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 ```{=html}
 <div class="central-idea">
   <span class="central-idea-label">Idea central · Sesión 12</span>
-  <p class="central-idea-text">Tu primer modelo en Python no aprendió porque alguien le escribió reglas a mano, sino porque encontró patrones en ejemplos etiquetados. Lo importante de esta sesión no fue memorizar código, sino entender que entrenar, probar y ajustar un modelo también es una forma de pensar.</p>
+  <p class="central-idea-text">Tu primer modelo en Python no aprendió porque alguien le escribió reglas a mano, sino porque encontró patrones en ejemplos etiquetados. Eso significa que la calidad de un modelo depende directamente de los datos con los que aprendió. La próxima vez que escuches “una IA hace X”, ya sabes qué preguntar antes que nada: ¿con qué ejemplos la entrenaron y cómo comprobaron su desempeño con datos que nunca había visto?</p>
 </div>
 ```
 
@@ -799,60 +775,24 @@ Busca la línea `test_size=0.25` y cámbiala por `test_size=0.5`. Esto mueve el 
 ### Recursos para explorar más sobre el tema
 
 ```{=html}
-<div class="route-grid">
-
-  <div class="route-card">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🧪</span>
-      <h4 class="route-name">Google Colab</h4>
-    </div>
-    <p class="route-org">Google</p>
-    <p class="route-desc">Cuadernos de Python en el navegador, sin instalar nada. El lugar más fácil para empezar a experimentar.</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Gratis</span>
-      <span class="route-tag route-tag-browser">En el navegador</span>
-    </div>
-  </div>
-
-  <div class="route-card">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🐍</span>
-      <h4 class="route-name">Kaggle Learn: Python</h4>
-    </div>
-    <p class="route-org">Kaggle</p>
-    <p class="route-desc">Lecciones cortas con ejercicios interactivos en el navegador. El mejor punto de partida para aprender Python desde cero.</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Gratis</span>
-      <span class="route-tag route-tag-beginner">Principiante</span>
-    </div>
-  </div>
-
-  <div class="route-card">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🤖</span>
-      <h4 class="route-name">Kaggle Learn: Intro to ML</h4>
-    </div>
-    <p class="route-org">Kaggle</p>
-    <p class="route-desc">Aprende más sobre modelos de ML. Extiende exactamente lo que hicimos hoy en esta sesión.</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Gratis</span>
-      <span class="route-tag route-tag-beginner">Principiante</span>
-    </div>
-  </div>
-
-  <div class="route-card">
-    <div class="route-card-header">
-      <span class="route-logo-emoji">🎓</span>
-      <h4 class="route-name">CS50P — Python</h4>
-    </div>
-    <p class="route-org">Harvard / edX</p>
-    <p class="route-desc">Curso completo de Python para principiantes, estructurado y riguroso. Para cuando quieras ir más allá de los experimentos.</p>
-    <div class="route-tags">
-      <span class="route-tag route-tag-free">Gratis</span>
-    </div>
-  </div>
-
-</div>
+<ul class="resource-list">
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://colab.research.google.com" target="_blank" rel="noopener">Google Colab — cuadernos de Python en el navegador <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Gratis y sin instalar nada. El lugar más fácil para empezar a experimentar con código y reproducir lo que hicimos hoy.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.kaggle.com/learn/python" target="_blank" rel="noopener">Kaggle Learn — Python desde cero <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Lecciones cortas con ejercicios interactivos en el navegador. El mejor punto de partida si quieres aprender Python desde cero.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://www.kaggle.com/learn/intro-to-machine-learning" target="_blank" rel="noopener">Kaggle Learn — Intro to Machine Learning <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Aprende más sobre modelos de ML, paso a paso. Extiende exactamente lo que hicimos hoy en esta sesión.</p>
+  </li>
+  <li class="resource-list-item">
+    <a class="resource-list-link" href="https://cs50.harvard.edu/python/" target="_blank" rel="noopener">CS50P — Introduction to Programming with Python (Harvard) <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></a>
+    <p class="resource-list-desc">Curso completo de Python, estructurado y riguroso. Gratis. Para cuando quieras ir más allá de los experimentos.</p>
+  </li>
+</ul>
 ```
 
 ---

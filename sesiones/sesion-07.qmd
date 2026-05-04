@@ -34,9 +34,8 @@ format:
 ## Video
 
 ```{=html}
-<div class="video-placeholder">
-  <span class="vp-icon">▶</span>
-  <p class="vp-title">Video: IA como Tutor de Lenguaje</p>
+<div class="video-capsule">
+  <iframe src="https://share.descript.com/embed/pQs5LgvCq8h" width="640" height="360" frameborder="0" allowfullscreen></iframe>
 </div>
 ```
 
@@ -361,7 +360,7 @@ La elección depende de tres preguntas: ¿necesitas conversación o fuentes?, ¿
 ``` -->
 
 
-### Uso ético de la IA para
+### Uso ético de la IA para aprender
 
 Hasta aquí hemos visto cómo pedir ayuda, es decir, qué tipo de prompts me pueden apoyar, y cómo mantenerte en control de la lectura, práctica, y redacción. Falta una última pregunta, y es la más importante: ¿este uso me ayuda a aprender o está reemplazando el aprendizaje que debería ocurrir?
 
