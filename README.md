@@ -65,3 +65,4 @@ curso_IA/
 
 
 Versión 2.0 — Marzo 2026
+# curso_IA_MS_1
