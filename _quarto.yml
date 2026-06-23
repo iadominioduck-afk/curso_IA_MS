@@ -1,6 +1,6 @@
 project:
   type: website
-  output-dir: _site
+  output-dir: docs
   resources:
     - assets/google-maps-pin.svg
     - assets/gmail-icon-2020.svg
@@ -68,7 +68,7 @@ website:
 
 format:
   html:
-    theme: cosmo
+    theme: lumen
     toc: true
     toc-depth: 3
     number-sections: false

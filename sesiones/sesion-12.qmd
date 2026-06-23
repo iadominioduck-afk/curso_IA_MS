@@ -1,6 +1,7 @@
 ---
 title: "Sesión 12: Tu primer modelo de Machine Learning en Python"
-jupyter: py_env
+jupyter:
+  kernel: python3
 format:
   html:
     toc: true
