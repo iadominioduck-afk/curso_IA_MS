@@ -1,5 +1,5 @@
 ---
-title: "Sesión 6: EN VIVO — IA en México: Investigación y Aplicaciones"
+title: "EN VIVO — IA en México: Investigación y Aplicaciones"
 format:
   html:
     toc: true

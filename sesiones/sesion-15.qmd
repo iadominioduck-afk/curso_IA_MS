@@ -1,5 +1,5 @@
 ---
-title: "Sesión 15: EN VIVO — IA en la Educación Global"
+title: "EN VIVO — IA en la Educación Global"
 format:
   html:
     toc: true

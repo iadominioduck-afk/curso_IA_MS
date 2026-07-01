@@ -470,17 +470,17 @@ format:
   <canvas id="lp-canvas"></canvas>
 
   <div class="lp-hero-content">
-    <p class="lp-eyebrow">San Luis Potosí · 2026 </p>
+    <p class="lp-eyebrow"> IA · México · 2026 </p>
     <h1 class="lp-title">
-      La IA ya está<br>
-      <span class="lp-accent">en tu vida.</span>
+      Panorma de la IA<br>
+      <span class="lp-accent">para EMS</span>
     </h1>
     <p class="lp-subtitle">
-      Entiéndela. Úsala.<br>No te dejes llevar por ella.
+      Estudiala. Entiendela.<br>Úsala para tu desarrollo.
     </p>
     <div class="lp-ctas">
       <a href="sesiones/sesion-01.qmd" class="lp-btn-primary">Comenzar ahora →</a>
-      <a href="syllabus.qmd" class="lp-btn-ghost">Ver programa</a>
+      
     </div>
   </div>
 
@@ -496,7 +496,7 @@ format:
     <span class="lp-stat-label">Sesiones</span>
   </div>
   <div class="lp-stat">
-    <span class="lp-stat-num" data-target="3">0</span>
+    <span class="lp-stat-num" data-target="0">0</span>
     <span class="lp-stat-label">Sesiones en vivo</span>
   </div>
   <div class="lp-stat">

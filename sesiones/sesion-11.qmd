@@ -1,5 +1,5 @@
 ---
-title: "Sesión 11: EN VIVO — IA, Política Pública y Ciudadanía"
+title: "EN VIVO — IA, Política Pública y Ciudadanía"
 format:
   html:
     toc: true

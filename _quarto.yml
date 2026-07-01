@@ -12,7 +12,7 @@ project:
 
 website:
   title: "Intro a la IA"
-  site-url: "https://www.curso-ia-slp.com"
+  site-url: "https://www.curso-ia.com"
   description: "Panorama de la Inteligencia Artificial para estudiantes de nivel medio-superior"
   favicon: assets/logo.svg
 
@@ -22,46 +22,46 @@ website:
     left:
       - text: "Inicio"
         href: index.qmd
-      - text: "Programa"
-        href: syllabus.qmd
+      #- text: "Programa"
+      #  href: syllabus.qmd
       - text: "Sesiones"
         menu:
           - text: "— Bloque 1: Fundamentos + Ética —"
-          - text: "S1 · ¿Qué es la IA?"
+          - text: "· ¿Qué es la IA?"
             href: sesiones/sesion-01.qmd
-          - text: "S2 · Redes Neuronales Artificiales"
+          - text: "· Redes Neuronales Artificiales"
             href: sesiones/sesion-02.qmd
-          - text: "S3 · Algoritmos de IA"
+          - text: "· Algoritmos de IA"
             href: sesiones/sesion-03.qmd
-          - text: "S4 · IA Generativa"
+          - text: "· IA Generativa"
             href: sesiones/sesion-04.qmd
-          - text: "S5 · Ética en la IA"
+          - text: "· Ética en la IA"
             href: sesiones/sesion-05.qmd
-          - text: "S6 · EN VIVO: IA en México"
-            href: sesiones/sesion-06.qmd
+          #- text: "S6 · EN VIVO: IA en México"
+          #  href: sesiones/sesion-06.qmd
           - text: "— Bloque 2: Herramientas Prácticas —"
-          - text: "S7 · Tutor de Lenguaje"
+          - text: "· Tutor de Lenguaje"
             href: sesiones/sesion-07.qmd
-          - text: "S8 · IA para Creatividad"
+          - text: "· IA para Creatividad"
             href: sesiones/sesion-08.qmd
-          - text: "S9 · IA para Organización"
+          - text: "· IA para Organización"
             href: sesiones/sesion-09.qmd
-          - text: "S10 · Tutor Académico"
+          - text: "· Tutor Académico"
             href: sesiones/sesion-10.qmd
-          - text: "S11 · EN VIVO: Política Pública"
-            href: sesiones/sesion-11.qmd
+          #- text: "S11 · EN VIVO: Política Pública"
+          #  href: sesiones/sesion-11.qmd
           - text: "— Bloque 3: Creación, Aplicaciones y Futuro —"
-          - text: "S12 · Programación con IA"
+          - text: "· Programación con IA"
             href: sesiones/sesion-12.qmd
-          - text: "S13 · Robótica e IA"
+          - text: "· Robótica e IA"
             href: sesiones/sesion-13.qmd
-          - text: "S14 · IA en Salud, Ciencia y Sociedad"
+          - text: "· IA en Salud, Ciencia y Sociedad"
             href: sesiones/sesion-14.qmd
-          - text: "S15 · EN VIVO: Educación Global"
-            href: sesiones/sesion-15.qmd
+          # - text: "S15 · EN VIVO: Educación Global"
+          #  href: sesiones/sesion-15.qmd
 
   page-footer:
-    left: "Intro a la IA · San Luis Potosí · 2026"
+    left: "Panorama de la IA · Educación Media Superior · 2026"
     right:
       - icon: github
         href: https://github.com/michelleg06

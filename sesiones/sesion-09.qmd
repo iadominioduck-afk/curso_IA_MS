@@ -1,5 +1,5 @@
 ---
-title: "Sesión 9: IA para Organización y Productividad Estudiantil"
+title: "IA para Organización y Productividad Estudiantil"
 format:
   html:
     toc: true
@@ -14,14 +14,12 @@ format:
   </div>
   <div class="sesion-progress-wrap">
     <div class="sesion-progress-bar">
-      <div class="sesion-progress-fill sesion-progress-fill-9"></div>
+      <div class="sesion-progress-fill sesion-progress-fill-8"></div>
     </div>
-    <span class="sesion-progress-label">9 de 15</span>
+    <span class="sesion-progress-label">8 de 12</span>
   </div>
   <div class="sesion-meta">
-    <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> 30 de junio de 2026</span>
     <span class="sesion-meta-chip"><svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg> 45 minutos</span>
-    <a href="../syllabus.html">Ver programa completo →</a>
   </div>
 </div>
 ```
@@ -506,7 +504,7 @@ Las herramientas (apps, modelos de IA) cambian: algunas aparecen, otras desapare
 <nav class="sesion-nav">
   <a href="sesion-08.html" class="sesion-nav-btn prev">
     <span class="nav-label">← Anterior</span>
-    <span class="nav-title">S8: IA para Creatividad</span>
+    <span class="nav-title">IA para Creatividad</span>
   </a>
   <div class="sesion-nav-center">
     <div class="sesion-nav-dots">
@@ -515,18 +513,18 @@ Las herramientas (apps, modelos de IA) cambian: algunas aparecen, otras desapare
       <span class="sesion-nav-dot published" title="Sesión 3"></span>
       <span class="sesion-nav-dot published" title="Sesión 4"></span>
       <span class="sesion-nav-dot published" title="Sesión 5"></span>
-      <span class="sesion-nav-dot published" title="Sesión 6"></span>
+      
       <span class="sesion-nav-dot published" title="Sesión 7"></span>
       <span class="sesion-nav-dot published" title="Sesión 8"></span>
       <span class="sesion-nav-dot active" title="Sesión 9"></span>
       <span class="sesion-nav-dot" title="Sesión 10"></span>
-      <span class="sesion-nav-dot" title="Sesión 11"></span>
+      
       <span class="sesion-nav-dot" title="Sesión 12"></span>
       <span class="sesion-nav-dot" title="Sesión 13"></span>
       <span class="sesion-nav-dot" title="Sesión 14"></span>
-      <span class="sesion-nav-dot" title="Sesión 15"></span>
+      
     </div>
-    <span class="sesion-nav-progress">Sesión 9 de 15</span>
+    <span class="sesion-nav-progress">Sesión 8 de 12</span>
   </div>
   <a href="sesion-10.html" class="sesion-nav-btn next">
     <span class="nav-label">Siguiente →</span>
