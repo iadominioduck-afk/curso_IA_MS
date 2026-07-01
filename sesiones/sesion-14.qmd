@@ -379,7 +379,7 @@ Estas preguntas tienen respaldo académico: investigadoras del área de informá
 
 ```{=html}
 <div class="video-capsule">
-  <iframe src="https://drive.google.com/file/d/1rlFqLRQiQmvP5E6aD6InT9YLeGThsyhk/preview" width="640" height="480"></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_IDWqHosczI?si=Mc9nQ9e2kHNNYDFG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </div>
 ```
 
